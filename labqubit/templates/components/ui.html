@@ -65,9 +65,13 @@
 {%- endmacro %}
 
 {% macro picture(src, alt="", cls="", width=1600, height=900, eager=False, sizes="100vw") -%}
+{#- Serves the WebP copy (created on upload) when it exists; the original is the fallback -#}
 {%- if src -%}
+{%- set webp = webp_url(src) -%}
+{%- if webp %}<picture><source srcset="{{ webp | e }}" type="image/webp">{% endif -%}
 <img src="{{ src | e }}" alt="{{ alt | e }}" class="{{ cls }}" width="{{ width }}" height="{{ height }}"
 	{{ 'fetchpriority="high"' if eager else 'loading="lazy"' }} decoding="async" sizes="{{ sizes }}">
+{%- if webp %}</picture>{% endif -%}
 {%- endif -%}
 {%- endmacro %}
 

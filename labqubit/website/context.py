@@ -177,6 +177,7 @@ def build_generator_context(doc, context):
 	builder = DETAIL_BUILDERS.get(doc.doctype)
 	if builder:
 		builder(doc, context)
+	context.schema = detail_schema(doc, context)
 
 
 def _service(doc, context):
@@ -274,3 +275,77 @@ DETAIL_BUILDERS = {
 	"LQ Case Study": _case_study,
 	"LQ Job Opening": _job_opening,
 }
+
+
+# ---------------------------------------------------------------- structured data (schema.org)
+
+EMPLOYMENT_TYPES = {
+	"Full-time": "FULL_TIME",
+	"Part-time": "PART_TIME",
+	"Contract": "CONTRACTOR",
+	"Internship": "INTERN",
+}
+
+
+def detail_schema(doc, context):
+	url = get_url("/" + doc.route)
+	company = frappe.get_cached_doc("LQ Settings").company_name or "LabQubit"
+	org = {"@type": "Organization", "name": company, "url": get_url("/")}
+	image = context.og_image and get_url(context.og_image)
+	section = context.get("section") or {}
+
+	crumbs = [{"name": _("Home"), "item": get_url("/")}]
+	if section:
+		crumbs.append({"name": section["label"], "item": get_url(section["url"])})
+	crumbs.append({"name": t(doc, "title"), "item": url})
+	schema = [
+		{
+			"@context": "https://schema.org",
+			"@type": "BreadcrumbList",
+			"itemListElement": [{"@type": "ListItem", "position": i + 1, **c} for i, c in enumerate(crumbs)],
+		}
+	]
+
+	main = None
+	if doc.doctype in ("LQ Service", "LQ Solution"):
+		main = {
+			"@type": "Service",
+			"name": t(doc, "title"),
+			"description": context.description,
+			"provider": org,
+			"url": url,
+			**({"serviceType": doc.category} if doc.get("category") else {}),
+		}
+	elif doc.doctype == "LQ Case Study":
+		context.og_type = "article"
+		main = {
+			"@type": "Article",
+			"headline": t(doc, "title"),
+			"description": context.description,
+			"datePublished": str(doc.published_on or doc.creation.date()),
+			"dateModified": str(doc.modified.date()),
+			"author": org,
+			"publisher": org,
+			"mainEntityOfPage": url,
+		}
+	elif doc.doctype == "LQ Job Opening" and context.is_open:
+		main = {
+			"@type": "JobPosting",
+			"title": t(doc, "title"),
+			"description": (t(doc, "description") or "") + (t(doc, "requirements") or "")
+			or context.description,
+			"datePosted": str(doc.creation.date()),
+			"hiringOrganization": {**org, "sameAs": get_url("/")},
+			"employmentType": EMPLOYMENT_TYPES.get(doc.employment_type, "FULL_TIME"),
+			"jobLocation": {
+				"@type": "Place",
+				"address": {"@type": "PostalAddress", "addressLocality": doc.location or ""},
+			},
+			"url": url,
+			**({"validThrough": str(doc.closes_on)} if doc.closes_on else {}),
+		}
+	if main:
+		if image:
+			main["image"] = image
+		schema.append({"@context": "https://schema.org", **main})
+	return schema

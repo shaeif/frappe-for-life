@@ -11,7 +11,7 @@
 
 <section class="pb-20">
 	<div class="lq-container grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-		{%- for i in lq.nav.industries %}{{ feature_card(i, "/" ~ i.route, loop.index0 * 60) }}
+		{%- for i in lq.nav.industries %}{{ feature_card(i, "/" ~ i.route, loop.index0 * 60, 2) }}
 		{%- else %}<div class="sm:col-span-2 lg:col-span-4">{{ empty_state(_("Industries are coming soon")) }}</div>{% endfor %}
 	</div>
 </section>

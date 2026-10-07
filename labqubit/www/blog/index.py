@@ -1,6 +1,8 @@
 import frappe
 from frappe import _
 
+sitemap = 1
+
 
 def get_context(context):
 	category = frappe.form_dict.category

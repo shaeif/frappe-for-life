@@ -12,7 +12,7 @@ const nm = path.join(root, "node_modules");
 const fonts = [
 	["@fontsource-variable/inter/files/inter-latin-wght-normal.woff2", "inter-latin.woff2"],
 	["@fontsource-variable/inter/files/inter-latin-ext-wght-normal.woff2", "inter-latin-ext.woff2"],
-	...[400, 500, 600, 700].map((w) => [
+	...[400, 600].map((w) => [
 		`@fontsource/ibm-plex-sans-arabic/files/ibm-plex-sans-arabic-arabic-${w}-normal.woff2`,
 		`plex-arabic-${w}.woff2`,
 	]),

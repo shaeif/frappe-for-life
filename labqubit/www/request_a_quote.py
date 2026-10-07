@@ -2,6 +2,8 @@ from frappe import _
 
 from labqubit.website.forms import form_options
 
+sitemap = 1
+
 
 def get_context(context):
 	context.title = _("Request a Quote")

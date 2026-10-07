@@ -50,6 +50,7 @@ jinja = {
 		"labqubit.utils.jinja.lq_icon",
 		"labqubit.utils.jinja.t",
 		"labqubit.utils.jinja.is_arabic",
+		"labqubit.utils.images.webp_url",
 	],
 	"filters": [
 		"labqubit.utils.jinja.json_script",
@@ -94,19 +95,25 @@ _clear_website = {
 }
 
 doc_events = {
-	doctype: _clear_website
-	for doctype in (
-		"LQ Service",
-		"LQ Solution",
-		"LQ Industry",
-		"LQ Case Study",
-		"LQ Partner",
-		"LQ Testimonial",
-		"LQ Certification",
-		"LQ Job Opening",
-		"LQ Settings",
-		"Blog Post",
-	)
+	"File": {
+		"after_insert": "labqubit.utils.images.create_webp",
+		"on_trash": "labqubit.utils.images.delete_webp",
+	},
+	**{
+		doctype: _clear_website
+		for doctype in (
+			"LQ Service",
+			"LQ Solution",
+			"LQ Industry",
+			"LQ Case Study",
+			"LQ Partner",
+			"LQ Testimonial",
+			"LQ Certification",
+			"LQ Job Opening",
+			"LQ Settings",
+			"Blog Post",
+		)
+	},
 }
 
 # Scheduled Tasks

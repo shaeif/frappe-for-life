@@ -1,7 +1,7 @@
 {#- SEO, social and structured data. Pages may set: title, description, og_image, og_type,
     noindex, schema (list of JSON-LD dicts). -#}
 {%- set s = lq.settings -%}
-{%- set desc = (description or t(s, "default_meta_description") or "") | striptags | trim | truncate(300, True, "…", 0) -%}
+{%- set desc = (description or t(s, "default_meta_description") or _("LabQubit designs, secures and runs mission-critical networks for enterprises, government, oil & gas and hospitality, backed by certified engineers and measurable SLAs.")) | striptags | trim | truncate(300, True, "…", 0) -%}
 {%- set image = og_image or s.default_og_image -%}
 {%- if desc %}<meta name="description" content="{{ desc | e }}">{% endif %}
 {%- if noindex %}<meta name="robots" content="noindex, nofollow">{% endif %}

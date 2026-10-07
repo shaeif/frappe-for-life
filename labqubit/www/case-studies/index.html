@@ -21,7 +21,7 @@
 
 <section class="pb-20">
 	<div id="case-grid" class="lq-container grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-		{%- for c in case_studies %}{{ case_card(c, (loop.index0 % 3) * 70) }}
+		{%- for c in case_studies %}{{ case_card(c, (loop.index0 % 3) * 70, 2) }}
 		{%- else %}<div class="md:col-span-2 lg:col-span-3">{{ empty_state(_("Case studies are coming soon"), _("We are documenting recent projects with our clients' approval.")) }}</div>{% endfor %}
 	</div>
 </section>

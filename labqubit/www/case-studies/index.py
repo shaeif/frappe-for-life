@@ -2,6 +2,8 @@ from frappe import _
 
 from labqubit.website.context import case_study_cards
 
+sitemap = 1
+
 
 def get_context(context):
 	context.title = _("Case Studies")

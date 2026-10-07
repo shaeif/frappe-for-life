@@ -47,7 +47,7 @@ variants.
 | Eyebrow | `.lq-eyebrow` | 12 px pill above section titles |
 
 - English uses **Inter** (variable, self-hosted, Latin + Latin Extended).
-- Arabic uses **IBM Plex Sans Arabic** (400/500/600/700, self-hosted, Arabic code points only).
+- Arabic uses **IBM Plex Sans Arabic** (two files: 400, and 600 serving 500–700; self-hosted, Arabic code points only).
   Both sit in one font stack, so mixed-script text renders correctly.
 - In RTL, letter-spacing is forced to 0, because tracking breaks joined Arabic letters.
 

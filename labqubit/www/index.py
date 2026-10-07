@@ -4,6 +4,8 @@ from frappe import _
 from labqubit.utils.jinja import t
 from labqubit.website.context import CARD_FIELDS, PARTNER_FIELDS, case_study_cards, published
 
+sitemap = 1
+
 
 def get_context(context):
 	settings = frappe.get_cached_doc("LQ Settings")
@@ -19,6 +21,8 @@ def get_context(context):
 			"oil & gas and hospitality, backed by certified engineers and measurable SLAs."
 		),
 	}
+
+	context.description = context.description or context.home_hero["subtitle"]
 
 	services = published("LQ Service", filters={"featured": 1}, limit=6) or published("LQ Service", limit=6)
 	context.services = services

@@ -16,12 +16,16 @@
 	</script>
 	<title>{% block title %}{% include "templates/includes/lq_title.html" %}{% endblock %}</title>
 	{% block meta_block %}{% include "templates/includes/lq_meta.html" %}{% endblock %}
-	<link rel="preload" href="{{ asset_url('fonts/inter-latin.woff2') }}" as="font" type="font/woff2" crossorigin>
+	{#- Preload only the font the first screen needs (Arabic headings on RTL pages, Inter otherwise).
+	    The URL must match the one in the CSS exactly (no ?v=), or the font downloads twice. -#}
 	{%- if lq.rtl %}
-	<link rel="preload" href="{{ asset_url('fonts/plex-arabic-400.woff2') }}" as="font" type="font/woff2" crossorigin>
+	<link rel="preload" href="/assets/labqubit/fonts/plex-arabic-600.woff2" as="font" type="font/woff2" crossorigin>
+	{%- else %}
+	<link rel="preload" href="/assets/labqubit/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
 	{%- endif %}
 	<link rel="stylesheet" href="{{ asset_url('css/labqubit.css') }}">
-	<link rel="icon" href="{{ (favicon or asset_url('images/favicon.svg')) | e }}">
+	{#- Frappe's default favicon is ignored; a custom one from Website Settings wins -#}
+	<link rel="icon" href="{{ (favicon if favicon and not favicon.startswith('/assets/frappe/') else asset_url('images/favicon.svg')) | e }}">
 	<meta name="theme-color" content="#05070f">
 	{%- block head_include %}{{ head_include or "" }}{% endblock -%}
 	{%- block style %}{% if colocated_css %}<style>{{ colocated_css }}</style>{% endif %}{% endblock -%}
