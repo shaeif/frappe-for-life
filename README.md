@@ -4,6 +4,39 @@ Company website and client portal for LabQubit, built as a custom [Frappe Framew
 
 See [docs/ROADMAP.md](docs/ROADMAP.md) for the phased plan.
 
+## Run with Docker (quickest)
+
+Needs Docker Engine 24+ with Compose v2 (Docker Desktop on Windows/macOS works).
+
+```bash
+git clone https://github.com/shaeif/frappe-for-life.git labqubit
+cd labqubit
+git checkout ccr-c556f6f6-47yonc
+cp .env.example .env              # edit: set ADMIN_PASSWORD and DB_ROOT_PASSWORD
+docker compose build              # first build ~10 min: installs Frappe v15 + this app
+docker compose up -d
+docker compose logs -f create-site   # first run ~2 min; returns when the site is ready
+```
+
+Open http://localhost:8080 and log in as `Administrator` with `ADMIN_PASSWORD`.
+The Desk is at http://localhost:8080/app.
+
+| Task | Command |
+|---|---|
+| Deploy new code | `git pull && docker compose build && docker compose up -d` (migrates automatically) |
+| Status / logs | `docker compose ps` · `docker compose logs -f backend` |
+| Bench console | `docker compose exec backend bench --site labqubit.localhost console` |
+| Run tests | `docker compose exec backend bench --site labqubit.localhost set-config allow_tests 1` then `... run-tests --app labqubit` |
+| Stop | `docker compose down` (data kept) |
+| Wipe everything | `docker compose down -v` (deletes the database) |
+
+Services: `frontend` (nginx, port 8080), `backend` (gunicorn), `websocket`, `queue-short`,
+`queue-long`, `scheduler`, `db` (MariaDB 10.11, utf8mb4), `redis-cache`, `redis-queue`.
+`create-site` creates the site on first start and runs `migrate` on every later start.
+
+This is a production-style image: app code is baked in, so code changes need a rebuild.
+For day-to-day development use the bench setup below.
+
 ## Development setup
 
 Tested target: Ubuntu 24.04 (native or WSL2). macOS works with Homebrew equivalents.
