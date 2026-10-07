@@ -1,0 +1,39 @@
+{% extends "templates/lq_page.html" %}
+{% from "templates/components/hero.html" import page_hero with context %}
+{% from "templates/components/forms.html" import lead_form, field, choice_chips with context %}
+
+{% block page %}
+{% call page_hero(_("Request a quote"), _("Share a few details about your sites and goals. An engineer, not a call center, will prepare your proposal."), _("Free, no-obligation proposal"), [(_("Request a Quote"), "")]) %}{% endcall %}
+
+<section class="pb-24">
+	<div class="lq-container grid gap-10 lg:grid-cols-12">
+		<div class="lg:col-span-8">
+			{% call lead_form(endpoint, _("Request my quote"), {"lead_type": "Quote Request"}) %}
+				{{ field("full_name", _("Full name"), required=True, autocomplete="name") }}
+				{{ field("email", _("Work email"), "email", required=True, autocomplete="email") }}
+				{{ field("phone", _("Phone"), "tel", required=True, autocomplete="tel") }}
+				{{ field("company", _("Company"), required=True, autocomplete="organization") }}
+				{{ field("job_title", _("Job title"), autocomplete="organization-title") }}
+				{{ field("country", _("Country"), "select", options=country_options, autocomplete="country-name") }}
+				{%- if industry_options %}{{ field("industry", _("Industry"), "select", options=industry_options) }}{% endif %}
+				{{ field("site_count", _("Number of sites"), "number", attrs='min="0" max="10000" inputmode="numeric"') }}
+				{%- if service_options %}{{ choice_chips("services_of_interest", _("Services you are interested in"), service_options, "sm:col-span-2") }}{% endif %}
+				{{ field("budget_range", _("Budget (USD)"), "select", options=budgets) }}
+				{{ field("timeline", _("Timeline"), "select", options=timelines) }}
+				{{ field("message", _("Project details"), "textarea", placeholder=_("Current setup, number of users, challenges, deadlines…"), cls="sm:col-span-2") }}
+			{% endcall %}
+		</div>
+		<aside class="space-y-4 lg:col-span-4">
+			{%- for ic, title, text in [
+				("clock", _("Reply within one business day"), _("We review every request the same day it arrives.")),
+				("badge-check", _("Certified engineers"), _("Your proposal is designed by vendor-certified engineers.")),
+				("lock", _("Confidential"), _("Your information is used only to prepare your proposal."))] %}
+			<div class="lq-card flex gap-4">
+				<span class="lq-icon-tile">{{ lq_icon(ic) }}</span>
+				<div><p class="font-semibold text-fg">{{ title }}</p><p class="mt-1 text-sm text-muted">{{ text }}</p></div>
+			</div>
+			{%- endfor %}
+		</aside>
+	</div>
+</section>
+{% endblock %}

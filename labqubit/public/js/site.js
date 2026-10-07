@@ -249,6 +249,98 @@
 		);
 	});
 
+	/* Forms: async submit with inline errors ([data-lq-form]) ------------- */
+	const params = new URLSearchParams(window.location.search);
+	const t = (en) => en; // messages below are fallbacks; the server sends translated text
+	$$("form[data-lq-form]").forEach((form) => {
+		const set = (name, value) => {
+			const input = form.elements.namedItem(name);
+			if (input && "value" in input) input.value = value;
+		};
+		set("ts", String(Date.now()));
+		set("page_url", window.location.pathname);
+		["utm_source", "utm_medium", "utm_campaign"].forEach((k) => set(k, params.get(k) || ""));
+
+		const formError = $("[data-form-error]", form);
+		const button = $("[data-submit]", form);
+		const spinner = $("[data-submit-spinner]", form);
+
+		const clearErrors = () => {
+			formError.hidden = true;
+			$$("[data-error-for]", form).forEach((el) => {
+				el.hidden = true;
+				el.textContent = "";
+			});
+			$$("[aria-invalid]", form).forEach((el) => el.removeAttribute("aria-invalid"));
+		};
+		const showErrors = (errors) => {
+			let first = null;
+			Object.entries(errors).forEach(([name, message]) => {
+				const slot = $(`[data-error-for="${CSS.escape(name)}"]`, form);
+				const input = form.elements.namedItem(name);
+				if (slot) {
+					slot.textContent = message;
+					slot.hidden = false;
+				} else {
+					formError.textContent = message;
+					formError.hidden = false;
+				}
+				if (input && input.setAttribute) input.setAttribute("aria-invalid", "true");
+				if (!first) first = input && input.focus ? input : formError;
+			});
+			if (first && first.focus) first.focus();
+		};
+		const busy = (on) => {
+			button.disabled = on;
+			form.setAttribute("aria-busy", on ? "true" : "false");
+			if (spinner) spinner.classList.toggle("hidden", !on);
+		};
+
+		form.addEventListener("submit", async (e) => {
+			e.preventDefault();
+			clearErrors();
+			busy(true);
+			const data = new FormData(form);
+			// multi-select checkboxes travel as one comma-separated value
+			new Set($$("input[type=checkbox]", form).map((c) => c.name)).forEach((name) => {
+				if (name === "consent") return;
+				const values = data.getAll(name);
+				data.delete(name);
+				if (values.length) data.append(name, values.join(","));
+			});
+			data.set("csrf_token", (window.frappe && frappe.csrf_token) || "");
+			try {
+				const response = await fetch(form.action, {
+					method: "POST",
+					body: data,
+					headers: { Accept: "application/json", "X-Requested-With": "XMLHttpRequest" },
+					credentials: "same-origin",
+				});
+				const body = await response.json().catch(() => ({}));
+				const result = body.message || {};
+				if (response.ok && result.ok) {
+					const success = $("[data-form-success]", form);
+					$("[data-success-message]", success).textContent = result.message || "";
+					success.hidden = false;
+					success.focus();
+					form.reset();
+					if (window.dataLayer) window.dataLayer.push({ event: "lq_form_submit", form: form.action });
+				} else if (response.status === 429) {
+					showErrors({ _form: t("Too many submissions. Please try again later.") });
+				} else if (result.errors && Object.keys(result.errors).length) {
+					showErrors(result.errors);
+				} else {
+					showErrors({ _form: t("Something went wrong. Please try again or email us.") });
+				}
+			} catch (err) {
+				showErrors({ _form: t("Network error. Please check your connection and try again.") });
+			} finally {
+				busy(false);
+				if (window.turnstile) window.turnstile.reset();
+			}
+		});
+	});
+
 	/* Frappe compatibility: run callbacks queued with frappe.ready() ------ */
 	if (window.frappe && Array.isArray(frappe.ready_events) && !window.frappe.call) {
 		frappe.ready_events.forEach((fn) => {
