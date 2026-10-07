@@ -1,0 +1,69 @@
+# Production overlay: HTTPS (Caddy + Let's Encrypt), real client IPs, daily backups.
+#
+#   docker compose -f compose.yml -f compose.prod.yml build
+#   docker compose -f compose.yml -f compose.prod.yml up -d
+#
+# Requires DOMAIN, LETSENCRYPT_EMAIL and SITE_NAME (= DOMAIN) in .env, and DNS for
+# DOMAIN (and www.DOMAIN) pointing at this server with ports 80/443 open.
+
+services:
+  frontend:
+    ports: !reset []
+    environment:
+      # Caddy sits in front: trust it to tell us the visitor's IP (rate limits, logs)
+      UPSTREAM_REAL_IP_ADDRESS: 172.28.0.0/16
+      UPSTREAM_REAL_IP_HEADER: X-Forwarded-For
+      UPSTREAM_REAL_IP_RECURSIVE: "on"
+
+  create-site:
+    environment:
+      DOMAIN: ${DOMAIN:?Set DOMAIN in .env}
+
+  caddy:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    networks:
+      - frappe_network
+    depends_on:
+      - frontend
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    environment:
+      DOMAIN: ${DOMAIN:?Set DOMAIN in .env}
+      LETSENCRYPT_EMAIL: ${LETSENCRYPT_EMAIL:?Set LETSENCRYPT_EMAIL in .env}
+    volumes:
+      - ./docker/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy-data:/data
+      - caddy-config:/config
+
+  backup:
+    image: labqubit:local
+    pull_policy: never
+    restart: unless-stopped
+    networks:
+      - frappe_network
+    entrypoint: ["/home/frappe/frappe-bench/apps/labqubit/docker/backup.sh"]
+    environment:
+      BACKUP_RETENTION_DAYS: ${BACKUP_RETENTION_DAYS:-14}
+      RESTIC_REPOSITORY: ${RESTIC_REPOSITORY:-}
+      RESTIC_PASSWORD: ${RESTIC_PASSWORD:-}
+      AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID:-}
+      AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY:-}
+    volumes:
+      - sites:/home/frappe/frappe-bench/sites
+      - logs:/home/frappe/frappe-bench/logs
+    depends_on:
+      configurator:
+        condition: service_completed_successfully
+
+volumes:
+  caddy-data:
+  caddy-config:
+
+networks:
+  frappe_network:
+    ipam:
+      config:
+        - subnet: 172.28.0.0/16

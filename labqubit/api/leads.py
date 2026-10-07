@@ -171,7 +171,7 @@ def submit_application():
 			**form.values,
 			"status": "New",
 			"resume": resume.file_url,
-			"ip_address": frappe.local.request_ip,
+			"ip_address": getattr(frappe.local, "request_ip", None),
 		}
 	).insert(ignore_permissions=True)
 

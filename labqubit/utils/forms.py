@@ -154,7 +154,7 @@ def verify_turnstile(data=None):
 	try:
 		response = requests.post(
 			"https://challenges.cloudflare.com/turnstile/v0/siteverify",
-			data={"secret": secret, "response": token, "remoteip": frappe.local.request_ip},
+			data={"secret": secret, "response": token, "remoteip": getattr(frappe.local, "request_ip", None)},
 			timeout=8,
 		).json()
 	except Exception:
@@ -174,15 +174,18 @@ def tracking_values(data=None) -> dict:
 		"utm_source": str(data.get("utm_source") or "")[:140],
 		"utm_medium": str(data.get("utm_medium") or "")[:140],
 		"utm_campaign": str(data.get("utm_campaign") or "")[:140],
-		"ip_address": frappe.local.request_ip,
+		"ip_address": getattr(frappe.local, "request_ip", None),
 		"language": (frappe.local.lang or "en")[:10],
 	}
 
 
 def respond(ok: bool, message: str = "", errors: dict | None = None, redirect: str | None = None):
 	"""JSON for fetch() callers; a redirect or message page for plain HTML form posts."""
-	wants_html = "text/html" in (frappe.get_request_header("Accept") or "") and not frappe.get_request_header(
-		"X-Requested-With"
+	request = getattr(frappe.local, "request", None)
+	wants_html = (
+		bool(request)
+		and "text/html" in (request.headers.get("Accept") or "")
+		and not request.headers.get("X-Requested-With")
 	)
 	if not ok:
 		frappe.local.response.http_status_code = 422

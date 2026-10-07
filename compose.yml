@@ -6,6 +6,8 @@
 #   docker compose up -d
 #   open http://localhost:8080
 
+name: labqubit
+
 x-app: &app
   image: labqubit:local
   pull_policy: never # built locally by `docker compose build`, never pulled
@@ -47,7 +49,8 @@ services:
       db:
         condition: service_healthy
 
-  # First run: creates the site and installs labqubit. Later runs: migrates it.
+  # First run: creates the site, installs labqubit and seeds starter content (SEED_DEMO=0 to skip).
+  # Later runs: migrates it.
   create-site:
     <<: [*app, *after-config]
     restart: "no"
@@ -56,6 +59,7 @@ services:
       SITE_NAME: ${SITE_NAME:-labqubit.localhost}
       ADMIN_PASSWORD: ${ADMIN_PASSWORD:?Set ADMIN_PASSWORD in .env}
       DB_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:?Set DB_ROOT_PASSWORD in .env}
+      SEED_DEMO: ${SEED_DEMO:-1}
     command:
       - |
         set -e
@@ -73,6 +77,12 @@ services:
             --admin-password="$$ADMIN_PASSWORD" \
             --install-app labqubit \
             --set-default
+          if [ "$$SEED_DEMO" = "1" ]; then
+            bench --site "$$SITE_NAME" execute labqubit.setup.demo.create_demo_content
+          fi
+        fi
+        if [ -n "$${DOMAIN:-}" ]; then
+          bench --site "$$SITE_NAME" set-config host_name "https://$$DOMAIN"
         fi
 
   db:

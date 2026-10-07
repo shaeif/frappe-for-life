@@ -5,16 +5,28 @@ Each phase starts only after the previous one is approved.
 
 | Phase | Deliverable | Status |
 |---|---|---|
-| 0 | Environment, site, app skeleton, Tailwind pipeline | **Done, awaiting your test** |
-| 1 | Design system: tokens, type, spacing, component specs and a static preview | Next, needs approval |
-| 2 | Data model: DocTypes, modules, roles, naming, links | |
-| 3 | Public website: base template, navbar/mega menu, footer, Jinja components, pages | |
-| 4 | Lead capture: Request a Quote, Book a Consultation, Contact forms | |
-| 5 | Lead workflow, assignment, notifications, SLA timers, dashboards | |
-| 6 | Client portal: AMC, assets, tickets, documents, permissions, login restyle | |
-| 7 | Arabic/RTL, SEO (meta, OG, schema.org, sitemap), performance | |
-| 8 | Tests, security hardening, production deploy (nginx, SSL, backups) | |
-| Later | ERPNext, WhatsApp, AI chatbot, payment gateway | |
+| 0 | Environment, app skeleton, Tailwind pipeline, Docker | Done |
+| 1 | Design system: tokens, type, components, `/styleguide` | Done |
+| 2 | Data model: 27 DocTypes, roles, naming, business rules | Done |
+| 3 | Public website: layout, navbar/mega menu, components, pages | Done |
+| 4 | Lead capture: quote, consultation, contact, job applications | Done |
+| 5 | Lead workflow, assignment, notifications, SLA, dashboards | Done |
+| 6 | Client portal, row-level permissions, login restyle | Done |
+| 7 | Arabic translations, SEO, performance (Lighthouse 95+) | Done |
+| 8 | Tests (26), security hardening, HTTPS, backups, docs | Done |
+| Next | ERPNext integration, WhatsApp notifications, AI chatbot, AMC payments | Planned |
+
+### Next: phase 2 extras (recommendations)
+
+- **ERPNext:** install on the same bench. Map LQ Client to Customer (`erpnext_customer`
+  field is ready), generate Quotations from Proposal Sent leads, create Sales Invoices for AMC
+  renewals, and attach them to the portal as LQ Client Documents automatically.
+- **WhatsApp:** use Frappe's Notification channels or a provider API (e.g. Meta Cloud API) for
+  ticket updates. Opt-in per client contact.
+- **AI chatbot:** first-level enquiries answered from published services and case studies.
+  Hand off to a human by creating an LQ Lead.
+- **Payments:** online AMC renewal payments with the Frappe Payments app and a regional
+  gateway. The renewal reminder links to a payment request.
 
 ## Target app structure
 
@@ -82,19 +94,16 @@ Desk workspace.
 - **Fonts are self-hosted woff2 subsets.** There is no Google Fonts request, which is
   faster and avoids a third-party privacy issue.
 
-## Open questions, settled in later phases
+## Decisions taken during the build
 
-1. **Client entity.** The portal needs a "client company" DocType (`LQ Client`) that
-   links portal users to their contracts, assets and tickets. It was missing from the
-   original list. It maps to an ERPNext Customer later.
-2. **One lead DocType or three.** The recommendation is a single `LQ Lead` with a
-   `lead_type` field (Contact / Quote / Consultation). That gives one workflow, one
-   assignment rule and one conversion dashboard. Three public forms still feed it.
-3. **Forms.** Frappe Web Forms are hard to restyle to this design. The recommendation is
-   custom Jinja forms that post to a rate-limited, validated API (Phase 4).
-4. **ERPNext.** Same bench or a separate instance? Decided before the "Later" items.
+1. **Client entity:** `LQ Client` was added; portal users belong to exactly one client.
+2. **One lead DocType:** `LQ Lead` with `lead_type` (Contact / Quote Request / Consultation).
+   Three public forms feed one workflow and one dashboard.
+3. **Forms:** custom Jinja forms posting to a validated, rate-limited API, instead of Frappe
+   Web Forms.
+4. **Blog:** Frappe's Blog Post DocType, rendered with LabQubit templates.
 
-## Security watch-list (addressed as we go)
+## Security watch-list (all addressed, see SECURITY.md)
 
 - Every `@frappe.whitelist(allow_guest=True)` method gets an explicit field allowlist,
   type and length validation, `@rate_limit`, a honeypot, and optionally Cloudflare
