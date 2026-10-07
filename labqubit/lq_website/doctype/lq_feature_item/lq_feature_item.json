@@ -1,0 +1,67 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-10-07 23:03:48.598166",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "icon",
+  "title",
+  "title_ar",
+  "description",
+  "description_ar"
+ ],
+ "fields": [
+  {
+   "columns": 2,
+   "fieldname": "icon",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Icon",
+   "options": "\nnetwork\nrouter\nwifi\nshield-check\nshield\nlock\nbrick-wall\nserver\nserver-cog\ndatabase\nhard-drive\ncable\ncloud\ncloud-cog\nheadset\nlife-buoy\nwrench\nsettings\ncpu\nradar\nactivity\ngauge\nbuilding-2\nlandmark\nfuel\nflame\nhotel\nhospital\ngraduation-cap\nbriefcase\nusers\nzap\nsparkles\nworkflow\nhandshake\naward\nbadge-check\nrocket\nlayers\nmonitor-smartphone\ncircuit-board\nsatellite-dish\nkey-round\nscan-line\npackage\nboxes\neye\nglobe\nclock\nfile-text"
+  },
+  {
+   "columns": 3,
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Title",
+   "reqd": 1
+  },
+  {
+   "columns": 2,
+   "fieldname": "title_ar",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Title (Arabic)"
+  },
+  {
+   "columns": 3,
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "in_list_view": 1,
+   "label": "Description"
+  },
+  {
+   "fieldname": "description_ar",
+   "fieldtype": "Small Text",
+   "label": "Description (Arabic)"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-10-07 23:04:53.623693",
+ "modified_by": "Administrator",
+ "module": "LQ Website",
+ "name": "LQ Feature Item",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

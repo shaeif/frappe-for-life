@@ -1,0 +1,287 @@
+{
+ "actions": [],
+ "allow_guest_to_view": 1,
+ "allow_rename": 1,
+ "autoname": "field:title",
+ "creation": "2026-10-07 23:04:45.126821",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "title",
+  "title_ar",
+  "client_label",
+  "client_logo",
+  "industry",
+  "col1",
+  "published",
+  "featured",
+  "published_on",
+  "route",
+  "summary_section",
+  "summary",
+  "summary_ar",
+  "cover_image",
+  "story_section",
+  "challenge",
+  "challenge_ar",
+  "solution",
+  "solution_ar",
+  "results",
+  "results_ar",
+  "metrics_section",
+  "metrics",
+  "related_section",
+  "services",
+  "col2",
+  "solutions",
+  "testimonial",
+  "seo_section",
+  "meta_title",
+  "meta_description",
+  "seo_col",
+  "meta_image"
+ ],
+ "fields": [
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Title",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "title_ar",
+   "fieldtype": "Data",
+   "label": "Title (Arabic)"
+  },
+  {
+   "description": "e.g. 'Regional oil & gas operator'. Name the client only with written permission.",
+   "fieldname": "client_label",
+   "fieldtype": "Data",
+   "label": "Client (as shown)",
+   "reqd": 1
+  },
+  {
+   "fieldname": "client_logo",
+   "fieldtype": "Attach Image",
+   "label": "Client Logo"
+  },
+  {
+   "fieldname": "industry",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Industry",
+   "options": "LQ Industry"
+  },
+  {
+   "fieldname": "col1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "published",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Published"
+  },
+  {
+   "default": "0",
+   "fieldname": "featured",
+   "fieldtype": "Check",
+   "label": "Show on Home Page"
+  },
+  {
+   "fieldname": "published_on",
+   "fieldtype": "Date",
+   "label": "Published On"
+  },
+  {
+   "fieldname": "route",
+   "fieldtype": "Data",
+   "label": "Route",
+   "unique": 1
+  },
+  {
+   "fieldname": "summary_section",
+   "fieldtype": "Section Break",
+   "label": "Summary"
+  },
+  {
+   "fieldname": "summary",
+   "fieldtype": "Small Text",
+   "label": "Summary",
+   "reqd": 1
+  },
+  {
+   "fieldname": "summary_ar",
+   "fieldtype": "Small Text",
+   "label": "Summary (Arabic)"
+  },
+  {
+   "fieldname": "cover_image",
+   "fieldtype": "Attach Image",
+   "label": "Cover Image"
+  },
+  {
+   "fieldname": "story_section",
+   "fieldtype": "Section Break",
+   "label": "Story"
+  },
+  {
+   "fieldname": "challenge",
+   "fieldtype": "Text Editor",
+   "label": "Challenge"
+  },
+  {
+   "fieldname": "challenge_ar",
+   "fieldtype": "Text Editor",
+   "label": "Challenge (Arabic)"
+  },
+  {
+   "fieldname": "solution",
+   "fieldtype": "Text Editor",
+   "label": "Solution"
+  },
+  {
+   "fieldname": "solution_ar",
+   "fieldtype": "Text Editor",
+   "label": "Solution (Arabic)"
+  },
+  {
+   "fieldname": "results",
+   "fieldtype": "Text Editor",
+   "label": "Results"
+  },
+  {
+   "fieldname": "results_ar",
+   "fieldtype": "Text Editor",
+   "label": "Results (Arabic)"
+  },
+  {
+   "fieldname": "metrics_section",
+   "fieldtype": "Section Break",
+   "label": "Key Metrics"
+  },
+  {
+   "fieldname": "metrics",
+   "fieldtype": "Table",
+   "label": "Metrics",
+   "options": "LQ Metric"
+  },
+  {
+   "fieldname": "related_section",
+   "fieldtype": "Section Break",
+   "label": "Related"
+  },
+  {
+   "fieldname": "services",
+   "fieldtype": "Table MultiSelect",
+   "label": "Services",
+   "options": "LQ Service Link"
+  },
+  {
+   "fieldname": "col2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "testimonial",
+   "fieldtype": "Link",
+   "label": "Testimonial",
+   "options": "LQ Testimonial"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "seo_section",
+   "fieldtype": "Section Break",
+   "label": "SEO"
+  },
+  {
+   "description": "Defaults to the title. Keep under 60 characters.",
+   "fieldname": "meta_title",
+   "fieldtype": "Data",
+   "label": "Meta Title"
+  },
+  {
+   "description": "Shown in search results. 140-160 characters.",
+   "fieldname": "meta_description",
+   "fieldtype": "Small Text",
+   "label": "Meta Description"
+  },
+  {
+   "fieldname": "seo_col",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "1200 x 630 px. Defaults to the hero image.",
+   "fieldname": "meta_image",
+   "fieldtype": "Attach Image",
+   "label": "Social Share Image"
+  },
+  {
+   "fieldname": "solutions",
+   "fieldtype": "Table MultiSelect",
+   "label": "Solutions",
+   "options": "LQ Solution Link"
+  }
+ ],
+ "grid_page_length": 50,
+ "has_web_view": 1,
+ "image_field": "cover_image",
+ "index_web_pages_for_search": 1,
+ "is_published_field": "published",
+ "links": [],
+ "modified": "2026-10-07 23:04:56.177623",
+ "modified_by": "Administrator",
+ "module": "LQ Website",
+ "name": "LQ Case Study",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "LQ Content Editor",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "LQ Sales User",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "route": "case-studies",
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "published_on",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "title"
+}

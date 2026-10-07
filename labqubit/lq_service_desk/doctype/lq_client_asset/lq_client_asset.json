@@ -1,0 +1,201 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "ASSET-.#####",
+ "creation": "2026-10-07 23:04:45.962889",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "asset_name",
+  "client",
+  "asset_type",
+  "status",
+  "col1",
+  "vendor",
+  "model",
+  "serial_number",
+  "amc_contract",
+  "location_section",
+  "site_location",
+  "ip_address",
+  "col2",
+  "installed_on",
+  "warranty_expiry",
+  "notes_section",
+  "notes"
+ ],
+ "fields": [
+  {
+   "bold": 1,
+   "description": "e.g. HQ Core Switch 01",
+   "fieldname": "asset_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Asset Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "client",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Client",
+   "options": "LQ Client",
+   "reqd": 1
+  },
+  {
+   "fieldname": "asset_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Asset Type",
+   "options": "Firewall\nSwitch\nRouter\nWireless Controller\nAccess Point\nServer\nStorage\nUPS\nRack / Cabling\nSoftware License\nOther",
+   "reqd": 1
+  },
+  {
+   "default": "Active",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Active\nIn Repair\nRetired"
+  },
+  {
+   "fieldname": "col1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "vendor",
+   "fieldtype": "Link",
+   "label": "Vendor",
+   "options": "LQ Partner"
+  },
+  {
+   "fieldname": "model",
+   "fieldtype": "Data",
+   "label": "Model"
+  },
+  {
+   "fieldname": "serial_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Serial Number"
+  },
+  {
+   "fieldname": "location_section",
+   "fieldtype": "Section Break",
+   "label": "Location & Dates"
+  },
+  {
+   "fieldname": "site_location",
+   "fieldtype": "Data",
+   "label": "Site / Location"
+  },
+  {
+   "fieldname": "ip_address",
+   "fieldtype": "Data",
+   "label": "Management IP"
+  },
+  {
+   "fieldname": "col2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "installed_on",
+   "fieldtype": "Date",
+   "label": "Installed On"
+  },
+  {
+   "fieldname": "warranty_expiry",
+   "fieldtype": "Date",
+   "label": "Warranty Expiry"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "notes_section",
+   "fieldtype": "Section Break",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Text",
+   "label": "Notes"
+  },
+  {
+   "description": "Set from the AMC contract's covered assets",
+   "fieldname": "amc_contract",
+   "fieldtype": "Link",
+   "label": "AMC Contract",
+   "options": "LQ AMC Contract",
+   "read_only": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-10-07 23:04:57.310815",
+ "modified_by": "Administrator",
+ "module": "LQ Service Desk",
+ "name": "LQ Client Asset",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "LQ Support Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "LQ Support Agent",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "LQ Client",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "search_fields": "client,serial_number,asset_type",
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "asset_name"
+}

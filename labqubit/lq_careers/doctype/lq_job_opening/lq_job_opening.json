@@ -1,0 +1,233 @@
+{
+ "actions": [],
+ "allow_guest_to_view": 1,
+ "allow_rename": 1,
+ "autoname": "field:title",
+ "creation": "2026-10-07 23:04:46.625009",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "title",
+  "title_ar",
+  "department",
+  "location",
+  "col1",
+  "status",
+  "published",
+  "employment_type",
+  "experience",
+  "closes_on",
+  "route",
+  "summary_section",
+  "summary",
+  "summary_ar",
+  "details_section",
+  "description",
+  "description_ar",
+  "requirements",
+  "requirements_ar",
+  "seo_section",
+  "meta_title",
+  "meta_description",
+  "seo_col",
+  "meta_image"
+ ],
+ "fields": [
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Title",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "title_ar",
+   "fieldtype": "Data",
+   "label": "Title (Arabic)"
+  },
+  {
+   "fieldname": "department",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Department",
+   "options": "\nEngineering\nSales\nOperations\nSupport\nManagement"
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Location"
+  },
+  {
+   "fieldname": "col1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Open",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Open\nClosed"
+  },
+  {
+   "default": "0",
+   "fieldname": "published",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Published"
+  },
+  {
+   "default": "Full-time",
+   "fieldname": "employment_type",
+   "fieldtype": "Select",
+   "label": "Employment Type",
+   "options": "Full-time\nPart-time\nContract\nInternship"
+  },
+  {
+   "description": "e.g. 5+ years",
+   "fieldname": "experience",
+   "fieldtype": "Data",
+   "label": "Experience"
+  },
+  {
+   "fieldname": "closes_on",
+   "fieldtype": "Date",
+   "label": "Applications Close On"
+  },
+  {
+   "fieldname": "route",
+   "fieldtype": "Data",
+   "label": "Route",
+   "unique": 1
+  },
+  {
+   "fieldname": "summary_section",
+   "fieldtype": "Section Break",
+   "label": "Summary"
+  },
+  {
+   "fieldname": "summary",
+   "fieldtype": "Small Text",
+   "label": "Summary",
+   "reqd": 1
+  },
+  {
+   "fieldname": "summary_ar",
+   "fieldtype": "Small Text",
+   "label": "Summary (Arabic)"
+  },
+  {
+   "fieldname": "details_section",
+   "fieldtype": "Section Break",
+   "label": "Details"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text Editor",
+   "label": "Role Description"
+  },
+  {
+   "fieldname": "description_ar",
+   "fieldtype": "Text Editor",
+   "label": "Role Description (Arabic)"
+  },
+  {
+   "fieldname": "requirements",
+   "fieldtype": "Text Editor",
+   "label": "Requirements"
+  },
+  {
+   "fieldname": "requirements_ar",
+   "fieldtype": "Text Editor",
+   "label": "Requirements (Arabic)"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "seo_section",
+   "fieldtype": "Section Break",
+   "label": "SEO"
+  },
+  {
+   "description": "Defaults to the title. Keep under 60 characters.",
+   "fieldname": "meta_title",
+   "fieldtype": "Data",
+   "label": "Meta Title"
+  },
+  {
+   "description": "Shown in search results. 140-160 characters.",
+   "fieldname": "meta_description",
+   "fieldtype": "Small Text",
+   "label": "Meta Description"
+  },
+  {
+   "fieldname": "seo_col",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "1200 x 630 px. Defaults to the hero image.",
+   "fieldname": "meta_image",
+   "fieldtype": "Attach Image",
+   "label": "Social Share Image"
+  }
+ ],
+ "grid_page_length": 50,
+ "has_web_view": 1,
+ "index_web_pages_for_search": 1,
+ "is_published_field": "published",
+ "links": [],
+ "modified": "2026-10-07 23:04:58.319558",
+ "modified_by": "Administrator",
+ "module": "LQ Careers",
+ "name": "LQ Job Opening",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "LQ HR User",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "LQ Content Editor",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "route": "careers",
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "title"
+}

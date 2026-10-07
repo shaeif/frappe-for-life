@@ -1,0 +1,229 @@
+{
+ "actions": [],
+ "allow_guest_to_view": 1,
+ "allow_rename": 1,
+ "autoname": "field:title",
+ "creation": "2026-10-07 23:04:44.753930",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "title",
+  "title_ar",
+  "icon",
+  "col1",
+  "published",
+  "featured",
+  "display_order",
+  "route",
+  "summary_section",
+  "short_description",
+  "short_description_ar",
+  "page_section",
+  "hero_image",
+  "description",
+  "description_ar",
+  "challenges_section",
+  "challenges",
+  "related_section",
+  "services",
+  "seo_section",
+  "meta_title",
+  "meta_description",
+  "seo_col",
+  "meta_image"
+ ],
+ "fields": [
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Title",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "title_ar",
+   "fieldtype": "Data",
+   "label": "Title (Arabic)"
+  },
+  {
+   "fieldname": "icon",
+   "fieldtype": "Select",
+   "label": "Icon",
+   "options": "\nnetwork\nrouter\nwifi\nshield-check\nshield\nlock\nbrick-wall\nserver\nserver-cog\ndatabase\nhard-drive\ncable\ncloud\ncloud-cog\nheadset\nlife-buoy\nwrench\nsettings\ncpu\nradar\nactivity\ngauge\nbuilding-2\nlandmark\nfuel\nflame\nhotel\nhospital\ngraduation-cap\nbriefcase\nusers\nzap\nsparkles\nworkflow\nhandshake\naward\nbadge-check\nrocket\nlayers\nmonitor-smartphone\ncircuit-board\nsatellite-dish\nkey-round\nscan-line\npackage\nboxes\neye\nglobe\nclock\nfile-text"
+  },
+  {
+   "fieldname": "col1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "published",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Published"
+  },
+  {
+   "default": "0",
+   "fieldname": "featured",
+   "fieldtype": "Check",
+   "label": "Show on Home Page"
+  },
+  {
+   "default": "0",
+   "fieldname": "display_order",
+   "fieldtype": "Int",
+   "label": "Display Order"
+  },
+  {
+   "fieldname": "route",
+   "fieldtype": "Data",
+   "label": "Route",
+   "unique": 1
+  },
+  {
+   "fieldname": "summary_section",
+   "fieldtype": "Section Break",
+   "label": "Summary"
+  },
+  {
+   "fieldname": "short_description",
+   "fieldtype": "Small Text",
+   "label": "Short Description",
+   "reqd": 1
+  },
+  {
+   "fieldname": "short_description_ar",
+   "fieldtype": "Small Text",
+   "label": "Short Description (Arabic)"
+  },
+  {
+   "fieldname": "page_section",
+   "fieldtype": "Section Break",
+   "label": "Page Content"
+  },
+  {
+   "fieldname": "hero_image",
+   "fieldtype": "Attach Image",
+   "label": "Hero Image"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text Editor",
+   "label": "Description"
+  },
+  {
+   "fieldname": "description_ar",
+   "fieldtype": "Text Editor",
+   "label": "Description (Arabic)"
+  },
+  {
+   "fieldname": "challenges_section",
+   "fieldtype": "Section Break",
+   "label": "Challenges We Solve"
+  },
+  {
+   "fieldname": "challenges",
+   "fieldtype": "Table",
+   "label": "Challenges",
+   "options": "LQ Feature Item"
+  },
+  {
+   "fieldname": "related_section",
+   "fieldtype": "Section Break",
+   "label": "Related"
+  },
+  {
+   "fieldname": "services",
+   "fieldtype": "Table MultiSelect",
+   "label": "Relevant Services",
+   "options": "LQ Service Link"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "seo_section",
+   "fieldtype": "Section Break",
+   "label": "SEO"
+  },
+  {
+   "description": "Defaults to the title. Keep under 60 characters.",
+   "fieldname": "meta_title",
+   "fieldtype": "Data",
+   "label": "Meta Title"
+  },
+  {
+   "description": "Shown in search results. 140-160 characters.",
+   "fieldname": "meta_description",
+   "fieldtype": "Small Text",
+   "label": "Meta Description"
+  },
+  {
+   "fieldname": "seo_col",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "1200 x 630 px. Defaults to the hero image.",
+   "fieldname": "meta_image",
+   "fieldtype": "Attach Image",
+   "label": "Social Share Image"
+  }
+ ],
+ "grid_page_length": 50,
+ "has_web_view": 1,
+ "image_field": "hero_image",
+ "index_web_pages_for_search": 1,
+ "is_published_field": "published",
+ "links": [],
+ "modified": "2026-10-07 23:04:55.568790",
+ "modified_by": "Administrator",
+ "module": "LQ Website",
+ "name": "LQ Industry",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "LQ Content Editor",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "LQ Sales User",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "route": "industries",
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "display_order",
+ "sort_order": "ASC",
+ "states": [],
+ "title_field": "title"
+}

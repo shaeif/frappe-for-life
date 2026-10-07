@@ -1,0 +1,69 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-10-07 23:04:46.291352",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "posted_on",
+  "posted_by",
+  "author_name",
+  "is_staff",
+  "message"
+ ],
+ "fields": [
+  {
+   "fieldname": "posted_on",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "Posted On",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "posted_by",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Posted By",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "fieldname": "author_name",
+   "fieldtype": "Data",
+   "label": "Author",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "is_staff",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Staff Reply",
+   "read_only": 1
+  },
+  {
+   "fieldname": "message",
+   "fieldtype": "Text",
+   "in_list_view": 1,
+   "label": "Message",
+   "reqd": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-10-07 23:04:57.789592",
+ "modified_by": "Administrator",
+ "module": "LQ Service Desk",
+ "name": "LQ Ticket Reply",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

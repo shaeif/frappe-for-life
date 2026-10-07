@@ -1,0 +1,269 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "TKT-.YYYY.-.#####",
+ "creation": "2026-10-07 23:04:46.359663",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "subject",
+  "client",
+  "priority",
+  "category",
+  "col1",
+  "status",
+  "raised_by",
+  "contact_email",
+  "asset",
+  "amc_contract",
+  "details_section",
+  "description",
+  "conversation_section",
+  "replies",
+  "resolution_notes",
+  "sla_section",
+  "sla_policy",
+  "sla_status",
+  "opened_on",
+  "col2",
+  "response_due_by",
+  "first_responded_on",
+  "resolution_due_by",
+  "resolved_on",
+  "breach_notified"
+ ],
+ "fields": [
+  {
+   "bold": 1,
+   "fieldname": "subject",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Subject",
+   "reqd": 1
+  },
+  {
+   "fieldname": "client",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Client",
+   "options": "LQ Client",
+   "reqd": 1
+  },
+  {
+   "default": "Medium",
+   "fieldname": "priority",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Priority",
+   "options": "Low\nMedium\nHigh\nCritical",
+   "reqd": 1
+  },
+  {
+   "default": "Incident",
+   "fieldname": "category",
+   "fieldtype": "Select",
+   "label": "Category",
+   "options": "Incident\nService Request\nChange Request\nQuestion"
+  },
+  {
+   "fieldname": "col1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Open",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "Open\nIn Progress\nWaiting on Client\nResolved\nClosed",
+   "reqd": 1
+  },
+  {
+   "fieldname": "raised_by",
+   "fieldtype": "Link",
+   "label": "Raised By",
+   "options": "User"
+  },
+  {
+   "fieldname": "contact_email",
+   "fieldtype": "Data",
+   "label": "Contact Email",
+   "options": "Email"
+  },
+  {
+   "fieldname": "asset",
+   "fieldtype": "Link",
+   "label": "Asset",
+   "options": "LQ Client Asset"
+  },
+  {
+   "fieldname": "amc_contract",
+   "fieldtype": "Link",
+   "label": "AMC Contract",
+   "options": "LQ AMC Contract"
+  },
+  {
+   "fieldname": "details_section",
+   "fieldtype": "Section Break",
+   "label": "Details"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text",
+   "label": "Description",
+   "reqd": 1
+  },
+  {
+   "fieldname": "conversation_section",
+   "fieldtype": "Section Break",
+   "label": "Conversation"
+  },
+  {
+   "fieldname": "replies",
+   "fieldtype": "Table",
+   "label": "Replies",
+   "options": "LQ Ticket Reply"
+  },
+  {
+   "fieldname": "resolution_notes",
+   "fieldtype": "Text",
+   "label": "Resolution Notes (internal)"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "sla_section",
+   "fieldtype": "Section Break",
+   "label": "SLA"
+  },
+  {
+   "fieldname": "sla_policy",
+   "fieldtype": "Link",
+   "label": "SLA Policy",
+   "options": "LQ SLA Policy",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sla_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "SLA Status",
+   "options": "\nOn Track\nAt Risk\nBreached\nMet",
+   "read_only": 1
+  },
+  {
+   "fieldname": "opened_on",
+   "fieldtype": "Datetime",
+   "label": "Opened On",
+   "read_only": 1
+  },
+  {
+   "fieldname": "col2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "response_due_by",
+   "fieldtype": "Datetime",
+   "label": "First Response Due",
+   "read_only": 1
+  },
+  {
+   "fieldname": "first_responded_on",
+   "fieldtype": "Datetime",
+   "label": "First Responded On",
+   "read_only": 1
+  },
+  {
+   "fieldname": "resolution_due_by",
+   "fieldtype": "Datetime",
+   "label": "Resolution Due",
+   "read_only": 1
+  },
+  {
+   "fieldname": "resolved_on",
+   "fieldtype": "Datetime",
+   "label": "Resolved On",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "breach_notified",
+   "fieldtype": "Check",
+   "hidden": 1,
+   "label": "Breach Notified",
+   "read_only": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-10-07 23:04:57.913228",
+ "modified_by": "Administrator",
+ "module": "LQ Service Desk",
+ "name": "LQ Support Ticket",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "LQ Support Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "LQ Support Agent",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "LQ Client",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "search_fields": "client,status,priority",
+ "show_title_field_in_link": 1,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "subject",
+ "track_changes": 1
+}

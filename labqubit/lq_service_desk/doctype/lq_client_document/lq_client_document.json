@@ -1,0 +1,195 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "DOC-.YYYY.-.#####",
+ "creation": "2026-10-07 23:04:46.487440",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "title",
+  "client",
+  "document_type",
+  "document_date",
+  "col1",
+  "reference_no",
+  "amount",
+  "currency",
+  "visible_to_client",
+  "file_section",
+  "file",
+  "amc_contract",
+  "ticket",
+  "notes"
+ ],
+ "fields": [
+  {
+   "bold": 1,
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Title",
+   "reqd": 1
+  },
+  {
+   "fieldname": "client",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Client",
+   "options": "LQ Client",
+   "reqd": 1
+  },
+  {
+   "fieldname": "document_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Document Type",
+   "options": "Quotation\nInvoice\nService Report\nContract\nOther",
+   "reqd": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "document_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Document Date"
+  },
+  {
+   "fieldname": "col1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "reference_no",
+   "fieldtype": "Data",
+   "label": "Reference No."
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "label": "Amount",
+   "options": "currency"
+  },
+  {
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "label": "Currency",
+   "options": "Currency"
+  },
+  {
+   "default": "1",
+   "fieldname": "visible_to_client",
+   "fieldtype": "Check",
+   "label": "Visible in Client Portal"
+  },
+  {
+   "fieldname": "file_section",
+   "fieldtype": "Section Break",
+   "label": "File"
+  },
+  {
+   "description": "PDF preferred. Stored as a private file.",
+   "fieldname": "file",
+   "fieldtype": "Attach",
+   "label": "File",
+   "reqd": 1
+  },
+  {
+   "fieldname": "amc_contract",
+   "fieldtype": "Link",
+   "label": "AMC Contract",
+   "options": "LQ AMC Contract"
+  },
+  {
+   "fieldname": "ticket",
+   "fieldtype": "Link",
+   "label": "Support Ticket",
+   "options": "LQ Support Ticket"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Notes"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-10-07 23:04:58.144324",
+ "modified_by": "Administrator",
+ "module": "LQ Service Desk",
+ "name": "LQ Client Document",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "LQ Support Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "LQ Sales Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "LQ Support Agent",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "LQ Client",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "search_fields": "client,document_type",
+ "show_title_field_in_link": 1,
+ "sort_field": "document_date",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "title"
+}

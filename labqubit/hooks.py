@@ -44,8 +44,8 @@ jinja = {
 # Installation
 # ------------
 
-# before_install = "labqubit.install.before_install"
-# after_install = "labqubit.install.after_install"
+after_install = "labqubit.install.after_install"
+after_migrate = "labqubit.install.after_migrate"
 
 # Permissions
 # -----------

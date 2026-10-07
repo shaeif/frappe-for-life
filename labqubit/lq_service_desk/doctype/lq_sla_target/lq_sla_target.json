@@ -1,0 +1,52 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-10-07 23:04:45.538777",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "priority",
+  "response_hours",
+  "resolution_hours"
+ ],
+ "fields": [
+  {
+   "fieldname": "priority",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Priority",
+   "options": "Low\nMedium\nHigh\nCritical",
+   "reqd": 1
+  },
+  {
+   "fieldname": "response_hours",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Response Within (hours)",
+   "reqd": 1
+  },
+  {
+   "fieldname": "resolution_hours",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Resolve Within (hours)",
+   "reqd": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-10-07 23:04:56.749559",
+ "modified_by": "Administrator",
+ "module": "LQ Service Desk",
+ "name": "LQ SLA Target",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
