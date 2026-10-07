@@ -1,0 +1,45 @@
+{% extends "templates/lq_page.html" %}
+{% from "templates/components/hero.html" import page_hero with context %}
+{% from "templates/components/ui.html" import section_header with context %}
+{% from "templates/components/sections.html" import cta_band, stats as stats_band, logo_marquee, certifications as cert_grid with context %}
+
+{% block page %}
+{% call page_hero(_("We engineer the infrastructure organizations run on"),
+	_("LabQubit is an IT solutions provider focused on networks, cybersecurity, data centers, web applications and the managed services that keep them healthy."),
+	_("About LabQubit"), [(_("About"), "")]) %}{% endcall %}
+
+<section class="pb-20">
+	<div class="lq-container grid gap-12 lg:grid-cols-2">
+		<div class="lq-prose max-w-none text-lg" data-reveal>
+			<p>{{ _("Every organization now depends on its network. When it slows down, people stop working; when it is breached, trust is lost. We started LabQubit to give enterprises and public institutions an engineering partner that takes that responsibility seriously.") }}</p>
+			<p>{{ _("Our experienced, qualified engineers design, build and operate technology across the full stack, from structured cabling and data center fabrics to next-generation firewalls, network automation and web applications, and we stand behind our work with clear, measurable SLAs.") }}</p>
+		</div>
+		<div class="grid gap-4 sm:grid-cols-2">
+			{%- for ic, title, text in [
+				("badge-check", _("Engineering first"), _("Designs are documented, peer-reviewed and tested before anything goes live.")),
+				("shield-check", _("Secure by design"), _("Security is part of every architecture, not an add-on at the end.")),
+				("handshake", _("Honest advice"), _("We recommend what fits your needs and budget, even when it means selling less.")),
+				("clock", _("Accountable"), _("Response and resolution times are written into every support contract."))] %}
+			<div class="lq-card" data-reveal style="--reveal-delay: {{ loop.index0 * 70 }}ms">
+				<span class="lq-icon-tile mb-4">{{ lq_icon(ic) }}</span>
+				<h3 class="lq-h3">{{ title }}</h3>
+				<p class="mt-2 text-sm text-muted">{{ text }}</p>
+			</div>
+			{%- endfor %}
+		</div>
+	</div>
+</section>
+
+{{ stats_band(stats) }}
+{{ logo_marquee(partners) }}
+
+{%- if certifications %}
+<section class="lq-section-tight">
+	<div class="lq-container">
+		{{ section_header(_("Certifications"), align="start") }}
+		<div class="mt-10">{{ cert_grid(certifications) }}</div>
+	</div>
+</section>
+{%- endif %}
+{{ cta_band(_("Want to work with us?"), _("Tell us about your project, or explore open roles on our team."), None, {"label": _("View careers"), "href": "/careers"}) }}
+{% endblock %}

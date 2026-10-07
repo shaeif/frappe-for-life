@@ -1,0 +1,23 @@
+{
+ "creation": "2026-10-07 23:41:37.825355",
+ "docstatus": 0,
+ "doctype": "Number Card",
+ "document_type": "LQ AMC Contract",
+ "dynamic_filters_json": "[]",
+ "filters_json": "[[\"LQ AMC Contract\", \"status\", \"=\", \"Expiring Soon\", false]]",
+ "function": "Count",
+ "idx": 0,
+ "is_public": 1,
+ "is_standard": 1,
+ "label": "AMC Renewals Due",
+ "modified": "2026-10-07 22:14:43.278777",
+ "modified_by": "Administrator",
+ "module": "LabQubit",
+ "name": "AMC Renewals Due",
+ "owner": "Administrator",
+ "report_function": "Sum",
+ "show_full_number": 0,
+ "show_percentage_stats": 1,
+ "stats_time_interval": "Monthly",
+ "type": "Document Type"
+}

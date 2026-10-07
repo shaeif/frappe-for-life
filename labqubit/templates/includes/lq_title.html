@@ -1,0 +1,3 @@
+{%- set company = lq.settings.company_name or "LabQubit" -%}
+{%- set page = (title or "") | striptags | trim -%}
+{%- if page and page != company -%}{{ page | e }} · {{ company | e }}{%- else -%}{{ company | e }} · {{ (t(lq.settings, "tagline") or _("Resilient solutions for resilient businesses")) | e }}{%- endif -%}

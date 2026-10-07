@@ -1,0 +1,532 @@
+/*
+ * LabQubit design system - Tailwind v4 entry point
+ * Compiled to labqubit/public/css/labqubit.css by `yarn build` (bench build runs it).
+ * Reference: docs/DESIGN.md
+ */
+
+/* source(none): don't scan the whole repo, only the folders listed below */
+@import "tailwindcss" source(none);
+
+/* Every place a Tailwind class can appear. Keep classes out of Python files. */
+@source "../labqubit/templates";
+@source "../labqubit/www";
+@source "../labqubit/public/js";
+@source "../labqubit/*/doctype/*/templates/*.html";
+
+/* Dark mode follows <html data-theme="dark|light">, set before first paint in lq_base.html */
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+/* ------------------------------------------------------------------ fonts */
+
+@font-face {
+	font-family: "Inter";
+	font-style: normal;
+	font-display: swap;
+	font-weight: 100 900;
+	src: url("../fonts/inter-latin.woff2") format("woff2");
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308,
+		U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+	font-family: "Inter";
+	font-style: normal;
+	font-display: swap;
+	font-weight: 100 900;
+	src: url("../fonts/inter-latin-ext.woff2") format("woff2");
+	unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329,
+		U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* IBM Plex Sans Arabic: Arabic code points only (Latin falls back to Inter); two files keep Arabic pages light */
+@font-face {
+	font-family: "IBM Plex Sans Arabic";
+	font-style: normal;
+	font-display: swap;
+	font-weight: 400;
+	src: url("../fonts/plex-arabic-400.woff2") format("woff2");
+	unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0897-08E1, U+08E3-08FF, U+200C-200E,
+		U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC;
+}
+@font-face {
+	font-family: "IBM Plex Sans Arabic";
+	font-style: normal;
+	font-display: swap;
+	font-weight: 500 700; /* one file serves medium, semibold and bold */
+	src: url("../fonts/plex-arabic-600.woff2") format("woff2");
+	unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0897-08E1, U+08E3-08FF, U+200C-200E,
+		U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC;
+}
+
+/* ------------------------------------------------------------------ tokens */
+
+/* Static scales: usable as bg-brand-600, text-accent-400, etc. */
+@theme {
+	--font-sans: "Inter", "IBM Plex Sans Arabic", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+	--font-mono: ui-monospace, "SFMono-Regular", "JetBrains Mono", Menlo, monospace;
+
+	/* Qubit blue - primary brand */
+	--color-brand-50: #eef1ff;
+	--color-brand-100: #e0e5ff;
+	--color-brand-200: #c6cdff;
+	--color-brand-300: #a3adff;
+	--color-brand-400: #7f8cff;
+	--color-brand-500: #5b6cff;
+	--color-brand-600: #4651f0;
+	--color-brand-700: #3a3fd4;
+	--color-brand-800: #3036aa;
+	--color-brand-900: #2c3386;
+	--color-brand-950: #1a1d4f;
+
+	/* Superposition violet - secondary accent */
+	--color-accent-300: #d8b4fe;
+	--color-accent-400: #c084fc;
+	--color-accent-500: #a855f7;
+	--color-accent-600: #9333ea;
+
+	/* Signal cyan - highlights, data, "online" states */
+	--color-signal-300: #67e8f9;
+	--color-signal-400: #22d3ee;
+	--color-signal-500: #06b6d4;
+
+	/* Ink - the navy/black base */
+	--color-ink-50: #f5f7fc;
+	--color-ink-100: #e8ecf8;
+	--color-ink-200: #cdd3e6;
+	--color-ink-300: #9aa4bf;
+	--color-ink-400: #6b7591;
+	--color-ink-500: #4b5570;
+	--color-ink-600: #2a3352;
+	--color-ink-700: #1a2240;
+	--color-ink-800: #111830;
+	--color-ink-900: #0a0f1e;
+	--color-ink-950: #05070f;
+
+	--radius-xl: 0.875rem;
+	--radius-2xl: 1.25rem;
+	--radius-3xl: 1.75rem;
+
+	--shadow-glow: 0 0 0 1px rgb(91 108 255 / 0.25), 0 10px 40px -10px rgb(91 108 255 / 0.45);
+	--shadow-soft: 0 1px 2px rgb(5 7 15 / 0.06), 0 12px 32px -12px rgb(5 7 15 / 0.18);
+
+	--ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+
+	--animate-marquee: marquee 40s linear infinite;
+	--animate-drift: drift 22s ease-in-out infinite alternate;
+	--animate-pulse-dot: pulse-dot 2.4s ease-in-out infinite;
+
+	@keyframes marquee {
+		from { transform: translateX(0); }
+		to { transform: translateX(-50%); }
+	}
+	@keyframes drift {
+		0% { transform: translate3d(0, 0, 0) scale(1); }
+		50% { transform: translate3d(4%, -6%, 0) scale(1.08); }
+		100% { transform: translate3d(-5%, 4%, 0) scale(0.96); }
+	}
+	@keyframes pulse-dot {
+		0%, 100% { opacity: 0.35; }
+		50% { opacity: 1; }
+	}
+}
+
+/* Semantic tokens that flip with the theme: bg-surface, text-muted, border-line... */
+@theme inline {
+	--color-canvas: var(--lq-canvas);
+	--color-canvas-soft: var(--lq-canvas-soft);
+	--color-surface: var(--lq-surface);
+	--color-surface-strong: var(--lq-surface-strong);
+	--color-line: var(--lq-line);
+	--color-line-strong: var(--lq-line-strong);
+	--color-fg: var(--lq-fg);
+	--color-muted: var(--lq-muted);
+	--color-subtle: var(--lq-subtle);
+	--color-link: var(--lq-link);
+}
+
+:root,
+[data-theme="light"] {
+	--lq-canvas: #ffffff;
+	--lq-canvas-soft: #f5f7fc;
+	--lq-surface: rgb(255 255 255 / 0.72);
+	--lq-surface-strong: #ffffff;
+	--lq-line: rgb(10 15 30 / 0.09);
+	--lq-line-strong: rgb(10 15 30 / 0.18);
+	--lq-fg: #0a0f1e;
+	--lq-muted: #4b5570;
+	--lq-subtle: #5f6985;
+	--lq-link: #3a3fd4;
+	--lq-grid: rgb(10 15 30 / 0.05);
+	--lq-glow-a: rgb(91 108 255 / 0.22);
+	--lq-glow-b: rgb(168 85 247 / 0.16);
+	--lq-glow-c: rgb(34 211 238 / 0.14);
+	color-scheme: light;
+}
+
+[data-theme="dark"] {
+	--lq-canvas: #05070f;
+	--lq-canvas-soft: #0a0f1e;
+	--lq-surface: rgb(255 255 255 / 0.04);
+	--lq-surface-strong: #0d1326;
+	--lq-line: rgb(255 255 255 / 0.08);
+	--lq-line-strong: rgb(255 255 255 / 0.16);
+	--lq-fg: #e8ecf8;
+	--lq-muted: #9aa4bf;
+	--lq-subtle: #8a94b0;
+	--lq-link: #a3adff;
+	--lq-grid: rgb(255 255 255 / 0.045);
+	--lq-glow-a: rgb(91 108 255 / 0.35);
+	--lq-glow-b: rgb(168 85 247 / 0.26);
+	--lq-glow-c: rgb(34 211 238 / 0.16);
+	color-scheme: dark;
+}
+
+/* ------------------------------------------------------------------ base */
+
+@layer base {
+	html {
+		-webkit-text-size-adjust: 100%;
+		text-rendering: optimizeLegibility;
+		scroll-behavior: smooth;
+		scroll-padding-top: 5rem;
+	}
+	body {
+		@apply bg-canvas text-fg font-sans antialiased;
+		font-feature-settings: "cv11", "ss01", "ss03";
+	}
+	::selection {
+		background: rgb(91 108 255 / 0.35);
+	}
+	:focus-visible {
+		outline: 2px solid var(--color-brand-400);
+		outline-offset: 2px;
+		border-radius: 0.375rem;
+	}
+	h1, h2, h3, h4 {
+		@apply text-fg font-semibold;
+		text-wrap: balance;
+	}
+	p {
+		text-wrap: pretty;
+	}
+	[hidden] {
+		display: none !important;
+	}
+}
+
+/* Arabic script must never be letter-spaced: it breaks joined letters */
+@layer utilities {
+	[dir="rtl"] [class*="tracking-"],
+	[dir="rtl"] .lq-display,
+	[dir="rtl"] .lq-h2,
+	[dir="rtl"] .lq-eyebrow {
+		letter-spacing: 0;
+	}
+}
+
+/* ------------------------------------------------------------------ components */
+
+@layer components {
+	/* Layout */
+	.lq-container {
+		@apply mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8;
+	}
+	.lq-section {
+		@apply py-20 sm:py-24 lg:py-28;
+	}
+	.lq-section-tight {
+		@apply py-14 sm:py-16;
+	}
+
+	/* Typography */
+	.lq-eyebrow {
+		@apply inline-flex items-center gap-2 rounded-full border border-line bg-surface px-3 py-1 text-xs font-medium tracking-wide text-muted backdrop-blur;
+	}
+	.lq-display {
+		@apply text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl;
+		line-height: 1.05;
+	}
+	.lq-h2 {
+		@apply text-3xl font-semibold tracking-tight sm:text-4xl;
+		line-height: 1.15;
+	}
+	.lq-h3 {
+		@apply text-lg font-semibold;
+	}
+	.lq-lead {
+		@apply text-lg text-muted sm:text-xl;
+		line-height: 1.6;
+	}
+	.lq-gradient-text {
+		background: linear-gradient(110deg, #67e8f9 0%, #7f8cff 40%, #c084fc 85%);
+		-webkit-background-clip: text;
+		background-clip: text;
+		color: transparent;
+	}
+	[data-theme="light"] .lq-gradient-text {
+		background-image: linear-gradient(110deg, #0891b2 0%, #4651f0 45%, #9333ea 90%);
+	}
+	.lq-link {
+		@apply font-medium text-link underline-offset-4 hover:underline;
+	}
+
+	/* Buttons */
+	.lq-btn,
+	.page-content-wrapper .btn {
+		@apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold whitespace-nowrap transition duration-200 select-none;
+		transition-timing-function: var(--ease-out-expo);
+	}
+	.lq-btn:disabled,
+	.lq-btn[aria-disabled="true"] {
+		@apply pointer-events-none opacity-60;
+	}
+	.lq-btn-primary,
+	.page-content-wrapper .btn-primary {
+		@apply bg-brand-600 text-white shadow-glow hover:bg-brand-500 active:bg-brand-700;
+	}
+	.lq-btn-secondary {
+		@apply border border-line-strong bg-surface text-fg backdrop-blur hover:border-brand-400/60 hover:bg-brand-500/10;
+	}
+	.lq-btn-ghost {
+		@apply text-muted hover:bg-surface hover:text-fg;
+	}
+	.lq-btn-sm {
+		@apply rounded-lg px-3.5 py-2 text-sm;
+	}
+	.lq-btn-lg {
+		@apply px-6 py-3.5 text-base;
+	}
+
+	/* Surfaces */
+	.lq-glass {
+		@apply rounded-2xl border border-line bg-surface backdrop-blur-xl;
+		box-shadow: inset 0 1px 0 0 rgb(255 255 255 / 0.04);
+	}
+	.lq-card {
+		@apply relative rounded-2xl border border-line bg-surface p-6 backdrop-blur-xl transition duration-300;
+		box-shadow: inset 0 1px 0 0 rgb(255 255 255 / 0.04);
+		transition-timing-function: var(--ease-out-expo);
+	}
+	.lq-card-hover:hover {
+		@apply -translate-y-1 border-brand-400/40;
+		box-shadow: var(--shadow-glow);
+	}
+	.lq-icon-tile {
+		@apply inline-flex size-11 shrink-0 items-center justify-center rounded-xl border border-brand-400/30 bg-brand-500/10 text-brand-300;
+	}
+	[data-theme="light"] .lq-icon-tile {
+		@apply text-brand-700;
+	}
+	.lq-badge {
+		@apply inline-flex items-center gap-1.5 rounded-full border border-line px-2.5 py-0.5 text-xs font-medium text-muted;
+	}
+	.lq-badge-brand { @apply border-brand-400/30 bg-brand-500/10 text-brand-300; }
+	.lq-badge-success { @apply border-emerald-400/30 bg-emerald-500/10 text-emerald-300; }
+	.lq-badge-warning { @apply border-amber-400/30 bg-amber-500/10 text-amber-300; }
+	.lq-badge-danger { @apply border-rose-400/30 bg-rose-500/10 text-rose-300; }
+	[data-theme="light"] .lq-badge-brand { @apply text-brand-700; }
+	[data-theme="light"] .lq-badge-success { @apply text-emerald-700; }
+	[data-theme="light"] .lq-badge-warning { @apply text-amber-800; }
+	[data-theme="light"] .lq-badge-danger { @apply text-rose-700; }
+
+	/* Forms */
+	.lq-label {
+		@apply mb-1.5 block text-sm font-medium text-fg;
+	}
+	.lq-input,
+	.page-content-wrapper .form-control {
+		@apply block w-full rounded-xl border border-line-strong bg-canvas-soft px-4 py-3 text-sm text-fg transition placeholder:text-subtle;
+	}
+	.lq-input:focus {
+		@apply border-brand-400 ring-4 ring-brand-500/20 outline-none;
+	}
+	.lq-input[aria-invalid="true"] {
+		@apply border-rose-400 ring-rose-500/20;
+	}
+	select.lq-input {
+		@apply appearance-none pe-10;
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='%239aa4bf' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m4 6 4 4 4-4'/%3E%3C/svg%3E");
+		background-repeat: no-repeat;
+		background-position: right 0.9rem center;
+	}
+	[dir="rtl"] select.lq-input {
+		background-position: left 0.9rem center;
+	}
+	.lq-help {
+		@apply mt-1.5 text-xs text-subtle;
+	}
+	.lq-error {
+		@apply mt-1.5 text-xs font-medium text-rose-400;
+	}
+	[data-theme="light"] .lq-error {
+		@apply text-rose-700;
+	}
+	.lq-check {
+		@apply size-4 rounded border-line-strong accent-brand-500;
+	}
+
+	/* Rich text from Desk (Text Editor fields) */
+	.lq-prose {
+		@apply text-base leading-7 text-muted;
+	}
+	.lq-prose > * + * { margin-top: 1.1em; }
+	.lq-prose h2 { @apply mt-10 text-2xl font-semibold text-fg; }
+	.lq-prose h3 { @apply mt-8 text-xl font-semibold text-fg; }
+	.lq-prose strong { @apply font-semibold text-fg; }
+	.lq-prose a { @apply text-link underline decoration-brand-400/40 underline-offset-4 hover:decoration-brand-400; }
+	.lq-prose ul { @apply list-disc ps-6; }
+	.lq-prose ol { @apply list-decimal ps-6; }
+	.lq-prose li + li { margin-top: 0.4em; }
+	.lq-prose blockquote { @apply border-s-2 border-brand-400 ps-5 text-fg italic; }
+	.lq-prose img { @apply rounded-2xl border border-line; }
+	.lq-prose code { @apply rounded bg-surface px-1.5 py-0.5 font-mono text-sm text-fg; }
+	.lq-prose pre { @apply overflow-x-auto rounded-xl border border-line bg-canvas-soft p-4 text-sm; }
+	.lq-prose table { @apply w-full text-sm; }
+	.lq-prose th, .lq-prose td { @apply border-b border-line px-3 py-2 text-start; }
+
+	/* Data tables in the portal */
+	.lq-table {
+		@apply w-full text-sm;
+	}
+	.lq-table th {
+		@apply border-b border-line px-4 py-3 text-start text-xs font-semibold tracking-wide text-subtle uppercase;
+	}
+	.lq-table td {
+		@apply border-b border-line px-4 py-3.5 text-muted;
+	}
+	.lq-table tr:last-child td {
+		@apply border-b-0;
+	}
+
+	/* Decorative backgrounds */
+	.lq-grid-bg {
+		background-image:
+			linear-gradient(to right, var(--lq-grid) 1px, transparent 1px),
+			linear-gradient(to bottom, var(--lq-grid) 1px, transparent 1px);
+		background-size: 56px 56px;
+		mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, #000 40%, transparent 100%);
+	}
+	.lq-mesh {
+		@apply pointer-events-none absolute inset-0 overflow-hidden;
+	}
+	.lq-mesh > span {
+		@apply absolute animate-drift rounded-full blur-3xl;
+		will-change: transform;
+	}
+	.lq-hairline {
+		background: linear-gradient(90deg, transparent, var(--lq-line-strong), transparent);
+		height: 1px;
+	}
+	.lq-circuit path {
+		stroke-dasharray: 6 14;
+		animation: circuit-flow 6s linear infinite;
+	}
+	@keyframes circuit-flow {
+		to { stroke-dashoffset: -200; }
+	}
+
+	/* Navbar: transparent at the top, solid after scrolling (set by site.js) */
+	.lq-nav {
+		@apply fixed inset-x-0 top-0 z-50 border-b border-transparent transition-colors duration-300;
+	}
+	.lq-nav[data-scrolled="true"],
+	.lq-nav[data-solid="true"] {
+		@apply border-line bg-canvas/80 backdrop-blur-xl;
+	}
+	/* Mega menus span the navbar container; .lq-mega-sm is a small dropdown under its item */
+	.lq-mega {
+		@apply invisible absolute inset-x-5 top-full translate-y-2 pt-1 opacity-0 transition duration-200 sm:inset-x-6 lg:inset-x-8;
+	}
+	.lq-mega-sm {
+		@apply inset-x-auto start-0 top-full pt-3;
+	}
+	.lq-mega[data-open="true"] {
+		@apply visible translate-y-0 opacity-100;
+	}
+	[data-mega-trigger][aria-expanded="true"] .lq-icon {
+		transform: rotate(180deg);
+	}
+
+	/* Mobile drawer slides in from the inline-end edge (right in LTR, left in RTL) */
+	.lq-drawer {
+		@apply fixed inset-0 z-[60];
+	}
+	.lq-drawer-panel {
+		@apply absolute inset-y-0 end-0 flex w-full max-w-sm flex-col border-s border-line bg-canvas shadow-2xl transition-transform duration-300;
+		transform: translateX(100%);
+	}
+	[dir="rtl"] .lq-drawer-panel {
+		transform: translateX(-100%);
+	}
+	.lq-drawer[data-open="true"] .lq-drawer-panel {
+		transform: none;
+	}
+	details > summary::-webkit-details-marker {
+		display: none;
+	}
+
+	/* Frappe's built-in pages (rendered inside our layout) */
+	.page-content-wrapper {
+		@apply mx-auto min-h-[60vh] w-full max-w-7xl px-5 pt-28 pb-16 sm:px-6 lg:px-8;
+	}
+
+	/* Scroll-reveal: site.js adds data-revealed when the element enters the viewport */
+	.js [data-reveal] {
+		opacity: 0;
+		transform: translateY(18px);
+		transition:
+			opacity 0.7s var(--ease-out-expo),
+			transform 0.7s var(--ease-out-expo);
+		transition-delay: var(--reveal-delay, 0ms);
+	}
+	.js [data-reveal="fade"] { transform: none; }
+	.js [data-reveal][data-revealed] {
+		opacity: 1;
+		transform: none;
+	}
+
+	/* Partner logo marquee */
+	.lq-marquee {
+		mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+	}
+	.lq-marquee:hover .lq-marquee-track {
+		animation-play-state: paused;
+	}
+	[dir="rtl"] .lq-marquee-track {
+		animation-direction: reverse;
+	}
+
+	/* Testimonial slider: CSS scroll-snap, arrows in site.js */
+	.lq-slider {
+		@apply flex snap-x snap-mandatory gap-6 overflow-x-auto scroll-smooth pb-4;
+		scrollbar-width: none;
+	}
+	.lq-slider::-webkit-scrollbar { display: none; }
+	.lq-slider > * { @apply snap-start; }
+
+	/* Icon sprite usage: <svg class="lq-icon"><use href="...#name"/></svg> */
+	.lq-icon {
+		@apply inline-block size-5 shrink-0;
+		fill: none;
+		stroke: currentColor;
+		stroke-width: 1.75;
+		stroke-linecap: round;
+		stroke-linejoin: round;
+	}
+	/* Directional icons (arrows, chevrons) mirror in RTL */
+	[dir="rtl"] .lq-icon-flip {
+		transform: scaleX(-1);
+	}
+}
+
+/* Respect users who ask for less motion */
+@media (prefers-reduced-motion: reduce) {
+	*, *::before, *::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+	.js [data-reveal] {
+		opacity: 1;
+		transform: none;
+	}
+}

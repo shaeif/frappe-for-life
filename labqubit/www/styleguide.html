@@ -1,0 +1,62 @@
+{% extends "templates/lq_page.html" %}
+{% from "templates/components/ui.html" import button, section_header, badge, empty_state with context %}
+{% from "templates/components/hero.html" import page_hero with context %}
+{% from "templates/components/cards.html" import feature_card, case_card, partner_tile with context %}
+{% from "templates/components/sections.html" import cta_band, stats as stats_band, testimonials as testimonial_slider, logo_marquee with context %}
+
+{% block page %}
+{% call page_hero("Design system", "Live preview of LabQubit tokens and components. Toggle the theme and language in the navbar to check both modes.", "Internal", [("Style guide", "")]) %}{% endcall %}
+
+{%- set h = "mb-6 text-xs font-semibold tracking-wide text-subtle uppercase" %}
+<div class="lq-container space-y-16 pb-16">
+	<section>
+		<p class="{{ h }}">Color</p>
+		<div class="grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-8">
+			{%- for name, cls in [("canvas", "bg-canvas"), ("canvas-soft", "bg-canvas-soft"), ("surface", "bg-surface"), ("brand-600", "bg-brand-600"), ("brand-400", "bg-brand-400"), ("accent-500", "bg-accent-500"), ("signal-400", "bg-signal-400"), ("ink-700", "bg-ink-700")] %}
+			<div><div class="h-16 rounded-xl border border-line {{ cls }}"></div><p class="mt-2 font-mono text-xs text-muted">{{ name }}</p></div>
+			{%- endfor %}
+		</div>
+	</section>
+	<section>
+		<p class="{{ h }}">Typography</p>
+		<p class="lq-display">Display headline</p>
+		<p class="lq-h2 mt-4">Section title <span class="lq-gradient-text">with gradient</span></p>
+		<p class="lq-h3 mt-4">Card title</p>
+		<p class="lq-lead mt-4 max-w-2xl">Lead paragraph used under section titles to introduce the content.</p>
+		<p class="mt-4 max-w-2xl text-muted">Body copy at 16px with relaxed line height. <a class="lq-link" href="#">Inline link</a>.</p>
+		<p class="mt-4 text-lg" dir="rtl" lang="ar">نص عربي للتحقق من خط IBM Plex Sans Arabic واتجاه الكتابة من اليمين إلى اليسار.</p>
+	</section>
+	<section>
+		<p class="{{ h }}">Buttons and badges</p>
+		<div class="flex flex-wrap items-center gap-3">
+			{{ button("Primary", "#", "primary", icon_end="arrow-right") }}
+			{{ button("Secondary", "#", "secondary") }}
+			{{ button("Ghost", "#", "ghost") }}
+			{{ button("Small", "#", "primary", "sm") }}
+			{{ badge("Default") }}{{ badge("Brand", "brand") }}{{ badge("Success", "success") }}{{ badge("Warning", "warning") }}{{ badge("Danger", "danger") }}
+		</div>
+	</section>
+	<section>
+		<p class="{{ h }}">Form controls</p>
+		<div class="grid max-w-3xl gap-5 sm:grid-cols-2">
+			<div><label class="lq-label" for="sg1">Full name</label><input id="sg1" class="lq-input" placeholder="Jane Doe"><p class="lq-help">Help text</p></div>
+			<div><label class="lq-label" for="sg2">Service</label><select id="sg2" class="lq-input"><option>Network Infrastructure</option></select></div>
+			<div><label class="lq-label" for="sg3">Email</label><input id="sg3" class="lq-input" aria-invalid="true" value="not-an-email"><p class="lq-error">Enter a valid email address.</p></div>
+			<div class="flex items-center gap-2 pt-8"><input id="sg4" type="checkbox" class="lq-check" checked><label for="sg4" class="text-sm text-muted">Checkbox</label></div>
+		</div>
+	</section>
+	<section>
+		<p class="{{ h }}">Cards</p>
+		<div class="grid gap-5 md:grid-cols-3">
+			{{ feature_card(sample_feature, "#") }}
+			{{ case_card(sample_case) }}
+			{{ empty_state("Empty state", "Shown when a list has no items.") }}
+		</div>
+		<div class="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-4">{% for p in sample_partners %}{{ partner_tile(p) }}{% endfor %}</div>
+	</section>
+</div>
+{{ stats_band(sample_stats) }}
+{{ testimonial_slider(sample_quotes, "Testimonial slider", "Component") }}
+{{ logo_marquee(sample_partners + sample_partners, "Logo marquee") }}
+{{ cta_band() }}
+{% endblock %}

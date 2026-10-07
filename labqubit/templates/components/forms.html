@@ -1,0 +1,90 @@
+{#- Accessible form building blocks used by the lead and job application forms.
+    Submission is handled by site.js ([data-lq-form]); without JS the form still posts normally. -#}
+
+{% macro field(name, label, type="text", required=False, autocomplete="", placeholder="", help="", cls="", options=None, rows=5, attrs="") -%}
+{%- set fid = "f-" ~ name -%}
+<div class="{{ cls }}">
+	<label for="{{ fid }}" class="lq-label">{{ label | e }}{% if required %}<span class="ms-0.5 text-rose-400" aria-hidden="true">*</span>{% endif %}</label>
+	{%- set common = 'id="' ~ fid ~ '" name="' ~ name ~ '" class="lq-input" aria-describedby="' ~ fid ~ '-error' ~ (' ' ~ fid ~ '-help' if help else '') ~ '"' ~ (' required aria-required="true"' if required else '') -%}
+	{%- if type == "textarea" %}
+	<textarea {{ common }} rows="{{ rows }}" placeholder="{{ placeholder | e }}" {{ attrs }}></textarea>
+	{%- elif type == "select" %}
+	<select {{ common }} {{ attrs }}>
+		<option value="">{{ placeholder or _("Select…") }}</option>
+		{%- for o in options or [] %}
+		{%- set value, text = (o if o is not string else (o, _(o))) %}
+		<option value="{{ value | e }}">{{ text | e }}</option>
+		{%- endfor %}
+	</select>
+	{%- else %}
+	<input type="{{ type }}" {{ common }} {{ ('autocomplete="' ~ autocomplete ~ '"') if autocomplete else '' }} placeholder="{{ placeholder | e }}" {{ attrs }}>
+	{%- endif %}
+	{%- if help %}<p id="{{ fid }}-help" class="lq-help">{{ help | e }}</p>{% endif %}
+	<p id="{{ fid }}-error" class="lq-error" data-error-for="{{ name }}" hidden></p>
+</div>
+{%- endmacro %}
+
+{% macro choice_chips(name, label, options, cls="") -%}
+{#- options: list of (value, label). Multi-select rendered as checkbox chips. -#}
+<fieldset class="{{ cls }}">
+	<legend class="lq-label">{{ label | e }}</legend>
+	<div class="mt-1 flex flex-wrap gap-2">
+		{%- for value, text in options %}
+		<label class="cursor-pointer">
+			<input type="checkbox" name="{{ name }}" value="{{ value | e }}" class="peer sr-only">
+			<span class="inline-flex items-center rounded-full border border-line-strong bg-canvas-soft px-3.5 py-1.5 text-sm text-muted transition peer-checked:border-brand-400 peer-checked:bg-brand-500/15 peer-checked:text-fg peer-focus-visible:ring-2 peer-focus-visible:ring-brand-400 hover:text-fg">{{ text | e }}</span>
+		</label>
+		{%- endfor %}
+	</div>
+	<p class="lq-error" data-error-for="{{ name }}" hidden></p>
+</fieldset>
+{%- endmacro %}
+
+{% macro lead_form(endpoint, submit_label, hidden=None, multipart=False, consent_text="") -%}
+{%- set s = lq.settings -%}
+<form action="{{ endpoint }}" method="post" class="lq-glass relative p-6 sm:p-8" data-lq-form novalidate
+	{{ 'enctype="multipart/form-data"' if multipart else '' }}>
+	{%- for key, value in (hidden or {}).items() %}
+	<input type="hidden" name="{{ key }}" value="{{ value | e }}">
+	{%- endfor %}
+	<input type="hidden" name="ts" value="">
+	<input type="hidden" name="page_url" value="">
+	<input type="hidden" name="utm_source" value=""><input type="hidden" name="utm_medium" value=""><input type="hidden" name="utm_campaign" value="">
+	<input type="hidden" name="csrf_token" value="">
+	{#- Honeypot: hidden from people and assistive tech, bots tend to fill it -#}
+	<div class="absolute -start-[9999px] h-px w-px overflow-hidden" aria-hidden="true">
+		<label>{{ _("Leave this field empty") }}<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+	</div>
+
+	<div class="lq-error mb-5 rounded-xl border border-rose-400/30 bg-rose-500/10 px-4 py-3 text-sm" role="alert" data-form-error hidden></div>
+
+	<div class="grid gap-5 sm:grid-cols-2" data-form-fields>
+		{{ caller() }}
+	</div>
+
+	<div class="mt-6 space-y-5">
+		<label class="flex items-start gap-3 text-sm text-muted">
+			<input type="checkbox" name="consent" value="1" class="lq-check mt-0.5" required>
+			<span>{{ consent_text or _("I agree that LabQubit may contact me about this request. See our {0}.").format('<a href="/privacy" class="lq-link">' ~ _("privacy policy") ~ '</a>') }}</span>
+		</label>
+		<p class="lq-error -mt-3" data-error-for="consent" hidden></p>
+
+		{%- if s.enable_turnstile and s.turnstile_site_key %}
+		<div class="cf-turnstile" data-sitekey="{{ s.turnstile_site_key | e }}" data-theme="auto"></div>
+		<p class="lq-error" data-error-for="captcha" hidden></p>
+		<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+		{%- endif %}
+
+		<button type="submit" class="lq-btn lq-btn-primary lq-btn-lg w-full sm:w-auto" data-submit>
+			<span data-submit-label>{{ submit_label | e }}</span>
+			<svg class="hidden size-4 animate-spin" data-submit-spinner viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-opacity=".3" stroke-width="3" /><path d="M21 12a9 9 0 0 0-9-9" stroke="currentColor" stroke-width="3" stroke-linecap="round" /></svg>
+		</button>
+	</div>
+
+	<div class="absolute inset-0 flex flex-col items-center justify-start rounded-2xl bg-canvas-soft p-8 pt-20 text-center sm:pt-28" data-form-success hidden tabindex="-1">
+		<span class="flex size-14 items-center justify-center rounded-full bg-emerald-500/15 text-emerald-400">{{ lq_icon("circle-check", "size-7") }}</span>
+		<p class="lq-h3 mt-5 text-xl">{{ _("Thank you!") }}</p>
+		<p class="mt-2 max-w-sm text-muted" data-success-message></p>
+	</div>
+</form>
+{%- endmacro %}

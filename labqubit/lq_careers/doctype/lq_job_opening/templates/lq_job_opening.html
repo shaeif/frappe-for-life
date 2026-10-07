@@ -1,0 +1,54 @@
+{% extends "templates/lq_page.html" %}
+{% from "templates/components/hero.html" import page_hero with context %}
+{% from "templates/components/forms.html" import lead_form, field with context %}
+{% from "templates/components/cards.html" import job_card with context %}
+
+{% block page %}
+{% call page_hero(t(doc, "title"), t(doc, "summary"), _(doc.department) if doc.department else _("Careers"), [(section.label, section.url), (t(doc, "title"), "")]) %}
+	<div class="mt-6 flex flex-wrap gap-2" data-reveal style="--reveal-delay: 160ms">
+		{%- if doc.location %}<span class="lq-badge">{{ lq_icon("map-pin", "size-3.5") }}{{ doc.location | e }}</span>{% endif %}
+		{%- if doc.employment_type %}<span class="lq-badge">{{ lq_icon("clock", "size-3.5") }}{{ _(doc.employment_type) }}</span>{% endif %}
+		{%- if doc.experience %}<span class="lq-badge">{{ lq_icon("award", "size-3.5") }}{{ doc.experience | e }}</span>{% endif %}
+		{%- if not is_open %}<span class="lq-badge lq-badge-warning">{{ _("Applications closed") }}</span>{% endif %}
+	</div>
+{% endcall %}
+
+<section class="pb-20">
+	<div class="lq-container grid gap-12 lg:grid-cols-12">
+		<article class="space-y-10 lg:col-span-7">
+			{%- if t(doc, "description") %}<div><h2 class="lq-h3 text-xl">{{ _("About the role") }}</h2><div class="lq-prose mt-4 max-w-none">{{ t(doc, "description") }}</div></div>{% endif %}
+			{%- if t(doc, "requirements") %}<div><h2 class="lq-h3 text-xl">{{ _("What you bring") }}</h2><div class="lq-prose mt-4 max-w-none">{{ t(doc, "requirements") }}</div></div>{% endif %}
+		</article>
+		<div class="lg:col-span-5" id="apply">
+			{%- if is_open %}
+			<h2 class="lq-h3 mb-4 text-xl">{{ _("Apply for this role") }}</h2>
+			{% call lead_form("/api/method/labqubit.api.leads.submit_application", _("Submit application"), {"job_opening": doc.name}, multipart=True,
+				consent_text=_("I agree that LabQubit may store and process my application for recruitment purposes. See our {0}.").format('<a href="/privacy" class="lq-link">' ~ _("privacy policy") ~ '</a>')) %}
+				{{ field("applicant_name", _("Full name"), required=True, autocomplete="name", cls="sm:col-span-2") }}
+				{{ field("email", _("Email"), "email", required=True, autocomplete="email") }}
+				{{ field("phone", _("Phone"), "tel", required=True, autocomplete="tel") }}
+				{{ field("linkedin_url", _("LinkedIn profile"), "url", placeholder="https://linkedin.com/in/…", cls="sm:col-span-2") }}
+				{{ field("current_location", _("Current location")) }}
+				{{ field("notice_period", _("Notice period")) }}
+				{{ field("resume", _("CV / resume"), "file", required=True, help=_("PDF or Word, up to 5 MB"), attrs='accept=".pdf,.doc,.docx"', cls="sm:col-span-2") }}
+				{{ field("cover_letter", _("Cover letter"), "textarea", rows=4, cls="sm:col-span-2") }}
+			{% endcall %}
+			{%- else %}
+			<div class="lq-card">
+				<p class="font-semibold text-fg">{{ _("This position is closed") }}</p>
+				<p class="mt-2 text-sm text-muted">{{ _("See our other open roles below, or check back soon.") }}</p>
+			</div>
+			{%- endif %}
+		</div>
+	</div>
+</section>
+
+{%- if other_openings %}
+<section class="lq-section-tight border-t border-line">
+	<div class="lq-container">
+		<h2 class="lq-h2 text-2xl sm:text-3xl">{{ _("Other open roles") }}</h2>
+		<div class="mt-8 grid gap-4">{% for job in other_openings %}{{ job_card(job, loop.index0 * 50) }}{% endfor %}</div>
+	</div>
+</section>
+{%- endif %}
+{% endblock %}

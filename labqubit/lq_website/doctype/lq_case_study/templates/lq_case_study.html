@@ -1,0 +1,51 @@
+{% extends "templates/lq_page.html" %}
+{% from "templates/components/hero.html" import page_hero with context %}
+{% from "templates/components/ui.html" import picture with context %}
+{% from "templates/components/lists.html" import chip_links, case_grid with context %}
+{% from "templates/components/sections.html" import cta_band, testimonial_quote with context %}
+
+{% block page %}
+{% call page_hero(t(doc, "title"), t(doc, "summary"), doc.client_label, [(section.label, section.url), (t(doc, "title"), "")]) %}
+	{%- if doc.metrics %}
+	{%- set metric_cols = {1: "sm:grid-cols-1", 2: "sm:grid-cols-2", 3: "sm:grid-cols-3"} %}
+	<dl class="mt-10 grid grid-cols-2 gap-4 {{ metric_cols[doc.metrics | length] or 'sm:grid-cols-4' }}" data-reveal style="--reveal-delay: 180ms">
+		{%- for m in doc.metrics %}
+		<div class="lq-glass p-5">
+			<dd class="text-3xl font-semibold tracking-tight text-fg" dir="ltr">{{ m.value | e }}</dd>
+			<dt class="mt-1 text-sm text-muted">{{ t(m, "label") | e }}</dt>
+		</div>
+		{%- endfor %}
+	</dl>
+	{%- endif %}
+{% endcall %}
+
+<section class="pb-20">
+	<div class="lq-container grid gap-12 lg:grid-cols-12">
+		<article class="space-y-12 lg:col-span-8">
+			{%- if doc.cover_image %}
+			<div class="overflow-hidden rounded-3xl border border-line">{{ picture(doc.cover_image, t(doc, "title"), "w-full object-cover", eager=True) }}</div>
+			{%- endif %}
+			{%- for field, label in [("challenge", _("The challenge")), ("solution", _("Our solution")), ("results", _("The results"))] %}
+			{%- if t(doc, field) %}
+			<div data-reveal>
+				<h2 class="lq-h3 text-2xl">{{ label }}</h2>
+				<div class="lq-prose mt-4 max-w-none">{{ t(doc, field) }}</div>
+			</div>
+			{%- endif %}
+			{%- endfor %}
+			{%- if testimonial %}{{ testimonial_quote(testimonial) }}{% endif %}
+		</article>
+		<div class="lg:col-span-4">
+			{%- include "templates/includes/lq_detail_aside.html" %}
+			<div class="lq-glass mt-6 p-6">
+				{%- if industry %}{{ chip_links([industry], _("Industry")) }}{% endif %}
+				{{ chip_links(services, _("Services")) }}
+				{{ chip_links(solutions, _("Solutions")) }}
+			</div>
+		</div>
+	</div>
+</section>
+
+{{ case_grid(more, _("More case studies")) }}
+{{ cta_band() }}
+{% endblock %}

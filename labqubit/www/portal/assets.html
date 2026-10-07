@@ -1,0 +1,34 @@
+{% extends "templates/lq_portal.html" %}
+{% from "templates/components/portal.html" import status, page_header, empty with context %}
+{% block portal %}
+{{ page_header(_("Assets"), _("Equipment registered under your account.")) }}
+{%- if types | length > 1 %}
+{%- set chip = "rounded-full border border-line bg-surface px-3 py-1 text-sm text-muted transition hover:text-fg aria-pressed:border-brand-400/60 aria-pressed:bg-brand-500/15 aria-pressed:text-fg" %}
+<div class="mb-4 flex flex-wrap gap-2" data-filter-group="#asset-rows" role="group" aria-label="{{ _('Filter by type') }}">
+	<button type="button" class="{{ chip }}" data-filter="" aria-pressed="true">{{ _("All") }}</button>
+	{%- for ty in types %}<button type="button" class="{{ chip }}" data-filter="{{ ty }}" aria-pressed="false">{{ _(ty) }}</button>{% endfor %}
+</div>
+{%- endif %}
+<div class="lq-glass overflow-x-auto">
+	{%- if assets %}
+	<table class="lq-table min-w-[48rem]">
+		<thead><tr><th>{{ _("Asset") }}</th><th>{{ _("Type") }}</th><th>{{ _("Serial") }}</th><th>{{ _("Location") }}</th><th>{{ _("Warranty") }}</th><th>{{ _("Status") }}</th><th></th></tr></thead>
+		<tbody id="asset-rows">
+			{%- for a in assets %}
+			<tr data-filter-value="{{ a.asset_type }}">
+				<td class="font-medium text-fg">{{ a.asset_name | e }}<span class="block text-xs text-subtle">{{ ([a.vendor, a.model] | select | join(" · ")) | e }}</span></td>
+				<td>{{ _(a.asset_type) }}</td>
+				<td class="font-mono text-xs">{{ (a.serial_number or "") | e }}</td>
+				<td>{{ (a.site_location or "") | e }}</td>
+				<td class="whitespace-nowrap">
+					{%- if a.warranty_expiry %}{{ frappe.format_date(a.warranty_expiry) }}{% if frappe.utils.getdate(a.warranty_expiry) < today %} <span class="lq-badge lq-badge-danger">{{ _("Expired") }}</span>{% endif %}{% endif -%}
+				</td>
+				<td>{{ status(a.status, badge) }}</td>
+				<td><a href="/portal/new-ticket?asset={{ a.name | urlencode }}" class="lq-link text-sm whitespace-nowrap">{{ _("Report issue") }}</a></td>
+			</tr>
+			{%- endfor %}
+		</tbody>
+	</table>
+	{%- else %}{{ empty(_("No assets registered yet."), "server") }}{% endif %}
+</div>
+{% endblock %}

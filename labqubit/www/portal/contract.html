@@ -1,0 +1,59 @@
+{% extends "templates/lq_portal.html" %}
+{% from "templates/components/portal.html" import status, empty with context %}
+{% block portal %}
+<a href="/portal/contracts" class="mb-4 inline-flex items-center gap-1.5 text-sm text-muted hover:text-fg">{{ lq_icon("arrow-left", "size-4 lq-icon-flip") }}{{ _("All contracts") }}</a>
+<div class="lq-glass p-6">
+	<div class="flex flex-wrap items-start justify-between gap-4">
+		<div>
+			<p class="text-xs text-subtle">{{ contract.name }}</p>
+			<h1 class="mt-1 text-2xl font-semibold tracking-tight text-fg">{{ contract.contract_title | e }}</h1>
+			<p class="mt-1 text-sm text-muted">{{ _(contract.coverage_level) }} · {{ frappe.format_date(contract.start_date) }} – {{ frappe.format_date(contract.end_date) }}</p>
+		</div>
+		{{ status(contract.status, badge) }}
+	</div>
+	<div class="mt-6">
+		<div class="flex justify-between text-xs text-subtle"><span>{{ _("Term elapsed") }}</span><span>{{ _("Ended") if ended else _("{0} days left").format(days_left) }}</span></div>
+		<div class="mt-2 h-2 overflow-hidden rounded-full bg-surface"><div class="h-full rounded-full bg-gradient-to-r from-signal-400 via-brand-500 to-accent-500" style="width: {{ progress }}%"></div></div>
+	</div>
+	{%- if contract.contract_document %}
+	<a href="{{ contract.contract_document | e }}" class="lq-btn lq-btn-secondary lq-btn-sm mt-6" download>{{ lq_icon("download", "size-4") }}{{ _("Download signed contract") }}</a>
+	{%- endif %}
+</div>
+
+{%- if targets %}
+<div class="lq-glass mt-6 overflow-x-auto">
+	<h2 class="border-b border-line px-5 py-4 font-semibold text-fg">{{ _("Service levels") }}</h2>
+	<table class="lq-table">
+		<thead><tr><th>{{ _("Priority") }}</th><th>{{ _("First response") }}</th><th>{{ _("Resolution") }}</th></tr></thead>
+		<tbody>
+			{%- for row in targets %}
+			<tr><td>{{ status(row.priority, badge) }}</td><td>{{ _("{0} h").format(frappe.utils.flt(row.response_hours, 1)) }}</td><td>{{ _("{0} h").format(frappe.utils.flt(row.resolution_hours, 1)) }}</td></tr>
+			{%- endfor %}
+		</tbody>
+	</table>
+</div>
+{%- endif %}
+
+<div class="lq-glass mt-6 overflow-x-auto">
+	<h2 class="border-b border-line px-5 py-4 font-semibold text-fg">{{ _("Covered assets") }}</h2>
+	{%- if assets %}
+	<table class="lq-table min-w-[36rem]">
+		<thead><tr><th>{{ _("Asset") }}</th><th>{{ _("Type") }}</th><th>{{ _("Serial") }}</th><th>{{ _("Location") }}</th><th></th></tr></thead>
+		<tbody>
+			{%- for a in assets %}
+			<tr>
+				<td class="font-medium text-fg">{{ a.asset_name | e }}<span class="block text-xs text-subtle">{{ (a.model or "") | e }}</span></td>
+				<td>{{ _(a.asset_type) }}</td>
+				<td class="font-mono text-xs">{{ (a.serial_number or "") | e }}</td>
+				<td>{{ (a.site_location or "") | e }}</td>
+				<td><a href="/portal/new-ticket?asset={{ a.name | urlencode }}" class="lq-link text-sm whitespace-nowrap">{{ _("Report issue") }}</a></td>
+			</tr>
+			{%- endfor %}
+		</tbody>
+	</table>
+	{%- else %}{{ empty(_("No assets are listed on this contract."), "server") }}{% endif %}
+</div>
+{%- if contract.scope %}
+<div class="lq-glass mt-6 p-6"><h2 class="font-semibold text-fg">{{ _("Scope of work") }}</h2><div class="lq-prose mt-3 max-w-none text-sm">{{ contract.scope }}</div></div>
+{%- endif %}
+{% endblock %}

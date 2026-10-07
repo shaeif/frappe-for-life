@@ -1,0 +1,11 @@
+from frappe import _
+
+from labqubit.website.context import open_jobs
+
+sitemap = 1
+
+
+def get_context(context):
+	context.title = _("Careers")
+	context.description = _("Join LabQubit's team of network, security, data center and web engineers.")
+	context.jobs = open_jobs()

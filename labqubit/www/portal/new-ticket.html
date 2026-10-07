@@ -1,0 +1,26 @@
+{% extends "templates/lq_portal.html" %}
+{% from "templates/components/portal.html" import page_header with context %}
+{% from "templates/components/forms.html" import field with context %}
+{% block portal %}
+{{ page_header(_("Raise a support ticket"), _("Describe the issue and we'll respond within your contract's SLA.")) }}
+<form action="/api/method/labqubit.api.portal.create_ticket" method="post" enctype="multipart/form-data" class="lq-glass relative p-6 sm:p-8" data-lq-form data-redirect novalidate>
+	<input type="hidden" name="csrf_token" value="">
+	<div class="lq-error mb-5 rounded-xl border border-rose-400/30 bg-rose-500/10 px-4 py-3 text-sm" role="alert" data-form-error hidden></div>
+	<div class="grid gap-5 sm:grid-cols-2">
+		{{ field("subject", _("Subject"), required=True, cls="sm:col-span-2", placeholder=_("e.g. Branch office VPN is down")) }}
+		{{ field("priority", _("Priority"), "select", required=True, options=[("Low", _("Low: question or minor issue")), ("Medium", _("Medium: degraded service")), ("High", _("High: major service impact")), ("Critical", _("Critical: outage, business stopped"))]) }}
+		{{ field("category", _("Category"), "select", options=["Incident", "Service Request", "Change Request", "Question"]) }}
+		{%- if assets %}{{ field("asset", _("Affected asset"), "select", options=assets, cls="sm:col-span-2") }}{% endif %}
+		{{ field("description", _("Description"), "textarea", required=True, rows=7, cls="sm:col-span-2", placeholder=_("What happened, when it started, who is affected, and anything you've already tried.")) }}
+		<div class="sm:col-span-2">
+			<label for="f-files" class="lq-label">{{ _("Attachments") }}</label>
+			<input id="f-files" type="file" name="files" multiple accept=".png,.jpg,.jpeg,.webp,.pdf,.txt,.log,.csv" class="text-sm text-muted file:me-3 file:rounded-lg file:border-0 file:bg-surface file:px-3 file:py-1.5 file:text-sm file:text-fg">
+			<p class="lq-help">{{ _("Screenshots, PDFs or logs. Up to 5 files, 10 MB each.") }}</p>
+			<p class="lq-error" data-error-for="files" hidden></p>
+		</div>
+	</div>
+	<button type="submit" class="lq-btn lq-btn-primary lq-btn-lg mt-6" data-submit><span>{{ _("Submit ticket") }}</span><svg class="hidden size-4 animate-spin" data-submit-spinner viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-opacity=".3" stroke-width="3" /><path d="M21 12a9 9 0 0 0-9-9" stroke="currentColor" stroke-width="3" stroke-linecap="round" /></svg></button>
+	<div hidden data-form-success><p data-success-message></p></div>
+</form>
+{%- if preselect_asset %}<script>document.addEventListener("DOMContentLoaded",()=>{const s=document.getElementById("f-asset");if(s)s.value={{ preselect_asset | json_script }};});</script>{% endif %}
+{% endblock %}

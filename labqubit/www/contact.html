@@ -1,0 +1,50 @@
+{% extends "templates/lq_page.html" %}
+{% from "templates/components/hero.html" import page_hero with context %}
+{% from "templates/components/forms.html" import lead_form, field with context %}
+
+{% block page %}
+{%- set s = lq.settings %}
+{% call page_hero(_("Let's talk about your infrastructure"), _("Questions, support or a new project: send us a message and the right engineer will get back to you."), _("Contact"), [(_("Contact"), "")]) %}{% endcall %}
+
+<section class="pb-24">
+	<div class="lq-container grid gap-10 lg:grid-cols-12">
+		<div class="space-y-4 lg:col-span-4">
+			{%- for ic, label, value, href in [
+				("mail", _("Email"), s.email, "mailto:" ~ (s.email or "")),
+				("phone", _("Phone"), s.phone, "tel:" ~ (s.phone or "")),
+				("whatsapp", "WhatsApp", s.whatsapp and ("+" ~ s.whatsapp), "https://wa.me/" ~ (s.whatsapp or ""))] %}
+			{%- if value %}
+			<a href="{{ href | e }}" class="lq-card lq-card-hover flex items-center gap-4" {{ 'target="_blank" rel="noopener"' if ic == "whatsapp" else "" }}>
+				<span class="lq-icon-tile">{{ lq_icon(ic) }}</span>
+				<span><span class="block text-sm text-muted">{{ label }}</span><span class="block font-medium text-fg" dir="ltr">{{ value | e }}</span></span>
+			</a>
+			{%- endif %}
+			{%- endfor %}
+			{%- if t(s, "address") %}
+			<div class="lq-card flex gap-4">
+				<span class="lq-icon-tile">{{ lq_icon("map-pin") }}</span>
+				<div>
+					<p class="text-sm text-muted">{{ _("Office") }}</p>
+					<p class="mt-0.5 whitespace-pre-line font-medium text-fg">{{ t(s, "address") | e }}</p>
+					{%- if s.map_url %}<a href="{{ s.map_url | e }}" target="_blank" rel="noopener" class="lq-link mt-2 inline-block text-sm">{{ _("Open in maps") }}</a>{% endif %}
+				</div>
+			</div>
+			{%- endif %}
+			<div class="lq-card">
+				<p class="font-semibold text-fg">{{ _("Existing client?") }}</p>
+				<p class="mt-1 text-sm text-muted">{{ _("Raise and track support tickets in the client portal for SLA-tracked response.") }}</p>
+				<a href="/portal" class="lq-btn lq-btn-secondary lq-btn-sm mt-4">{{ _("Go to client portal") }}</a>
+			</div>
+		</div>
+		<div class="lg:col-span-8">
+			{% call lead_form(endpoint, _("Send message"), {"lead_type": "Contact"}) %}
+				{{ field("full_name", _("Full name"), required=True, autocomplete="name") }}
+				{{ field("email", _("Work email"), "email", required=True, autocomplete="email") }}
+				{{ field("phone", _("Phone"), "tel", autocomplete="tel") }}
+				{{ field("company", _("Company"), autocomplete="organization") }}
+				{{ field("message", _("How can we help?"), "textarea", required=True, cls="sm:col-span-2") }}
+			{% endcall %}
+		</div>
+	</div>
+</section>
+{% endblock %}

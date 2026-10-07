@@ -1,0 +1,23 @@
+{
+ "creation": "2026-10-07 23:41:37.808227",
+ "docstatus": 0,
+ "doctype": "Number Card",
+ "document_type": "LQ Lead",
+ "dynamic_filters_json": "[]",
+ "filters_json": "[]",
+ "idx": 0,
+ "is_public": 1,
+ "is_standard": 1,
+ "label": "Lead Conversion Rate",
+ "method": "labqubit.api.dashboard.lead_conversion_rate",
+ "modified": "2026-10-07 22:14:43.256675",
+ "modified_by": "Administrator",
+ "module": "LabQubit",
+ "name": "Lead Conversion Rate",
+ "owner": "Administrator",
+ "report_function": "Sum",
+ "show_full_number": 0,
+ "show_percentage_stats": 0,
+ "stats_time_interval": "Monthly",
+ "type": "Custom"
+}

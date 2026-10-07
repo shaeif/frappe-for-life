@@ -1,0 +1,27 @@
+{% macro status(value, badge) -%}
+{%- if value %}<span class="lq-badge {{ 'lq-badge-' ~ badge[value] if badge[value] else '' }}">{{ _(value) }}</span>{% endif -%}
+{%- endmacro %}
+
+{% macro page_header(title, subtitle="", action_label="", action_href="") -%}
+<div class="mb-6 flex flex-wrap items-end justify-between gap-4">
+	<div>
+		<h1 class="text-2xl font-semibold tracking-tight text-fg sm:text-3xl">{{ title | e }}</h1>
+		{%- if subtitle %}<p class="mt-1 text-muted">{{ subtitle | e }}</p>{% endif %}
+	</div>
+	{%- if action_label %}<a href="{{ action_href }}" class="lq-btn lq-btn-primary lq-btn-sm">{{ lq_icon("plus", "size-4") }}{{ action_label }}</a>{% endif %}
+</div>
+{%- endmacro %}
+
+{% macro stat(label, value, icon_name, href="") -%}
+<a href="{{ href or '#' }}" class="lq-card lq-card-hover flex items-center gap-4 p-5">
+	<span class="lq-icon-tile">{{ lq_icon(icon_name) }}</span>
+	<span><span class="block text-2xl font-semibold text-fg">{{ value }}</span><span class="block text-sm text-muted">{{ label }}</span></span>
+</a>
+{%- endmacro %}
+
+{% macro empty(message, icon_name="sparkles") -%}
+<div class="px-6 py-14 text-center">
+	<span class="lq-icon-tile mx-auto mb-3">{{ lq_icon(icon_name) }}</span>
+	<p class="text-sm text-muted">{{ message }}</p>
+</div>
+{%- endmacro %}

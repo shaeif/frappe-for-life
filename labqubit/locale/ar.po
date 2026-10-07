@@ -1,0 +1,4271 @@
+# Arabic translations for LabQubit.
+# Copyright (C) 2026 ORGANIZATION
+# This file is distributed under the same license as the LabQubit project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: LabQubit VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-10-07 18:54+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: ar\n"
+"Language-Team: ar <LL@li.org>\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=0 && n%100<=2 ? 4 : 5);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.13.1\n"
+
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.json
+msgid "1-3 months"
+msgstr "1-3 أشهر"
+
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.json
+msgid "10,000 - 50,000"
+msgstr "10,000 - 50,000"
+
+#: labqubit/lq_careers/doctype/lq_job_opening/lq_job_opening.json
+#: labqubit/lq_website/doctype/lq_case_study/lq_case_study.json
+#: labqubit/lq_website/doctype/lq_industry/lq_industry.json
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+#: labqubit/lq_website/doctype/lq_solution/lq_solution.json
+msgid "1200 x 630 px. Defaults to the hero image."
+msgstr ""
+
+#: labqubit/lq_service_desk/doctype/lq_amc_contract/lq_amc_contract.json
+msgid "24x7 Critical"
+msgstr "حرج على مدار الساعة"
+
+#: labqubit/www/index.html:12
+msgid "24x7 NOC & SOC options"
+msgstr "خيارات مركز عمليات الشبكة والأمن على مدار الساعة"
+
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.json
+msgid "250,000+"
+msgstr "250,000+"
+
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.json
+msgid "3-6 months"
+msgstr "3-6 أشهر"
+
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.json
+msgid "50,000 - 250,000"
+msgstr "50,000 - 250,000"
+
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.json
+msgid "6+ months"
+msgstr "أكثر من 6 أشهر"
+
+#: labqubit/labqubit/workspace/labqubit/labqubit.json
+msgid "<span class=\"h4\"><b>LabQubit</b></span>"
+msgstr ""
+
+#: labqubit/labqubit/workspace/labqubit/labqubit.json
+msgid "<span class=\"h4\"><b>Modules</b></span>"
+msgstr ""
+
+#: labqubit/www/book-a-consultation.html:6
+msgid "A 45-minute session with a senior engineer to review your environment, risks and priorities."
+msgstr "جلسة مدتها 45 دقيقة مع مهندس أول لمراجعة بيئتك ومخاطرك وأولوياتك."
+
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.py:49
+msgid "A new enquiry arrived from the website."
+msgstr "وصل استفسار جديد من الموقع."
+
+#: labqubit/lq_service_desk/doctype/lq_support_ticket/lq_support_ticket.py:43
+msgid "A new support ticket was raised."
+msgstr "تم فتح تذكرة دعم جديدة."
+
+#: labqubit/www/case-studies/index.html:9
+msgid "A selection of networks, security programs and data centers we have delivered."
+msgstr "مجموعة مختارة من الشبكات وبرامج الأمن ومراكز البيانات التي نفذناها."
+
+#: labqubit/www/book-a-consultation.html:30
+msgid "A senior engineer reviews your environment, goals and constraints."
+msgstr "يراجع مهندس أول بيئتك وأهدافك وقيودك."
+
+#: labqubit/labqubit/workspace/labqubit/labqubit.json
+#: labqubit/lq_service_desk/doctype/lq_client_asset/lq_client_asset.json
+#: labqubit/lq_service_desk/doctype/lq_client_document/lq_client_document.json
+#: labqubit/lq_service_desk/doctype/lq_support_ticket/lq_support_ticket.json
+msgid "AMC Contract"
+msgstr ""
+
+#: labqubit/labqubit/workspace/labqubit/labqubit.json
+msgid "AMC Contracts"
+msgstr ""
+
+#: labqubit/labqubit/workspace/labqubit/labqubit.json
+msgid "AMC Renewals Due"
+msgstr ""
+
+#: labqubit/www/portal/ticket.html:53
+msgid "AMC contract"
+msgstr "عقد الصيانة السنوية"
+
+#: labqubit/lq_service_desk/doctype/lq_support_ticket/lq_support_ticket.py:92
+msgid "AMC contract {0} does not belong to {1}."
+msgstr "عقد الصيانة السنوية {0} لا يخص {1}."
+
+#: labqubit/templates/lq_portal.html:29
+#: labqubit/www/portal/contracts/index.html:4
+#: labqubit/www/portal/contracts/index.py:10
+msgid "AMC contracts"
+msgstr "عقود الصيانة السنوية"
+
+#: labqubit/tasks.py:98
+msgid "AMC renewal due"
+msgstr "موعد تجديد عقد الصيانة"
+
+#: labqubit/tasks.py:95
+msgid "AMC renewal due: {0} ends {1}"
+msgstr "موعد تجديد عقد الصيانة: {0} ينتهي في {1}"
+
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.json
+msgid "ASAP"
+msgstr "في أقرب وقت"
+
+#: labqubit/templates/includes/lq_footer.html:37
+#: labqubit/templates/includes/lq_navbar.html:84
+#: labqubit/templates/includes/lq_navbar.html:160 labqubit/www/about.html:9
+#: labqubit/www/about.py:11
+msgid "About"
+msgstr "من نحن"
+
+#: labqubit/www/about.html:9
+msgid "About LabQubit"
+msgstr "عن LabQubit"
+
+#: labqubit/lq_careers/doctype/lq_job_opening/templates/lq_job_opening.html:19
+msgid "About the role"
+msgstr "عن الوظيفة"
+
+#: labqubit/lq_service_desk/doctype/lq_client_asset/lq_client_asset.json
+msgid "Access Point"
+msgstr "نقطة وصول لاسلكية"
+
+#: labqubit/api/portal_admin.py:44
+msgid "Access was granted, but the invitation email could not be sent. Check the outgoing email account, then use Reset Password on the user."
+msgstr "تم منح صلاحية الوصول، لكن تعذر إرسال رسالة الدعوة. تحقق من حساب البريد الصادر، ثم استخدم إعادة تعيين كلمة المرور للمستخدم."
+
+#: labqubit/lq_service_desk/doctype/lq_client/lq_client.json
+msgid "Account Manager"
+msgstr ""
+
+#: labqubit/www/about.html:22
+msgid "Accountable"
+msgstr "المسؤولية"
+
+#: labqubit/lq_service_desk/doctype/lq_amc_contract/lq_amc_contract.js:14
+msgid "Activate"
+msgstr "تفعيل"
+
+#: labqubit/lq_service_desk/doctype/lq_amc_contract/lq_amc_contract.json
+#: labqubit/lq_service_desk/doctype/lq_client/lq_client.json
+#: labqubit/lq_service_desk/doctype/lq_client_asset/lq_client_asset.json
+msgid "Active"
+msgstr "ساري"
+
+#: labqubit/lq_service_desk/doctype/lq_amc_contract/lq_amc_contract.json
+msgid "Active / Expiring Soon / Expired are set automatically from the dates"
+msgstr ""
+
+#: labqubit/www/portal/index.html:15
+msgid "Active contracts"
+msgstr "العقود السارية"
+
+#: labqubit/www/portal/ticket.html:31
+msgid "Add a reply"
+msgstr "إضافة رد"
+
+#: labqubit/lq_service_desk/doctype/lq_sla_policy/lq_sla_policy.py:16
+msgid "Add exactly one target for each priority: {0}."
+msgstr "أضف هدفًا واحدًا فقط لكل أولوية: {0}."
+
+#: labqubit/lq_service_desk/doctype/lq_client/lq_client.json
+#: labqubit/lq_website/doctype/lq_settings/lq_settings.json
+msgid "Address"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_settings/lq_settings.json
+msgid "Address (Arabic)"
+msgstr ""
+
+#: labqubit/www/portal/new-ticket.html:13
+msgid "Affected asset"
+msgstr "الأصل المتأثر"
+
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.json
+msgid "Afternoon (12-4)"
+msgstr "بعد الظهر (12-4)"
+
+#: labqubit/www/blog/index.html:12 labqubit/www/case-studies/index.html:14
+#: labqubit/www/portal/assets.html:8 labqubit/www/portal/documents.html:8
+#: labqubit/www/portal/tickets/index.html:7
+msgid "All"
+msgstr "الكل"
+
+#: labqubit/www/index.html:86
+msgid "All case studies"
+msgstr "جميع دراسات الحالة"
+
+#: labqubit/www/portal/contract.html:4
+msgid "All contracts"
+msgstr "جميع العقود"
+
+#: labqubit/templates/includes/lq_navbar.html:70
+msgid "All industries"
+msgstr "جميع القطاعات"
+
+#: labqubit/templates/includes/lq_footer.html:53
+msgid "All rights reserved."
+msgstr "جميع الحقوق محفوظة."
+
+#: labqubit/templates/includes/lq_footer.html:30 labqubit/www/index.html:26
+msgid "All services"
+msgstr "جميع الخدمات"
+
+#: labqubit/templates/includes/lq_navbar.html:61
+msgid "All solutions"
+msgstr "جميع الحلول"
+
+#: labqubit/www/portal/ticket.html:4
+msgid "All tickets"
+msgstr "جميع التذاكر"
+
+#: labqubit/lq_service_desk/doctype/lq_client_document/lq_client_document.json
+#: labqubit/www/portal/documents.html:15
+msgid "Amount"
+msgstr "المبلغ"
+
+#: labqubit/lq_website/doctype/lq_settings/lq_settings.json
+msgid "Animated counters on the home page. Leave 0 to hide a stat."
+msgstr ""
+
+#: labqubit/lq_service_desk/doctype/lq_amc_contract/lq_amc_contract.json
+msgid "Annual"
+msgstr "سنوي"
+
+#: labqubit/www/book-a-consultation.html:21
+msgid "Anything we should prepare?"
+msgstr "هل هناك ما يجب أن نحضّره؟"
+
+#: labqubit/lq_careers/doctype/lq_job_application/lq_job_application.json
+msgid "Applicant"
+msgstr ""
+
+#: labqubit/lq_careers/doctype/lq_job_application/lq_job_application.json
+msgid "Application"
+msgstr ""
+
+#: labqubit/lq_careers/doctype/lq_job_opening/lq_job_opening.json
+msgid "Applications Close On"
+msgstr ""
+
+#: labqubit/lq_careers/doctype/lq_job_opening/templates/lq_job_opening.html:12
+msgid "Applications closed"
+msgstr "انتهى التقديم"
+
+#: labqubit/lq_careers/doctype/lq_job_opening/templates/lq_job_opening.html:24
+msgid "Apply for this role"
+msgstr "قدّم على هذه الوظيفة"
+
+#: labqubit/lq_service_desk/doctype/lq_amc_asset/lq_amc_asset.json
+#: labqubit/lq_service_desk/doctype/lq_support_ticket/lq_support_ticket.json
+#: labqubit/www/portal/assets.html:15 labqubit/www/portal/contract.html:41
+#: labqubit/www/portal/ticket.html:52
+msgid "Asset"
+msgstr "الأصل"
+
+#: labqubit/lq_service_desk/doctype/lq_amc_asset/lq_amc_asset.json
+#: labqubit/lq_service_desk/doctype/lq_client_asset/lq_client_asset.json
+msgid "Asset Name"
+msgstr ""
+
+#: labqubit/lq_service_desk/doctype/lq_client_asset/lq_client_asset.json
+msgid "Asset Type"
+msgstr ""
+
+#: labqubit/lq_service_desk/doctype/lq_support_ticket/lq_support_ticket.py:85
+msgid "Asset {0} does not belong to {1}."
+msgstr "الأصل {0} لا يخص {1}."
+
+#: labqubit/lq_service_desk/doctype/lq_client/lq_client.js:35
+#: labqubit/templates/lq_portal.html:30 labqubit/www/portal/assets.html:4
+#: labqubit/www/portal/assets.py:10
+msgid "Assets"
+msgstr "الأصول"
+
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.py:66
+msgid "Assigned to"
+msgstr "مُسند إلى"
+
+#: labqubit/lq_service_desk/doctype/lq_support_ticket/lq_support_ticket.json
+msgid "At Risk"
+msgstr "معرض للخطر"
+
+#: labqubit/www/update-password.html:21
+msgid "At least 8 characters. Use a passphrase you don't use anywhere else."
+msgstr "8 أحرف على الأقل. استخدم عبارة مرور لا تستخدمها في أي مكان آخر."
+
+#: labqubit/api/portal.py:139
+msgid "Attach up to {0} files."
+msgstr "أرفق {0} ملفات كحد أقصى."
+
+#: labqubit/api/portal.py:110
+msgid "Attached: {0}"
+msgstr "المرفقات: {0}"
+
+#: labqubit/www/portal/new-ticket.html:16 labqubit/www/portal/ticket.html:64
+msgid "Attachments"
+msgstr "المرفقات"
+
+#: labqubit/lq_service_desk/doctype/lq_ticket_reply/lq_ticket_reply.json
+#: labqubit/lq_website/doctype/lq_testimonial/lq_testimonial.json
+msgid "Author"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_testimonial/lq_testimonial.json
+msgid "Author Name"
+msgstr ""
+
+#: labqubit/www/404.html:12 labqubit/www/message.html:15
+#: labqubit/www/thank-you.html:12
+msgid "Back to home"
+msgstr "العودة إلى الرئيسية"
+
+#: labqubit/www/login.html:53
+msgid "Back to sign in"
+msgstr "العودة إلى تسجيل الدخول"
+
+#: labqubit/lq_service_desk/doctype/lq_amc_contract/lq_amc_contract.json
+msgid "Basic"
+msgstr "أساسي"
+
+#: labqubit/lq_service_desk/doctype/lq_amc_contract/lq_amc_contract.json
+msgid "Billing Frequency"
+msgstr ""
+
+#: labqubit/templates/includes/lq_footer.html:37
+#: labqubit/templates/includes/lq_navbar.html:84
+#: labqubit/templates/includes/lq_navbar.html:160
+#: labqubit/www/blog/index.html:8 labqubit/www/blog/index.py:36
+#: labqubit/www/blog/post.html:11
+msgid "Blog"
+msgstr "المدونة"
+
+#: labqubit/labqubit/workspace/labqubit/labqubit.json
+msgid "Blog Post"
+msgstr ""
+
+#: labqubit/templates/components/sections.html:18
+#: labqubit/templates/includes/lq_detail_aside.html:10
+#: labqubit/www/book-a-consultation.html:6
+#: labqubit/www/book_a_consultation.py:10 labqubit/www/index.html:10
+msgid "Book a Consultation"
+msgstr "احجز استشارة"
+
+#: labqubit/templates/includes/lq_navbar.html:33
+#: labqubit/www/book-a-consultation.html:6
+msgid "Book a free consultation"
+msgstr "احجز استشارة مجانية"
+
+#: labqubit/www/book_a_consultation.py:11
+msgid "Book a free consultation with a LabQubit engineer."
+msgstr "احجز استشارة مجانية مع أحد مهندسي LabQubit."
+
+#: labqubit/lq_service_desk/doctype/lq_support_ticket/lq_support_ticket.json
+msgid "Breach Notified"
+msgstr ""
+
+#: labqubit/lq_service_desk/doctype/lq_support_ticket/lq_support_ticket.json
+msgid "Breached"
+msgstr "تم تجاوزه"
+
+#: labqubit/templates/components/ui.html:53
+msgid "Breadcrumb"
+msgstr "مسار التنقل"
+
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.py:59
+msgid "Budget"
+msgstr "الميزانية"
+
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.json
+#: labqubit/www/request-a-quote.html:21
+msgid "Budget (USD)"
+msgstr "الميزانية (بالدولار الأمريكي)"
+
+#: labqubit/www/careers/index.html:7
+msgid "Build the networks that keep organizations running"
+msgstr "ابنِ الشبكات التي تُبقي المؤسسات تعمل"
+
+#: labqubit/lq_website/doctype/lq_solution/templates/lq_solution.html:19
+msgid "Built for"
+msgstr "مصمم لـ"
+
+#: labqubit/templates/includes/lq_navbar.html:64
+msgid "By industry"
+msgstr "حسب القطاع"
+
+#: labqubit/templates/includes/lq_navbar.html:47
+msgid "By outcome"
+msgstr "حسب النتيجة"
+
+#: labqubit/lq_careers/doctype/lq_job_application/lq_job_application.json
+msgid "CV / Resume"
+msgstr ""
+
+#: labqubit/lq_careers/doctype/lq_job_opening/templates/lq_job_opening.html:33
+msgid "CV / resume"
+msgstr "السيرة الذاتية"
+
+#: labqubit/lq_service_desk/doctype/lq_amc_contract/lq_amc_contract.json
+msgid "Cancelled"
+msgstr "ملغى"
+
+#: labqubit/lq_website/doctype/lq_solution/lq_solution.json
+#: labqubit/lq_website/doctype/lq_solution/templates/lq_solution.html:17
+msgid "Capabilities"
+msgstr "القدرات"
+
+#: labqubit/labqubit/workspace/labqubit/labqubit.json
+#: labqubit/lq_careers/doctype/lq_job_opening/templates/lq_job_opening.html:7
+#: labqubit/templates/includes/lq_footer.html:37
+#: labqubit/templates/includes/lq_navbar.html:84
+#: labqubit/templates/includes/lq_navbar.html:160
+#: labqubit/website/context.py:236 labqubit/www/careers/index.html:9
+#: labqubit/www/careers/index.py:9
+msgid "Careers"
+msgstr "الوظائف"
+
+#: labqubit/templates/includes/lq_footer.html:45
+#: labqubit/templates/includes/lq_navbar.html:76
+#: labqubit/templates/includes/lq_navbar.html:160
+#: labqubit/website/context.py:213 labqubit/www/case-studies/index.html:10
+#: labqubit/www/case-studies/index.py:9
+msgid "Case Studies"
+msgstr "دراسات الحالة"
+
+#: labqubit/labqubit/workspace/labqubit/labqubit.json
+msgid "Case Study"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_industry/templates/lq_industry.html:25
+#: labqubit/www/case-studies/index.html:10 labqubit/www/index.html:85
+msgid "Case studies"
+msgstr "دراسات الحالة"
+
+#: labqubit/www/case-studies/index.html:25
+msgid "Case studies are coming soon"
+msgstr "دراسات الحالة قادمة قريبًا"
+
+#: labqubit/www/blog/index.html:10
+msgid "Categories"
+msgstr "التصنيفات"
+
+#: labqubit/lq_service_desk/doctype/lq_support_ticket/lq_support_ticket.json
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+#: labqubit/www/portal/new-ticket.html:12 labqubit/www/portal/ticket.html:51
+msgid "Category"
+msgstr "الفئة"
+
+#: labqubit/labqubit/workspace/labqubit/labqubit.json
+msgid "Certification"
+msgstr ""
+
+#: labqubit/www/about.html:39 labqubit/www/index.html:100
+#: labqubit/www/partners.html:32
+msgid "Certifications"
+msgstr "الشهادات"
+
+#: labqubit/lq_website/doctype/lq_case_study/lq_case_study.json
+msgid "Challenge"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_case_study/lq_case_study.json
+msgid "Challenge (Arabic)"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_industry/lq_industry.json
+msgid "Challenges"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_industry/lq_industry.json
+msgid "Challenges We Solve"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_industry/templates/lq_industry.html:17
+msgid "Challenges we solve"
+msgstr "التحديات التي نعالجها"
+
+#: labqubit/lq_service_desk/doctype/lq_support_ticket/lq_support_ticket.json
+msgid "Change Request"
+msgstr "طلب تغيير"
+
+#: labqubit/templates/lq_portal.html:40 labqubit/www/update-password.html:8
+msgid "Change password"
+msgstr "تغيير كلمة المرور"
+
+#: labqubit/www/blog/index.html:36
+msgid "Check back soon for insights from our engineers."
+msgstr "عد قريبًا لقراءة رؤى مهندسينا."
+
+#: labqubit/utils/forms.py:93
+msgid "Choose a date between today and the next {0} days."
+msgstr "اختر تاريخًا بين اليوم و{0} يومًا قادمًا."
+
+#: labqubit/utils/forms.py:62 labqubit/utils/forms.py:100
+msgid "Choose one of the listed options."
+msgstr "اختر أحد الخيارات المتاحة."
+
+#: labqubit/www/book-a-consultation.html:31
+msgid "Clear recommendations and next steps, whether or not you work with us."
+msgstr "توصيات واضحة وخطوات تالية، سواء عملت معنا أم لا."
+
+#: labqubit/labqubit/workspace/labqubit/labqubit.json
+#: labqubit/lq_service_desk/doctype/lq_amc_contract/lq_amc_contract.json
+#: labqubit/lq_service_desk/doctype/lq_client_asset/lq_client_asset.json
+#: labqubit/lq_service_desk/doctype/lq_client_document/lq_client_document.json
+#: labqubit/lq_service_desk/doctype/lq_support_ticket/lq_support_ticket.json
+#: labqubit/lq_service_desk/doctype/lq_support_ticket/lq_support_ticket.py:165
+#: labqubit/tasks.py:88
+msgid "Client"
+msgstr "العميل"
+
+#: labqubit/lq_website/doctype/lq_case_study/lq_case_study.json
+msgid "Client (as shown)"
+msgstr ""
+
+#: labqubit/labqubit/workspace/labqubit/labqubit.json
+msgid "Client Asset"
+msgstr ""
+
+#: labqubit/labqubit/workspace/labqubit/labqubit.json
+msgid "Client Document"
+msgstr ""
+
+#: labqubit/templates/includes/lq_navbar.html:101
+#: labqubit/templates/includes/lq_navbar.html:167
+msgid "Client Login"
+msgstr "دخول العملاء"
+
+#: labqubit/lq_website/doctype/lq_case_study/lq_case_study.json
+msgid "Client Logo"
+msgstr ""
+
+#: labqubit/lq_service_desk/doctype/lq_client/lq_client.json
+msgid "Client Name"
+msgstr ""
+
+#: labqubit/templates/includes/lq_footer.html:45
+msgid "Client Portal"
+msgstr "بوابة العملاء"
+
+#: labqubit/templates/lq_portal.html:23 labqubit/www/portal/index.py:10
+#: labqubit/www/privacy.html:15
+msgid "Client portal"
+msgstr "بوابة العملاء"
+
+#: labqubit/www/login.html:12
+msgid "Client portal and staff access"
+msgstr "بوابة العملاء ودخول الموظفين"
+
+#: labqubit/lq_service_desk/doctype/lq_support_ticket/lq_support_ticket.py:73
+msgid "Client replied on {0}: {1}"
+msgstr "رد العميل على {0}: {1}"
+
+#: labqubit/templates/components/sections.html:70
+msgid "Client stories"
+msgstr "قصص العملاء"
+
+#: labqubit/labqubit/workspace/labqubit/labqubit.json
+msgid "Clients"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_settings/lq_settings.json
+msgid "Clients Served"
+msgstr ""
+
+#: labqubit/www/about.py:21 labqubit/www/index.py:48
+msgid "Clients served"
+msgstr "عملاء خدمناهم"
+
+#: labqubit/templates/includes/lq_navbar.html:119
+msgid "Close menu"
+msgstr "إغلاق القائمة"
+
+#: labqubit/lq_careers/doctype/lq_job_opening/lq_job_opening.json
+#: labqubit/lq_service_desk/doctype/lq_support_ticket/lq_support_ticket.json
+msgid "Closed"
+msgstr "مغلق"
+
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.json
+msgid "Closed On"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+msgid "Cloud & Consulting"
+msgstr "السحابة والاستشارات"
+
+#: labqubit/lq_website/doctype/lq_settings/lq_settings.json
+msgid "Cloudflare Turnstile (free, privacy-friendly CAPTCHA). Forms always use a honeypot and rate limiting."
+msgstr ""
+
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.json
+msgid "Cold Outreach"
+msgstr ""
+
+#: labqubit/lq_service_desk/doctype/lq_amc_contract/lq_amc_contract.json
+msgid "Commercial"
+msgstr ""
+
+#: labqubit/api/leads.py:61 labqubit/lq_sales/doctype/lq_lead/lq_lead.json
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.py:54
+#: labqubit/lq_website/doctype/lq_settings/lq_settings.json
+#: labqubit/lq_website/doctype/lq_testimonial/lq_testimonial.json
+#: labqubit/templates/includes/lq_footer.html:35
+#: labqubit/templates/includes/lq_navbar.html:80
+#: labqubit/www/book-a-consultation.html:15 labqubit/www/contact.html:44
+#: labqubit/www/request-a-quote.html:15
+msgid "Company"
+msgstr "الشركة"
+
+#: labqubit/lq_website/doctype/lq_settings/lq_settings.json
+msgid "Company Name"
+msgstr ""
+
+#: labqubit/www/request-a-quote.html:30
+msgid "Confidential"
+msgstr "سرية تامة"
+
+#: labqubit/www/update-password.html:22
+msgid "Confirm new password"
+msgstr "تأكيد كلمة المرور الجديدة"
+
+#: labqubit/lq_careers/doctype/lq_job_application/lq_job_application.json
+msgid "Consented to Data Processing"
+msgstr ""
+
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.json
+msgid "Consented to be Contacted"
+msgstr ""
+
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.json
+msgid "Consultation"
+msgstr "استشارة"
+
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.json
+msgid "Consultation Details"
+msgstr ""
+
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.json
+#: labqubit/lq_service_desk/doctype/lq_client/lq_client.json
+#: labqubit/templates/includes/lq_footer.html:37
+#: labqubit/templates/includes/lq_navbar.html:84
+#: labqubit/templates/includes/lq_navbar.html:160 labqubit/www/contact.html:7
+#: labqubit/www/contact.py:9
+msgid "Contact"
+msgstr "اتصل بنا"
+
+#: labqubit/lq_service_desk/doctype/lq_support_ticket/lq_support_ticket.json
+msgid "Contact Email"
+msgstr ""
+
+#: labqubit/www/contact.py:10
+msgid "Contact LabQubit about networks, cybersecurity, data centers, managed services and web development."
+msgstr "تواصل مع LabQubit بشأن الشبكات والأمن السيبراني ومراكز البيانات والخدمات المُدارة وتطوير المواقع."
+
+#: labqubit/templates/lq_portal.html:16 labqubit/www/404.html:13
+msgid "Contact us"
+msgstr "تواصل معنا"
+
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.json
+msgid "Contacted"
+msgstr "تم التواصل"
+
+#: labqubit/www/login.html:38
+msgid "Continue with {0}"
+msgstr "المتابعة باستخدام {0}"
+
+#: labqubit/lq_careers/doctype/lq_job_opening/lq_job_opening.json
+#: labqubit/lq_service_desk/doctype/lq_client_document/lq_client_document.json
+#: labqubit/tasks.py:87 labqubit/www/portal/contract.py:11
+msgid "Contract"
+msgstr "العقد"
+
+#: labqubit/lq_service_desk/doctype/lq_amc_contract/lq_amc_contract.json
+msgid "Contract Title"
+msgstr ""
+
+#: labqubit/lq_service_desk/doctype/lq_amc_contract/lq_amc_contract.json
+msgid "Contract Value"
+msgstr ""
+
+#: labqubit/lq_service_desk/doctype/lq_client/lq_client.js:34
+msgid "Contracts"
+msgstr "العقود"
+
+#: labqubit/lq_service_desk/doctype/lq_support_ticket/lq_support_ticket.json
+#: labqubit/www/portal/ticket.html:14
+msgid "Conversation"
+msgstr "المحادثة"
+
+#: labqubit/www/privacy.html:13
+msgid "Cookies"
+msgstr "ملفات تعريف الارتباط"
+
+#: labqubit/www/update-password.html:60
+msgid "Could not update the password. It may be too weak."
+msgstr "تعذر تحديث كلمة المرور. قد تكون ضعيفة جدًا."
+
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.json
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.py:56
+#: labqubit/www/request-a-quote.html:17
+msgid "Country"
+msgstr "الدولة"
+
+#: labqubit/lq_website/doctype/lq_case_study/lq_case_study.json
+msgid "Cover Image"
+msgstr ""
+
+#: labqubit/lq_careers/doctype/lq_job_application/lq_job_application.json
+msgid "Cover Letter"
+msgstr ""
+
+#: labqubit/lq_careers/doctype/lq_job_opening/templates/lq_job_opening.html:34
+msgid "Cover letter"
+msgstr "خطاب التقديم"
+
+#: labqubit/tasks.py:89
+msgid "Coverage"
+msgstr "التغطية"
+
+#: labqubit/lq_service_desk/doctype/lq_amc_contract/lq_amc_contract.json
+msgid "Coverage Level"
+msgstr ""
+
+#: labqubit/lq_service_desk/doctype/lq_amc_contract/lq_amc_contract.json
+msgid "Covered Assets"
+msgstr ""
+
+#: labqubit/tasks.py:91 labqubit/www/portal/contract.html:38
+#: labqubit/www/portal/index.html:16
+msgid "Covered assets"
+msgstr "الأصول المشمولة"
+
+#: labqubit/lq_service_desk/doctype/lq_client/lq_client.js:7
+msgid "Create Portal User"
+msgstr "إنشاء مستخدم للبوابة"
+
+#: labqubit/lq_service_desk/doctype/lq_amc_contract/lq_amc_contract.js:7
+msgid "Create Renewal"
+msgstr "إنشاء تجديد"
+
+#: labqubit/lq_service_desk/doctype/lq_client/lq_client.js:16
+msgid "Create and send invite"
+msgstr "إنشاء وإرسال الدعوة"
+
+#: labqubit/lq_service_desk/doctype/lq_sla_target/lq_sla_target.json
+#: labqubit/lq_service_desk/doctype/lq_support_ticket/lq_support_ticket.json
+msgid "Critical"
+msgstr "حرج"
+
+#: labqubit/templates/components/hero.html:82
+msgid "Critical alerts"
+msgstr "تنبيهات حرجة"
+
+#: labqubit/www/portal/new-ticket.html:11
+msgid "Critical: outage, business stopped"
+msgstr "حرج: انقطاع كامل وتوقف العمل"
+
+#: labqubit/lq_service_desk/doctype/lq_amc_contract/lq_amc_contract.json
+#: labqubit/lq_service_desk/doctype/lq_client_document/lq_client_document.json
+msgid "Currency"
+msgstr ""
+
+#: labqubit/lq_careers/doctype/lq_job_application/lq_job_application.json
+msgid "Current Location"
+msgstr ""
+
+#: labqubit/lq_careers/doctype/lq_job_opening/templates/lq_job_opening.html:31
+msgid "Current location"
+msgstr "الموقع الحالي"
+
+#: labqubit/www/update-password.html:18
+msgid "Current password"
+msgstr "كلمة المرور الحالية"
+
+#: labqubit/www/request-a-quote.html:23
+msgid "Current setup, number of users, challenges, deadlines…"
+msgstr "الوضع الحالي، عدد المستخدمين، التحديات، المواعيد النهائية…"
+
+#: labqubit/lq_service_desk/doctype/lq_client/lq_client.json
+msgid "Customer ID in ERPNext, for the future integration"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+msgid "Cybersecurity"
+msgstr "الأمن السيبراني"
+
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+msgid "Data Center"
+msgstr "مراكز البيانات"
+
+#: labqubit/utils/forms.py:82 labqubit/www/portal/documents.html:15
+msgid "Date"
+msgstr "التاريخ"
+
+#: labqubit/lq_website/doctype/lq_settings/lq_settings.json
+msgid "Default Meta Description"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_settings/lq_settings.json
+msgid "Default Meta Description (Arabic)"
+msgstr ""
+
+#: labqubit/lq_service_desk/doctype/lq_sla_policy/lq_sla_policy.json
+msgid "Default Policy"
+msgstr ""
+
+#: labqubit/lq_service_desk/doctype/lq_client/lq_client.json
+#: labqubit/lq_website/doctype/lq_settings/lq_settings.json
+msgid "Default SLA Policy"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_settings/lq_settings.json
+msgid "Default Social Share Image"
+msgstr ""
+
+#: labqubit/lq_careers/doctype/lq_job_opening/lq_job_opening.json
+#: labqubit/lq_website/doctype/lq_case_study/lq_case_study.json
+#: labqubit/lq_website/doctype/lq_industry/lq_industry.json
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+#: labqubit/lq_website/doctype/lq_solution/lq_solution.json
+msgid "Defaults to the title. Keep under 60 characters."
+msgstr ""
+
+#: labqubit/lq_careers/doctype/lq_job_opening/lq_job_opening.json
+msgid "Department"
+msgstr ""
+
+#: labqubit/www/portal/new-ticket.html:5
+msgid "Describe the issue and we'll respond within your contract's SLA."
+msgstr "صف المشكلة وسنرد خلال مستوى الخدمة المتفق عليه في عقدك."
+
+#: labqubit/api/portal.py:58
+#: labqubit/lq_service_desk/doctype/lq_sla_policy/lq_sla_policy.json
+#: labqubit/lq_service_desk/doctype/lq_support_ticket/lq_support_ticket.json
+#: labqubit/lq_website/doctype/lq_certification/lq_certification.json
+#: labqubit/lq_website/doctype/lq_feature_item/lq_feature_item.json
+#: labqubit/lq_website/doctype/lq_industry/lq_industry.json
+#: labqubit/lq_website/doctype/lq_partner/lq_partner.json
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+#: labqubit/lq_website/doctype/lq_solution/lq_solution.json
+#: labqubit/www/portal/new-ticket.html:14
+msgid "Description"
+msgstr "الوصف"
+
+#: labqubit/lq_website/doctype/lq_certification/lq_certification.json
+#: labqubit/lq_website/doctype/lq_feature_item/lq_feature_item.json
+#: labqubit/lq_website/doctype/lq_industry/lq_industry.json
+#: labqubit/lq_website/doctype/lq_partner/lq_partner.json
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+#: labqubit/lq_website/doctype/lq_solution/lq_solution.json
+msgid "Description (Arabic)"
+msgstr ""
+
+#: labqubit/www/about.html:19
+msgid "Designs are documented, peer-reviewed and tested before anything goes live."
+msgstr "التصاميم موثقة ومراجعة من الزملاء ومختبرة قبل التشغيل الفعلي."
+
+#: labqubit/lq_careers/doctype/lq_job_opening/lq_job_opening.json
+#: labqubit/lq_service_desk/doctype/lq_support_ticket/lq_support_ticket.json
+#: labqubit/www/portal/ticket.html:48
+msgid "Details"
+msgstr "التفاصيل"
+
+#: labqubit/lq_website/doctype/lq_certification/lq_certification.json
+#: labqubit/lq_website/doctype/lq_industry/lq_industry.json
+#: labqubit/lq_website/doctype/lq_partner/lq_partner.json
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+#: labqubit/lq_website/doctype/lq_solution/lq_solution.json
+#: labqubit/lq_website/doctype/lq_testimonial/lq_testimonial.json
+msgid "Display Order"
+msgstr ""
+
+#: labqubit/www/portal/documents.html:15
+msgid "Document"
+msgstr "المستند"
+
+#: labqubit/lq_service_desk/doctype/lq_client_document/lq_client_document.json
+msgid "Document Date"
+msgstr ""
+
+#: labqubit/lq_service_desk/doctype/lq_client_document/lq_client_document.json
+msgid "Document Type"
+msgstr ""
+
+#: labqubit/templates/lq_portal.html:31 labqubit/www/portal/documents.html:4
+#: labqubit/www/portal/documents.py:10 labqubit/www/portal/index.html:17
+msgid "Documents"
+msgstr "المستندات"
+
+#: labqubit/www/portal/documents.html:23
+msgid "Download"
+msgstr "تنزيل"
+
+#: labqubit/www/portal/contract.html:19
+msgid "Download signed contract"
+msgstr "تنزيل العقد الموقّع"
+
+#: labqubit/lq_service_desk/doctype/lq_amc_contract/lq_amc_contract.json
+msgid "Draft"
+msgstr "مسودة"
+
+#: labqubit/lq_service_desk/doctype/lq_client/lq_client.json
+msgid "ERPNext Customer"
+msgstr ""
+
+#: labqubit/lq_careers/doctype/lq_job_application/lq_job_application.json
+#: labqubit/lq_careers/doctype/lq_job_application/lq_job_application.py:27
+#: labqubit/lq_careers/doctype/lq_job_opening/templates/lq_job_opening.html:28
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.json
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.py:52
+#: labqubit/lq_service_desk/doctype/lq_client/lq_client.js:11
+#: labqubit/lq_service_desk/doctype/lq_client/lq_client.json
+#: labqubit/utils/forms.py:47 labqubit/www/contact.html:13
+#: labqubit/www/login.html:21 labqubit/www/login.html:49
+msgid "Email"
+msgstr "البريد الإلكتروني"
+
+#: labqubit/lq_careers/doctype/lq_job_opening/lq_job_opening.json
+msgid "Employment Type"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_settings/lq_settings.json
+msgid "Enable Turnstile"
+msgstr ""
+
+#: labqubit/lq_service_desk/doctype/lq_amc_contract/lq_amc_contract.json
+msgid "End Date"
+msgstr ""
+
+#: labqubit/lq_service_desk/doctype/lq_amc_contract/lq_amc_contract.py:18
+msgid "End date must be after the start date."
+msgstr "يجب أن يكون تاريخ الانتهاء بعد تاريخ البدء."
+
+#: labqubit/www/index.html:24
+msgid "End-to-end infrastructure, engineered for uptime"
+msgstr "بنية تحتية متكاملة، مصممة لاستمرارية العمل"
+
+#: labqubit/www/portal/contract.html:15
+msgid "Ended"
+msgstr "منتهٍ"
+
+#: labqubit/tasks.py:90
+msgid "Ends on"
+msgstr "ينتهي في"
+
+#: labqubit/lq_careers/doctype/lq_job_opening/lq_job_opening.json
+msgid "Engineering"
+msgstr "الهندسة"
+
+#: labqubit/www/about.html:19
+msgid "Engineering first"
+msgstr "الهندسة أولًا"
+
+#: labqubit/www/industries/index.html:8
+msgid "Engineering for environments that can't go down"
+msgstr "هندسة لبيئات لا تحتمل التوقف"
+
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.json
+msgid "Enquiry Type"
+msgstr ""
+
+#: labqubit/api/leads.py:132
+msgid "Enter a full link starting with https://"
+msgstr "أدخل رابطًا كاملًا يبدأ بـ https://"
+
+#: labqubit/utils/forms.py:76
+msgid "Enter a number between {0} and {1}."
+msgstr "أدخل رقمًا بين {0} و{1}."
+
+#: labqubit/utils/forms.py:89
+msgid "Enter a valid date."
+msgstr "أدخل تاريخًا صحيحًا."
+
+#: labqubit/api/portal_admin.py:20 labqubit/utils/forms.py:49
+msgid "Enter a valid email address."
+msgstr "أدخل بريدًا إلكترونيًا صحيحًا."
+
+#: labqubit/utils/forms.py:56
+msgid "Enter a valid phone number."
+msgstr "أدخل رقم هاتف صحيحًا."
+
+#: labqubit/www/login.html:45
+msgid "Enter your email and we'll send you a link to reset your password."
+msgstr "أدخل بريدك الإلكتروني وسنرسل لك رابطًا لإعادة تعيين كلمة المرور."
+
+#: labqubit/www/portal/assets.html:4
+msgid "Equipment registered under your account."
+msgstr "المعدات المسجلة في حسابك."
+
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.json
+msgid "Estimated Value"
+msgstr ""
+
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.json
+msgid "Evening (4-6)"
+msgstr "المساء (4-6)"
+
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.json
+msgid "Event"
+msgstr ""
+
+#: labqubit/www/about.html:14
+msgid "Every organization now depends on its network. When it slows down, people stop working; when it is breached, trust is lost. We started LabQubit to give enterprises and public institutions an engineering partner that takes that responsibility seriously."
+msgstr "تعتمد كل مؤسسة اليوم على شبكتها. عندما تتباطأ يتوقف الموظفون عن العمل، وعندما تُخترق تُفقد الثقة. أسسنا LabQubit لنمنح المؤسسات والجهات الحكومية شريكًا هندسيًا يتحمل هذه المسؤولية بجدية."
+
+#: labqubit/www/services/index.html:8
+msgid "Everything your infrastructure needs, from one accountable team"
+msgstr "كل ما تحتاجه بنيتك التحتية، من فريق واحد مسؤول"
+
+#: labqubit/www/contact.html:34
+msgid "Existing client?"
+msgstr "عميل حالي؟"
+
+#: labqubit/lq_careers/doctype/lq_job_opening/lq_job_opening.json
+msgid "Experience"
+msgstr ""
+
+#: labqubit/www/request-a-quote.html:29
+msgid "Experienced engineers"
+msgstr "مهندسون ذوو خبرة"
+
+#: labqubit/www/index.html:12
+msgid "Experienced, qualified engineers"
+msgstr "مهندسون ذوو خبرة وكفاءة"
+
+#: labqubit/lq_service_desk/doctype/lq_amc_contract/lq_amc_contract.json
+#: labqubit/www/portal/assets.html:24
+msgid "Expired"
+msgstr "منتهي"
+
+#: labqubit/lq_service_desk/doctype/lq_amc_contract/lq_amc_contract.json
+msgid "Expiring Soon"
+msgstr "ينتهي قريبًا"
+
+#: labqubit/www/thank-you.html:13
+msgid "Explore case studies"
+msgstr "استكشف دراسات الحالة"
+
+#: labqubit/www/index.html:64
+msgid "Explore industries"
+msgstr "استكشف القطاعات"
+
+#: labqubit/www/index.html:50 labqubit/www/solutions/index.html:20
+msgid "Explore solution"
+msgstr "استكشف الحل"
+
+#: labqubit/lq_website/doctype/lq_settings/lq_settings.json
+msgid "Facebook"
+msgstr ""
+
+#: labqubit/lq_service_desk/doctype/lq_client_document/lq_client_document.json
+msgid "File"
+msgstr ""
+
+#: labqubit/www/case-studies/index.html:13
+msgid "Filter by industry"
+msgstr "تصفية حسب القطاع"
+
+#: labqubit/www/portal/tickets/index.html:6
+msgid "Filter by status"
+msgstr "تصفية حسب الحالة"
+
+#: labqubit/www/portal/assets.html:7 labqubit/www/portal/documents.html:7
+msgid "Filter by type"
+msgstr "تصفية حسب النوع"
+
+#: labqubit/lq_service_desk/doctype/lq_client_asset/lq_client_asset.json
+msgid "Firewall"
+msgstr "جدار حماية"
+
+#: labqubit/templates/components/hero.html:82
+msgid "Firewall cluster"
+msgstr "مجموعة جدران الحماية"
+
+#: labqubit/lq_service_desk/doctype/lq_client/lq_client.js:12
+msgid "First Name"
+msgstr "الاسم الأول"
+
+#: labqubit/lq_service_desk/doctype/lq_support_ticket/lq_support_ticket.json
+msgid "First Responded On"
+msgstr ""
+
+#: labqubit/lq_service_desk/doctype/lq_support_ticket/lq_support_ticket.json
+msgid "First Response Due"
+msgstr ""
+
+#: labqubit/www/portal/ticket.html:55
+msgid "First responded"
+msgstr "تاريخ أول رد"
+
+#: labqubit/www/portal/contract.html:27
+msgid "First response"
+msgstr "أول رد"
+
+#: labqubit/www/portal/ticket.html:54
+msgid "First response due"
+msgstr "موعد أول رد"
+
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.json
+msgid "Follow-up"
+msgstr ""
+
+#: labqubit/www/login.html:25
+msgid "Forgot password?"
+msgstr "نسيت كلمة المرور؟"
+
+#: labqubit/www/request-a-quote.html:6
+msgid "Free, no-obligation proposal"
+msgstr "عرض مجاني ودون أي التزام"
+
+#: labqubit/www/index.html:25
+msgid "From the first cable to the web applications your customers use, one accountable team designs, builds and operates your environment."
+msgstr "من أول كابل إلى تطبيقات الويب التي يستخدمها عملاؤك، فريق واحد مسؤول يصمم بيئتك وينفذها ويشغّلها."
+
+#: labqubit/lq_careers/doctype/lq_job_application/lq_job_application.json
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.json
+#: labqubit/lq_service_desk/doctype/lq_client_user/lq_client_user.json
+msgid "Full Name"
+msgstr ""
+
+#: labqubit/api/leads.py:58 labqubit/api/leads.py:123
+#: labqubit/lq_careers/doctype/lq_job_opening/templates/lq_job_opening.html:27
+#: labqubit/www/book-a-consultation.html:12 labqubit/www/contact.html:41
+#: labqubit/www/request-a-quote.html:12
+msgid "Full name"
+msgstr "الاسم الكامل"
+
+#: labqubit/lq_careers/doctype/lq_job_opening/lq_job_opening.json
+msgid "Full-time"
+msgstr "دوام كامل"
+
+#: labqubit/templates/includes/lq_detail_aside.html:6
+msgid "Get a tailored proposal"
+msgstr "احصل على عرض مخصص"
+
+#: labqubit/lq_service_desk/doctype/lq_client/lq_client.js:9
+msgid "Give portal access"
+msgstr "منح صلاحية الوصول إلى البوابة"
+
+#: labqubit/www/contact.html:36
+msgid "Go to client portal"
+msgstr "الانتقال إلى بوابة العملاء"
+
+#: labqubit/www/update-password.html:12
+msgid "Go to sign in"
+msgstr "الانتقال إلى تسجيل الدخول"
+
+#: labqubit/lq_website/doctype/lq_settings/lq_settings.json
+msgid "Google Site Verification Code"
+msgstr ""
+
+#: labqubit/templates/components/hero.html:82
+msgid "Healthy"
+msgstr "سليم"
+
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.py:95
+msgid "Hello {0},"
+msgstr "مرحبًا {0}،"
+
+#: labqubit/www/portal/index.html:4
+msgid "Here's the current state of your services with LabQubit."
+msgstr "إليك الوضع الحالي لخدماتك مع LabQubit."
+
+#: labqubit/lq_website/doctype/lq_settings/lq_settings.json
+msgid "Hero Eyebrow"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_settings/lq_settings.json
+msgid "Hero Eyebrow (Arabic)"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_settings/lq_settings.json
+msgid "Hero Headline"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_settings/lq_settings.json
+msgid "Hero Headline (Arabic)"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_industry/lq_industry.json
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+#: labqubit/lq_website/doctype/lq_solution/lq_solution.json
+msgid "Hero Image"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_settings/lq_settings.json
+msgid "Hero Subheadline"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_settings/lq_settings.json
+msgid "Hero Subheadline (Arabic)"
+msgstr ""
+
+#: labqubit/lq_service_desk/doctype/lq_sla_target/lq_sla_target.json
+#: labqubit/lq_service_desk/doctype/lq_support_ticket/lq_support_ticket.json
+msgid "High"
+msgstr "عالٍ"
+
+#: labqubit/www/portal/new-ticket.html:11
+msgid "High: major service impact"
+msgstr "عالٍ: تأثير كبير على الخدمة"
+
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+msgid "Highlights"
+msgstr ""
+
+#: labqubit/lq_careers/doctype/lq_job_application/lq_job_application.json
+msgid "Hired"
+msgstr "تم التعيين"
+
+#: labqubit/templates/components/ui.html:55 labqubit/website/context.py:298
+#: labqubit/www/message.html:13
+msgid "Home"
+msgstr "الرئيسية"
+
+#: labqubit/lq_website/doctype/lq_settings/lq_settings.json
+msgid "Home Page"
+msgstr ""
+
+#: labqubit/www/about.html:21
+msgid "Honest advice"
+msgstr "نصيحة صادقة"
+
+#: labqubit/www/case-studies/index.py:10
+msgid "How LabQubit delivers secure, high-performance infrastructure for its clients."
+msgstr "كيف تقدم LabQubit بنية تحتية آمنة وعالية الأداء لعملائها."
+
+#: labqubit/www/contact.html:45
+msgid "How can we help?"
+msgstr "كيف يمكننا مساعدتك؟"
+
+#: labqubit/www/privacy.html:5
+msgid "How this website collects and uses your information."
+msgstr "كيف يجمع هذا الموقع معلوماتك ويستخدمها."
+
+#: labqubit/www/privacy.html:11
+msgid "How we use it"
+msgstr "كيف نستخدمها"
+
+#: labqubit/templates/components/forms.html:68
+msgid "I agree that LabQubit may contact me about this request. See our {0}."
+msgstr "أوافق على أن تتواصل معي LabQubit بخصوص هذا الطلب. راجع {0}."
+
+#: labqubit/lq_careers/doctype/lq_job_opening/templates/lq_job_opening.html:26
+msgid "I agree that LabQubit may store and process my application for recruitment purposes. See our {0}."
+msgstr "أوافق على أن تحفظ LabQubit طلبي وتعالجه لأغراض التوظيف. راجع {0}."
+
+#: labqubit/lq_careers/doctype/lq_job_application/lq_job_application.json
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.json
+msgid "IP Address"
+msgstr ""
+
+#: labqubit/www/industries/index.py:8
+msgid "IT infrastructure and security for enterprise, government, oil & gas and hospitality."
+msgstr "البنية التحتية لتقنية المعلومات وأمنها للمؤسسات والجهات الحكومية وقطاعي النفط والغاز والضيافة."
+
+#: labqubit/lq_website/doctype/lq_feature_item/lq_feature_item.json
+#: labqubit/lq_website/doctype/lq_industry/lq_industry.json
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+#: labqubit/lq_website/doctype/lq_solution/lq_solution.json
+msgid "Icon"
+msgstr ""
+
+#: labqubit/www/login.html:131
+msgid "If an account exists for that email, a reset link is on its way."
+msgstr "إذا كان هناك حساب بهذا البريد، فإن رابط إعادة التعيين في طريقه إليك."
+
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.py:101
+msgid "If you need to add anything, simply reply to this email."
+msgstr "إذا أردت إضافة أي شيء، فقط رد على هذه الرسالة."
+
+#: labqubit/lq_service_desk/doctype/lq_support_ticket/lq_support_ticket.json
+msgid "In Progress"
+msgstr "قيد التنفيذ"
+
+#: labqubit/lq_service_desk/doctype/lq_client_asset/lq_client_asset.json
+msgid "In Repair"
+msgstr "قيد الإصلاح"
+
+#: labqubit/lq_website/doctype/lq_settings/lq_settings.json
+msgid "In addition to the assigned salesperson"
+msgstr ""
+
+#: labqubit/lq_service_desk/doctype/lq_client/lq_client.json
+msgid "Inactive"
+msgstr "غير نشط"
+
+#: labqubit/lq_service_desk/doctype/lq_support_ticket/lq_support_ticket.json
+msgid "Incident"
+msgstr "حادث"
+
+#: labqubit/www/login.html:110
+msgid "Incorrect email or password."
+msgstr "البريد الإلكتروني أو كلمة المرور غير صحيحة."
+
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+#: labqubit/lq_website/doctype/lq_solution/lq_solution.json
+#: labqubit/templates/includes/lq_footer.html:45
+#: labqubit/templates/includes/lq_navbar.html:152
+#: labqubit/website/context.py:203 labqubit/www/index.html:62
+#: labqubit/www/industries/index.html:10 labqubit/www/industries/index.py:7
+msgid "Industries"
+msgstr "القطاعات"
+
+#: labqubit/www/industries/index.html:15
+msgid "Industries are coming soon"
+msgstr "القطاعات قادمة قريبًا"
+
+#: labqubit/lq_website/doctype/lq_service/templates/lq_service.html:19
+msgid "Industries we serve"
+msgstr "القطاعات التي نخدمها"
+
+#: labqubit/labqubit/workspace/labqubit/labqubit.json
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.json
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.py:57
+#: labqubit/lq_service_desk/doctype/lq_client/lq_client.json
+#: labqubit/lq_website/doctype/lq_case_study/lq_case_study.json
+#: labqubit/lq_website/doctype/lq_case_study/templates/lq_case_study.html:41
+#: labqubit/lq_website/doctype/lq_industry/templates/lq_industry.html:8
+#: labqubit/lq_website/doctype/lq_industry_link/lq_industry_link.json
+#: labqubit/lq_website/doctype/lq_testimonial/lq_testimonial.json
+#: labqubit/www/request-a-quote.html:18
+msgid "Industry"
+msgstr "القطاع"
+
+#: labqubit/www/blog/index.html:6
+msgid "Insights from the field"
+msgstr "رؤى من الميدان"
+
+#: labqubit/www/blog/index.py:37
+msgid "Insights on networks, cybersecurity and data centers from LabQubit engineers."
+msgstr "رؤى حول الشبكات والأمن السيبراني ومراكز البيانات من مهندسي LabQubit."
+
+#: labqubit/lq_website/doctype/lq_settings/lq_settings.json
+msgid "Instagram"
+msgstr ""
+
+#: labqubit/lq_service_desk/doctype/lq_client_asset/lq_client_asset.json
+msgid "Installed On"
+msgstr ""
+
+#: labqubit/lq_service_desk/doctype/lq_client/lq_client.json
+#: labqubit/lq_service_desk/doctype/lq_client_asset/lq_client_asset.json
+#: labqubit/lq_service_desk/doctype/lq_client_document/lq_client_document.json
+msgid "Internal Notes"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_settings/lq_settings.json
+msgid "International format, digits only, e.g. 9715XXXXXXXX"
+msgstr ""
+
+#: labqubit/lq_careers/doctype/lq_job_opening/lq_job_opening.json
+msgid "Internship"
+msgstr "تدريب"
+
+#: labqubit/lq_careers/doctype/lq_job_application/lq_job_application.json
+msgid "Interview"
+msgstr "مقابلة"
+
+#: labqubit/lq_service_desk/doctype/lq_client_document/lq_client_document.json
+msgid "Invoice"
+msgstr "فاتورة"
+
+#: labqubit/www/portal/ticket.html:81
+msgid "Issue fixed on your side?"
+msgstr "هل تم حل المشكلة من جهتك؟"
+
+#: labqubit/lq_website/doctype/lq_certification/lq_certification.json
+msgid "Issuer"
+msgstr ""
+
+#: labqubit/labqubit/workspace/labqubit/labqubit.json
+msgid "Job Application"
+msgstr ""
+
+#: labqubit/labqubit/workspace/labqubit/labqubit.json
+#: labqubit/lq_careers/doctype/lq_job_application/lq_job_application.json
+msgid "Job Opening"
+msgstr ""
+
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.json
+#: labqubit/lq_website/doctype/lq_testimonial/lq_testimonial.json
+msgid "Job Title"
+msgstr ""
+
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.py:55
+#: labqubit/www/book-a-consultation.html:19
+#: labqubit/www/request-a-quote.html:16
+msgid "Job title"
+msgstr "المسمى الوظيفي"
+
+#: labqubit/www/careers/index.py:10
+msgid "Join LabQubit's team of network, security, data center and web engineers."
+msgstr "انضم إلى فريق LabQubit من مهندسي الشبكات والأمن ومراكز البيانات والويب."
+
+#: labqubit/www/blog/post.html:25
+msgid "Keep reading"
+msgstr "تابع القراءة"
+
+#: labqubit/lq_website/doctype/lq_case_study/lq_case_study.json
+msgid "Key Metrics"
+msgstr ""
+
+#: labqubit/lq_service_desk/doctype/lq_amc_asset/lq_amc_asset.json
+msgid "LQ AMC Asset"
+msgstr ""
+
+#: labqubit/lq_service_desk/doctype/lq_amc_contract/lq_amc_contract.json
+msgid "LQ AMC Contract"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_case_study/lq_case_study.json
+msgid "LQ Case Study"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_certification/lq_certification.json
+msgid "LQ Certification"
+msgstr ""
+
+#: labqubit/lq_service_desk/doctype/lq_amc_contract/lq_amc_contract.json
+#: labqubit/lq_service_desk/doctype/lq_client/lq_client.json
+#: labqubit/lq_service_desk/doctype/lq_client_asset/lq_client_asset.json
+#: labqubit/lq_service_desk/doctype/lq_client_document/lq_client_document.json
+#: labqubit/lq_service_desk/doctype/lq_support_ticket/lq_support_ticket.json
+msgid "LQ Client"
+msgstr ""
+
+#: labqubit/lq_service_desk/doctype/lq_client_asset/lq_client_asset.json
+msgid "LQ Client Asset"
+msgstr ""
+
+#: labqubit/lq_service_desk/doctype/lq_client_document/lq_client_document.json
+msgid "LQ Client Document"
+msgstr ""
+
+#: labqubit/lq_service_desk/doctype/lq_client_user/lq_client_user.json
+msgid "LQ Client User"
+msgstr ""
+
+#: labqubit/lq_careers/doctype/lq_job_opening/lq_job_opening.json
+#: labqubit/lq_website/doctype/lq_case_study/lq_case_study.json
+#: labqubit/lq_website/doctype/lq_certification/lq_certification.json
+#: labqubit/lq_website/doctype/lq_industry/lq_industry.json
+#: labqubit/lq_website/doctype/lq_partner/lq_partner.json
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+#: labqubit/lq_website/doctype/lq_settings/lq_settings.json
+#: labqubit/lq_website/doctype/lq_solution/lq_solution.json
+#: labqubit/lq_website/doctype/lq_testimonial/lq_testimonial.json
+msgid "LQ Content Editor"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_feature_item/lq_feature_item.json
+msgid "LQ Feature Item"
+msgstr ""
+
+#: labqubit/lq_careers/doctype/lq_job_application/lq_job_application.json
+#: labqubit/lq_careers/doctype/lq_job_opening/lq_job_opening.json
+msgid "LQ HR User"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_industry/lq_industry.json
+msgid "LQ Industry"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_industry_link/lq_industry_link.json
+msgid "LQ Industry Link"
+msgstr ""
+
+#: labqubit/lq_careers/doctype/lq_job_application/lq_job_application.json
+msgid "LQ Job Application"
+msgstr ""
+
+#: labqubit/lq_careers/doctype/lq_job_opening/lq_job_opening.json
+msgid "LQ Job Opening"
+msgstr ""
+
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.json
+msgid "LQ Lead"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_metric/lq_metric.json
+msgid "LQ Metric"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_partner/lq_partner.json
+msgid "LQ Partner"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_partner_link/lq_partner_link.json
+msgid "LQ Partner Link"
+msgstr ""
+
+#: labqubit/lq_service_desk/doctype/lq_sla_policy/lq_sla_policy.json
+msgid "LQ SLA Policy"
+msgstr ""
+
+#: labqubit/lq_service_desk/doctype/lq_sla_target/lq_sla_target.json
+msgid "LQ SLA Target"
+msgstr ""
+
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.json
+#: labqubit/lq_service_desk/doctype/lq_amc_contract/lq_amc_contract.json
+#: labqubit/lq_service_desk/doctype/lq_client/lq_client.json
+#: labqubit/lq_service_desk/doctype/lq_client_document/lq_client_document.json
+msgid "LQ Sales Manager"
+msgstr ""
+
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.json
+#: labqubit/lq_service_desk/doctype/lq_client/lq_client.json
+#: labqubit/lq_website/doctype/lq_case_study/lq_case_study.json
+#: labqubit/lq_website/doctype/lq_industry/lq_industry.json
+#: labqubit/lq_website/doctype/lq_partner/lq_partner.json
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+#: labqubit/lq_website/doctype/lq_solution/lq_solution.json
+msgid "LQ Sales User"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+msgid "LQ Service"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_service_link/lq_service_link.json
+msgid "LQ Service Link"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_settings/lq_settings.json
+msgid "LQ Settings"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_solution/lq_solution.json
+msgid "LQ Solution"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_solution_link/lq_solution_link.json
+msgid "LQ Solution Link"
+msgstr ""
+
+#: labqubit/lq_service_desk/doctype/lq_amc_contract/lq_amc_contract.json
+#: labqubit/lq_service_desk/doctype/lq_client/lq_client.json
+#: labqubit/lq_service_desk/doctype/lq_client_asset/lq_client_asset.json
+#: labqubit/lq_service_desk/doctype/lq_client_document/lq_client_document.json
+#: labqubit/lq_service_desk/doctype/lq_sla_policy/lq_sla_policy.json
+#: labqubit/lq_service_desk/doctype/lq_support_ticket/lq_support_ticket.json
+msgid "LQ Support Agent"
+msgstr ""
+
+#: labqubit/lq_service_desk/doctype/lq_amc_contract/lq_amc_contract.json
+#: labqubit/lq_service_desk/doctype/lq_client/lq_client.json
+#: labqubit/lq_service_desk/doctype/lq_client_asset/lq_client_asset.json
+#: labqubit/lq_service_desk/doctype/lq_client_document/lq_client_document.json
+#: labqubit/lq_service_desk/doctype/lq_sla_policy/lq_sla_policy.json
+#: labqubit/lq_service_desk/doctype/lq_support_ticket/lq_support_ticket.json
+msgid "LQ Support Manager"
+msgstr ""
+
+#: labqubit/lq_service_desk/doctype/lq_support_ticket/lq_support_ticket.json
+msgid "LQ Support Ticket"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_testimonial/lq_testimonial.json
+msgid "LQ Testimonial"
+msgstr ""
+
+#: labqubit/lq_service_desk/doctype/lq_ticket_reply/lq_ticket_reply.json
+msgid "LQ Ticket Reply"
+msgstr ""
+
+#: labqubit/labqubit/workspace/labqubit/labqubit.json
+msgid "LabQubit"
+msgstr ""
+
+#: labqubit/templates/includes/lq_meta.html:4 labqubit/www/index.py:19
+msgid "LabQubit designs, builds and runs networks, security, cloud infrastructure and web applications for enterprises, government, oil & gas and hospitality, backed by experienced, qualified engineers and measurable SLAs."
+msgstr "تصمم LabQubit وتنفذ وتشغّل الشبكات والأمن والبنية التحتية السحابية وتطبيقات الويب للمؤسسات والقطاع الحكومي وقطاع النفط والغاز والضيافة، بدعم من مهندسين ذوي خبرة وكفاءة واتفاقيات مستوى خدمة قابلة للقياس."
+
+#: labqubit/templates/includes/lq_footer.html:12
+#: labqubit/templates/includes/lq_navbar.html:8
+#: labqubit/templates/includes/lq_navbar.html:118
+msgid "LabQubit home"
+msgstr "الصفحة الرئيسية لـ LabQubit"
+
+#: labqubit/www/about.html:8
+msgid "LabQubit is an IT solutions provider focused on networks, cybersecurity, data centers, web applications and the managed services that keep them healthy."
+msgstr "LabQubit مزوّد حلول تقنية معلومات يركّز على الشبكات والأمن السيبراني ومراكز البيانات وتطبيقات الويب والخدمات المُدارة التي تحافظ على سلامتها."
+
+#: labqubit/www/about.py:12
+msgid "LabQubit is an IT solutions provider specializing in networks, cybersecurity, data centers, managed services and web development."
+msgstr "LabQubit مزوّد حلول تقنية معلومات متخصص في الشبكات والأمن السيبراني ومراكز البيانات والخدمات المُدارة وتطوير الويب."
+
+#: labqubit/lq_website/doctype/lq_metric/lq_metric.json
+msgid "Label"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_metric/lq_metric.json
+msgid "Label (Arabic)"
+msgstr ""
+
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.json
+msgid "Language"
+msgstr ""
+
+#: labqubit/lq_service_desk/doctype/lq_client/lq_client.js:13
+msgid "Last Name"
+msgstr "اسم العائلة"
+
+#: labqubit/www/portal/index.html:39
+msgid "Latest documents"
+msgstr "أحدث المستندات"
+
+#: labqubit/labqubit/workspace/labqubit/labqubit.json
+msgid "Lead"
+msgstr ""
+
+#: labqubit/labqubit/workspace/labqubit/labqubit.json
+msgid "Lead Conversion Rate"
+msgstr ""
+
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.json
+msgid "Lead Owner"
+msgstr ""
+
+#: labqubit/labqubit/workspace/labqubit/labqubit.json
+msgid "Lead Pipeline"
+msgstr ""
+
+#: labqubit/labqubit/workspace/labqubit/labqubit.json
+msgid "Leads"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_settings/lq_settings.json
+msgid "Leads & Support"
+msgstr ""
+
+#: labqubit/labqubit/workspace/labqubit/labqubit.json
+msgid "Leads by Source"
+msgstr ""
+
+#: labqubit/labqubit/workspace/labqubit/labqubit.json
+msgid "Leads per Month"
+msgstr ""
+
+#: labqubit/www/careers/index.html:16
+msgid "Learn from engineers with decades of field experience."
+msgstr "تعلّم من مهندسين يملكون عقودًا من الخبرة الميدانية."
+
+#: labqubit/templates/components/cards.html:13
+msgid "Learn more"
+msgstr "اعرف المزيد"
+
+#: labqubit/templates/components/forms.html:56
+msgid "Leave this field empty"
+msgstr "اترك هذا الحقل فارغًا"
+
+#: labqubit/templates/components/sections.html:13
+msgid "Let's design your next network, together."
+msgstr "لنصمم شبكتك القادمة معًا."
+
+#: labqubit/www/contact.html:7
+msgid "Let's talk about your infrastructure"
+msgstr "لنتحدث عن بنيتك التحتية"
+
+#: labqubit/lq_careers/doctype/lq_job_application/lq_job_application.py:31
+#: labqubit/lq_website/doctype/lq_settings/lq_settings.json
+msgid "LinkedIn"
+msgstr "LinkedIn"
+
+#: labqubit/lq_careers/doctype/lq_job_application/lq_job_application.json
+msgid "LinkedIn Profile"
+msgstr ""
+
+#: labqubit/lq_careers/doctype/lq_job_opening/templates/lq_job_opening.html:30
+msgid "LinkedIn profile"
+msgstr "ملف LinkedIn"
+
+#: labqubit/lq_careers/doctype/lq_job_application/lq_job_application.py:29
+#: labqubit/lq_careers/doctype/lq_job_opening/lq_job_opening.json
+#: labqubit/www/portal/assets.html:15 labqubit/www/portal/contract.html:41
+msgid "Location"
+msgstr "الموقع"
+
+#: labqubit/lq_service_desk/doctype/lq_client_asset/lq_client_asset.json
+msgid "Location & Dates"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_certification/lq_certification.json
+msgid "Logo"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_settings/lq_settings.json
+msgid "Logo (dark backgrounds)"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_partner/lq_partner.json
+msgid "Logo (for dark backgrounds)"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_partner/lq_partner.json
+msgid "Logo (for light backgrounds)"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_settings/lq_settings.json
+msgid "Logo (light backgrounds)"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_partner/lq_partner.json
+msgid "Logos"
+msgstr ""
+
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.json
+msgid "Lost"
+msgstr "خاسرة"
+
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.json
+msgid "Lost Reason"
+msgstr ""
+
+#: labqubit/lq_service_desk/doctype/lq_sla_target/lq_sla_target.json
+#: labqubit/lq_service_desk/doctype/lq_support_ticket/lq_support_ticket.json
+msgid "Low"
+msgstr "منخفض"
+
+#: labqubit/www/portal/new-ticket.html:11
+msgid "Low: question or minor issue"
+msgstr "منخفض: سؤال أو مشكلة بسيطة"
+
+#: labqubit/templates/includes/lq_navbar.html:10
+msgid "Main"
+msgstr "الرئيسية"
+
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+msgid "Managed Services"
+msgstr "الخدمات المُدارة"
+
+#: labqubit/lq_careers/doctype/lq_job_opening/lq_job_opening.json
+msgid "Management"
+msgstr "الإدارة"
+
+#: labqubit/lq_service_desk/doctype/lq_client_asset/lq_client_asset.json
+msgid "Management IP"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_settings/lq_settings.json
+msgid "Map Link"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_settings/lq_settings.json
+#, python-format
+msgid "Mark SLA 'At Risk' After (% of time used)"
+msgstr ""
+
+#: labqubit/www/portal/ticket.html:82
+msgid "Mark as resolved"
+msgstr "تحديد كمحلولة"
+
+#: labqubit/lq_service_desk/doctype/lq_sla_policy/lq_sla_policy.json
+msgid "Measured in calendar hours (24x7)."
+msgstr ""
+
+#: labqubit/lq_service_desk/doctype/lq_sla_target/lq_sla_target.json
+#: labqubit/lq_service_desk/doctype/lq_support_ticket/lq_support_ticket.json
+msgid "Medium"
+msgstr "متوسط"
+
+#: labqubit/www/portal/new-ticket.html:11
+msgid "Medium: degraded service"
+msgstr "متوسط: تراجع في الخدمة"
+
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.py:64
+msgid "Meeting"
+msgstr "الاجتماع"
+
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.json
+msgid "Meeting Mode"
+msgstr ""
+
+#: labqubit/api/leads.py:76
+msgid "Meeting mode"
+msgstr "طريقة الاجتماع"
+
+#: labqubit/www/book-a-consultation.html:18
+msgid "Meeting type"
+msgstr "نوع الاجتماع"
+
+#: labqubit/templates/includes/lq_navbar.html:116
+msgid "Menu"
+msgstr "القائمة"
+
+#: labqubit/api/leads.py:66 labqubit/api/portal.py:96
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.json
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.py:65
+#: labqubit/lq_service_desk/doctype/lq_ticket_reply/lq_ticket_reply.json
+#: labqubit/www/message.html:10
+msgid "Message"
+msgstr "الرسالة"
+
+#: labqubit/lq_service_desk/doctype/lq_support_ticket/lq_support_ticket.json
+msgid "Met"
+msgstr "تم الالتزام"
+
+#: labqubit/lq_careers/doctype/lq_job_opening/lq_job_opening.json
+#: labqubit/lq_website/doctype/lq_case_study/lq_case_study.json
+#: labqubit/lq_website/doctype/lq_industry/lq_industry.json
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+#: labqubit/lq_website/doctype/lq_solution/lq_solution.json
+msgid "Meta Description"
+msgstr ""
+
+#: labqubit/lq_careers/doctype/lq_job_opening/lq_job_opening.json
+#: labqubit/lq_website/doctype/lq_case_study/lq_case_study.json
+#: labqubit/lq_website/doctype/lq_industry/lq_industry.json
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+#: labqubit/lq_website/doctype/lq_solution/lq_solution.json
+msgid "Meta Title"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_case_study/lq_case_study.json
+msgid "Metrics"
+msgstr ""
+
+#: labqubit/templates/includes/lq_navbar.html:121
+msgid "Mobile"
+msgstr "الجوال"
+
+#: labqubit/lq_service_desk/doctype/lq_client_asset/lq_client_asset.json
+msgid "Model"
+msgstr ""
+
+#: labqubit/www/careers/index.html:17
+msgid "Modern stack"
+msgstr "تقنيات حديثة"
+
+#: labqubit/lq_service_desk/doctype/lq_amc_contract/lq_amc_contract.json
+msgid "Monthly"
+msgstr "شهري"
+
+#: labqubit/lq_website/doctype/lq_case_study/templates/lq_case_study.html:49
+msgid "More case studies"
+msgstr "مزيد من دراسات الحالة"
+
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.json
+msgid "Morning (9-12)"
+msgstr "الصباح (9-12)"
+
+#: labqubit/lq_careers/doctype/lq_job_application/lq_job_application.py:26
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.py:51
+msgid "Name"
+msgstr "الاسم"
+
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+msgid "Network Infrastructure"
+msgstr "البنية التحتية للشبكات"
+
+#: labqubit/lq_website/doctype/lq_settings/lq_settings.json
+msgid "Network Uptime (%)"
+msgstr ""
+
+#: labqubit/www/login.html:114
+msgid "Network error. Please try again."
+msgstr "خطأ في الشبكة. يرجى المحاولة مرة أخرى."
+
+#: labqubit/www/services/index.py:8
+msgid "Network infrastructure and automation, cybersecurity, data center, structured cabling, managed services, cloud consulting, and web and application development."
+msgstr "البنية التحتية للشبكات وأتمتتها، والأمن السيبراني، ومراكز البيانات، والكابلات الهيكلية، والخدمات المُدارة، والاستشارات السحابية، وتطوير المواقع والتطبيقات."
+
+#: labqubit/www/about.py:22 labqubit/www/index.py:49
+msgid "Network uptime"
+msgstr "توفر الشبكة"
+
+#: labqubit/www/index.py:16
+msgid "Networks · Security · Cloud · Web"
+msgstr "الشبكات · الأمن · السحابة · الويب"
+
+#: labqubit/lq_careers/doctype/lq_job_application/lq_job_application.json
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.json
+msgid "New"
+msgstr "جديد"
+
+#: labqubit/labqubit/workspace/labqubit/labqubit.json
+msgid "New Leads This Month"
+msgstr ""
+
+#: labqubit/lq_careers/doctype/lq_job_application/lq_job_application.py:22
+msgid "New application: {0} for {1}"
+msgstr "طلب توظيف جديد: {0} لوظيفة {1}"
+
+#: labqubit/lq_careers/doctype/lq_job_application/lq_job_application.py:23
+msgid "New job application"
+msgstr "طلب توظيف جديد"
+
+#: labqubit/www/update-password.html:20
+msgid "New password"
+msgstr "كلمة المرور الجديدة"
+
+#: labqubit/lq_service_desk/doctype/lq_support_ticket/lq_support_ticket.py:67
+msgid "New reply on ticket {0}"
+msgstr "رد جديد على التذكرة {0}"
+
+#: labqubit/templates/lq_portal.html:38 labqubit/www/portal/new_ticket.py:10
+#: labqubit/www/portal/tickets/index.html:4
+msgid "New ticket"
+msgstr "تذكرة جديدة"
+
+#: labqubit/lq_service_desk/doctype/lq_support_ticket/lq_support_ticket.py:43
+msgid "New ticket {0}: {1}"
+msgstr "تذكرة جديدة {0}: {1}"
+
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.py:48
+msgid "New {0}"
+msgstr "{0} جديد"
+
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.py:23
+msgid "New {0} from {1}"
+msgstr "{0} جديد من {1}"
+
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.py:45
+msgid "New {0}: {1} ({2})"
+msgstr "{0} جديد: {1} ({2})"
+
+#: labqubit/templates/components/sections.html:74
+msgid "Next"
+msgstr "التالي"
+
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.json
+msgid "Next Follow-up"
+msgstr ""
+
+#: labqubit/www/blog/index.html:36
+msgid "No articles yet"
+msgstr "لا توجد مقالات بعد"
+
+#: labqubit/www/portal/contract.html:54
+msgid "No assets are listed on this contract."
+msgstr "لا توجد أصول مدرجة في هذا العقد."
+
+#: labqubit/www/portal/assets.html:32
+msgid "No assets registered yet."
+msgstr "لا توجد أصول مسجلة بعد."
+
+#: labqubit/templates/lq_portal.html:10
+msgid "No client account linked"
+msgstr "لا يوجد حساب عميل مرتبط"
+
+#: labqubit/www/portal/contracts/index.html:15
+msgid "No contracts yet."
+msgstr "لا توجد عقود بعد."
+
+#: labqubit/www/portal/documents.html:28
+msgid "No documents shared yet."
+msgstr "لا توجد مستندات مشتركة بعد."
+
+#: labqubit/www/careers/index.html:32
+msgid "No open positions right now"
+msgstr "لا توجد وظائف شاغرة حاليًا"
+
+#: labqubit/www/book-a-consultation.html:6
+msgid "No sales pitch"
+msgstr "بلا عروض بيع"
+
+#: labqubit/www/portal/index.html:35
+msgid "No tickets yet. Need help? Raise a ticket and we'll respond within your SLA."
+msgstr "لا توجد تذاكر بعد. تحتاج مساعدة؟ افتح تذكرة وسنرد خلال مستوى الخدمة المتفق عليه."
+
+#: labqubit/www/login.html:56
+msgid "Not a client yet?"
+msgstr "لست عميلًا بعد؟"
+
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.json
+msgid "Not sure"
+msgstr "غير متأكد"
+
+#: labqubit/templates/includes/lq_navbar.html:32
+msgid "Not sure where to start? Our engineers will assess your environment."
+msgstr "لا تعرف من أين تبدأ؟ سيقيّم مهندسونا بيئتك."
+
+#: labqubit/lq_service_desk/doctype/lq_client/lq_client.json
+#: labqubit/lq_service_desk/doctype/lq_client_asset/lq_client_asset.json
+msgid "Notes"
+msgstr ""
+
+#: labqubit/lq_careers/doctype/lq_job_application/lq_job_application.json
+msgid "Notice Period"
+msgstr ""
+
+#: labqubit/lq_careers/doctype/lq_job_application/lq_job_application.py:30
+#: labqubit/lq_careers/doctype/lq_job_opening/templates/lq_job_opening.html:32
+msgid "Notice period"
+msgstr "فترة الإشعار"
+
+#: labqubit/lq_website/doctype/lq_settings/lq_settings.json
+msgid "Notify on Job Application (email)"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_settings/lq_settings.json
+msgid "Notify on New Lead (email)"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_settings/lq_settings.json
+msgid "Notify on SLA Breach (email)"
+msgstr ""
+
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.json
+msgid "Number of Sites"
+msgstr ""
+
+#: labqubit/www/request-a-quote.html:19
+msgid "Number of sites"
+msgstr "عدد المواقع"
+
+#: labqubit/lq_careers/doctype/lq_job_application/lq_job_application.json
+msgid "Offer"
+msgstr "عرض وظيفي"
+
+#: labqubit/www/contact.html:27
+msgid "Office"
+msgstr "المكتب"
+
+#: labqubit/lq_service_desk/doctype/lq_support_ticket/lq_support_ticket.json
+msgid "On Track"
+msgstr "ضمن المسار"
+
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.json
+msgid "On-site"
+msgstr "في الموقع"
+
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.json
+msgid "Online"
+msgstr "عبر الإنترنت"
+
+#: labqubit/lq_website/doctype/lq_testimonial/lq_testimonial.json
+msgid "Only publish real testimonials with the client's written approval."
+msgstr ""
+
+#: labqubit/lq_careers/doctype/lq_job_opening/lq_job_opening.json
+#: labqubit/lq_service_desk/doctype/lq_support_ticket/lq_support_ticket.json
+msgid "Open"
+msgstr "مفتوحة"
+
+#: labqubit/templates/lq_portal.html:13
+msgid "Open Desk"
+msgstr "فتح لوحة التحكم"
+
+#: labqubit/labqubit/workspace/labqubit/labqubit.json
+msgid "Open Leads"
+msgstr ""
+
+#: labqubit/labqubit/workspace/labqubit/labqubit.json
+msgid "Open Tickets"
+msgstr ""
+
+#: labqubit/labqubit/workspace/labqubit/labqubit.json
+msgid "Open Tickets by Priority"
+msgstr ""
+
+#: labqubit/tasks.py:101
+msgid "Open contract"
+msgstr "فتح العقد"
+
+#: labqubit/www/contact.html:29
+msgid "Open in maps"
+msgstr "فتح في الخرائط"
+
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.py:68
+msgid "Open lead"
+msgstr "فتح العميل المحتمل"
+
+#: labqubit/templates/includes/lq_navbar.html:106
+msgid "Open menu"
+msgstr "فتح القائمة"
+
+#: labqubit/www/careers/index.html:29
+msgid "Open positions"
+msgstr "الوظائف الشاغرة"
+
+#: labqubit/lq_service_desk/doctype/lq_support_ticket/lq_support_ticket.py:141
+#: labqubit/tasks.py:51
+msgid "Open ticket"
+msgstr "فتح التذكرة"
+
+#: labqubit/www/portal/index.html:14
+msgid "Open tickets"
+msgstr "التذاكر المفتوحة"
+
+#: labqubit/lq_service_desk/doctype/lq_support_ticket/lq_support_ticket.json
+msgid "Opened On"
+msgstr ""
+
+#: labqubit/www/portal/ticket.html:8
+msgid "Opened {0}"
+msgstr "فُتحت {0}"
+
+#: labqubit/lq_careers/doctype/lq_job_opening/lq_job_opening.json
+msgid "Operations"
+msgstr "العمليات"
+
+#: labqubit/lq_website/doctype/lq_partner/lq_partner.json
+msgid "Optional white/monochrome version"
+msgstr ""
+
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.json
+#: labqubit/lq_service_desk/doctype/lq_client_asset/lq_client_asset.json
+#: labqubit/lq_service_desk/doctype/lq_client_document/lq_client_document.json
+msgid "Other"
+msgstr "أخرى"
+
+#: labqubit/lq_careers/doctype/lq_job_opening/templates/lq_job_opening.html:49
+msgid "Other open roles"
+msgstr "وظائف شاغرة أخرى"
+
+#: labqubit/www/about.html:15
+msgid "Our experienced, qualified engineers design, build and operate technology across the full stack, from structured cabling and data center fabrics to next-generation firewalls, network automation and web applications, and we stand behind our work with clear, measurable SLAs."
+msgstr "يصمم مهندسونا ذوو الخبرة والكفاءة التقنية وينفذونها ويشغّلونها على جميع المستويات، من الكابلات الهيكلية وشبكات مراكز البيانات إلى جدران الحماية من الجيل التالي وأتمتة الشبكات وتطبيقات الويب، ونلتزم بجودة عملنا عبر اتفاقيات مستوى خدمة واضحة وقابلة للقياس."
+
+#: labqubit/lq_website/doctype/lq_case_study/templates/lq_case_study.html:28
+msgid "Our solution"
+msgstr "حلنا"
+
+#: labqubit/templates/lq_portal.html:27
+msgid "Overview"
+msgstr "نظرة عامة"
+
+#: labqubit/www/careers/index.html:15
+msgid "Own projects end to end, from design to handover."
+msgstr "تولَّ المشاريع من التصميم حتى التسليم."
+
+#: labqubit/lq_careers/doctype/lq_job_opening/templates/lq_job_opening.html:33
+msgid "PDF or Word, up to 5 MB"
+msgstr "PDF أو Word، حتى 5 ميغابايت"
+
+#: labqubit/lq_service_desk/doctype/lq_client_document/lq_client_document.json
+msgid "PDF preferred. Stored as a private file."
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_industry/lq_industry.json
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+#: labqubit/lq_website/doctype/lq_solution/lq_solution.json
+msgid "Page Content"
+msgstr ""
+
+#: labqubit/www/404.py:6
+msgid "Page not found"
+msgstr "الصفحة غير موجودة"
+
+#: labqubit/www/careers/index.html:14
+msgid "Paid technical training and exams every year."
+msgstr "تدريب تقني واختبارات مدفوعة كل عام."
+
+#: labqubit/lq_careers/doctype/lq_job_opening/lq_job_opening.json
+msgid "Part-time"
+msgstr "دوام جزئي"
+
+#: labqubit/labqubit/workspace/labqubit/labqubit.json
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.json
+#: labqubit/lq_website/doctype/lq_partner_link/lq_partner_link.json
+msgid "Partner"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_partner/lq_partner.json
+msgid "Partner Name"
+msgstr ""
+
+#: labqubit/www/partners.html:24
+msgid "Partner details are being updated"
+msgstr "يجري تحديث بيانات الشركاء"
+
+#: labqubit/templates/includes/lq_footer.html:37
+#: labqubit/templates/includes/lq_navbar.html:77
+#: labqubit/templates/includes/lq_navbar.html:160 labqubit/www/partners.html:10
+#: labqubit/www/partners.py:9
+msgid "Partners"
+msgstr "الشركاء"
+
+#: labqubit/lq_website/doctype/lq_partner/lq_partner.json
+msgid "Partnership Level"
+msgstr ""
+
+#: labqubit/www/login.html:25
+msgid "Password"
+msgstr "كلمة المرور"
+
+#: labqubit/lq_careers/doctype/lq_job_application/lq_job_application.json
+#: labqubit/lq_careers/doctype/lq_job_application/lq_job_application.py:28
+#: labqubit/lq_careers/doctype/lq_job_opening/templates/lq_job_opening.html:29
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.json
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.py:53
+#: labqubit/lq_service_desk/doctype/lq_client/lq_client.json
+#: labqubit/utils/forms.py:54 labqubit/www/book-a-consultation.html:14
+#: labqubit/www/contact.html:14 labqubit/www/contact.html:43
+#: labqubit/www/request-a-quote.html:14
+msgid "Phone"
+msgstr "الهاتف"
+
+#: labqubit/lq_website/doctype/lq_testimonial/lq_testimonial.json
+msgid "Photo"
+msgstr ""
+
+#: labqubit/api/leads.py:67
+msgid "Please agree to be contacted about your request."
+msgstr "يرجى الموافقة على التواصل معك بخصوص طلبك."
+
+#: labqubit/api/leads.py:130
+msgid "Please agree to the processing of your application."
+msgstr "يرجى الموافقة على معالجة طلب التوظيف الخاص بك."
+
+#: labqubit/api/leads.py:204
+msgid "Please attach your CV."
+msgstr "يرجى إرفاق سيرتك الذاتية."
+
+#: labqubit/utils/forms.py:198
+msgid "Please check the form"
+msgstr "يرجى مراجعة النموذج"
+
+#: labqubit/utils/forms.py:153
+msgid "Please complete the verification."
+msgstr "يرجى إكمال التحقق."
+
+#: labqubit/utils/forms.py:119
+msgid "Please confirm to continue."
+msgstr "يرجى التأكيد للمتابعة."
+
+#: labqubit/utils/forms.py:40
+msgid "Please keep this under {0} characters."
+msgstr "يرجى ألا يتجاوز النص {0} حرفًا."
+
+#: labqubit/api/portal.py:36
+msgid "Please sign in."
+msgstr "يرجى تسجيل الدخول."
+
+#: labqubit/lq_service_desk/doctype/lq_sla_policy/lq_sla_policy.json
+msgid "Policy Name"
+msgstr ""
+
+#: labqubit/templates/includes/lq_navbar.html:103
+#: labqubit/templates/includes/lq_navbar.html:168
+#: labqubit/templates/lq_portal.html:25
+msgid "Portal"
+msgstr "البوابة"
+
+#: labqubit/lq_service_desk/doctype/lq_client/lq_client.json
+msgid "Portal Access"
+msgstr ""
+
+#: labqubit/lq_service_desk/doctype/lq_client/lq_client.json
+msgid "Portal Users"
+msgstr ""
+
+#: labqubit/lq_service_desk/doctype/lq_client/lq_client.js:26
+msgid "Portal access granted to {0}"
+msgstr "تم منح صلاحية الوصول إلى البوابة لـ {0}"
+
+#: labqubit/www/privacy.html:16
+msgid "Portal accounts can see only their own organization's contracts, assets, tickets and documents. Uploaded files are stored privately."
+msgstr "لا تستطيع حسابات البوابة رؤية سوى عقود مؤسستها وأصولها وتذاكرها ومستنداتها. تُحفظ الملفات المرفوعة بشكل خاص."
+
+#: labqubit/lq_service_desk/doctype/lq_ticket_reply/lq_ticket_reply.json
+msgid "Posted By"
+msgstr ""
+
+#: labqubit/lq_service_desk/doctype/lq_ticket_reply/lq_ticket_reply.json
+msgid "Posted On"
+msgstr ""
+
+#: labqubit/www/blog/index.html:7
+msgid "Practical guidance on networks, security and data centers from the engineers who build them."
+msgstr "إرشادات عملية حول الشبكات والأمن ومراكز البيانات من المهندسين الذين يبنونها."
+
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.json
+msgid "Preferred Date"
+msgstr ""
+
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.json
+msgid "Preferred Time"
+msgstr ""
+
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.py:62
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.py:99
+#: labqubit/www/book-a-consultation.html:16
+msgid "Preferred date"
+msgstr "التاريخ المفضل"
+
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.py:63
+#: labqubit/www/book-a-consultation.html:17
+msgid "Preferred time"
+msgstr "الوقت المفضل"
+
+#: labqubit/lq_service_desk/doctype/lq_amc_contract/lq_amc_contract.json
+msgid "Premium"
+msgstr "متميز"
+
+#: labqubit/tasks.py:99
+msgid "Prepare the renewal proposal for this contract."
+msgstr "جهّز عرض التجديد لهذا العقد."
+
+#: labqubit/templates/components/sections.html:73
+msgid "Previous"
+msgstr "السابق"
+
+#: labqubit/lq_service_desk/doctype/lq_client_user/lq_client_user.json
+msgid "Primary Contact"
+msgstr ""
+
+#: labqubit/lq_service_desk/doctype/lq_client/lq_client.js:14
+msgid "Primary contact (receives renewal reminders)"
+msgstr "جهة الاتصال الرئيسية (تتلقى تذكيرات التجديد)"
+
+#: labqubit/api/portal.py:59
+#: labqubit/lq_service_desk/doctype/lq_sla_target/lq_sla_target.json
+#: labqubit/lq_service_desk/doctype/lq_support_ticket/lq_support_ticket.json
+#: labqubit/lq_service_desk/doctype/lq_support_ticket/lq_support_ticket.py:166
+#: labqubit/www/portal/contract.html:27 labqubit/www/portal/new-ticket.html:11
+#: labqubit/www/portal/tickets/index.html:15
+msgid "Priority"
+msgstr "الأولوية"
+
+#: labqubit/templates/includes/lq_footer.html:54 labqubit/www/privacy.html:5
+msgid "Privacy"
+msgstr "الخصوصية"
+
+#: labqubit/www/privacy.html:5 labqubit/www/privacy.py:7
+msgid "Privacy Policy"
+msgstr "سياسة الخصوصية"
+
+#: labqubit/lq_careers/doctype/lq_job_application/lq_job_application.json
+msgid "Private file (PDF or Word)"
+msgstr ""
+
+#: labqubit/www/request-a-quote.html:23
+msgid "Project details"
+msgstr "تفاصيل المشروع"
+
+#: labqubit/lq_website/doctype/lq_settings/lq_settings.json
+msgid "Projects Delivered"
+msgstr ""
+
+#: labqubit/www/about.py:20 labqubit/www/index.py:47
+msgid "Projects delivered"
+msgstr "مشاريع منجزة"
+
+#: labqubit/lq_website/doctype/lq_solution/templates/lq_solution.html:26
+msgid "Proof in production"
+msgstr "إثبات في بيئات الإنتاج"
+
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.json
+msgid "Proposal Sent"
+msgstr "تم إرسال العرض"
+
+#: labqubit/www/solutions/index.py:8
+msgid "Proven architectures that combine LabQubit services and partner technology."
+msgstr "بنى مجربة تجمع بين خدمات LabQubit وتقنيات شركائها."
+
+#: labqubit/www/index.html:41
+msgid "Proven architectures that combine our services and partner technology to solve a specific business problem."
+msgstr "بنى مجربة تجمع بين خدماتنا وتقنيات شركائنا لحل مشكلة عمل محددة."
+
+#: labqubit/lq_website/doctype/lq_settings/lq_settings.json
+msgid "Public Email"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_settings/lq_settings.json
+msgid "Public Phone"
+msgstr ""
+
+#: labqubit/lq_careers/doctype/lq_job_opening/lq_job_opening.json
+#: labqubit/lq_website/doctype/lq_case_study/lq_case_study.json
+#: labqubit/lq_website/doctype/lq_certification/lq_certification.json
+#: labqubit/lq_website/doctype/lq_industry/lq_industry.json
+#: labqubit/lq_website/doctype/lq_partner/lq_partner.json
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+#: labqubit/lq_website/doctype/lq_solution/lq_solution.json
+#: labqubit/lq_website/doctype/lq_testimonial/lq_testimonial.json
+msgid "Published"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_case_study/lq_case_study.json
+msgid "Published On"
+msgstr ""
+
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.json
+msgid "Qualified"
+msgstr "مؤهل"
+
+#: labqubit/lq_service_desk/doctype/lq_amc_contract/lq_amc_contract.json
+msgid "Quarterly"
+msgstr "ربع سنوي"
+
+#: labqubit/lq_service_desk/doctype/lq_support_ticket/lq_support_ticket.json
+msgid "Question"
+msgstr "سؤال"
+
+#: labqubit/www/contact.html:7
+msgid "Questions, support or a new project: send us a message and the right engineer will get back to you."
+msgstr "أسئلة أو دعم أو مشروع جديد: أرسل لنا رسالة وسيعود إليك المهندس المناسب."
+
+#: labqubit/lq_service_desk/doctype/lq_client_document/lq_client_document.json
+msgid "Quotation"
+msgstr "عرض سعر"
+
+#: labqubit/www/portal/index.html:52
+msgid "Quotations, invoices and service reports will appear here."
+msgstr "ستظهر هنا عروض الأسعار والفواتير وتقارير الخدمة."
+
+#: labqubit/www/portal/documents.html:4
+msgid "Quotations, invoices, service reports and contracts shared with you."
+msgstr "عروض الأسعار والفواتير وتقارير الخدمة والعقود المشتركة معك."
+
+#: labqubit/lq_website/doctype/lq_testimonial/lq_testimonial.json
+msgid "Quote"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_testimonial/lq_testimonial.json
+msgid "Quote (Arabic)"
+msgstr ""
+
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.json
+msgid "Quote Details"
+msgstr ""
+
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.json
+msgid "Quote Request"
+msgstr "طلب عرض سعر"
+
+#: labqubit/lq_service_desk/doctype/lq_client_asset/lq_client_asset.json
+msgid "Rack / Cabling"
+msgstr "خزائن / كابلات"
+
+#: labqubit/www/portal/new-ticket.html:5
+msgid "Raise a support ticket"
+msgstr "افتح تذكرة دعم"
+
+#: labqubit/www/contact.html:35
+msgid "Raise and track support tickets in the client portal for SLA-tracked response."
+msgstr "افتح تذاكر الدعم وتابعها عبر بوابة العملاء لتحصل على استجابة وفق مستوى الخدمة."
+
+#: labqubit/lq_service_desk/doctype/lq_support_ticket/lq_support_ticket.json
+msgid "Raised By"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_testimonial/lq_testimonial.json
+msgid "Rating"
+msgstr ""
+
+#: labqubit/www/blog/index.html:32
+msgid "Read article"
+msgstr "اقرأ المقال"
+
+#: labqubit/templates/components/cards.html:33
+msgid "Read case study"
+msgstr "اقرأ دراسة الحالة"
+
+#: labqubit/www/careers/index.html:15
+msgid "Real impact"
+msgstr "أثر حقيقي"
+
+#: labqubit/www/case-studies/index.html:8
+msgid "Real projects. Measurable results."
+msgstr "مشاريع حقيقية. نتائج قابلة للقياس."
+
+#: labqubit/www/portal/index.html:23
+msgid "Recent tickets"
+msgstr "أحدث التذاكر"
+
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.py:98
+msgid "Reference"
+msgstr "المرجع"
+
+#: labqubit/lq_service_desk/doctype/lq_client_document/lq_client_document.json
+msgid "Reference No."
+msgstr ""
+
+#: labqubit/www/solutions/index.html:8
+msgid "Reference architectures we have designed, deployed and supported in production."
+msgstr "بنى مرجعية صممناها ونفذناها وندعمها في بيئات الإنتاج."
+
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.json
+msgid "Referral"
+msgstr ""
+
+#: labqubit/www/index.html:63
+msgid "Regulated, distributed and always-on environments are our everyday work."
+msgstr "البيئات الخاضعة للتنظيم والموزعة والعاملة باستمرار هي عملنا اليومي."
+
+#: labqubit/lq_careers/doctype/lq_job_application/lq_job_application.json
+msgid "Rejected"
+msgstr "مرفوض"
+
+#: labqubit/lq_website/doctype/lq_case_study/lq_case_study.json
+#: labqubit/lq_website/doctype/lq_industry/lq_industry.json
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+#: labqubit/lq_website/doctype/lq_solution/lq_solution.json
+msgid "Related"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_service/templates/lq_service.html:25
+msgid "Related case studies"
+msgstr "دراسات حالة ذات صلة"
+
+#: labqubit/lq_website/doctype/lq_service/templates/lq_service.html:26
+msgid "Related services"
+msgstr "خدمات ذات صلة"
+
+#: labqubit/lq_website/doctype/lq_industry/lq_industry.json
+msgid "Relevant Services"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_industry/templates/lq_industry.html:18
+msgid "Relevant solutions"
+msgstr "حلول ذات صلة"
+
+#: labqubit/lq_service_desk/doctype/lq_amc_contract/lq_amc_contract.json
+msgid "Renewal Reminder (days before end)"
+msgstr ""
+
+#: labqubit/lq_service_desk/doctype/lq_amc_contract/lq_amc_contract.json
+msgid "Renewal Reminder Sent On"
+msgstr ""
+
+#: labqubit/lq_service_desk/doctype/lq_amc_contract/lq_amc_contract.json
+msgid "Renewed"
+msgstr "تم التجديد"
+
+#: labqubit/lq_service_desk/doctype/lq_amc_contract/lq_amc_contract.json
+msgid "Renewed By"
+msgstr ""
+
+#: labqubit/www/portal/ticket.html:78
+msgid "Reopen ticket"
+msgstr "إعادة فتح التذكرة"
+
+#: labqubit/lq_service_desk/doctype/lq_support_ticket/lq_support_ticket.json
+msgid "Replies"
+msgstr ""
+
+#: labqubit/lq_service_desk/doctype/lq_support_ticket/lq_support_ticket.py:156
+msgid "Reply from the client portal so your message is added to the ticket."
+msgstr "رد من بوابة العملاء لتُضاف رسالتك إلى التذكرة."
+
+#: labqubit/api/portal.py:117
+msgid "Reply sent."
+msgstr "تم إرسال الرد."
+
+#: labqubit/www/request-a-quote.html:28
+msgid "Reply within one business day"
+msgstr "رد خلال يوم عمل واحد"
+
+#: labqubit/www/portal/assets.html:27 labqubit/www/portal/contract.html:49
+msgid "Report issue"
+msgstr "الإبلاغ عن مشكلة"
+
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.json
+msgid "Request"
+msgstr ""
+
+#: labqubit/templates/components/sections.html:17
+#: labqubit/templates/includes/lq_detail_aside.html:9
+#: labqubit/templates/includes/lq_footer.html:45
+#: labqubit/templates/includes/lq_navbar.html:105
+#: labqubit/templates/includes/lq_navbar.html:165 labqubit/www/index.html:9
+#: labqubit/www/request-a-quote.html:6 labqubit/www/request_a_quote.py:9
+msgid "Request a Quote"
+msgstr "اطلب عرض سعر"
+
+#: labqubit/www/request-a-quote.html:6
+msgid "Request a quote"
+msgstr "اطلب عرض سعر"
+
+#: labqubit/www/book-a-consultation.html:11
+msgid "Request consultation"
+msgstr "اطلب استشارة"
+
+#: labqubit/www/request-a-quote.html:11
+msgid "Request my quote"
+msgstr "اطلب عرض السعر"
+
+#: labqubit/lq_careers/doctype/lq_job_opening/lq_job_opening.json
+msgid "Requirements"
+msgstr ""
+
+#: labqubit/lq_careers/doctype/lq_job_opening/lq_job_opening.json
+msgid "Requirements (Arabic)"
+msgstr ""
+
+#: labqubit/templates/includes/lq_footer.html:14
+#: labqubit/templates/includes/lq_title.html:3 labqubit/www/index.py:17
+msgid "Resilient solutions for resilient businesses"
+msgstr "حلول مرنة لأعمال مرنة"
+
+#: labqubit/www/portal/contract.html:27
+msgid "Resolution"
+msgstr "الحل"
+
+#: labqubit/lq_service_desk/doctype/lq_support_ticket/lq_support_ticket.json
+msgid "Resolution Due"
+msgstr ""
+
+#: labqubit/lq_service_desk/doctype/lq_support_ticket/lq_support_ticket.json
+msgid "Resolution Notes (internal)"
+msgstr ""
+
+#: labqubit/tasks.py:49 labqubit/www/portal/ticket.html:56
+msgid "Resolution due"
+msgstr "موعد الحل"
+
+#: labqubit/lq_service_desk/doctype/lq_sla_target/lq_sla_target.json
+msgid "Resolve Within (hours)"
+msgstr ""
+
+#: labqubit/lq_service_desk/doctype/lq_support_ticket/lq_support_ticket.json
+#: labqubit/www/portal/ticket.html:57
+msgid "Resolved"
+msgstr "محلولة"
+
+#: labqubit/lq_service_desk/doctype/lq_support_ticket/lq_support_ticket.json
+msgid "Resolved On"
+msgstr ""
+
+#: labqubit/templates/includes/lq_footer.html:43
+msgid "Resources"
+msgstr "الموارد"
+
+#: labqubit/lq_service_desk/doctype/lq_sla_target/lq_sla_target.json
+msgid "Response Within (hours)"
+msgstr ""
+
+#: labqubit/www/about.html:22
+msgid "Response and resolution times are written into every support contract."
+msgstr "أوقات الاستجابة والحل مكتوبة في كل عقد دعم."
+
+#: labqubit/lq_service_desk/doctype/lq_support_ticket/lq_support_ticket.py:168
+msgid "Response due"
+msgstr "موعد الاستجابة"
+
+#: labqubit/lq_website/doctype/lq_case_study/lq_case_study.json
+msgid "Results"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_case_study/lq_case_study.json
+msgid "Results (Arabic)"
+msgstr ""
+
+#: labqubit/www/index.html:85
+msgid "Results that speak for themselves"
+msgstr "نتائج تتحدث عن نفسها"
+
+#: labqubit/lq_service_desk/doctype/lq_client_asset/lq_client_asset.json
+msgid "Retired"
+msgstr "متوقف عن الخدمة"
+
+#: labqubit/lq_careers/doctype/lq_job_application/lq_job_application.py:33
+msgid "Review application"
+msgstr "مراجعة الطلب"
+
+#: labqubit/lq_careers/doctype/lq_job_application/lq_job_application.py:25
+msgid "Role"
+msgstr "الوظيفة"
+
+#: labqubit/lq_careers/doctype/lq_job_opening/lq_job_opening.json
+msgid "Role Description"
+msgstr ""
+
+#: labqubit/lq_careers/doctype/lq_job_opening/lq_job_opening.json
+msgid "Role Description (Arabic)"
+msgstr ""
+
+#: labqubit/lq_careers/doctype/lq_job_opening/lq_job_opening.json
+#: labqubit/lq_website/doctype/lq_case_study/lq_case_study.json
+#: labqubit/lq_website/doctype/lq_industry/lq_industry.json
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+#: labqubit/lq_website/doctype/lq_solution/lq_solution.json
+msgid "Route"
+msgstr ""
+
+#: labqubit/lq_service_desk/doctype/lq_client_asset/lq_client_asset.json
+msgid "Router"
+msgstr "موجّه"
+
+#: labqubit/lq_service_desk/doctype/lq_amc_contract/lq_amc_contract.py:41
+msgid "Row {0}: asset {1} does not belong to {2}."
+msgstr "الصف {0}: الأصل {1} لا يخص {2}."
+
+#: labqubit/lq_service_desk/doctype/lq_amc_contract/lq_amc_contract.py:37
+msgid "Row {0}: asset {1} is listed twice."
+msgstr "الصف {0}: الأصل {1} مدرج مرتين."
+
+#: labqubit/lq_service_desk/doctype/lq_sla_policy/lq_sla_policy.py:20
+msgid "Row {0}: resolution time must be at least the response time, and both above zero."
+msgstr "الصف {0}: يجب ألا يقل وقت الحل عن وقت الاستجابة، وأن يكون كلاهما أكبر من صفر."
+
+#: labqubit/lq_service_desk/doctype/lq_client/lq_client.py:23
+msgid "Row {0}: {1} is listed twice."
+msgstr "الصف {0}: {1} مدرج مرتين."
+
+#: labqubit/templates/components/hero.html:82
+msgid "SD-WAN sites"
+msgstr "مواقع SD-WAN"
+
+#: labqubit/lq_careers/doctype/lq_job_opening/lq_job_opening.json
+#: labqubit/lq_website/doctype/lq_case_study/lq_case_study.json
+#: labqubit/lq_website/doctype/lq_industry/lq_industry.json
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+#: labqubit/lq_website/doctype/lq_settings/lq_settings.json
+#: labqubit/lq_website/doctype/lq_solution/lq_solution.json
+msgid "SEO"
+msgstr ""
+
+#: labqubit/lq_service_desk/doctype/lq_support_ticket/lq_support_ticket.json
+#: labqubit/www/portal/tickets/index.html:15
+msgid "SLA"
+msgstr "مستوى الخدمة"
+
+#: labqubit/labqubit/workspace/labqubit/labqubit.json
+msgid "SLA Breached"
+msgstr ""
+
+#: labqubit/labqubit/workspace/labqubit/labqubit.json
+#: labqubit/lq_service_desk/doctype/lq_amc_contract/lq_amc_contract.json
+#: labqubit/lq_service_desk/doctype/lq_support_ticket/lq_support_ticket.json
+msgid "SLA Policy"
+msgstr ""
+
+#: labqubit/lq_service_desk/doctype/lq_support_ticket/lq_support_ticket.json
+msgid "SLA Status"
+msgstr ""
+
+#: labqubit/tasks.py:45
+msgid "SLA breached"
+msgstr "تم تجاوز مستوى الخدمة"
+
+#: labqubit/tasks.py:44
+msgid "SLA breached: {0} ({1})"
+msgstr "تم تجاوز مستوى الخدمة: {0} ({1})"
+
+#: labqubit/www/index.html:12
+msgid "SLA-backed support"
+msgstr "دعم مضمون باتفاقيات مستوى الخدمة"
+
+#: labqubit/labqubit/workspace/labqubit/labqubit.json
+#: labqubit/lq_careers/doctype/lq_job_opening/lq_job_opening.json
+msgid "Sales"
+msgstr "المبيعات"
+
+#: labqubit/www/update-password.html:24
+msgid "Save password"
+msgstr "حفظ كلمة المرور"
+
+#: labqubit/lq_service_desk/doctype/lq_amc_contract/lq_amc_contract.json
+msgid "Scope"
+msgstr ""
+
+#: labqubit/lq_service_desk/doctype/lq_amc_contract/lq_amc_contract.json
+msgid "Scope of Work"
+msgstr ""
+
+#: labqubit/www/portal/contract.html:57
+msgid "Scope of work"
+msgstr "نطاق العمل"
+
+#: labqubit/lq_careers/doctype/lq_job_application/lq_job_application.json
+msgid "Screening"
+msgstr "الفرز الأولي"
+
+#: labqubit/www/portal/new-ticket.html:18
+msgid "Screenshots, PDFs or logs. Up to 5 files, 10 MB each."
+msgstr "لقطات شاشة أو ملفات PDF أو سجلات. حتى 5 ملفات، 10 ميغابايت لكل ملف."
+
+#: labqubit/www/about.html:20
+msgid "Secure by design"
+msgstr "الأمن جزء من التصميم"
+
+#: labqubit/www/about.html:20
+msgid "Security is part of every architecture, not an add-on at the end."
+msgstr "الأمن جزء من كل تصميم، وليس إضافة في النهاية."
+
+#: labqubit/lq_careers/doctype/lq_job_opening/templates/lq_job_opening.html:39
+msgid "See our other open roles below, or check back soon."
+msgstr "اطلع على وظائفنا الشاغرة الأخرى أدناه، أو عد لاحقًا."
+
+#: labqubit/templates/components/forms.html:13
+msgid "Select…"
+msgstr "اختر…"
+
+#: labqubit/lq_service_desk/doctype/lq_amc_contract/lq_amc_contract.json
+msgid "Semi-annual"
+msgstr "نصف سنوي"
+
+#: labqubit/lq_website/doctype/lq_settings/lq_settings.json
+msgid "Send Acknowledgement Email to Visitor"
+msgstr ""
+
+#: labqubit/www/contact.html:40
+msgid "Send message"
+msgstr "إرسال الرسالة"
+
+#: labqubit/www/portal/ticket.html:39
+msgid "Send reply"
+msgstr "إرسال الرد"
+
+#: labqubit/www/login.html:52
+msgid "Send reset link"
+msgstr "إرسال رابط إعادة التعيين"
+
+#: labqubit/www/careers/index.html:16
+msgid "Senior mentors"
+msgstr "مرشدون ذوو خبرة"
+
+#: labqubit/www/portal/assets.html:15 labqubit/www/portal/contract.html:41
+msgid "Serial"
+msgstr "الرقم التسلسلي"
+
+#: labqubit/lq_service_desk/doctype/lq_amc_asset/lq_amc_asset.json
+#: labqubit/lq_service_desk/doctype/lq_client_asset/lq_client_asset.json
+msgid "Serial Number"
+msgstr ""
+
+#: labqubit/lq_service_desk/doctype/lq_client_asset/lq_client_asset.py:20
+msgid "Serial number {0} is already registered as {1}."
+msgstr "الرقم التسلسلي {0} مسجل مسبقًا باسم {1}."
+
+#: labqubit/lq_service_desk/doctype/lq_client_asset/lq_client_asset.json
+msgid "Server"
+msgstr "خادم"
+
+#: labqubit/labqubit/workspace/labqubit/labqubit.json
+#: labqubit/lq_website/doctype/lq_service_link/lq_service_link.json
+msgid "Service"
+msgstr ""
+
+#: labqubit/labqubit/workspace/labqubit/labqubit.json
+msgid "Service Desk"
+msgstr ""
+
+#: labqubit/lq_service_desk/doctype/lq_client_document/lq_client_document.json
+msgid "Service Report"
+msgstr "تقرير خدمة"
+
+#: labqubit/lq_service_desk/doctype/lq_support_ticket/lq_support_ticket.json
+msgid "Service Request"
+msgstr "طلب خدمة"
+
+#: labqubit/www/services/index.html:12
+msgid "Service categories"
+msgstr "فئات الخدمات"
+
+#: labqubit/www/portal/contract.html:25
+msgid "Service levels"
+msgstr "مستويات الخدمة"
+
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.py:58
+#: labqubit/lq_website/doctype/lq_case_study/lq_case_study.json
+#: labqubit/lq_website/doctype/lq_case_study/templates/lq_case_study.html:42
+#: labqubit/templates/includes/lq_footer.html:25
+#: labqubit/templates/includes/lq_navbar.html:15
+#: labqubit/templates/includes/lq_navbar.html:125
+#: labqubit/website/context.py:185 labqubit/www/services/index.html:10
+#: labqubit/www/services/index.py:7
+msgid "Services"
+msgstr "الخدمات"
+
+#: labqubit/lq_website/doctype/lq_solution/lq_solution.json
+msgid "Services Involved"
+msgstr ""
+
+#: labqubit/www/services/index.html:34
+msgid "Services are coming soon"
+msgstr "الخدمات قادمة قريبًا"
+
+#: labqubit/lq_website/doctype/lq_industry/templates/lq_industry.html:24
+msgid "Services for {0}"
+msgstr "خدمات {0}"
+
+#: labqubit/lq_website/doctype/lq_solution/templates/lq_solution.html:25
+msgid "Services involved"
+msgstr "الخدمات المشمولة"
+
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.json
+msgid "Services of Interest"
+msgstr ""
+
+#: labqubit/www/request-a-quote.html:20
+msgid "Services you are interested in"
+msgstr "الخدمات التي تهمك"
+
+#: labqubit/www/update-password.html:8
+msgid "Set a new password"
+msgstr "تعيين كلمة مرور جديدة"
+
+#: labqubit/lq_service_desk/doctype/lq_client_asset/lq_client_asset.json
+msgid "Set from the AMC contract's covered assets"
+msgstr ""
+
+#: labqubit/www/update_password.py:8
+msgid "Set password"
+msgstr "تعيين كلمة المرور"
+
+#: labqubit/www/services/index.html:9
+msgid "Seven practices, one standard of engineering. Pick a service or let us assess your environment end to end."
+msgstr "سبعة مجالات تخصص، ومعيار هندسي واحد. اختر خدمة أو دعنا نقيّم بيئتك من البداية إلى النهاية."
+
+#: labqubit/www/request-a-quote.html:6
+msgid "Share a few details about your sites and goals. An engineer, not a call center, will prepare your proposal."
+msgstr "شاركنا بعض التفاصيل عن مواقعك وأهدافك. سيُعد عرضك مهندس، وليس مركز اتصال."
+
+#: labqubit/lq_website/doctype/lq_industry/lq_industry.json
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+#: labqubit/lq_website/doctype/lq_solution/lq_solution.json
+msgid "Short Description"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_industry/lq_industry.json
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+#: labqubit/lq_website/doctype/lq_solution/lq_solution.json
+msgid "Short Description (Arabic)"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_case_study/lq_case_study.json
+#: labqubit/lq_website/doctype/lq_industry/lq_industry.json
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+#: labqubit/lq_website/doctype/lq_solution/lq_solution.json
+msgid "Show on Home Page"
+msgstr ""
+
+#: labqubit/lq_careers/doctype/lq_job_opening/lq_job_opening.json
+#: labqubit/lq_website/doctype/lq_case_study/lq_case_study.json
+#: labqubit/lq_website/doctype/lq_industry/lq_industry.json
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+#: labqubit/lq_website/doctype/lq_solution/lq_solution.json
+msgid "Shown in search results. 140-160 characters."
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+msgid "Shown on cards and in search results (max ~200 characters)"
+msgstr ""
+
+#: labqubit/www/login.html:33 labqubit/www/login.py:11
+msgid "Sign in"
+msgstr "تسجيل الدخول"
+
+#: labqubit/www/login.html:11
+msgid "Sign in to LabQubit"
+msgstr "تسجيل الدخول إلى LabQubit"
+
+#: labqubit/templates/lq_portal.html:41
+msgid "Sign out"
+msgstr "تسجيل الخروج"
+
+#: labqubit/www/update-password.html:23
+msgid "Sign out of all other devices"
+msgstr "تسجيل الخروج من جميع الأجهزة الأخرى"
+
+#: labqubit/lq_service_desk/doctype/lq_amc_contract/lq_amc_contract.json
+msgid "Signed Contract (PDF)"
+msgstr ""
+
+#: labqubit/lq_service_desk/doctype/lq_client_asset/lq_client_asset.json
+msgid "Site / Location"
+msgstr ""
+
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.py:61
+msgid "Sites"
+msgstr "المواقع"
+
+#: labqubit/templates/lq_base.html:39
+msgid "Skip to content"
+msgstr "تخطَّ إلى المحتوى"
+
+#: labqubit/lq_website/doctype/lq_settings/lq_settings.json
+msgid "Social"
+msgstr ""
+
+#: labqubit/lq_careers/doctype/lq_job_opening/lq_job_opening.json
+#: labqubit/lq_website/doctype/lq_case_study/lq_case_study.json
+#: labqubit/lq_website/doctype/lq_industry/lq_industry.json
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+#: labqubit/lq_website/doctype/lq_solution/lq_solution.json
+msgid "Social Share Image"
+msgstr ""
+
+#: labqubit/lq_service_desk/doctype/lq_client_asset/lq_client_asset.json
+msgid "Software License"
+msgstr "ترخيص برمجيات"
+
+#: labqubit/labqubit/workspace/labqubit/labqubit.json
+#: labqubit/lq_website/doctype/lq_case_study/lq_case_study.json
+#: labqubit/lq_website/doctype/lq_solution_link/lq_solution_link.json
+msgid "Solution"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_case_study/lq_case_study.json
+msgid "Solution (Arabic)"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_case_study/lq_case_study.json
+#: labqubit/lq_website/doctype/lq_case_study/templates/lq_case_study.html:43
+#: labqubit/templates/includes/lq_footer.html:45
+#: labqubit/templates/includes/lq_navbar.html:42
+#: labqubit/templates/includes/lq_navbar.html:142
+#: labqubit/website/context.py:195 labqubit/www/index.html:40
+#: labqubit/www/solutions/index.html:9 labqubit/www/solutions/index.py:7
+msgid "Solutions"
+msgstr "الحلول"
+
+#: labqubit/www/solutions/index.html:23
+msgid "Solutions are coming soon"
+msgstr "الحلول قادمة قريبًا"
+
+#: labqubit/www/solutions/index.html:7
+msgid "Solutions built around business outcomes"
+msgstr "حلول مبنية حول نتائج الأعمال"
+
+#: labqubit/www/index.html:40
+msgid "Solutions built around outcomes"
+msgstr "حلول مبنية حول النتائج"
+
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.json
+msgid "Source"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_settings/lq_settings.json
+msgid "Spam Protection"
+msgstr ""
+
+#: labqubit/lq_service_desk/doctype/lq_ticket_reply/lq_ticket_reply.json
+msgid "Staff Reply"
+msgstr ""
+
+#: labqubit/lq_service_desk/doctype/lq_amc_contract/lq_amc_contract.json
+msgid "Standard"
+msgstr "قياسي"
+
+#: labqubit/www/index.html:100
+msgid "Standards and accreditations"
+msgstr "المعايير والاعتمادات"
+
+#: labqubit/lq_service_desk/doctype/lq_amc_contract/lq_amc_contract.json
+msgid "Start Date"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_settings/lq_settings.json
+msgid "Stats"
+msgstr ""
+
+#: labqubit/lq_careers/doctype/lq_job_application/lq_job_application.json
+#: labqubit/lq_careers/doctype/lq_job_opening/lq_job_opening.json
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.json
+#: labqubit/lq_service_desk/doctype/lq_amc_contract/lq_amc_contract.json
+#: labqubit/lq_service_desk/doctype/lq_client/lq_client.json
+#: labqubit/lq_service_desk/doctype/lq_client_asset/lq_client_asset.json
+#: labqubit/lq_service_desk/doctype/lq_support_ticket/lq_support_ticket.json
+#: labqubit/lq_service_desk/doctype/lq_support_ticket/lq_support_ticket.py:167
+#: labqubit/www/portal/assets.html:15 labqubit/www/portal/tickets/index.html:15
+msgid "Status"
+msgstr "الحالة"
+
+#: labqubit/www/message.html:17
+msgid "Status: {0}"
+msgstr "الحالة: {0}"
+
+#: labqubit/www/portal/ticket.html:77
+msgid "Still having the issue?"
+msgstr "ما زالت المشكلة قائمة؟"
+
+#: labqubit/lq_service_desk/doctype/lq_client_asset/lq_client_asset.json
+msgid "Storage"
+msgstr "وحدة تخزين"
+
+#: labqubit/lq_website/doctype/lq_case_study/lq_case_study.json
+msgid "Story"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+msgid "Structured Cabling"
+msgstr "الكابلات المهيكلة"
+
+#: labqubit/www/styleguide.py:10
+msgid "Style guide"
+msgstr "دليل التصميم"
+
+#: labqubit/api/portal.py:57
+#: labqubit/lq_service_desk/doctype/lq_support_ticket/lq_support_ticket.json
+#: labqubit/lq_service_desk/doctype/lq_support_ticket/lq_support_ticket.py:164
+#: labqubit/www/portal/new-ticket.html:10
+msgid "Subject"
+msgstr "الموضوع"
+
+#: labqubit/lq_careers/doctype/lq_job_opening/templates/lq_job_opening.html:25
+msgid "Submit application"
+msgstr "إرسال الطلب"
+
+#: labqubit/www/portal/new-ticket.html:22
+msgid "Submit ticket"
+msgstr "إرسال التذكرة"
+
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.json
+msgid "Submitted From"
+msgstr ""
+
+#: labqubit/lq_careers/doctype/lq_job_opening/lq_job_opening.json
+#: labqubit/lq_website/doctype/lq_case_study/lq_case_study.json
+#: labqubit/lq_website/doctype/lq_industry/lq_industry.json
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+#: labqubit/lq_website/doctype/lq_solution/lq_solution.json
+msgid "Summary"
+msgstr ""
+
+#: labqubit/lq_careers/doctype/lq_job_opening/lq_job_opening.json
+#: labqubit/lq_website/doctype/lq_case_study/lq_case_study.json
+msgid "Summary (Arabic)"
+msgstr ""
+
+#: labqubit/lq_careers/doctype/lq_job_opening/lq_job_opening.json
+msgid "Support"
+msgstr "الدعم"
+
+#: labqubit/labqubit/workspace/labqubit/labqubit.json
+#: labqubit/lq_service_desk/doctype/lq_client_document/lq_client_document.json
+msgid "Support Ticket"
+msgstr ""
+
+#: labqubit/templates/lq_portal.html:28
+#: labqubit/www/portal/tickets/index.html:4
+#: labqubit/www/portal/tickets/index.py:10
+msgid "Support tickets"
+msgstr "تذاكر الدعم"
+
+#: labqubit/lq_service_desk/doctype/lq_client_asset/lq_client_asset.json
+msgid "Switch"
+msgstr "محوّل"
+
+#: labqubit/lq_careers/doctype/lq_job_application/lq_job_application.json
+#: labqubit/lq_careers/doctype/lq_job_opening/lq_job_opening.json
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.json
+#: labqubit/lq_service_desk/doctype/lq_amc_contract/lq_amc_contract.json
+#: labqubit/lq_service_desk/doctype/lq_client/lq_client.json
+#: labqubit/lq_service_desk/doctype/lq_client_asset/lq_client_asset.json
+#: labqubit/lq_service_desk/doctype/lq_client_document/lq_client_document.json
+#: labqubit/lq_service_desk/doctype/lq_sla_policy/lq_sla_policy.json
+#: labqubit/lq_service_desk/doctype/lq_support_ticket/lq_support_ticket.json
+#: labqubit/lq_website/doctype/lq_case_study/lq_case_study.json
+#: labqubit/lq_website/doctype/lq_certification/lq_certification.json
+#: labqubit/lq_website/doctype/lq_industry/lq_industry.json
+#: labqubit/lq_website/doctype/lq_partner/lq_partner.json
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+#: labqubit/lq_website/doctype/lq_settings/lq_settings.json
+#: labqubit/lq_website/doctype/lq_solution/lq_solution.json
+#: labqubit/lq_website/doctype/lq_testimonial/lq_testimonial.json
+msgid "System Manager"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_settings/lq_settings.json
+#: labqubit/lq_website/doctype/lq_solution/lq_solution.json
+msgid "Tagline"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_settings/lq_settings.json
+#: labqubit/lq_website/doctype/lq_solution/lq_solution.json
+msgid "Tagline (Arabic)"
+msgstr ""
+
+#: labqubit/templates/includes/lq_detail_aside.html:5
+msgid "Talk to an engineer"
+msgstr "تحدث مع مهندس"
+
+#: labqubit/templates/components/sections.html:14
+msgid "Talk to an experienced engineer about your project. We respond within one business day."
+msgstr "تحدّث مع مهندس ذي خبرة عن مشروعك. نرد خلال يوم عمل واحد."
+
+#: labqubit/www/login.html:56
+msgid "Talk to us"
+msgstr "تحدث معنا"
+
+#: labqubit/lq_service_desk/doctype/lq_sla_policy/lq_sla_policy.json
+msgid "Targets"
+msgstr ""
+
+#: labqubit/templates/components/sections.html:92
+msgid "Technologies we design, deploy and support"
+msgstr "تقنيات نصممها وننشرها وندعمها"
+
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+#: labqubit/lq_website/doctype/lq_solution/lq_solution.json
+msgid "Technology Partners"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_service/templates/lq_service.html:18
+#: labqubit/lq_website/doctype/lq_solution/templates/lq_solution.html:18
+msgid "Technology partners"
+msgstr "شركاء التقنية"
+
+#: labqubit/www/partners.py:10
+msgid "Technology vendors LabQubit works with."
+msgstr "مزوّدو التقنية الذين تعمل معهم LabQubit."
+
+#: labqubit/www/request_a_quote.py:10
+msgid "Tell LabQubit about your project and receive a tailored proposal."
+msgstr "أخبر LabQubit عن مشروعك واحصل على عرض مخصص."
+
+#: labqubit/www/about.html:44
+msgid "Tell us about your project, or explore open roles on our team."
+msgstr "أخبرنا عن مشروعك، أو استكشف الوظائف الشاغرة في فريقنا."
+
+#: labqubit/templates/includes/lq_detail_aside.html:7
+msgid "Tell us about your sites, users and goals. We reply within one business day."
+msgstr "أخبرنا عن مواقعك ومستخدميك وأهدافك. نرد خلال يوم عمل واحد."
+
+#: labqubit/www/portal/contract.html:15
+msgid "Term elapsed"
+msgstr "المدة المنقضية من العقد"
+
+#: labqubit/labqubit/workspace/labqubit/labqubit.json
+#: labqubit/lq_website/doctype/lq_case_study/lq_case_study.json
+msgid "Testimonial"
+msgstr ""
+
+#: labqubit/templates/components/sections.html:78
+msgid "Testimonials"
+msgstr "آراء العملاء"
+
+#: labqubit/utils/forms.py:198 labqubit/www/thank_you.py:21
+msgid "Thank you"
+msgstr "شكرًا لك"
+
+#: labqubit/api/leads.py:147
+msgid "Thank you for applying."
+msgstr "شكرًا لتقديمك."
+
+#: labqubit/api/leads.py:187
+msgid "Thank you for applying. Our team will review your application and contact you if there is a fit."
+msgstr "شكرًا لتقديمك. سيراجع فريقنا طلبك ويتواصل معك إذا كان هناك توافق."
+
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.py:88
+msgid "Thank you for booking a consultation. We will confirm the date and time by email shortly."
+msgstr "شكرًا لحجزك استشارة. سنؤكد التاريخ والوقت عبر البريد الإلكتروني قريبًا."
+
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.py:82
+msgid "Thank you for contacting LabQubit. A member of our team will reply within one business day."
+msgstr "شكرًا لتواصلك مع LabQubit. سيرد عليك أحد أعضاء فريقنا خلال يوم عمل واحد."
+
+#: labqubit/api/leads.py:107
+msgid "Thank you for reaching out. Our team will reply within one business day."
+msgstr "شكرًا لتواصلك. سيرد فريقنا خلال يوم عمل واحد."
+
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.py:85
+msgid "Thank you for your interest. An engineer is reviewing your requirements and will send you a tailored proposal."
+msgstr "شكرًا لاهتمامك. يراجع أحد المهندسين متطلباتك وسيرسل لك عرضًا مخصصًا."
+
+#: labqubit/templates/components/forms.html:86
+msgid "Thank you!"
+msgstr "شكرًا لك!"
+
+#: labqubit/lq_careers/doctype/lq_job_application/lq_job_application.py:40
+msgid "Thank you, {0}"
+msgstr "شكرًا لك يا {0}"
+
+#: labqubit/api/leads.py:108
+msgid "Thank you. An engineer will review your requirements and send a proposal."
+msgstr "شكرًا لك. سيراجع أحد المهندسين متطلباتك ويرسل عرضًا."
+
+#: labqubit/api/leads.py:85
+msgid "Thank you. We will be in touch shortly."
+msgstr "شكرًا لك. سنتواصل معك قريبًا."
+
+#: labqubit/api/leads.py:109
+msgid "Thank you. We will confirm your consultation time by email."
+msgstr "شكرًا لك. سنؤكد موعد استشارتك عبر البريد الإلكتروني."
+
+#: labqubit/lq_website/doctype/lq_case_study/templates/lq_case_study.html:28
+msgid "The challenge"
+msgstr "التحدي"
+
+#: labqubit/api/leads.py:215
+msgid "The file doesn't look like a valid {0} document."
+msgstr "لا يبدو أن الملف مستند {0} صالح."
+
+#: labqubit/api/leads.py:212
+msgid "The file is larger than 5 MB."
+msgstr "حجم الملف أكبر من 5 ميغابايت."
+
+#: labqubit/www/404.html:10
+msgid "The page may have moved, or the link may be mistyped."
+msgstr "ربما نُقلت الصفحة، أو أن الرابط مكتوب بشكل خاطئ."
+
+#: labqubit/www/update-password.html:43
+msgid "The passwords do not match."
+msgstr "كلمتا المرور غير متطابقتين."
+
+#: labqubit/lq_website/doctype/lq_case_study/templates/lq_case_study.html:28
+msgid "The results"
+msgstr "النتائج"
+
+#: labqubit/www/partners.html:8
+msgid "The right technology for every job"
+msgstr "التقنية المناسبة لكل مهمة"
+
+#: labqubit/lq_service_desk/doctype/lq_support_ticket/lq_support_ticket.py:60
+msgid "The status of your ticket \"{0}\" changed to {1}."
+msgstr "تغيرت حالة تذكرتك \"{0}\" إلى {1}."
+
+#: labqubit/www/styleguide.py:9
+msgid "The style guide is available to System Managers only."
+msgstr "دليل التصميم متاح لمديري النظام فقط."
+
+#: labqubit/api/portal.py:129
+msgid "This action is not available for the ticket's current status."
+msgstr "هذا الإجراء غير متاح لحالة التذكرة الحالية."
+
+#: labqubit/lq_service_desk/doctype/lq_amc_contract/lq_amc_contract.py:61
+msgid "This contract was already renewed by {0}."
+msgstr "تم تجديد هذا العقد مسبقًا بالعقد {0}."
+
+#: labqubit/utils/forms.py:42
+msgid "This field"
+msgstr "هذا الحقل"
+
+#: labqubit/www/update-password.html:11
+msgid "This link is incomplete. Request a new password reset link from the sign-in page."
+msgstr "هذا الرابط غير مكتمل. اطلب رابطًا جديدًا لإعادة تعيين كلمة المرور من صفحة تسجيل الدخول."
+
+#: labqubit/lq_careers/doctype/lq_job_opening/templates/lq_job_opening.html:38
+msgid "This position is closed"
+msgstr "هذه الوظيفة مغلقة"
+
+#: labqubit/api/leads.py:122
+msgid "This position is no longer accepting applications."
+msgstr "لم تعد هذه الوظيفة تقبل طلبات التقديم."
+
+#: labqubit/www/update-password.html:58
+msgid "This reset link has expired or was already used. Request a new one from the sign-in page."
+msgstr "انتهت صلاحية رابط إعادة التعيين أو تم استخدامه. اطلب رابطًا جديدًا من صفحة تسجيل الدخول."
+
+#: labqubit/www/404.html:9
+msgid "This route doesn't exist"
+msgstr "هذا المسار غير موجود"
+
+#: labqubit/tasks.py:46
+msgid "This ticket has passed its SLA target."
+msgstr "تجاوزت هذه التذكرة هدف مستوى الخدمة."
+
+#: labqubit/api/portal.py:106
+msgid "This ticket is closed. Please open a new ticket."
+msgstr "هذه التذكرة مغلقة. يرجى فتح تذكرة جديدة."
+
+#: labqubit/www/privacy.html:14
+msgid "This website uses essential cookies to remember your language, keep you signed in to the client portal and protect forms against abuse. Your light or dark theme choice is stored in your browser only."
+msgstr "يستخدم هذا الموقع ملفات تعريف ارتباط أساسية لتذكر لغتك، والإبقاء على تسجيل دخولك إلى بوابة العملاء، وحماية النماذج من إساءة الاستخدام. يُحفظ اختيارك للمظهر الفاتح أو الداكن في متصفحك فقط."
+
+#: labqubit/lq_service_desk/doctype/lq_support_ticket/lq_support_ticket.py:163
+#: labqubit/www/portal/ticket.py:10 labqubit/www/portal/tickets/index.html:15
+msgid "Ticket"
+msgstr "التذكرة"
+
+#: labqubit/api/portal.py:48
+msgid "Ticket not found."
+msgstr "التذكرة غير موجودة."
+
+#: labqubit/api/portal.py:85
+msgid "Ticket {0} created."
+msgstr "تم إنشاء التذكرة {0}."
+
+#: labqubit/lq_service_desk/doctype/lq_support_ticket/lq_support_ticket.py:59
+msgid "Ticket {0} is now {1}"
+msgstr "التذكرة {0} أصبحت {1}"
+
+#: labqubit/lq_service_desk/doctype/lq_support_ticket/lq_support_ticket.py:46
+msgid "Ticket {0} received: {1}"
+msgstr "تم استلام التذكرة {0}: {1}"
+
+#: labqubit/labqubit/workspace/labqubit/labqubit.json
+#: labqubit/lq_service_desk/doctype/lq_client/lq_client.js:33
+msgid "Tickets"
+msgstr "التذاكر"
+
+#: labqubit/tasks.py:110
+msgid "Time to renew your support contract"
+msgstr "حان وقت تجديد عقد الدعم الخاص بك"
+
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.json
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.py:60
+#: labqubit/www/request-a-quote.html:22
+msgid "Timeline"
+msgstr "الجدول الزمني"
+
+#: labqubit/lq_careers/doctype/lq_job_opening/lq_job_opening.json
+#: labqubit/lq_service_desk/doctype/lq_client_document/lq_client_document.json
+#: labqubit/lq_website/doctype/lq_case_study/lq_case_study.json
+#: labqubit/lq_website/doctype/lq_certification/lq_certification.json
+#: labqubit/lq_website/doctype/lq_feature_item/lq_feature_item.json
+#: labqubit/lq_website/doctype/lq_industry/lq_industry.json
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+#: labqubit/lq_website/doctype/lq_solution/lq_solution.json
+msgid "Title"
+msgstr ""
+
+#: labqubit/lq_careers/doctype/lq_job_opening/lq_job_opening.json
+#: labqubit/lq_website/doctype/lq_case_study/lq_case_study.json
+#: labqubit/lq_website/doctype/lq_feature_item/lq_feature_item.json
+#: labqubit/lq_website/doctype/lq_industry/lq_industry.json
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+#: labqubit/lq_website/doctype/lq_solution/lq_solution.json
+msgid "Title (Arabic)"
+msgstr ""
+
+#: labqubit/templates/includes/lq_navbar.html:98
+msgid "Toggle light and dark mode"
+msgstr "التبديل بين الوضع الفاتح والداكن"
+
+#: labqubit/www/login.html:110 labqubit/www/login.html:127
+msgid "Too many attempts. Please wait a few minutes and try again."
+msgstr "محاولات كثيرة جدًا. يرجى الانتظار بضع دقائق ثم المحاولة مرة أخرى."
+
+#: labqubit/utils/ratelimit.py:21
+msgid "Too many requests. Please try again later."
+msgstr "طلبات كثيرة جدًا. يرجى المحاولة لاحقًا."
+
+#: labqubit/www/book-a-consultation.html:20
+msgid "Topics to discuss"
+msgstr "مواضيع للنقاش"
+
+#: labqubit/www/portal/tickets/index.html:4
+msgid "Track every request and its SLA in one place."
+msgstr "تابع كل طلب ومستوى الخدمة الخاص به في مكان واحد."
+
+#: labqubit/lq_careers/doctype/lq_job_application/lq_job_application.json
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.json
+msgid "Tracking"
+msgstr ""
+
+#: labqubit/www/careers/index.html:14
+msgid "Training budget"
+msgstr "ميزانية التدريب"
+
+#: labqubit/templates/components/sections.html:70
+msgid "Trusted by teams who can't afford downtime"
+msgstr "موثوقون لدى فرق لا تحتمل التوقف"
+
+#: labqubit/www/index.html:62
+msgid "Trusted where failure isn't an option"
+msgstr "موثوقون حيث لا مجال للفشل"
+
+#: labqubit/lq_website/doctype/lq_settings/lq_settings.json
+msgid "Turnstile Secret Key"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_settings/lq_settings.json
+msgid "Turnstile Site Key"
+msgstr ""
+
+#: labqubit/www/portal/assets.html:15 labqubit/www/portal/contract.html:41
+#: labqubit/www/portal/documents.html:15
+msgid "Type"
+msgstr "النوع"
+
+#: labqubit/lq_service_desk/doctype/lq_client_asset/lq_client_asset.json
+msgid "UPS"
+msgstr "مزود طاقة غير منقطعة"
+
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+msgid "URL path, set automatically from the title"
+msgstr ""
+
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.json
+msgid "UTM Campaign"
+msgstr ""
+
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.json
+msgid "UTM Medium"
+msgstr ""
+
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.json
+msgid "UTM Source"
+msgstr ""
+
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.json
+msgid "Under 10,000"
+msgstr "أقل من 10,000"
+
+#: labqubit/api/leads.py:55
+msgid "Unknown form."
+msgstr "نموذج غير معروف."
+
+#: labqubit/api/preferences.py:11
+msgid "Unsupported language"
+msgstr "لغة غير مدعومة"
+
+#: labqubit/www/portal/tickets/index.html:15
+msgid "Updated"
+msgstr "آخر تحديث"
+
+#: labqubit/api/leads.py:208
+msgid "Upload a PDF or Word document."
+msgstr "ارفع مستند PDF أو Word."
+
+#: labqubit/www/update-password.html:42
+msgid "Use at least 8 characters."
+msgstr "استخدم 8 أحرف على الأقل."
+
+#: labqubit/lq_website/doctype/lq_partner/lq_partner.json
+msgid "Use the official logo from the vendor's partner portal. SVG or transparent PNG/WebP."
+msgstr ""
+
+#: labqubit/lq_service_desk/doctype/lq_sla_policy/lq_sla_policy.json
+msgid "Used for tickets without an AMC contract"
+msgstr ""
+
+#: labqubit/lq_service_desk/doctype/lq_client_user/lq_client_user.json
+msgid "User"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_metric/lq_metric.json
+msgid "Value"
+msgstr ""
+
+#: labqubit/lq_service_desk/doctype/lq_client_asset/lq_client_asset.json
+msgid "Vendor"
+msgstr ""
+
+#: labqubit/www/login.html:29
+msgid "Verification code"
+msgstr "رمز التحقق"
+
+#: labqubit/utils/forms.py:164
+msgid "Verification failed. Please try again."
+msgstr "فشل التحقق. يرجى المحاولة مرة أخرى."
+
+#: labqubit/utils/forms.py:162
+msgid "Verification is temporarily unavailable. Please try again."
+msgstr "التحقق غير متاح مؤقتًا. يرجى المحاولة مرة أخرى."
+
+#: labqubit/lq_service_desk/doctype/lq_client/lq_client.js:33
+#: labqubit/lq_service_desk/doctype/lq_client/lq_client.js:34
+#: labqubit/lq_service_desk/doctype/lq_client/lq_client.js:35
+msgid "View"
+msgstr "عرض"
+
+#: labqubit/www/portal/index.html:24 labqubit/www/portal/index.html:40
+msgid "View all"
+msgstr "عرض الكل"
+
+#: labqubit/www/about.html:44
+msgid "View careers"
+msgstr "استكشف الوظائف"
+
+#: labqubit/tasks.py:116 labqubit/www/portal/index.html:9
+msgid "View contract"
+msgstr "عرض العقد"
+
+#: labqubit/lq_service_desk/doctype/lq_support_ticket/lq_support_ticket.py:153
+msgid "View in client portal"
+msgstr "العرض في بوابة العملاء"
+
+#: labqubit/templates/components/cards.html:48
+msgid "View role"
+msgstr "عرض الوظيفة"
+
+#: labqubit/lq_service_desk/doctype/lq_client_document/lq_client_document.json
+msgid "Visible in Client Portal"
+msgstr ""
+
+#: labqubit/lq_service_desk/doctype/lq_support_ticket/lq_support_ticket.json
+msgid "Waiting on Client"
+msgstr "بانتظار العميل"
+
+#: labqubit/www/about.html:44
+msgid "Want to work with us?"
+msgstr "هل تريد العمل معنا؟"
+
+#: labqubit/www/portal/assets.html:15
+msgid "Warranty"
+msgstr "الضمان"
+
+#: labqubit/lq_service_desk/doctype/lq_client_asset/lq_client_asset.json
+msgid "Warranty Expiry"
+msgstr ""
+
+#: labqubit/lq_service_desk/doctype/lq_client_asset/lq_client_asset.py:28
+msgid "Warranty expiry cannot be before the installation date."
+msgstr "لا يمكن أن يسبق تاريخ انتهاء الضمان تاريخ التركيب."
+
+#: labqubit/www/careers/index.html:32
+msgid "We are always happy to meet great engineers. Send your CV to {0}."
+msgstr "يسعدنا دائمًا التعرف على مهندسين متميزين. أرسل سيرتك الذاتية إلى {0}."
+
+#: labqubit/www/case-studies/index.html:25
+msgid "We are documenting recent projects with our clients' approval."
+msgstr "نوثّق المشاريع الأخيرة بعد موافقة عملائنا."
+
+#: labqubit/www/book-a-consultation.html:29
+msgid "We confirm a time"
+msgstr "نؤكد الموعد"
+
+#: labqubit/api/leads.py:164
+msgid "We couldn't read this file. Please upload a standard PDF or Word document."
+msgstr "تعذرت قراءة هذا الملف. يرجى رفع مستند PDF أو Word قياسي."
+
+#: labqubit/www/about.html:7
+msgid "We engineer the infrastructure organizations run on"
+msgstr "نهندس البنية التحتية التي تعمل عليها المؤسسات"
+
+#: labqubit/www/book-a-consultation.html:30
+msgid "We listen"
+msgstr "نستمع إليك"
+
+#: labqubit/lq_careers/doctype/lq_job_application/lq_job_application.py:39
+msgid "We received your application"
+msgstr "استلمنا طلب التوظيف الخاص بك"
+
+#: labqubit/lq_careers/doctype/lq_job_application/lq_job_application.py:41
+msgid "We received your application for {0}. Our team reviews every application and will contact you if there is a fit."
+msgstr "استلمنا طلبك لوظيفة {0}. يراجع فريقنا كل طلب وسيتواصل معك إذا كان هناك توافق."
+
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.py:77
+msgid "We received your message"
+msgstr "استلمنا رسالتك"
+
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.py:78
+msgid "We received your quote request"
+msgstr "استلمنا طلب عرض السعر الخاص بك"
+
+#: labqubit/lq_service_desk/doctype/lq_support_ticket/lq_support_ticket.py:47
+msgid "We received your support request and will respond by {0}."
+msgstr "استلمنا طلب الدعم الخاص بك وسنرد قبل {0}."
+
+#: labqubit/www/about.html:21
+msgid "We recommend what fits your needs and budget, even when it means selling less."
+msgstr "نوصي بما يناسب احتياجاتك وميزانيتك، حتى لو كان ذلك يعني بيعًا أقل."
+
+#: labqubit/www/request-a-quote.html:28
+msgid "We review every request the same day it arrives."
+msgstr "نراجع كل طلب في يوم وصوله نفسه."
+
+#: labqubit/www/industries/index.html:9
+msgid "We understand the regulations, operating conditions and expectations of each sector we serve."
+msgstr "نفهم الأنظمة وظروف التشغيل وتوقعات كل قطاع نخدمه."
+
+#: labqubit/www/privacy.html:12
+msgid "We use this information only to respond to your request, prepare proposals, deliver contracted services and, for job applications, to assess your application. We do not sell your information."
+msgstr "نستخدم هذه المعلومات فقط للرد على طلبك وإعداد العروض وتقديم الخدمات المتعاقد عليها، ولتقييم طلبات التوظيف. لا نبيع معلوماتك."
+
+#: labqubit/www/partners.html:9
+msgid "We work with leading technology vendors and recommend what fits your needs, deployed and supported by engineers who know these platforms well."
+msgstr "نعمل مع كبار مزوّدي التقنية ونوصي بما يناسب احتياجاتك، مع نشر ودعم من مهندسين يعرفون هذه المنصات جيدًا."
+
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+msgid "Web & Application Development"
+msgstr "تطوير المواقع والتطبيقات"
+
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+msgid "WebP, 1600 x 900 px"
+msgstr ""
+
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.json
+#: labqubit/lq_service_desk/doctype/lq_client/lq_client.json
+#: labqubit/lq_website/doctype/lq_partner/lq_partner.json
+msgid "Website"
+msgstr ""
+
+#: labqubit/labqubit/workspace/labqubit/labqubit.json
+msgid "Website Content"
+msgstr ""
+
+#: labqubit/labqubit/workspace/labqubit/labqubit.json
+msgid "Website Settings"
+msgstr ""
+
+#: labqubit/lq_service_desk/doctype/lq_client/lq_client.json
+msgid "Website users who can sign in to the client portal and see this client's contracts, assets, tickets and documents."
+msgstr ""
+
+#: labqubit/www/portal/index.html:4
+msgid "Welcome back"
+msgstr "مرحبًا بعودتك"
+
+#: labqubit/www/portal/new-ticket.html:14
+msgid "What happened, when it started, who is affected, and anything you've already tried."
+msgstr "ما الذي حدث، ومتى بدأ، ومن المتأثر، وما الذي جربته حتى الآن."
+
+#: labqubit/www/book-a-consultation.html:26
+msgid "What to expect"
+msgstr "ماذا تتوقع"
+
+#: labqubit/www/privacy.html:9
+msgid "What we collect"
+msgstr "ما الذي نجمعه"
+
+#: labqubit/www/index.html:24
+msgid "What we do"
+msgstr "ما نقدمه"
+
+#: labqubit/lq_careers/doctype/lq_job_opening/templates/lq_job_opening.html:20
+msgid "What you bring"
+msgstr "ما الذي تقدمه"
+
+#: labqubit/lq_website/doctype/lq_service/templates/lq_service.html:17
+msgid "What's included"
+msgstr "ما المشمول"
+
+#: labqubit/lq_website/doctype/lq_settings/lq_settings.json
+msgid "WhatsApp Number"
+msgstr ""
+
+#: labqubit/www/privacy.html:10
+msgid "When you submit a form on this website (contact, quote request, consultation booking or job application) we collect the details you enter, such as your name, email, phone number, company and message, together with the page you submitted from and your IP address for spam prevention."
+msgstr "عندما ترسل نموذجًا على هذا الموقع (تواصل أو طلب عرض سعر أو حجز استشارة أو طلب توظيف) نجمع البيانات التي تدخلها مثل اسمك وبريدك الإلكتروني ورقم هاتفك وشركتك ورسالتك، إضافة إلى الصفحة التي أرسلت منها وعنوان IP الخاص بك لمنع الرسائل المزعجة."
+
+#: labqubit/lq_service_desk/doctype/lq_client_asset/lq_client_asset.json
+msgid "Wireless Controller"
+msgstr "وحدة تحكم لاسلكية"
+
+#: labqubit/templates/components/hero.html:82
+msgid "Wireless clients"
+msgstr "أجهزة متصلة لاسلكيًا"
+
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.json
+msgid "Won"
+msgstr "ناجحة"
+
+#: labqubit/www/book-a-consultation.html:13 labqubit/www/contact.html:42
+#: labqubit/www/request-a-quote.html:13
+msgid "Work email"
+msgstr "البريد الإلكتروني للعمل"
+
+#: labqubit/www/careers/index.html:8
+msgid "Work on demanding projects across enterprise, government, energy and hospitality, with the training and support to grow your career."
+msgstr "اعمل على مشاريع مليئة بالتحديات في قطاعات المؤسسات والحكومة والطاقة والضيافة، مع التدريب والدعم لتطوير مسيرتك المهنية."
+
+#: labqubit/www/careers/index.html:17
+msgid "Work with current enterprise and security platforms."
+msgstr "اعمل على منصات المؤسسات والأمن الحديثة."
+
+#: labqubit/lq_website/doctype/lq_settings/lq_settings.json
+msgid "X (Twitter)"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_settings/lq_settings.json
+msgid "Years of Experience"
+msgstr ""
+
+#: labqubit/www/about.py:23 labqubit/www/index.py:50
+msgid "Years of experience"
+msgstr "سنوات من الخبرة"
+
+#: labqubit/templates/lq_portal.html:12
+msgid "You are signed in as staff. The client portal is for client contacts; manage clients in the Desk."
+msgstr "أنت مسجل الدخول كموظف. بوابة العملاء مخصصة لجهات اتصال العملاء؛ أدِر العملاء من لوحة التحكم."
+
+#: labqubit/www/privacy.html:18
+msgid "You can ask us to access, correct or delete your personal data at any time by contacting {0}."
+msgstr "يمكنك أن تطلب منا الاطلاع على بياناتك الشخصية أو تصحيحها أو حذفها في أي وقت بالتواصل مع {0}."
+
+#: labqubit/www/book-a-consultation.html:31
+msgid "You get a summary"
+msgstr "تحصل على ملخص"
+
+#: labqubit/www/portal/tickets/index.html:28
+msgid "You haven't raised any tickets yet."
+msgstr "لم تفتح أي تذاكر بعد."
+
+#: labqubit/www/book-a-consultation.html:29
+msgid "You receive a calendar invite within one business day."
+msgstr "تصلك دعوة تقويم خلال يوم عمل واحد."
+
+#: labqubit/lq_website/doctype/lq_settings/lq_settings.json
+msgid "YouTube"
+msgstr ""
+
+#: labqubit/tasks.py:111
+msgid "Your LabQubit support contract is ending soon. Your account manager will contact you with renewal options."
+msgstr "ينتهي عقد الدعم الخاص بك مع LabQubit قريبًا. سيتواصل معك مدير حسابك بخيارات التجديد."
+
+#: labqubit/api/portal.py:39
+msgid "Your account is not linked to a client."
+msgstr "حسابك غير مرتبط بأي عميل."
+
+#: labqubit/templates/lq_portal.html:15
+msgid "Your account isn't linked to a client yet. Please contact your LabQubit account manager."
+msgstr "حسابك غير مرتبط بعميل حتى الآن. يرجى التواصل مع مدير حسابك في LabQubit."
+
+#: labqubit/templates/lq_portal.html:47
+msgid "Your account manager"
+msgstr "مدير حسابك"
+
+#: labqubit/lq_sales/doctype/lq_lead/lq_lead.py:79
+msgid "Your consultation request"
+msgstr "طلب الاستشارة الخاص بك"
+
+#: labqubit/www/request-a-quote.html:30
+msgid "Your information is used only to prepare your proposal."
+msgstr "تُستخدم معلوماتك فقط لإعداد عرضك."
+
+#: labqubit/www/portal/contracts/index.html:4
+msgid "Your maintenance and support agreements."
+msgstr "اتفاقيات الصيانة والدعم الخاصة بك."
+
+#: labqubit/www/request-a-quote.html:29
+msgid "Your proposal is designed by experienced, qualified engineers."
+msgstr "يُعدّ عرضك مهندسون ذوو خبرة وكفاءة."
+
+#: labqubit/www/privacy.html:17
+msgid "Your rights"
+msgstr "حقوقك"
+
+#: labqubit/tasks.py:109
+msgid "Your support contract renews on {0}"
+msgstr "يتجدد عقد الدعم الخاص بك في {0}"
+
+#: labqubit/lq_website/doctype/lq_feature_item/lq_feature_item.json
+#: labqubit/lq_website/doctype/lq_industry/lq_industry.json
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+#: labqubit/lq_website/doctype/lq_solution/lq_solution.json
+msgid "activity"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_feature_item/lq_feature_item.json
+#: labqubit/lq_website/doctype/lq_industry/lq_industry.json
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+#: labqubit/lq_website/doctype/lq_solution/lq_solution.json
+msgid "award"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_feature_item/lq_feature_item.json
+#: labqubit/lq_website/doctype/lq_industry/lq_industry.json
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+#: labqubit/lq_website/doctype/lq_solution/lq_solution.json
+msgid "badge-check"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_feature_item/lq_feature_item.json
+#: labqubit/lq_website/doctype/lq_industry/lq_industry.json
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+#: labqubit/lq_website/doctype/lq_solution/lq_solution.json
+msgid "boxes"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_feature_item/lq_feature_item.json
+#: labqubit/lq_website/doctype/lq_industry/lq_industry.json
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+#: labqubit/lq_website/doctype/lq_solution/lq_solution.json
+msgid "brick-wall"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_feature_item/lq_feature_item.json
+#: labqubit/lq_website/doctype/lq_industry/lq_industry.json
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+#: labqubit/lq_website/doctype/lq_solution/lq_solution.json
+msgid "briefcase"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_feature_item/lq_feature_item.json
+#: labqubit/lq_website/doctype/lq_industry/lq_industry.json
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+#: labqubit/lq_website/doctype/lq_solution/lq_solution.json
+msgid "building-2"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_feature_item/lq_feature_item.json
+#: labqubit/lq_website/doctype/lq_industry/lq_industry.json
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+#: labqubit/lq_website/doctype/lq_solution/lq_solution.json
+msgid "cable"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_feature_item/lq_feature_item.json
+#: labqubit/lq_website/doctype/lq_industry/lq_industry.json
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+#: labqubit/lq_website/doctype/lq_solution/lq_solution.json
+msgid "circuit-board"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_feature_item/lq_feature_item.json
+#: labqubit/lq_website/doctype/lq_industry/lq_industry.json
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+#: labqubit/lq_website/doctype/lq_solution/lq_solution.json
+msgid "clock"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_feature_item/lq_feature_item.json
+#: labqubit/lq_website/doctype/lq_industry/lq_industry.json
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+#: labqubit/lq_website/doctype/lq_solution/lq_solution.json
+msgid "cloud"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_feature_item/lq_feature_item.json
+#: labqubit/lq_website/doctype/lq_industry/lq_industry.json
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+#: labqubit/lq_website/doctype/lq_solution/lq_solution.json
+msgid "cloud-cog"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_feature_item/lq_feature_item.json
+#: labqubit/lq_website/doctype/lq_industry/lq_industry.json
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+#: labqubit/lq_website/doctype/lq_solution/lq_solution.json
+msgid "cpu"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_feature_item/lq_feature_item.json
+#: labqubit/lq_website/doctype/lq_industry/lq_industry.json
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+#: labqubit/lq_website/doctype/lq_solution/lq_solution.json
+msgid "database"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_case_study/lq_case_study.json
+msgid "e.g. 'Regional oil & gas operator'. Name the client only with written permission."
+msgstr ""
+
+#: labqubit/lq_careers/doctype/lq_job_opening/lq_job_opening.json
+msgid "e.g. 5+ years"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_metric/lq_metric.json
+#, python-format
+msgid "e.g. 99.99% or 40+"
+msgstr ""
+
+#: labqubit/www/portal/new-ticket.html:10
+msgid "e.g. Branch office VPN is down"
+msgstr "مثال: شبكة VPN لمكتب الفرع متوقفة"
+
+#: labqubit/lq_website/doctype/lq_partner/lq_partner.json
+msgid "e.g. Gold Integrator, Platinum Partner"
+msgstr ""
+
+#: labqubit/lq_service_desk/doctype/lq_client_asset/lq_client_asset.json
+msgid "e.g. HQ Core Switch 01"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_feature_item/lq_feature_item.json
+#: labqubit/lq_website/doctype/lq_industry/lq_industry.json
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+#: labqubit/lq_website/doctype/lq_solution/lq_solution.json
+msgid "eye"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_feature_item/lq_feature_item.json
+#: labqubit/lq_website/doctype/lq_industry/lq_industry.json
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+#: labqubit/lq_website/doctype/lq_solution/lq_solution.json
+msgid "file-text"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_feature_item/lq_feature_item.json
+#: labqubit/lq_website/doctype/lq_industry/lq_industry.json
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+#: labqubit/lq_website/doctype/lq_solution/lq_solution.json
+msgid "flame"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_feature_item/lq_feature_item.json
+#: labqubit/lq_website/doctype/lq_industry/lq_industry.json
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+#: labqubit/lq_website/doctype/lq_solution/lq_solution.json
+msgid "fuel"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_feature_item/lq_feature_item.json
+#: labqubit/lq_website/doctype/lq_industry/lq_industry.json
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+#: labqubit/lq_website/doctype/lq_solution/lq_solution.json
+msgid "gauge"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_feature_item/lq_feature_item.json
+#: labqubit/lq_website/doctype/lq_industry/lq_industry.json
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+#: labqubit/lq_website/doctype/lq_solution/lq_solution.json
+msgid "globe"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_feature_item/lq_feature_item.json
+#: labqubit/lq_website/doctype/lq_industry/lq_industry.json
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+#: labqubit/lq_website/doctype/lq_solution/lq_solution.json
+msgid "graduation-cap"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_feature_item/lq_feature_item.json
+#: labqubit/lq_website/doctype/lq_industry/lq_industry.json
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+#: labqubit/lq_website/doctype/lq_solution/lq_solution.json
+msgid "handshake"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_feature_item/lq_feature_item.json
+#: labqubit/lq_website/doctype/lq_industry/lq_industry.json
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+#: labqubit/lq_website/doctype/lq_solution/lq_solution.json
+msgid "hard-drive"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_feature_item/lq_feature_item.json
+#: labqubit/lq_website/doctype/lq_industry/lq_industry.json
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+#: labqubit/lq_website/doctype/lq_solution/lq_solution.json
+msgid "headset"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_feature_item/lq_feature_item.json
+#: labqubit/lq_website/doctype/lq_industry/lq_industry.json
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+#: labqubit/lq_website/doctype/lq_solution/lq_solution.json
+msgid "hospital"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_feature_item/lq_feature_item.json
+#: labqubit/lq_website/doctype/lq_industry/lq_industry.json
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+#: labqubit/lq_website/doctype/lq_solution/lq_solution.json
+msgid "hotel"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_feature_item/lq_feature_item.json
+#: labqubit/lq_website/doctype/lq_industry/lq_industry.json
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+#: labqubit/lq_website/doctype/lq_solution/lq_solution.json
+msgid "key-round"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_feature_item/lq_feature_item.json
+#: labqubit/lq_website/doctype/lq_industry/lq_industry.json
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+#: labqubit/lq_website/doctype/lq_solution/lq_solution.json
+msgid "landmark"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_feature_item/lq_feature_item.json
+#: labqubit/lq_website/doctype/lq_industry/lq_industry.json
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+#: labqubit/lq_website/doctype/lq_solution/lq_solution.json
+msgid "layers"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_feature_item/lq_feature_item.json
+#: labqubit/lq_website/doctype/lq_industry/lq_industry.json
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+#: labqubit/lq_website/doctype/lq_solution/lq_solution.json
+msgid "life-buoy"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_feature_item/lq_feature_item.json
+#: labqubit/lq_website/doctype/lq_industry/lq_industry.json
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+#: labqubit/lq_website/doctype/lq_solution/lq_solution.json
+msgid "lock"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_feature_item/lq_feature_item.json
+#: labqubit/lq_website/doctype/lq_industry/lq_industry.json
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+#: labqubit/lq_website/doctype/lq_solution/lq_solution.json
+msgid "monitor-smartphone"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_feature_item/lq_feature_item.json
+#: labqubit/lq_website/doctype/lq_industry/lq_industry.json
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+#: labqubit/lq_website/doctype/lq_solution/lq_solution.json
+msgid "network"
+msgstr ""
+
+#: labqubit/www/login.html:36
+msgid "or"
+msgstr "أو"
+
+#: labqubit/lq_website/doctype/lq_feature_item/lq_feature_item.json
+#: labqubit/lq_website/doctype/lq_industry/lq_industry.json
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+#: labqubit/lq_website/doctype/lq_solution/lq_solution.json
+msgid "package"
+msgstr ""
+
+#: labqubit/lq_careers/doctype/lq_job_opening/templates/lq_job_opening.html:26
+#: labqubit/templates/components/forms.html:68
+msgid "privacy policy"
+msgstr "سياسة الخصوصية"
+
+#: labqubit/lq_website/doctype/lq_feature_item/lq_feature_item.json
+#: labqubit/lq_website/doctype/lq_industry/lq_industry.json
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+#: labqubit/lq_website/doctype/lq_solution/lq_solution.json
+msgid "radar"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_feature_item/lq_feature_item.json
+#: labqubit/lq_website/doctype/lq_industry/lq_industry.json
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+#: labqubit/lq_website/doctype/lq_solution/lq_solution.json
+msgid "rocket"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_feature_item/lq_feature_item.json
+#: labqubit/lq_website/doctype/lq_industry/lq_industry.json
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+#: labqubit/lq_website/doctype/lq_solution/lq_solution.json
+msgid "router"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_feature_item/lq_feature_item.json
+#: labqubit/lq_website/doctype/lq_industry/lq_industry.json
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+#: labqubit/lq_website/doctype/lq_solution/lq_solution.json
+msgid "satellite-dish"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_feature_item/lq_feature_item.json
+#: labqubit/lq_website/doctype/lq_industry/lq_industry.json
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+#: labqubit/lq_website/doctype/lq_solution/lq_solution.json
+msgid "scan-line"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_feature_item/lq_feature_item.json
+#: labqubit/lq_website/doctype/lq_industry/lq_industry.json
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+#: labqubit/lq_website/doctype/lq_solution/lq_solution.json
+msgid "server"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_feature_item/lq_feature_item.json
+#: labqubit/lq_website/doctype/lq_industry/lq_industry.json
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+#: labqubit/lq_website/doctype/lq_solution/lq_solution.json
+msgid "server-cog"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_feature_item/lq_feature_item.json
+#: labqubit/lq_website/doctype/lq_industry/lq_industry.json
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+#: labqubit/lq_website/doctype/lq_solution/lq_solution.json
+msgid "settings"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_feature_item/lq_feature_item.json
+#: labqubit/lq_website/doctype/lq_industry/lq_industry.json
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+#: labqubit/lq_website/doctype/lq_solution/lq_solution.json
+msgid "shield"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_feature_item/lq_feature_item.json
+#: labqubit/lq_website/doctype/lq_industry/lq_industry.json
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+#: labqubit/lq_website/doctype/lq_solution/lq_solution.json
+msgid "shield-check"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_feature_item/lq_feature_item.json
+#: labqubit/lq_website/doctype/lq_industry/lq_industry.json
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+#: labqubit/lq_website/doctype/lq_solution/lq_solution.json
+msgid "sparkles"
+msgstr ""
+
+#: labqubit/lq_service_desk/doctype/lq_support_ticket/lq_support_ticket.py:50
+msgid "the agreed time"
+msgstr "الموعد المتفق عليه"
+
+#: labqubit/www/privacy.html:18
+msgid "us"
+msgstr "نحن"
+
+#: labqubit/lq_website/doctype/lq_feature_item/lq_feature_item.json
+#: labqubit/lq_website/doctype/lq_industry/lq_industry.json
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+#: labqubit/lq_website/doctype/lq_solution/lq_solution.json
+msgid "users"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_feature_item/lq_feature_item.json
+#: labqubit/lq_website/doctype/lq_industry/lq_industry.json
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+#: labqubit/lq_website/doctype/lq_solution/lq_solution.json
+msgid "wifi"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_feature_item/lq_feature_item.json
+#: labqubit/lq_website/doctype/lq_industry/lq_industry.json
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+#: labqubit/lq_website/doctype/lq_solution/lq_solution.json
+msgid "workflow"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_feature_item/lq_feature_item.json
+#: labqubit/lq_website/doctype/lq_industry/lq_industry.json
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+#: labqubit/lq_website/doctype/lq_solution/lq_solution.json
+msgid "wrench"
+msgstr ""
+
+#: labqubit/lq_website/doctype/lq_feature_item/lq_feature_item.json
+#: labqubit/lq_website/doctype/lq_industry/lq_industry.json
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+#: labqubit/lq_website/doctype/lq_solution/lq_solution.json
+msgid "zap"
+msgstr ""
+
+#: labqubit/lq_service_desk/doctype/lq_client/lq_client.py:34
+msgid "{0} already has portal access for {1}. A portal user can belong to one client only."
+msgstr "{0} لديه صلاحية وصول إلى البوابة لـ {1}. يمكن أن ينتمي مستخدم البوابة إلى عميل واحد فقط."
+
+#: labqubit/www/portal/contract.html:15
+msgid "{0} days left"
+msgstr "متبقٍ {0} يومًا"
+
+#: labqubit/api/portal.py:151
+msgid "{0} doesn't match its file type."
+msgstr "{0} لا يطابق نوع ملفه."
+
+#: labqubit/www/portal/index.html:8
+msgid "{0} ends on {1}"
+msgstr "{0} ينتهي في {1}"
+
+#: labqubit/www/portal/contract.html:30
+msgid "{0} h"
+msgstr "{0} ساعة"
+
+#: labqubit/api/portal_admin.py:25
+msgid "{0} is a staff account. Use a separate email for portal access."
+msgstr "{0} حساب موظف. استخدم بريدًا إلكترونيًا مختلفًا للوصول إلى البوابة."
+
+#: labqubit/api/portal.py:148
+msgid "{0} is larger than 10 MB."
+msgstr "{0} أكبر من 10 ميغابايت."
+
+#: labqubit/utils/forms.py:42
+msgid "{0} is required."
+msgstr "{0} مطلوب."
+
+#: labqubit/www/blog/index.html:29 labqubit/www/blog/post.html:16
+msgid "{0} min read"
+msgstr "{0} دقائق للقراءة"
+
+#: labqubit/api/portal.py:156
+msgid "{0} must be a plain text file."
+msgstr "يجب أن يكون {0} ملفًا نصيًا عاديًا."
+
+#: labqubit/lq_service_desk/doctype/lq_support_ticket/lq_support_ticket.py:40
+msgid "{0} ticket from {1}: {2}"
+msgstr "تذكرة بأولوية {0} من {1}: {2}"
+
+#: labqubit/lq_service_desk/doctype/lq_client_document/lq_client_document.py:16
+msgid "{0} {1} does not belong to {2}."
+msgstr "{0} {1} لا يخص {2}."
+
+#: labqubit/api/portal.py:145
+msgid "{0}: file type not allowed."
+msgstr "{0}: نوع الملف غير مسموح."
+

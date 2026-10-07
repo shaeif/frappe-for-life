@@ -1,0 +1,30 @@
+{% extends "templates/lq_portal.html" %}
+{% from "templates/components/portal.html" import status, page_header, empty with context %}
+{% block portal %}
+{{ page_header(_("Support tickets"), _("Track every request and its SLA in one place."), _("New ticket"), "/portal/new-ticket") }}
+{%- set chip = "rounded-full border border-line bg-surface px-3 py-1 text-sm text-muted transition hover:text-fg aria-pressed:border-brand-400/60 aria-pressed:bg-brand-500/15 aria-pressed:text-fg" %}
+<div class="mb-4 flex flex-wrap gap-2" data-filter-group="#ticket-rows" role="group" aria-label="{{ _('Filter by status') }}">
+	<button type="button" class="{{ chip }}" data-filter="" aria-pressed="true">{{ _("All") }}</button>
+	{%- for s in ["Open", "In Progress", "Waiting on Client", "Resolved", "Closed"] %}
+	<button type="button" class="{{ chip }}" data-filter="{{ s }}" aria-pressed="false">{{ _(s) }}</button>
+	{%- endfor %}
+</div>
+<div class="lq-glass overflow-x-auto">
+	{%- if tickets %}
+	<table class="lq-table min-w-[40rem]">
+		<thead><tr><th>{{ _("Ticket") }}</th><th>{{ _("Priority") }}</th><th>{{ _("Status") }}</th><th>{{ _("SLA") }}</th><th>{{ _("Updated") }}</th></tr></thead>
+		<tbody id="ticket-rows">
+			{%- for t in tickets %}
+			<tr data-filter-value="{{ t.status }}" class="hover:bg-surface">
+				<td><a href="/portal/tickets/{{ t.name }}" class="font-medium text-fg hover:text-link">{{ t.subject | e }}</a><span class="block text-xs text-subtle">{{ t.name }}</span></td>
+				<td>{{ status(t.priority, badge) }}</td>
+				<td>{{ status(t.status, badge) }}</td>
+				<td>{{ status(t.sla_status, badge) }}</td>
+				<td class="whitespace-nowrap">{{ frappe.utils.pretty_date(t.modified) }}</td>
+			</tr>
+			{%- endfor %}
+		</tbody>
+	</table>
+	{%- else %}{{ empty(_("You haven't raised any tickets yet."), "life-buoy") }}{% endif %}
+</div>
+{% endblock %}

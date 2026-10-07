@@ -1,0 +1,17 @@
+{% extends "templates/lq_page.html" %}
+{% from "templates/components/hero.html" import backdrop with context %}
+{% from "templates/components/ui.html" import button with context %}
+{% block page %}
+<section class="relative isolate flex min-h-[80vh] items-center overflow-hidden pt-24">
+	{{ backdrop() }}
+	<div class="lq-container relative text-center">
+		<p class="font-mono text-sm text-signal-400">404</p>
+		<h1 class="lq-display mt-4">{{ _("This route doesn't exist") }}</h1>
+		<p class="lq-lead mx-auto mt-5 max-w-xl">{{ _("The page may have moved, or the link may be mistyped.") }}</p>
+		<div class="mt-10 flex flex-wrap justify-center gap-3">
+			{{ button(_("Back to home"), "/", "primary", icon_end="arrow-right") }}
+			{{ button(_("Contact us"), "/contact", "secondary") }}
+		</div>
+	</div>
+</section>
+{% endblock %}

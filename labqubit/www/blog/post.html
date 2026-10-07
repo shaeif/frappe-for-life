@@ -1,0 +1,36 @@
+{% extends "templates/lq_page.html" %}
+{% from "templates/components/ui.html" import breadcrumbs, picture with context %}
+{% from "templates/components/hero.html" import backdrop with context %}
+{% from "templates/components/sections.html" import cta_band with context %}
+
+{% block page %}
+<article>
+	<header class="relative isolate overflow-hidden pt-32 pb-12 sm:pt-36">
+		{{ backdrop("light") }}
+		<div class="lq-container relative max-w-3xl">
+			{{ breadcrumbs([(_("Blog"), "/blog")] + ([(category.title, "/" ~ category.route)] if category else []) + [(post.title, "")]) }}
+			<h1 class="lq-display text-4xl sm:text-5xl" data-reveal>{{ post.title | e }}</h1>
+			<p class="mt-5 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-muted" data-reveal>
+				{%- if author %}<span>{{ author.full_name | e }}</span>{% endif %}
+				{%- if post.published_on %}<time datetime="{{ post.published_on }}">{{ frappe.format_date(post.published_on) }}</time>{% endif %}
+				{%- if post.read_time %}<span>{{ _("{0} min read").format(post.read_time) }}</span>{% endif %}
+			</p>
+		</div>
+	</header>
+	<div class="lq-container max-w-3xl pb-16">
+		{%- if post.meta_image %}<div class="mb-10 overflow-hidden rounded-3xl border border-line">{{ picture(post.meta_image, post.title, "w-full", eager=True) }}</div>{% endif %}
+		<div class="lq-prose text-lg">{{ content_html }}</div>
+		{%- if related %}
+		<aside class="mt-16 border-t border-line pt-10">
+			<h2 class="lq-h3">{{ _("Keep reading") }}</h2>
+			<ul class="mt-4 space-y-3">
+				{%- for r in related %}
+				<li><a href="/{{ r.route | e }}" class="group flex items-center justify-between gap-4 rounded-xl border border-line bg-surface px-5 py-4 hover:border-brand-400/50"><span class="font-medium text-fg">{{ r.title | e }}</span>{{ lq_icon("arrow-right", "size-4 lq-icon-flip text-muted group-hover:text-fg") }}</a></li>
+				{%- endfor %}
+			</ul>
+		</aside>
+		{%- endif %}
+	</div>
+</article>
+{{ cta_band() }}
+{% endblock %}

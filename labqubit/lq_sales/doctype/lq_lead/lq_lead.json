@@ -1,0 +1,359 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "LEAD-.YYYY.-.#####",
+ "creation": "2026-10-07 23:04:45.380148",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "lead_type",
+  "status",
+  "col0",
+  "source",
+  "lead_owner",
+  "contact_section",
+  "full_name",
+  "email",
+  "phone",
+  "col1",
+  "company",
+  "job_title",
+  "country",
+  "industry",
+  "request_section",
+  "services_of_interest",
+  "message",
+  "quote_section",
+  "budget_range",
+  "timeline",
+  "col2",
+  "site_count",
+  "consult_section",
+  "preferred_date",
+  "preferred_time",
+  "col3",
+  "meeting_mode",
+  "followup_section",
+  "next_follow_up",
+  "estimated_value",
+  "col4",
+  "lost_reason",
+  "closed_on",
+  "tracking_section",
+  "page_url",
+  "language",
+  "consent",
+  "col5",
+  "utm_source",
+  "utm_medium",
+  "utm_campaign",
+  "ip_address"
+ ],
+ "fields": [
+  {
+   "default": "Contact",
+   "fieldname": "lead_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Enquiry Type",
+   "options": "Contact\nQuote Request\nConsultation",
+   "reqd": 1
+  },
+  {
+   "default": "New",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "New\nContacted\nQualified\nProposal Sent\nWon\nLost",
+   "reqd": 1
+  },
+  {
+   "fieldname": "col0",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Website",
+   "fieldname": "source",
+   "fieldtype": "Select",
+   "in_standard_filter": 1,
+   "label": "Source",
+   "options": "Website\nReferral\nPartner\nEvent\nCold Outreach\nOther"
+  },
+  {
+   "fieldname": "lead_owner",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Lead Owner",
+   "options": "User"
+  },
+  {
+   "fieldname": "contact_section",
+   "fieldtype": "Section Break",
+   "label": "Contact"
+  },
+  {
+   "bold": 1,
+   "fieldname": "full_name",
+   "fieldtype": "Data",
+   "label": "Full Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Email",
+   "options": "Email",
+   "reqd": 1
+  },
+  {
+   "fieldname": "phone",
+   "fieldtype": "Data",
+   "label": "Phone",
+   "options": "Phone"
+  },
+  {
+   "fieldname": "col1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Company"
+  },
+  {
+   "fieldname": "job_title",
+   "fieldtype": "Data",
+   "label": "Job Title"
+  },
+  {
+   "fieldname": "country",
+   "fieldtype": "Link",
+   "label": "Country",
+   "options": "Country"
+  },
+  {
+   "fieldname": "industry",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Industry",
+   "options": "LQ Industry"
+  },
+  {
+   "fieldname": "request_section",
+   "fieldtype": "Section Break",
+   "label": "Request"
+  },
+  {
+   "fieldname": "services_of_interest",
+   "fieldtype": "Table MultiSelect",
+   "label": "Services of Interest",
+   "options": "LQ Service Link"
+  },
+  {
+   "fieldname": "message",
+   "fieldtype": "Text",
+   "label": "Message"
+  },
+  {
+   "depends_on": "eval:doc.lead_type==\"Quote Request\"",
+   "fieldname": "quote_section",
+   "fieldtype": "Section Break",
+   "label": "Quote Details"
+  },
+  {
+   "fieldname": "budget_range",
+   "fieldtype": "Select",
+   "label": "Budget (USD)",
+   "options": "\nUnder 10,000\n10,000 - 50,000\n50,000 - 250,000\n250,000+\nNot sure"
+  },
+  {
+   "fieldname": "timeline",
+   "fieldtype": "Select",
+   "label": "Timeline",
+   "options": "\nASAP\n1-3 months\n3-6 months\n6+ months\nNot sure"
+  },
+  {
+   "fieldname": "col2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "site_count",
+   "fieldtype": "Int",
+   "label": "Number of Sites"
+  },
+  {
+   "depends_on": "eval:doc.lead_type==\"Consultation\"",
+   "fieldname": "consult_section",
+   "fieldtype": "Section Break",
+   "label": "Consultation Details"
+  },
+  {
+   "fieldname": "preferred_date",
+   "fieldtype": "Date",
+   "label": "Preferred Date"
+  },
+  {
+   "fieldname": "preferred_time",
+   "fieldtype": "Select",
+   "label": "Preferred Time",
+   "options": "\nMorning (9-12)\nAfternoon (12-4)\nEvening (4-6)"
+  },
+  {
+   "fieldname": "col3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "meeting_mode",
+   "fieldtype": "Select",
+   "label": "Meeting Mode",
+   "options": "\nOnline\nOn-site\nPhone"
+  },
+  {
+   "fieldname": "followup_section",
+   "fieldtype": "Section Break",
+   "label": "Follow-up"
+  },
+  {
+   "fieldname": "next_follow_up",
+   "fieldtype": "Date",
+   "label": "Next Follow-up"
+  },
+  {
+   "fieldname": "estimated_value",
+   "fieldtype": "Currency",
+   "label": "Estimated Value"
+  },
+  {
+   "fieldname": "col4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.status==\"Lost\"",
+   "fieldname": "lost_reason",
+   "fieldtype": "Small Text",
+   "label": "Lost Reason",
+   "mandatory_depends_on": "eval:doc.status==\"Lost\""
+  },
+  {
+   "fieldname": "closed_on",
+   "fieldtype": "Date",
+   "label": "Closed On",
+   "read_only": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "tracking_section",
+   "fieldtype": "Section Break",
+   "label": "Tracking"
+  },
+  {
+   "fieldname": "page_url",
+   "fieldtype": "Data",
+   "label": "Submitted From",
+   "read_only": 1
+  },
+  {
+   "fieldname": "language",
+   "fieldtype": "Data",
+   "label": "Language",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "consent",
+   "fieldtype": "Check",
+   "label": "Consented to be Contacted",
+   "read_only": 1
+  },
+  {
+   "fieldname": "col5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "utm_source",
+   "fieldtype": "Data",
+   "label": "UTM Source",
+   "read_only": 1
+  },
+  {
+   "fieldname": "utm_medium",
+   "fieldtype": "Data",
+   "label": "UTM Medium",
+   "read_only": 1
+  },
+  {
+   "fieldname": "utm_campaign",
+   "fieldtype": "Data",
+   "label": "UTM Campaign",
+   "read_only": 1
+  },
+  {
+   "fieldname": "ip_address",
+   "fieldtype": "Data",
+   "label": "IP Address",
+   "read_only": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-10-07 22:16:29.619529",
+ "modified_by": "Administrator",
+ "module": "LQ Sales",
+ "name": "LQ Lead",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "LQ Sales Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "LQ Sales User",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "search_fields": "email,company,lead_type,status",
+ "show_title_field_in_link": 1,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "full_name",
+ "track_changes": 1
+}

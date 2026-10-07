@@ -1,0 +1,173 @@
+{%- from "templates/components/ui.html" import logo with context -%}
+{%- set nav = lq.nav -%}
+{%- set link_cls = "flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-medium text-muted transition hover:bg-surface hover:text-fg aria-expanded:text-fg" -%}
+{%- set other_lang = "en" if lq.rtl else "ar" -%}
+
+<header class="lq-nav" data-nav {{ 'data-solid="true"' if nav_solid else '' }}>
+	<div class="lq-container relative flex h-16 items-center justify-between gap-4">
+		<a href="/" class="shrink-0" aria-label="{{ _('LabQubit home') }}">{{ logo("nav") }}</a>
+
+		<nav aria-label="{{ _('Main') }}" class="hidden lg:block">
+			<ul class="flex items-center gap-0.5">
+				{%- if nav.service_groups %}
+				<li data-mega>
+					<button type="button" class="{{ link_cls }}" aria-expanded="false" aria-controls="mega-services" data-mega-trigger>
+						{{ _("Services") }}{{ lq_icon("chevron-down", "size-4 transition") }}
+					</button>
+					<div id="mega-services" class="lq-mega" data-mega-panel>
+						<div class="lq-glass grid grid-cols-3 gap-x-6 gap-y-7 bg-canvas-soft p-7 shadow-2xl">
+							{%- for group in nav.service_groups %}
+							<div>
+								<a href="/services#{{ group.anchor }}" class="flex items-center gap-2 text-xs font-semibold tracking-wide text-subtle uppercase hover:text-fg">
+									{{ lq_icon(group.icon, "size-4 text-brand-400") }}{{ _(group.category) | e }}
+								</a>
+								<ul class="mt-3 space-y-1">
+									{%- for s in group.services[:4] %}
+									<li><a href="/{{ s.route | e }}" class="block rounded-lg px-2 py-1.5 text-sm text-fg/90 hover:bg-surface hover:text-fg">{{ t(s, "title") | e }}</a></li>
+									{%- endfor %}
+								</ul>
+							</div>
+							{%- endfor %}
+							<div class="col-span-3 flex items-center justify-between rounded-xl border border-line bg-surface px-5 py-4">
+								<p class="text-sm text-muted">{{ _("Not sure where to start? Our engineers will assess your environment.") }}</p>
+								<a href="/book-a-consultation" class="lq-btn lq-btn-primary lq-btn-sm">{{ _("Book a free consultation") }}</a>
+							</div>
+						</div>
+					</div>
+				</li>
+				{%- endif %}
+				{%- if nav.solutions or nav.industries %}
+				<li data-mega>
+					<button type="button" class="{{ link_cls }}" aria-expanded="false" aria-controls="mega-solutions" data-mega-trigger>
+						{{ _("Solutions") }}{{ lq_icon("chevron-down", "size-4 transition") }}
+					</button>
+					<div id="mega-solutions" class="lq-mega" data-mega-panel>
+						<div class="lq-glass grid grid-cols-5 gap-8 bg-canvas-soft p-7 shadow-2xl">
+							<div class="col-span-3">
+								<p class="text-xs font-semibold tracking-wide text-subtle uppercase">{{ _("By outcome") }}</p>
+								<ul class="mt-3 grid grid-cols-2 gap-2">
+									{%- for s in nav.solutions[:6] %}
+									<li>
+										<a href="/{{ s.route | e }}" class="flex gap-3 rounded-xl p-2.5 hover:bg-surface">
+											<span class="lq-icon-tile size-9">{{ lq_icon(s.icon or "layers", "size-4") }}</span>
+											<span>
+												<span class="block text-sm font-medium text-fg">{{ t(s, "title") | e }}</span>
+												<span class="mt-0.5 line-clamp-2 block text-xs text-muted">{{ (t(s, "tagline") or t(s, "short_description")) | e }}</span>
+											</span>
+										</a>
+									</li>
+									{%- endfor %}
+								</ul>
+								<a href="/solutions" class="mt-3 inline-flex items-center gap-1 px-2.5 text-sm font-medium text-link">{{ _("All solutions") }}{{ lq_icon("arrow-right", "size-4 lq-icon-flip") }}</a>
+							</div>
+							<div class="col-span-2 border-s border-line ps-8">
+								<p class="text-xs font-semibold tracking-wide text-subtle uppercase">{{ _("By industry") }}</p>
+								<ul class="mt-3 space-y-1">
+									{%- for i in nav.industries[:6] %}
+									<li><a href="/{{ i.route | e }}" class="flex items-center gap-2.5 rounded-lg px-2 py-2 text-sm text-fg/90 hover:bg-surface hover:text-fg">{{ lq_icon(i.icon or "building-2", "size-4 text-brand-400") }}{{ t(i, "title") | e }}</a></li>
+									{%- endfor %}
+								</ul>
+								<a href="/industries" class="mt-3 inline-flex items-center gap-1 px-2 text-sm font-medium text-link">{{ _("All industries") }}{{ lq_icon("arrow-right", "size-4 lq-icon-flip") }}</a>
+							</div>
+						</div>
+					</div>
+				</li>
+				{%- endif %}
+				<li><a href="/case-studies" class="{{ link_cls }}">{{ _("Case Studies") }}</a></li>
+				<li><a href="/partners" class="{{ link_cls }}">{{ _("Partners") }}</a></li>
+				<li data-mega class="relative">
+					<button type="button" class="{{ link_cls }}" aria-expanded="false" aria-controls="mega-company" data-mega-trigger>
+						{{ _("Company") }}{{ lq_icon("chevron-down", "size-4 transition") }}
+					</button>
+					<div id="mega-company" class="lq-mega lq-mega-sm" data-mega-panel>
+						<ul class="lq-glass w-60 bg-canvas-soft p-2 shadow-2xl">
+							{%- for label, href, ic in [(_("About"), "/about", "building-2"), (_("Careers"), "/careers", "briefcase"), (_("Blog"), "/blog", "file-text"), (_("Contact"), "/contact", "mail")] %}
+							<li><a href="{{ href }}" class="flex items-center gap-2.5 rounded-lg px-3 py-2 text-sm text-fg/90 hover:bg-surface hover:text-fg">{{ lq_icon(ic, "size-4 text-brand-400") }}{{ label }}</a></li>
+							{%- endfor %}
+						</ul>
+					</div>
+				</li>
+			</ul>
+		</nav>
+
+		<div class="flex items-center gap-1.5">
+			<a href="?_lang={{ other_lang }}" data-lang-switch="{{ other_lang }}" hreflang="{{ other_lang }}" lang="{{ other_lang }}"
+				class="hidden rounded-lg px-2.5 py-2 text-sm font-medium text-muted hover:bg-surface hover:text-fg sm:block">
+				{{ "English" if lq.rtl else "العربية" }}
+			</a>
+			<button type="button" class="rounded-lg p-2 text-muted hover:bg-surface hover:text-fg" data-theme-toggle aria-label="{{ _('Toggle light and dark mode') }}">
+				<span class="hidden dark:inline">{{ lq_icon("sun") }}</span><span class="dark:hidden">{{ lq_icon("moon") }}</span>
+			</button>
+			<a href="/login" data-auth="guest" class="hidden rounded-lg px-3 py-2 text-sm font-medium text-muted hover:bg-surface hover:text-fg xl:block">{{ _("Client Login") }}</a>
+			<a href="/portal" data-auth="user" data-portal-link hidden class="hidden items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium text-muted hover:bg-surface hover:text-fg xl:flex">
+				{{ lq_icon("layout-dashboard", "size-4") }}<span data-user-name>{{ _("Portal") }}</span>
+			</a>
+			<a href="/request-a-quote" class="lq-btn lq-btn-primary lq-btn-sm hidden sm:inline-flex">{{ _("Request a Quote") }}</a>
+			<button type="button" class="rounded-lg p-2 text-fg hover:bg-surface lg:hidden" data-drawer-open aria-controls="lq-drawer" aria-expanded="false" aria-label="{{ _('Open menu') }}">
+				{{ lq_icon("menu", "size-6") }}
+			</button>
+		</div>
+	</div>
+</header>
+
+{#- Mobile slide-out menu -#}
+<div id="lq-drawer" class="lq-drawer lg:hidden" data-drawer hidden>
+	<div class="absolute inset-0 bg-ink-950/60 backdrop-blur-sm" data-drawer-close></div>
+	<div class="lq-drawer-panel" role="dialog" aria-modal="true" aria-label="{{ _('Menu') }}">
+		<div class="flex h-16 items-center justify-between border-b border-line px-5">
+			<a href="/" aria-label="{{ _('LabQubit home') }}">{{ logo("drawer") }}</a>
+			<button type="button" class="rounded-lg p-2 text-fg hover:bg-surface" data-drawer-close aria-label="{{ _('Close menu') }}">{{ lq_icon("x", "size-6") }}</button>
+		</div>
+		<nav class="flex-1 overflow-y-auto px-3 py-4" aria-label="{{ _('Mobile') }}">
+			{%- set row = "flex items-center justify-between rounded-xl px-3 py-3 text-base font-medium text-fg hover:bg-surface" -%}
+			{%- if nav.service_groups %}
+			<details class="group">
+				<summary class="{{ row }} cursor-pointer list-none">{{ _("Services") }}{{ lq_icon("chevron-down", "size-5 transition group-open:rotate-180") }}</summary>
+				<div class="space-y-4 px-3 pt-1 pb-3">
+					{%- for group in nav.service_groups %}
+					<div>
+						<a href="/services#{{ group.anchor }}" class="text-xs font-semibold tracking-wide text-subtle uppercase">{{ _(group.category) | e }}</a>
+						<ul class="mt-1.5 space-y-0.5 border-s border-line ps-3">
+							{%- for s in group.services %}
+							<li><a href="/{{ s.route | e }}" class="block py-1.5 text-sm text-muted hover:text-fg">{{ t(s, "title") | e }}</a></li>
+							{%- endfor %}
+						</ul>
+					</div>
+					{%- endfor %}
+				</div>
+			</details>
+			{%- endif %}
+			{%- if nav.solutions %}
+			<details class="group">
+				<summary class="{{ row }} cursor-pointer list-none">{{ _("Solutions") }}{{ lq_icon("chevron-down", "size-5 transition group-open:rotate-180") }}</summary>
+				<ul class="space-y-0.5 px-3 pb-3">
+					{%- for s in nav.solutions %}
+					<li><a href="/{{ s.route | e }}" class="block py-1.5 text-sm text-muted hover:text-fg">{{ t(s, "title") | e }}</a></li>
+					{%- endfor %}
+				</ul>
+			</details>
+			{%- endif %}
+			{%- if nav.industries %}
+			<details class="group">
+				<summary class="{{ row }} cursor-pointer list-none">{{ _("Industries") }}{{ lq_icon("chevron-down", "size-5 transition group-open:rotate-180") }}</summary>
+				<ul class="space-y-0.5 px-3 pb-3">
+					{%- for i in nav.industries %}
+					<li><a href="/{{ i.route | e }}" class="block py-1.5 text-sm text-muted hover:text-fg">{{ t(i, "title") | e }}</a></li>
+					{%- endfor %}
+				</ul>
+			</details>
+			{%- endif %}
+			{%- for label, href in [(_("Case Studies"), "/case-studies"), (_("Partners"), "/partners"), (_("About"), "/about"), (_("Careers"), "/careers"), (_("Blog"), "/blog"), (_("Contact"), "/contact")] %}
+			<a href="{{ href }}" class="{{ row }}">{{ label }}</a>
+			{%- endfor %}
+		</nav>
+		<div class="space-y-3 border-t border-line p-5">
+			<a href="/request-a-quote" class="lq-btn lq-btn-primary w-full">{{ _("Request a Quote") }}</a>
+			<div class="grid grid-cols-2 gap-3">
+				<a href="/login" data-auth="guest" class="lq-btn lq-btn-secondary">{{ _("Client Login") }}</a>
+				<a href="/portal" data-auth="user" data-portal-link hidden class="lq-btn lq-btn-secondary">{{ _("Portal") }}</a>
+				<a href="?_lang={{ other_lang }}" data-lang-switch="{{ other_lang }}" lang="{{ other_lang }}" class="lq-btn lq-btn-secondary">{{ "English" if lq.rtl else "العربية" }}</a>
+			</div>
+		</div>
+	</div>
+</div>

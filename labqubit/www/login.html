@@ -1,0 +1,137 @@
+{% extends "templates/lq_page.html" %}
+{% from "templates/components/hero.html" import backdrop with context %}
+{% from "templates/components/ui.html" import logo_mark with context %}
+{% block page %}
+<section class="relative isolate flex min-h-screen items-center overflow-hidden py-28">
+	{{ backdrop() }}
+	<div class="lq-container relative">
+		<div class="mx-auto w-full max-w-md">
+			<div class="mb-8 text-center">
+				<span class="inline-flex">{{ logo_mark("login", "size-12") }}</span>
+				<h1 class="mt-5 text-2xl font-semibold tracking-tight text-fg">{{ _("Sign in to LabQubit") }}</h1>
+				<p class="mt-2 text-sm text-muted">{{ _("Client portal and staff access") }}</p>
+			</div>
+
+			<div class="lq-glass p-6 sm:p-8">
+				{#- sign in -#}
+				<form id="login-form" class="space-y-5" data-login-form data-redirect-to="{{ redirect_to | e }}" novalidate>
+					<div class="lq-error rounded-xl border border-rose-400/30 bg-rose-500/10 px-4 py-3 text-sm" role="alert" data-login-error hidden></div>
+					{%- if not disable_user_pass_login %}
+					<div>
+						<label for="login-email" class="lq-label">{{ _("Email") }}</label>
+						<input id="login-email" name="usr" type="email" autocomplete="username" class="lq-input" required>
+					</div>
+					<div>
+						<div class="flex items-center justify-between"><label for="login-password" class="lq-label">{{ _("Password") }}</label><button type="button" class="mb-1.5 text-sm text-link hover:underline" data-show="forgot">{{ _("Forgot password?") }}</button></div>
+						<input id="login-password" name="pwd" type="password" autocomplete="current-password" class="lq-input" required>
+					</div>
+					<div data-otp hidden>
+						<label for="login-otp" class="lq-label">{{ _("Verification code") }}</label>
+						<input id="login-otp" name="otp" inputmode="numeric" autocomplete="one-time-code" class="lq-input">
+						<p class="lq-help" data-otp-help></p>
+					</div>
+					<button type="submit" class="lq-btn lq-btn-primary w-full" data-submit>{{ _("Sign in") }}</button>
+					{%- endif %}
+					{%- if provider_logins %}
+					<div class="flex items-center gap-3 text-xs text-subtle"><span class="h-px flex-1 bg-line"></span>{{ _("or") }}<span class="h-px flex-1 bg-line"></span></div>
+					{%- for p in provider_logins %}
+					<a href="{{ p.auth_url | e }}" class="lq-btn lq-btn-secondary w-full">{{ _("Continue with {0}").format(p.provider_name | e) }}</a>
+					{%- endfor %}
+					{%- endif %}
+				</form>
+
+				{#- forgot password -#}
+				<form class="space-y-5" data-forgot-form hidden novalidate>
+					<p class="text-sm text-muted">{{ _("Enter your email and we'll send you a link to reset your password.") }}</p>
+					<div class="lq-error rounded-xl border border-rose-400/30 bg-rose-500/10 px-4 py-3 text-sm" role="alert" data-forgot-error hidden></div>
+					<div class="rounded-xl border border-emerald-400/30 bg-emerald-500/10 px-4 py-3 text-sm text-fg" role="status" data-forgot-ok hidden></div>
+					<div>
+						<label for="forgot-email" class="lq-label">{{ _("Email") }}</label>
+						<input id="forgot-email" name="user" type="email" autocomplete="email" class="lq-input" required>
+					</div>
+					<button type="submit" class="lq-btn lq-btn-primary w-full" data-submit>{{ _("Send reset link") }}</button>
+					<button type="button" class="w-full text-sm text-link hover:underline" data-show="login">{{ _("Back to sign in") }}</button>
+				</form>
+			</div>
+			<p class="mt-6 text-center text-sm text-muted">{{ _("Not a client yet?") }} <a href="/contact" class="lq-link">{{ _("Talk to us") }}</a></p>
+		</div>
+	</div>
+</section>
+{% endblock %}
+
+{% block script %}
+<script>
+(() => {
+	const loginForm = document.querySelector("[data-login-form]");
+	const forgotForm = document.querySelector("[data-forgot-form]");
+	if (!loginForm) return;
+	const csrf = () => (window.frappe && frappe.csrf_token) || "";
+	const post = (url, data) =>
+		fetch(url, {
+			method: "POST",
+			headers: { "Content-Type": "application/x-www-form-urlencoded", Accept: "application/json", "X-Frappe-CSRF-Token": csrf() },
+			body: new URLSearchParams(data),
+			credentials: "same-origin",
+		}).then(async (r) => ({ status: r.status, body: await r.json().catch(() => ({})) }));
+	const show = (which) => {
+		loginForm.hidden = which !== "login";
+		forgotForm.hidden = which !== "forgot";
+		(which === "login" ? loginForm : forgotForm).querySelector("input").focus();
+	};
+	document.querySelectorAll("[data-show]").forEach((b) => b.addEventListener("click", () => show(b.dataset.show)));
+
+	// only same-site paths are allowed as a post-login destination
+	const safeRedirect = (target) => (target && target.startsWith("/") && !target.startsWith("//") ? target : null);
+	let tmpId = null;
+
+	loginForm.addEventListener("submit", async (e) => {
+		e.preventDefault();
+		const error = loginForm.querySelector("[data-login-error]");
+		const button = loginForm.querySelector("[data-submit]");
+		error.hidden = true;
+		button.disabled = true;
+		const data = tmpId
+			? { cmd: "login", otp: loginForm.otp.value, tmp_id: tmpId }
+			: { cmd: "login", usr: loginForm.usr.value.trim(), pwd: loginForm.pwd.value };
+		try {
+			const { status, body } = await post("/api/method/login", data);
+			if (status === 200 && body.verification && body.verification.setup !== false) {
+				// two-factor authentication
+				tmpId = body.tmp_id;
+				loginForm.querySelector("[data-otp]").hidden = false;
+				loginForm.querySelector("[data-otp-help]").textContent = body.verification.prompt || "";
+				loginForm.otp.focus();
+			} else if (status === 200) {
+				const home = body.home_page === "/app" ? "/app" : "/portal";
+				window.location.href = safeRedirect(loginForm.dataset.redirectTo) || home;
+				return;
+			} else {
+				error.textContent =
+					status === 429 ? {{ _('Too many attempts. Please wait a few minutes and try again.') | tojson }} : {{ _('Incorrect email or password.') | tojson }};
+				error.hidden = false;
+			}
+		} catch (err) {
+			error.textContent = {{ _('Network error. Please try again.') | tojson }};
+			error.hidden = false;
+		}
+		button.disabled = false;
+	});
+
+	forgotForm.addEventListener("submit", async (e) => {
+		e.preventDefault();
+		const ok = forgotForm.querySelector("[data-forgot-ok]");
+		const error = forgotForm.querySelector("[data-forgot-error]");
+		ok.hidden = error.hidden = true;
+		const { status } = await post("/api/method/frappe.core.doctype.user.user.reset_password", { user: forgotForm.user.value.trim() });
+		if (status === 429) {
+			error.textContent = {{ _('Too many attempts. Please wait a few minutes and try again.') | tojson }};
+			error.hidden = false;
+		} else {
+			// same message whether or not the account exists
+			ok.textContent = {{ _('If an account exists for that email, a reset link is on its way.') | tojson }};
+			ok.hidden = false;
+		}
+	});
+})();
+</script>
+{% endblock %}

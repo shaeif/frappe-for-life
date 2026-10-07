@@ -1,0 +1,110 @@
+{#- Hero sections.
+    hero(): home-page hero with animated mesh, grid and circuit traces.
+    page_hero(): compact hero for inner pages. -#}
+{% from "templates/components/ui.html" import button, breadcrumbs with context %}
+
+{% macro backdrop(intensity="full") -%}
+<div class="lq-mesh [mask-image:linear-gradient(to_bottom,#000_55%,transparent)]" aria-hidden="true">
+	<div class="lq-grid-bg absolute inset-0"></div>
+	<span class="-top-40 start-1/4 size-[34rem]" style="background: var(--lq-glow-a)"></span>
+	<span class="top-10 -end-24 size-[28rem]" style="background: var(--lq-glow-b); animation-delay: -6s"></span>
+	{%- if intensity == "full" %}
+	<span class="top-72 -start-32 size-[22rem]" style="background: var(--lq-glow-c); animation-delay: -12s"></span>
+	{%- endif %}
+</div>
+{%- endmacro %}
+
+{% macro circuit() -%}
+<svg class="lq-circuit pointer-events-none absolute inset-x-0 bottom-0 h-40 w-full text-brand-400/40" viewBox="0 0 1200 160" preserveAspectRatio="none" aria-hidden="true">
+	<g fill="none" stroke="currentColor" stroke-width="1.2">
+		<path d="M0 120 H220 L260 80 H480 L520 120 H760" />
+		<path d="M1200 100 H980 L940 60 H760 L720 100 H560" style="animation-delay: -2s" />
+		<path d="M0 150 H340 L370 130 H640 L680 150 H1200" style="animation-delay: -4s" />
+	</g>
+	<g fill="currentColor">
+		<circle cx="260" cy="80" r="3" /><circle cx="520" cy="120" r="3" /><circle cx="940" cy="60" r="3" /><circle cx="720" cy="100" r="3" />
+	</g>
+</svg>
+{%- endmacro %}
+
+{% macro hero(title, subtitle="", eyebrow="", primary=None, secondary=None) -%}
+{#- primary / secondary: {"label": ..., "href": ...} -#}
+<section class="relative isolate overflow-hidden pt-32 pb-24 sm:pt-40 sm:pb-32">
+	{{ backdrop() }}
+	{{ circuit() }}
+	<div class="lq-container relative grid items-center gap-16 lg:grid-cols-12">
+		<div class="lg:col-span-7">
+			{%- if eyebrow %}
+			<p class="lq-eyebrow mb-6" data-reveal><span class="size-1.5 rounded-full bg-signal-400 animate-pulse-dot"></span>{{ eyebrow | e }}</p>
+			{%- endif %}
+			<h1 class="lq-display" data-reveal style="--reveal-delay: 80ms">{{ title }}</h1>
+			{%- if subtitle %}
+			<p class="lq-lead mt-6 max-w-2xl" data-reveal style="--reveal-delay: 160ms">{{ subtitle | e }}</p>
+			{%- endif %}
+			<div class="mt-10 flex flex-wrap gap-3" data-reveal style="--reveal-delay: 240ms">
+				{%- if primary %}{{ button(primary.label, primary.href, "primary", "lg", icon_end="arrow-right") }}{% endif %}
+				{%- if secondary %}{{ button(secondary.label, secondary.href, "secondary", "lg", icon_name="calendar") }}{% endif %}
+			</div>
+			{{ caller() if caller else "" }}
+		</div>
+		<div class="hidden lg:col-span-5 lg:block" data-reveal="fade" style="--reveal-delay: 200ms">
+			{{ network_panel() }}
+		</div>
+	</div>
+</section>
+{%- endmacro %}
+
+{% macro network_panel() -%}
+{#- Decorative "operations console" illustration. Purely visual: hidden from assistive tech. -#}
+<div class="lq-glass relative p-5 shadow-2xl" aria-hidden="true">
+	<div class="mb-4 flex items-center justify-between">
+		<div class="flex gap-1.5"><span class="size-2.5 rounded-full bg-rose-400/70"></span><span class="size-2.5 rounded-full bg-amber-300/70"></span><span class="size-2.5 rounded-full bg-emerald-400/70"></span></div>
+		<span class="font-mono text-[11px] text-subtle">noc.labqubit</span>
+	</div>
+	<svg viewBox="0 0 320 170" class="w-full">
+		<defs>
+			<linearGradient id="np-line" x1="0" x2="1"><stop offset="0" stop-color="#22d3ee" /><stop offset="1" stop-color="#a855f7" /></linearGradient>
+		</defs>
+		<g class="lq-circuit" fill="none" stroke="url(#np-line)" stroke-width="1.4" stroke-opacity=".8">
+			<path d="M160 85 L60 35" /><path d="M160 85 L60 135" style="animation-delay:-1s" /><path d="M160 85 L260 35" style="animation-delay:-2s" />
+			<path d="M160 85 L260 135" style="animation-delay:-3s" /><path d="M60 35 L60 135" style="animation-delay:-4s" /><path d="M260 35 L260 135" style="animation-delay:-5s" />
+		</g>
+		<g>
+			<circle cx="160" cy="85" r="16" fill="#5b6cff" fill-opacity=".2" stroke="#7f8cff" />
+			<circle cx="160" cy="85" r="5" fill="#a3adff" />
+			{%- for x, y in [(60, 35), (60, 135), (260, 35), (260, 135)] %}
+			<circle cx="{{ x }}" cy="{{ y }}" r="10" fill="#22d3ee" fill-opacity=".12" stroke="#22d3ee" stroke-opacity=".7" />
+			<circle cx="{{ x }}" cy="{{ y }}" r="3" fill="#67e8f9" />
+			{%- endfor %}
+		</g>
+	</svg>
+	<div class="mt-4 space-y-2.5 text-xs">
+		{%- for label, value, tone in [(_("Firewall cluster"), _("Healthy"), "bg-emerald-400"), (_("SD-WAN sites"), "12 / 12", "bg-emerald-400"), (_("Wireless clients"), "2,481", "bg-sky-400"), (_("Critical alerts"), "0", "bg-emerald-400")] %}
+		<div class="flex items-center justify-between rounded-lg border border-line bg-canvas-soft/60 px-3 py-2">
+			<span class="flex items-center gap-2 text-muted"><span class="size-1.5 rounded-full {{ tone }}"></span>{{ label }}</span>
+			<span class="font-mono text-fg">{{ value }}</span>
+		</div>
+		{%- endfor %}
+	</div>
+</div>
+{%- endmacro %}
+
+{% macro page_hero(title, subtitle="", eyebrow="", crumbs=None, icon_name="") -%}
+<section class="relative isolate overflow-hidden pt-32 pb-16 sm:pt-36 sm:pb-20">
+	{{ backdrop("light") }}
+	<div class="lq-container relative">
+		{%- if crumbs %}{{ breadcrumbs(crumbs) }}{% endif %}
+		<div class="max-w-3xl">
+			{%- if icon_name or eyebrow %}
+			<div class="mb-5 flex items-center gap-3" data-reveal>
+				{%- if icon_name %}<span class="lq-icon-tile size-12">{{ lq_icon(icon_name, "size-6") }}</span>{% endif %}
+				{%- if eyebrow %}<p class="lq-eyebrow">{{ eyebrow | e }}</p>{% endif %}
+			</div>
+			{%- endif %}
+			<h1 class="lq-display text-4xl sm:text-5xl" data-reveal style="--reveal-delay: 60ms">{{ title | e }}</h1>
+			{%- if subtitle %}<p class="lq-lead mt-5" data-reveal style="--reveal-delay: 120ms">{{ subtitle | e }}</p>{% endif %}
+			{{ caller() if caller else "" }}
+		</div>
+	</div>
+</section>
+{%- endmacro %}

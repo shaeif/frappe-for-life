@@ -1,0 +1,42 @@
+{% extends "templates/lq_page.html" %}
+{% from "templates/components/hero.html" import page_hero with context %}
+{% from "templates/components/forms.html" import lead_form, field, choice_chips with context %}
+
+{% block page %}
+{% call page_hero(_("Book a free consultation"), _("A 45-minute session with a senior engineer to review your environment, risks and priorities."), _("No sales pitch"), [(_("Book a Consultation"), "")]) %}{% endcall %}
+
+<section class="pb-24">
+	<div class="lq-container grid gap-10 lg:grid-cols-12">
+		<div class="lg:col-span-8">
+			{% call lead_form(endpoint, _("Request consultation"), {"lead_type": "Consultation"}) %}
+				{{ field("full_name", _("Full name"), required=True, autocomplete="name") }}
+				{{ field("email", _("Work email"), "email", required=True, autocomplete="email") }}
+				{{ field("phone", _("Phone"), "tel", required=True, autocomplete="tel") }}
+				{{ field("company", _("Company"), required=True, autocomplete="organization") }}
+				{{ field("preferred_date", _("Preferred date"), "date", required=True, attrs='min="' ~ min_date ~ '" max="' ~ max_date ~ '"') }}
+				{{ field("preferred_time", _("Preferred time"), "select", options=times) }}
+				{{ field("meeting_mode", _("Meeting type"), "select", required=True, options=meeting_modes) }}
+				{{ field("job_title", _("Job title"), autocomplete="organization-title") }}
+				{%- if service_options %}{{ choice_chips("services_of_interest", _("Topics to discuss"), service_options, "sm:col-span-2") }}{% endif %}
+				{{ field("message", _("Anything we should prepare?"), "textarea", rows=4, cls="sm:col-span-2") }}
+			{% endcall %}
+		</div>
+		<aside class="lg:col-span-4">
+			<div class="lq-card">
+				<p class="font-semibold text-fg">{{ _("What to expect") }}</p>
+				<ol class="mt-4 space-y-4">
+					{%- for title, text in [
+						(_("We confirm a time"), _("You receive a calendar invite within one business day.")),
+						(_("We listen"), _("A senior engineer reviews your environment, goals and constraints.")),
+						(_("You get a summary"), _("Clear recommendations and next steps, whether or not you work with us."))] %}
+					<li class="flex gap-3">
+						<span class="flex size-7 shrink-0 items-center justify-center rounded-full bg-brand-500/15 text-sm font-semibold text-brand-300">{{ loop.index }}</span>
+						<div><p class="text-sm font-medium text-fg">{{ title }}</p><p class="mt-0.5 text-sm text-muted">{{ text }}</p></div>
+					</li>
+					{%- endfor %}
+				</ol>
+			</div>
+		</aside>
+	</div>
+</section>
+{% endblock %}

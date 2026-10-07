@@ -1,0 +1,38 @@
+{% extends "templates/lq_page.html" %}
+{% from "templates/components/hero.html" import page_hero with context %}
+{% from "templates/components/cards.html" import partner_tile with context %}
+{% from "templates/components/sections.html" import cta_band, certifications as cert_grid with context %}
+{% from "templates/components/ui.html" import empty_state, section_header with context %}
+
+{% block page %}
+{% call page_hero(_("The right technology for every job"),
+	_("We work with leading technology vendors and recommend what fits your needs, deployed and supported by engineers who know these platforms well."),
+	_("Partners"), [(_("Partners"), "")]) %}{% endcall %}
+
+<section class="pb-16">
+	<div class="lq-container grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+		{%- for p in partners %}
+		<div class="lq-card flex flex-col" data-reveal style="--reveal-delay: {{ (loop.index0 % 3) * 70 }}ms">
+			{{ partner_tile(p) }}
+			<div class="mt-5 flex items-center justify-between gap-3">
+				<h2 class="lq-h3">{{ p.partner_name | e }}</h2>
+				{%- if p.partnership_level %}<span class="lq-badge lq-badge-brand">{{ p.partnership_level | e }}</span>{% endif %}
+			</div>
+			{%- if t(p, "description") %}<p class="mt-2 text-sm text-muted">{{ t(p, "description") | e }}</p>{% endif %}
+		</div>
+		{%- else %}
+		<div class="md:col-span-2 lg:col-span-3">{{ empty_state(_("Partner details are being updated"), icon_name="handshake") }}</div>
+		{%- endfor %}
+	</div>
+</section>
+
+{%- if certifications %}
+<section class="lq-section-tight border-t border-line">
+	<div class="lq-container">
+		{{ section_header(_("Certifications"), align="start") }}
+		<div class="mt-10">{{ cert_grid(certifications) }}</div>
+	</div>
+</section>
+{%- endif %}
+{{ cta_band() }}
+{% endblock %}

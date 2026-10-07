@@ -1,0 +1,65 @@
+{%- from "templates/components/ui.html" import logo with context -%}
+{%- set s = lq.settings -%}
+{%- set socials = [("linkedin", s.linkedin_url, "LinkedIn"), ("x-social", s.x_url, "X"), ("instagram", s.instagram_url, "Instagram"), ("youtube", s.youtube_url, "YouTube"), ("facebook", s.facebook_url, "Facebook")] | selectattr(1) | list -%}
+{%- set col_title = "text-sm font-semibold text-fg" -%}
+{%- set col_link = "text-sm text-muted transition hover:text-fg" -%}
+
+<footer class="relative mt-10 border-t border-line bg-canvas-soft/60">
+	<div class="lq-hairline absolute inset-x-0 top-0"></div>
+	<div class="lq-container py-16">
+		<div class="grid gap-12 lg:grid-cols-12">
+			<div class="lg:col-span-4">
+				<a href="/" aria-label="{{ _('LabQubit home') }}">{{ logo("footer") }}</a>
+				<p class="mt-4 max-w-sm text-sm leading-6 text-muted">
+					{{ (t(s, "tagline") or _("Resilient solutions for resilient businesses")) | e }}
+				</p>
+				<ul class="mt-6 space-y-2.5 text-sm text-muted">
+					{%- if s.email %}<li><a href="mailto:{{ s.email | e }}" class="flex items-center gap-2.5 hover:text-fg">{{ lq_icon("mail", "size-4 text-brand-400") }}{{ s.email | e }}</a></li>{% endif %}
+					{%- if s.phone %}<li><a href="tel:{{ s.phone | e }}" class="flex items-center gap-2.5 hover:text-fg" dir="ltr">{{ lq_icon("phone", "size-4 text-brand-400") }}{{ s.phone | e }}</a></li>{% endif %}
+					{%- if s.whatsapp %}<li><a href="https://wa.me/{{ s.whatsapp | e }}" rel="noopener" target="_blank" class="flex items-center gap-2.5 hover:text-fg">{{ lq_icon("whatsapp", "size-4 text-brand-400") }}WhatsApp</a></li>{% endif %}
+					{%- if t(s, "address") %}<li class="flex items-start gap-2.5">{{ lq_icon("map-pin", "size-4 mt-0.5 text-brand-400") }}<span class="whitespace-pre-line">{{ t(s, "address") | e }}</span></li>{% endif %}
+				</ul>
+			</div>
+			<div class="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:col-span-8">
+				<div>
+					<p class="{{ col_title }}">{{ _("Services") }}</p>
+					<ul class="mt-4 space-y-2.5">
+						{%- for group in lq.nav.service_groups %}
+						<li><a href="/services#{{ group.anchor }}" class="{{ col_link }}">{{ _(group.category) | e }}</a></li>
+						{%- else %}
+						<li><a href="/services" class="{{ col_link }}">{{ _("All services") }}</a></li>
+						{%- endfor %}
+					</ul>
+				</div>
+				<div>
+					<p class="{{ col_title }}">{{ _("Company") }}</p>
+					<ul class="mt-4 space-y-2.5">
+						{%- for label, href in [(_("About"), "/about"), (_("Partners"), "/partners"), (_("Careers"), "/careers"), (_("Blog"), "/blog"), (_("Contact"), "/contact")] %}
+						<li><a href="{{ href }}" class="{{ col_link }}">{{ label }}</a></li>
+						{%- endfor %}
+					</ul>
+				</div>
+				<div>
+					<p class="{{ col_title }}">{{ _("Resources") }}</p>
+					<ul class="mt-4 space-y-2.5">
+						{%- for label, href in [(_("Solutions"), "/solutions"), (_("Industries"), "/industries"), (_("Case Studies"), "/case-studies"), (_("Request a Quote"), "/request-a-quote"), (_("Client Portal"), "/portal")] %}
+						<li><a href="{{ href }}" class="{{ col_link }}">{{ label }}</a></li>
+						{%- endfor %}
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="mt-14 flex flex-col-reverse items-start justify-between gap-6 border-t border-line pt-8 sm:flex-row sm:items-center">
+			<p class="text-sm text-subtle">© {{ lq.year }} {{ (s.company_name or "LabQubit") | e }}. {{ _("All rights reserved.") }}
+				<a href="/privacy" class="ms-3 hover:text-fg">{{ _("Privacy") }}</a>
+			</p>
+			{%- if socials %}
+			<ul class="flex items-center gap-2">
+				{%- for ic, url, label in socials %}
+				<li><a href="{{ url | e }}" target="_blank" rel="noopener" class="flex size-9 items-center justify-center rounded-lg border border-line text-muted transition hover:border-brand-400/50 hover:text-fg">{{ lq_icon(ic, "size-4", label) }}</a></li>
+				{%- endfor %}
+			</ul>
+			{%- endif %}
+		</div>
+	</div>
+</footer>

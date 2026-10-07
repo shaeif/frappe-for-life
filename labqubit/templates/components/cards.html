@@ -1,0 +1,61 @@
+{#- Cards for listings. Every card is a single link with a visible title. -#}
+{% from "templates/components/ui.html" import picture with context %}
+
+{% macro feature_card(item, href="", delay=0, level=3) -%}
+{#- item: dict with icon, title, short_description (or description), with optional _ar variants -#}
+{%- set desc = t(item, "short_description") or t(item, "description") -%}
+<{{ 'a href="' ~ (href | e) ~ '"' if href else 'div' }} class="lq-card {{ 'lq-card-hover group' if href else '' }} flex h-full flex-col" data-reveal style="--reveal-delay: {{ delay }}ms">
+	{%- if item.icon %}<span class="lq-icon-tile mb-5">{{ lq_icon(item.icon) }}</span>{% endif %}
+	<h{{ level }} class="lq-h3">{{ t(item, "title") | e }}</h{{ level }}>
+	{%- if desc %}<p class="mt-2 text-sm leading-6 text-muted">{{ desc | e }}</p>{% endif %}
+	{%- if href %}
+	<span class="mt-auto flex items-center gap-1.5 pt-5 text-sm font-medium text-link">
+		{{ _("Learn more") }}{{ lq_icon("arrow-right", "size-4 lq-icon-flip transition group-hover:translate-x-0.5") }}
+	</span>
+	{%- endif %}
+</{{ 'a' if href else 'div' }}>
+{%- endmacro %}
+
+{% macro case_card(c, delay=0, level=3) -%}
+<a href="/{{ c.route | e }}" class="lq-card lq-card-hover group flex h-full flex-col overflow-hidden p-0" data-reveal data-filter-value="{{ (c.industry or '') | e }}" style="--reveal-delay: {{ delay }}ms">
+	<div class="relative aspect-[16/9] overflow-hidden border-b border-line bg-canvas-soft">
+		{%- if c.cover_image %}
+		{{ picture(c.cover_image, t(c, "title"), "size-full object-cover transition duration-700 group-hover:scale-105", 800, 450, sizes="(min-width: 1024px) 33vw, 100vw") }}
+		{%- else %}
+		<div class="lq-grid-bg absolute inset-0"></div>
+		<div class="absolute inset-0 bg-gradient-to-br from-brand-500/25 via-transparent to-accent-500/20"></div>
+		{%- endif %}
+	</div>
+	<div class="flex flex-1 flex-col p-6">
+		<p class="text-xs font-medium tracking-wide text-signal-400 uppercase">{{ (c.industry or c.client_label) | e }}</p>
+		<h{{ level }} class="lq-h3 mt-2">{{ t(c, "title") | e }}</h{{ level }}>
+		<p class="mt-2 line-clamp-3 text-sm leading-6 text-muted">{{ t(c, "summary") | e }}</p>
+		<span class="mt-auto flex items-center gap-1.5 pt-5 text-sm font-medium text-link">{{ _("Read case study") }}{{ lq_icon("arrow-right", "size-4 lq-icon-flip") }}</span>
+	</div>
+</a>
+{%- endmacro %}
+
+{% macro job_card(job, delay=0) -%}
+<a href="/{{ job.route | e }}" class="lq-card lq-card-hover group flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between" data-reveal style="--reveal-delay: {{ delay }}ms">
+	<div>
+		<h3 class="lq-h3">{{ t(job, "title") | e }}</h3>
+		<p class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-muted">
+			{%- if job.department %}<span class="flex items-center gap-1.5">{{ lq_icon("briefcase", "size-4") }}{{ _(job.department) }}</span>{% endif %}
+			{%- if job.location %}<span class="flex items-center gap-1.5">{{ lq_icon("map-pin", "size-4") }}{{ job.location | e }}</span>{% endif %}
+			{%- if job.employment_type %}<span class="flex items-center gap-1.5">{{ lq_icon("clock", "size-4") }}{{ _(job.employment_type) }}</span>{% endif %}
+		</p>
+	</div>
+	<span class="lq-btn lq-btn-secondary lq-btn-sm shrink-0">{{ _("View role") }}{{ lq_icon("arrow-right", "size-4 lq-icon-flip") }}</span>
+</a>
+{%- endmacro %}
+
+{% macro partner_tile(p) -%}
+<div class="flex h-20 items-center justify-center rounded-xl border border-line bg-surface px-6" title="{{ p.partner_name | e }}">
+	{%- if p.logo_dark or p.logo %}
+	{%- if p.logo %}<img src="{{ p.logo | e }}" alt="{{ p.partner_name | e }}" class="max-h-9 w-auto opacity-80 {{ 'dark:hidden' if p.logo_dark else 'dark:brightness-0 dark:invert' }}" loading="lazy" width="140" height="36">{% endif %}
+	{%- if p.logo_dark %}<img src="{{ p.logo_dark | e }}" alt="{{ p.partner_name | e }}" class="max-h-9 w-auto opacity-80 {{ 'hidden dark:block' if p.logo else '' }}" loading="lazy" width="140" height="36">{% endif %}
+	{%- else %}
+	<span class="text-lg font-semibold tracking-tight text-muted">{{ p.partner_name | e }}</span>
+	{%- endif %}
+</div>
+{%- endmacro %}

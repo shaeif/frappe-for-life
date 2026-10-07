@@ -1,0 +1,22 @@
+{% extends "templates/lq_page.html" %}
+{% from "templates/components/hero.html" import page_hero with context %}
+{#- Describes what this website actually collects. Have it reviewed by your legal advisor before launch. -#}
+{% block page %}
+{% call page_hero(_("Privacy Policy"), _("How this website collects and uses your information."), "", [(_("Privacy"), "")]) %}{% endcall %}
+<section class="pb-24">
+	<div class="lq-container">
+		<div class="lq-prose max-w-3xl">
+			<h2>{{ _("What we collect") }}</h2>
+			<p>{{ _("When you submit a form on this website (contact, quote request, consultation booking or job application) we collect the details you enter, such as your name, email, phone number, company and message, together with the page you submitted from and your IP address for spam prevention.") }}</p>
+			<h2>{{ _("How we use it") }}</h2>
+			<p>{{ _("We use this information only to respond to your request, prepare proposals, deliver contracted services and, for job applications, to assess your application. We do not sell your information.") }}</p>
+			<h2>{{ _("Cookies") }}</h2>
+			<p>{{ _("This website uses essential cookies to remember your language, keep you signed in to the client portal and protect forms against abuse. Your light or dark theme choice is stored in your browser only.") }}</p>
+			<h2>{{ _("Client portal") }}</h2>
+			<p>{{ _("Portal accounts can see only their own organization's contracts, assets, tickets and documents. Uploaded files are stored privately.") }}</p>
+			<h2>{{ _("Your rights") }}</h2>
+			<p>{{ _("You can ask us to access, correct or delete your personal data at any time by contacting {0}.").format(lq.settings.email or _("us")) }}</p>
+		</div>
+	</div>
+</section>
+{% endblock %}

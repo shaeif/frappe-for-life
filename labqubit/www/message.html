@@ -1,0 +1,21 @@
+{% extends "templates/lq_page.html" %}
+{% from "templates/components/hero.html" import backdrop with context %}
+{#- Used by frappe.respond_as_web_page (password reset, permission errors, confirmations). -#}
+{% block page %}
+{%- set tone = {"red": "lq-badge-danger", "green": "lq-badge-success", "orange": "lq-badge-warning", "yellow": "lq-badge-warning"} -%}
+<section class="relative isolate flex min-h-[75vh] items-center overflow-hidden pt-24 pb-16">
+	{{ backdrop("light") }}
+	<div class="lq-container relative">
+		<div class="lq-glass mx-auto max-w-lg p-8 text-center sm:p-10">
+			<span class="lq-badge {{ tone[indicator_color] or 'lq-badge-brand' }} mb-5">{{ (title or _("Message")) | striptags | e }}</span>
+			{%- if message %}<div class="lq-prose mx-auto text-base">{{ message }}</div>{% endif %}
+			{%- if primary_action %}
+			<a href="{{ primary_action | e }}" class="lq-btn lq-btn-primary mt-8">{{ (primary_label or _("Home")) | e }}</a>
+			{%- else %}
+			<a href="/" class="lq-btn lq-btn-secondary mt-8">{{ _("Back to home") }}</a>
+			{%- endif %}
+			{%- if error_code %}<p class="mt-6 text-xs text-subtle">{{ _("Status: {0}").format(error_code) }}</p>{% endif %}
+		</div>
+	</div>
+</section>
+{% endblock %}

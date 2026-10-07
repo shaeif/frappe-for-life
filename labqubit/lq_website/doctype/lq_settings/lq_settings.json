@@ -1,0 +1,369 @@
+{
+ "actions": [],
+ "creation": "2026-10-07 23:04:46.871564",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "company_tab",
+  "company_name",
+  "tagline",
+  "tagline_ar",
+  "logo",
+  "logo_dark",
+  "col1",
+  "email",
+  "phone",
+  "whatsapp",
+  "address",
+  "address_ar",
+  "map_url",
+  "social_section",
+  "linkedin_url",
+  "x_url",
+  "col2",
+  "instagram_url",
+  "youtube_url",
+  "facebook_url",
+  "home_tab",
+  "hero_eyebrow",
+  "hero_eyebrow_ar",
+  "hero_title",
+  "hero_title_ar",
+  "hero_subtitle",
+  "hero_subtitle_ar",
+  "stats_section",
+  "stat_projects",
+  "stat_clients",
+  "col3",
+  "stat_uptime",
+  "stat_years",
+  "leads_tab",
+  "lead_notification_email",
+  "send_lead_acknowledgement",
+  "support_notification_email",
+  "sla_at_risk_percent",
+  "col4",
+  "default_sla_policy",
+  "careers_notification_email",
+  "spam_section",
+  "enable_turnstile",
+  "turnstile_site_key",
+  "turnstile_secret_key",
+  "seo_tab",
+  "default_meta_description",
+  "default_meta_description_ar",
+  "default_og_image",
+  "google_site_verification"
+ ],
+ "fields": [
+  {
+   "fieldname": "company_tab",
+   "fieldtype": "Tab Break",
+   "label": "Company"
+  },
+  {
+   "default": "LabQubit",
+   "fieldname": "company_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Company Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "tagline",
+   "fieldtype": "Data",
+   "label": "Tagline",
+   "default": "Resilient solutions for resilient businesses"
+  },
+  {
+   "fieldname": "tagline_ar",
+   "fieldtype": "Data",
+   "label": "Tagline (Arabic)",
+   "default": "حلول مرنة لأعمال مرنة"
+  },
+  {
+   "fieldname": "logo",
+   "fieldtype": "Attach Image",
+   "label": "Logo (light backgrounds)"
+  },
+  {
+   "fieldname": "logo_dark",
+   "fieldtype": "Attach Image",
+   "label": "Logo (dark backgrounds)"
+  },
+  {
+   "fieldname": "col1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Public Email",
+   "options": "Email"
+  },
+  {
+   "fieldname": "phone",
+   "fieldtype": "Data",
+   "label": "Public Phone",
+   "options": "Phone"
+  },
+  {
+   "description": "International format, digits only, e.g. 9715XXXXXXXX",
+   "fieldname": "whatsapp",
+   "fieldtype": "Data",
+   "label": "WhatsApp Number"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Small Text",
+   "label": "Address"
+  },
+  {
+   "fieldname": "address_ar",
+   "fieldtype": "Small Text",
+   "label": "Address (Arabic)"
+  },
+  {
+   "fieldname": "map_url",
+   "fieldtype": "Data",
+   "label": "Map Link",
+   "options": "URL"
+  },
+  {
+   "fieldname": "social_section",
+   "fieldtype": "Section Break",
+   "label": "Social"
+  },
+  {
+   "fieldname": "linkedin_url",
+   "fieldtype": "Data",
+   "label": "LinkedIn",
+   "options": "URL"
+  },
+  {
+   "fieldname": "x_url",
+   "fieldtype": "Data",
+   "label": "X (Twitter)",
+   "options": "URL"
+  },
+  {
+   "fieldname": "col2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "instagram_url",
+   "fieldtype": "Data",
+   "label": "Instagram",
+   "options": "URL"
+  },
+  {
+   "fieldname": "youtube_url",
+   "fieldtype": "Data",
+   "label": "YouTube",
+   "options": "URL"
+  },
+  {
+   "fieldname": "facebook_url",
+   "fieldtype": "Data",
+   "label": "Facebook",
+   "options": "URL"
+  },
+  {
+   "fieldname": "home_tab",
+   "fieldtype": "Tab Break",
+   "label": "Home Page"
+  },
+  {
+   "fieldname": "hero_eyebrow",
+   "fieldtype": "Data",
+   "label": "Hero Eyebrow"
+  },
+  {
+   "fieldname": "hero_eyebrow_ar",
+   "fieldtype": "Data",
+   "label": "Hero Eyebrow (Arabic)"
+  },
+  {
+   "fieldname": "hero_title",
+   "fieldtype": "Data",
+   "label": "Hero Headline"
+  },
+  {
+   "fieldname": "hero_title_ar",
+   "fieldtype": "Data",
+   "label": "Hero Headline (Arabic)"
+  },
+  {
+   "fieldname": "hero_subtitle",
+   "fieldtype": "Small Text",
+   "label": "Hero Subheadline"
+  },
+  {
+   "fieldname": "hero_subtitle_ar",
+   "fieldtype": "Small Text",
+   "label": "Hero Subheadline (Arabic)"
+  },
+  {
+   "description": "Animated counters on the home page. Leave 0 to hide a stat.",
+   "fieldname": "stats_section",
+   "fieldtype": "Section Break",
+   "label": "Stats"
+  },
+  {
+   "fieldname": "stat_projects",
+   "fieldtype": "Int",
+   "label": "Projects Delivered"
+  },
+  {
+   "fieldname": "stat_clients",
+   "fieldtype": "Int",
+   "label": "Clients Served"
+  },
+  {
+   "fieldname": "col3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "stat_uptime",
+   "fieldtype": "Float",
+   "label": "Network Uptime (%)",
+   "precision": "2"
+  },
+  {
+   "fieldname": "stat_years",
+   "fieldtype": "Int",
+   "label": "Years of Experience"
+  },
+  {
+   "fieldname": "leads_tab",
+   "fieldtype": "Tab Break",
+   "label": "Leads & Support"
+  },
+  {
+   "description": "In addition to the assigned salesperson",
+   "fieldname": "lead_notification_email",
+   "fieldtype": "Data",
+   "label": "Notify on New Lead (email)",
+   "options": "Email"
+  },
+  {
+   "default": "1",
+   "fieldname": "send_lead_acknowledgement",
+   "fieldtype": "Check",
+   "label": "Send Acknowledgement Email to Visitor"
+  },
+  {
+   "fieldname": "support_notification_email",
+   "fieldtype": "Data",
+   "label": "Notify on SLA Breach (email)",
+   "options": "Email"
+  },
+  {
+   "default": "75",
+   "fieldname": "sla_at_risk_percent",
+   "fieldtype": "Int",
+   "label": "Mark SLA 'At Risk' After (% of time used)"
+  },
+  {
+   "fieldname": "col4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "default_sla_policy",
+   "fieldtype": "Link",
+   "label": "Default SLA Policy",
+   "options": "LQ SLA Policy"
+  },
+  {
+   "fieldname": "careers_notification_email",
+   "fieldtype": "Data",
+   "label": "Notify on Job Application (email)",
+   "options": "Email"
+  },
+  {
+   "description": "Cloudflare Turnstile (free, privacy-friendly CAPTCHA). Forms always use a honeypot and rate limiting.",
+   "fieldname": "spam_section",
+   "fieldtype": "Section Break",
+   "label": "Spam Protection"
+  },
+  {
+   "default": "0",
+   "fieldname": "enable_turnstile",
+   "fieldtype": "Check",
+   "label": "Enable Turnstile"
+  },
+  {
+   "depends_on": "enable_turnstile",
+   "fieldname": "turnstile_site_key",
+   "fieldtype": "Data",
+   "label": "Turnstile Site Key"
+  },
+  {
+   "depends_on": "enable_turnstile",
+   "fieldname": "turnstile_secret_key",
+   "fieldtype": "Password",
+   "label": "Turnstile Secret Key"
+  },
+  {
+   "fieldname": "seo_tab",
+   "fieldtype": "Tab Break",
+   "label": "SEO"
+  },
+  {
+   "fieldname": "default_meta_description",
+   "fieldtype": "Small Text",
+   "label": "Default Meta Description"
+  },
+  {
+   "fieldname": "default_meta_description_ar",
+   "fieldtype": "Small Text",
+   "label": "Default Meta Description (Arabic)"
+  },
+  {
+   "fieldname": "default_og_image",
+   "fieldtype": "Attach Image",
+   "label": "Default Social Share Image"
+  },
+  {
+   "fieldname": "google_site_verification",
+   "fieldtype": "Data",
+   "label": "Google Site Verification Code"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2026-10-07 22:16:31.743266",
+ "modified_by": "Administrator",
+ "module": "LQ Website",
+ "name": "LQ Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "LQ Content Editor",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

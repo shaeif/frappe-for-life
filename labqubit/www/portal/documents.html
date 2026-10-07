@@ -1,0 +1,30 @@
+{% extends "templates/lq_portal.html" %}
+{% from "templates/components/portal.html" import page_header, empty with context %}
+{% block portal %}
+{{ page_header(_("Documents"), _("Quotations, invoices, service reports and contracts shared with you.")) }}
+{%- if types | length > 1 %}
+{%- set chip = "rounded-full border border-line bg-surface px-3 py-1 text-sm text-muted transition hover:text-fg aria-pressed:border-brand-400/60 aria-pressed:bg-brand-500/15 aria-pressed:text-fg" %}
+<div class="mb-4 flex flex-wrap gap-2" data-filter-group="#doc-rows" role="group" aria-label="{{ _('Filter by type') }}">
+	<button type="button" class="{{ chip }}" data-filter="" aria-pressed="true">{{ _("All") }}</button>
+	{%- for ty in types %}<button type="button" class="{{ chip }}" data-filter="{{ ty }}" aria-pressed="false">{{ _(ty) }}</button>{% endfor %}
+</div>
+{%- endif %}
+<div class="lq-glass overflow-x-auto">
+	{%- if documents %}
+	<table class="lq-table min-w-[36rem]">
+		<thead><tr><th>{{ _("Document") }}</th><th>{{ _("Type") }}</th><th>{{ _("Date") }}</th><th class="text-end">{{ _("Amount") }}</th><th></th></tr></thead>
+		<tbody id="doc-rows">
+			{%- for d in documents %}
+			<tr data-filter-value="{{ d.document_type }}">
+				<td class="font-medium text-fg">{{ d.title | e }}{% if d.reference_no %}<span class="block text-xs text-subtle">{{ d.reference_no | e }}</span>{% endif %}</td>
+				<td>{{ _(d.document_type) }}</td>
+				<td class="whitespace-nowrap">{{ frappe.format_date(d.document_date) if d.document_date else "" }}</td>
+				<td class="text-end whitespace-nowrap" dir="ltr">{{ frappe.utils.fmt_money(d.amount, currency=d.currency) if d.amount else "" }}</td>
+				<td class="text-end"><a href="{{ d.file | e }}" class="lq-btn lq-btn-secondary lq-btn-sm" download>{{ lq_icon("download", "size-4") }}{{ _("Download") }}</a></td>
+			</tr>
+			{%- endfor %}
+		</tbody>
+	</table>
+	{%- else %}{{ empty(_("No documents shared yet."), "file-text") }}{% endif %}
+</div>
+{% endblock %}
