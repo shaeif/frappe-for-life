@@ -17,7 +17,7 @@
 {%- endmacro %}
 
 {% macro case_card(c, delay=0) -%}
-<a href="/{{ c.route | e }}" class="lq-card lq-card-hover group flex h-full flex-col overflow-hidden p-0" data-reveal data-industry="{{ (c.industry or '') | e }}" style="--reveal-delay: {{ delay }}ms">
+<a href="/{{ c.route | e }}" class="lq-card lq-card-hover group flex h-full flex-col overflow-hidden p-0" data-reveal data-filter-value="{{ (c.industry or '') | e }}" style="--reveal-delay: {{ delay }}ms">
 	<div class="relative aspect-[16/9] overflow-hidden border-b border-line bg-canvas-soft">
 		{%- if c.cover_image %}
 		{{ picture(c.cover_image, t(c, "title"), "size-full object-cover transition duration-700 group-hover:scale-105", 800, 450, sizes="(min-width: 1024px) 33vw, 100vw") }}

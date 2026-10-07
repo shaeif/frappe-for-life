@@ -72,7 +72,8 @@
    "description": "Customer ID in ERPNext, for the future integration",
    "fieldname": "erpnext_customer",
    "fieldtype": "Data",
-   "label": "ERPNext Customer"
+   "label": "ERPNext Customer",
+   "permlevel": 1
   },
   {
    "fieldname": "contact_section",
@@ -122,18 +123,19 @@
    "collapsible": 1,
    "fieldname": "notes_section",
    "fieldtype": "Section Break",
-   "label": "Notes"
+   "label": "Internal Notes"
   },
   {
    "fieldname": "notes",
    "fieldtype": "Text",
-   "label": "Notes"
+   "label": "Notes",
+   "permlevel": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-10-07 23:04:57.142664",
+ "modified": "2026-10-07 22:16:30.188408",
  "modified_by": "Administrator",
  "module": "LQ Service Desk",
  "name": "LQ Client",
@@ -211,6 +213,64 @@
    "role": "LQ Client",
    "share": 1,
    "write": 1
+  },
+  {
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "permlevel": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "permlevel": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "LQ Support Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "permlevel": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "LQ Sales Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "permlevel": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "LQ Support Agent",
+   "share": 1
+  },
+  {
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "permlevel": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "LQ Sales User",
+   "share": 1
   }
  ],
  "row_format": "Dynamic",

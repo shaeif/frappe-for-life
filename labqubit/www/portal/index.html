@@ -1,0 +1,55 @@
+{% extends "templates/lq_portal.html" %}
+{% from "templates/components/portal.html" import status, page_header, stat, empty with context %}
+{% block portal %}
+{{ page_header(_("Welcome back"), _("Here's the current state of your services with LabQubit.")) }}
+
+{%- for c in expiring %}
+<div class="mb-4 flex flex-wrap items-center justify-between gap-3 rounded-xl border border-amber-400/30 bg-amber-500/10 px-4 py-3 text-sm">
+	<span class="flex items-center gap-2 text-fg">{{ lq_icon("triangle-alert", "size-4 text-amber-400") }}{{ _("{0} ends on {1}").format(c.contract_title | e, frappe.format_date(c.end_date)) }}</span>
+	<a href="/portal/contracts/{{ c.name }}" class="lq-link">{{ _("View contract") }}</a>
+</div>
+{%- endfor %}
+
+<div class="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+	{{ stat(_("Open tickets"), counts.tickets, "ticket", "/portal/tickets") }}
+	{{ stat(_("Active contracts"), counts.contracts, "file-signature", "/portal/contracts") }}
+	{{ stat(_("Covered assets"), counts.assets, "server", "/portal/assets") }}
+	{{ stat(_("Documents"), counts.documents, "file-text", "/portal/documents") }}
+</div>
+
+<div class="mt-8 grid gap-6 xl:grid-cols-5">
+	<div class="lq-glass overflow-hidden xl:col-span-3">
+		<div class="flex items-center justify-between border-b border-line px-5 py-4">
+			<h2 class="font-semibold text-fg">{{ _("Recent tickets") }}</h2>
+			<a href="/portal/tickets" class="lq-link text-sm">{{ _("View all") }}</a>
+		</div>
+		{%- if recent_tickets %}
+		<ul class="divide-y divide-line">
+			{%- for t in recent_tickets %}
+			<li><a href="/portal/tickets/{{ t.name }}" class="flex items-center justify-between gap-4 px-5 py-3.5 hover:bg-surface">
+				<span class="min-w-0"><span class="block truncate text-sm font-medium text-fg">{{ t.subject | e }}</span><span class="text-xs text-subtle">{{ t.name }} · {{ frappe.utils.pretty_date(t.modified) }}</span></span>
+				{{ status(t.status, badge) }}
+			</a></li>
+			{%- endfor %}
+		</ul>
+		{%- else %}{{ empty(_("No tickets yet. Need help? Raise a ticket and we'll respond within your SLA."), "life-buoy") }}{% endif %}
+	</div>
+	<div class="lq-glass overflow-hidden xl:col-span-2">
+		<div class="flex items-center justify-between border-b border-line px-5 py-4">
+			<h2 class="font-semibold text-fg">{{ _("Latest documents") }}</h2>
+			<a href="/portal/documents" class="lq-link text-sm">{{ _("View all") }}</a>
+		</div>
+		{%- if recent_documents %}
+		<ul class="divide-y divide-line">
+			{%- for d in recent_documents %}
+			<li><a href="{{ d.file | e }}" class="flex items-center gap-3 px-5 py-3.5 hover:bg-surface" download>
+				{{ lq_icon("file-text", "size-5 text-brand-400") }}
+				<span class="min-w-0 flex-1"><span class="block truncate text-sm font-medium text-fg">{{ d.title | e }}</span><span class="text-xs text-subtle">{{ _(d.document_type) }} · {{ frappe.format_date(d.document_date) if d.document_date else "" }}</span></span>
+				{{ lq_icon("download", "size-4 text-muted") }}
+			</a></li>
+			{%- endfor %}
+		</ul>
+		{%- else %}{{ empty(_("Quotations, invoices and service reports will appear here."), "file-text") }}{% endif %}
+	</div>
+</div>
+{% endblock %}

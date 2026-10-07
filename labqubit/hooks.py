@@ -32,10 +32,14 @@ website_route_rules = [
 	{"from_route": "/blog", "to_route": "blog"},
 	{"from_route": "/blog/<category>/<name>", "to_route": "blog/post"},
 	{"from_route": "/blog/<category>", "to_route": "blog"},
+	{"from_route": "/portal/tickets/<name>", "to_route": "portal/ticket"},
+	{"from_route": "/portal/contracts/<name>", "to_route": "portal/contract"},
 ]
 
-# Phase 6: client portal sidebar
-# portal_menu_items = []
+# Frappe's generic account page sends clients to our portal
+website_redirects = [
+	{"source": "/me", "target": "/portal"},
+]
 
 # Jinja
 # ----------
@@ -60,11 +64,26 @@ after_migrate = "labqubit.install.after_migrate"
 
 # Permissions
 # -----------
-# Phase 6: restrict portal users to their own records
+# Client portal users only ever see their own client's records (see permissions.py)
 
-# permission_query_conditions = {}
-# has_permission = {}
-# has_website_permission = {}
+permission_query_conditions = {
+	"LQ Client": "labqubit.permissions.client_query",
+	"LQ AMC Contract": "labqubit.permissions.contract_query",
+	"LQ Client Asset": "labqubit.permissions.asset_query",
+	"LQ Support Ticket": "labqubit.permissions.ticket_query",
+	"LQ Client Document": "labqubit.permissions.document_query",
+}
+
+has_permission = {
+	doctype: "labqubit.permissions.has_client_permission"
+	for doctype in (
+		"LQ Client",
+		"LQ AMC Contract",
+		"LQ Client Asset",
+		"LQ Support Ticket",
+		"LQ Client Document",
+	)
+}
 
 # Document Events
 # ---------------

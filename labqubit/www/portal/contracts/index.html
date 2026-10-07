@@ -1,0 +1,18 @@
+{% extends "templates/lq_portal.html" %}
+{% from "templates/components/portal.html" import status, page_header, empty with context %}
+{% block portal %}
+{{ page_header(_("AMC contracts"), _("Your maintenance and support agreements.")) }}
+<div class="grid gap-4">
+	{%- for c in contracts %}
+	<a href="/portal/contracts/{{ c.name }}" class="lq-card lq-card-hover flex flex-wrap items-center justify-between gap-4">
+		<div>
+			<p class="font-semibold text-fg">{{ c.contract_title | e }}</p>
+			<p class="mt-1 text-sm text-muted">{{ c.name }} · {{ _(c.coverage_level) }} · {{ frappe.format_date(c.start_date) }} – {{ frappe.format_date(c.end_date) }}</p>
+		</div>
+		{{ status(c.status, badge) }}
+	</a>
+	{%- else %}
+	<div class="lq-glass">{{ empty(_("No contracts yet."), "file-signature") }}</div>
+	{%- endfor %}
+</div>
+{% endblock %}

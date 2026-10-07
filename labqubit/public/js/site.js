@@ -233,7 +233,7 @@
 		$("[data-slider-next]", controls).addEventListener("click", () => step(1));
 	});
 
-	/* Client-side filters (e.g. case studies by industry) ---------------- */
+	/* Client-side filters (case studies by industry, portal lists by status/type) */
 	$$("[data-filter-group]").forEach((group) => {
 		const target = $(group.dataset.filterGroup);
 		if (!target) return;
@@ -242,8 +242,8 @@
 			btn.addEventListener("click", () => {
 				const value = btn.dataset.filter;
 				buttons.forEach((b) => b.setAttribute("aria-pressed", b === btn ? "true" : "false"));
-				$$("[data-industry]", target).forEach((item) => {
-					item.hidden = Boolean(value) && item.dataset.industry !== value;
+				$$("[data-filter-value]", target).forEach((item) => {
+					item.hidden = Boolean(value) && item.dataset.filterValue !== value;
 				});
 			})
 		);
@@ -255,7 +255,7 @@
 	$$("form[data-lq-form]").forEach((form) => {
 		const set = (name, value) => {
 			const input = form.elements.namedItem(name);
-			if (input && "value" in input) input.value = value;
+			if (input && "value" in input && input.type === "hidden") input.value = value;
 		};
 		set("ts", String(Date.now()));
 		set("page_url", window.location.pathname);
@@ -310,7 +310,8 @@
 			});
 			data.set("csrf_token", (window.frappe && frappe.csrf_token) || "");
 			try {
-				const response = await fetch(form.action, {
+				// getAttribute: a field named "action" would shadow form.action
+				const response = await fetch(form.getAttribute("action"), {
 					method: "POST",
 					body: data,
 					headers: { Accept: "application/json", "X-Requested-With": "XMLHttpRequest" },
@@ -318,17 +319,25 @@
 				});
 				const body = await response.json().catch(() => ({}));
 				const result = body.message || {};
+				if (response.ok && result.ok && form.hasAttribute("data-redirect") && result.redirect) {
+					window.location.href = result.redirect;
+					return;
+				}
 				if (response.ok && result.ok) {
 					const success = $("[data-form-success]", form);
 					$("[data-success-message]", success).textContent = result.message || "";
 					success.hidden = false;
 					success.focus();
 					form.reset();
-					if (window.dataLayer) window.dataLayer.push({ event: "lq_form_submit", form: form.action });
+					if (window.dataLayer) window.dataLayer.push({ event: "lq_form_submit", form: form.getAttribute("action") });
 				} else if (response.status === 429) {
 					showErrors({ _form: t("Too many submissions. Please try again later.") });
 				} else if (result.errors && Object.keys(result.errors).length) {
 					showErrors(result.errors);
+				} else if (body._server_messages) {
+					// frappe.throw() messages
+					const msgs = JSON.parse(body._server_messages).map((m) => JSON.parse(m).message);
+					showErrors({ _form: msgs.join(" ").replace(/<[^>]+>/g, "") });
 				} else {
 					showErrors({ _form: t("Something went wrong. Please try again or email us.") });
 				}
