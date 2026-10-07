@@ -5,4 +5,4 @@ from labqubit.website.generator import LQWebsiteGenerator
 
 
 class LQCaseStudy(LQWebsiteGenerator):
-	pass
+	route_prefix = "case-studies"

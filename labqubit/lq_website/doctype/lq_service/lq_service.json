@@ -246,7 +246,6 @@
    "write": 1
   }
  ],
- "route": "services",
  "row_format": "Dynamic",
  "rows_threshold_for_grid_search": 20,
  "search_fields": "category,short_description",

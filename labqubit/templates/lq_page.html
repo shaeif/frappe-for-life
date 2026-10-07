@@ -1,0 +1,4 @@
+{#- Layout for LabQubit pages: no Frappe web bundle (keeps pages light), content in <main>. -#}
+{% extends "templates/lq_base.html" %}
+{% block base_scripts %}{% endblock %}
+{% block content %}<main>{% block page %}{% endblock %}</main>{% endblock %}

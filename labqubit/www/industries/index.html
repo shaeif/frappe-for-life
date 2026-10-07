@@ -1,0 +1,19 @@
+{% extends "templates/lq_page.html" %}
+{% from "templates/components/hero.html" import page_hero with context %}
+{% from "templates/components/cards.html" import feature_card with context %}
+{% from "templates/components/sections.html" import cta_band with context %}
+{% from "templates/components/ui.html" import empty_state with context %}
+
+{% block page %}
+{% call page_hero(_("Engineering for environments that can't go down"),
+	_("We understand the regulations, operating conditions and expectations of each sector we serve."),
+	_("Industries"), [(_("Industries"), "")]) %}{% endcall %}
+
+<section class="pb-20">
+	<div class="lq-container grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+		{%- for i in lq.nav.industries %}{{ feature_card(i, "/" ~ i.route, loop.index0 * 60) }}
+		{%- else %}<div class="sm:col-span-2 lg:col-span-4">{{ empty_state(_("Industries are coming soon")) }}</div>{% endfor %}
+	</div>
+</section>
+{{ cta_band() }}
+{% endblock %}

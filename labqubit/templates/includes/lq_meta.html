@@ -1,0 +1,28 @@
+{#- SEO, social and structured data. Pages may set: title, description, og_image, og_type,
+    noindex, schema (list of JSON-LD dicts). -#}
+{%- set s = lq.settings -%}
+{%- set desc = (description or t(s, "default_meta_description") or "") | striptags | trim | truncate(300, True, "…", 0) -%}
+{%- set image = og_image or s.default_og_image -%}
+{%- if desc %}<meta name="description" content="{{ desc | e }}">{% endif %}
+{%- if noindex %}<meta name="robots" content="noindex, nofollow">{% endif %}
+<link rel="canonical" href="{{ lq.canonical | e }}">
+<link rel="alternate" hreflang="en" href="{{ lq.url | e }}?_lang=en">
+<link rel="alternate" hreflang="ar" href="{{ lq.url | e }}?_lang=ar">
+<link rel="alternate" hreflang="x-default" href="{{ lq.url | e }}">
+<meta property="og:site_name" content="{{ (s.company_name or 'LabQubit') | e }}">
+<meta property="og:type" content="{{ og_type or 'website' }}">
+<meta property="og:title" content="{% include 'templates/includes/lq_title.html' %}">
+{%- if desc %}<meta property="og:description" content="{{ desc | e }}">{% endif %}
+<meta property="og:url" content="{{ lq.canonical | e }}">
+<meta property="og:locale" content="{{ 'ar_AR' if lq.rtl else 'en_US' }}">
+{%- if image %}
+<meta property="og:image" content="{{ image | abs_url | e }}">
+<meta name="twitter:card" content="summary_large_image">
+{%- else %}
+<meta name="twitter:card" content="summary">
+{%- endif %}
+{%- if s.google_site_verification %}<meta name="google-site-verification" content="{{ s.google_site_verification | e }}">{% endif %}
+<script type="application/ld+json">{{ lq.organization_schema | json_script }}</script>
+{%- for item in (schema or []) %}
+<script type="application/ld+json">{{ item | json_script }}</script>
+{%- endfor %}

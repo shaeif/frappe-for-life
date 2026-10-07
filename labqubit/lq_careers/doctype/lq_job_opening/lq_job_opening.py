@@ -5,4 +5,4 @@ from labqubit.website.generator import LQWebsiteGenerator
 
 
 class LQJobOpening(LQWebsiteGenerator):
-	pass
+	route_prefix = "careers"

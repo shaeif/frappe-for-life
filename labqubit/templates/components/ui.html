@@ -1,0 +1,80 @@
+{#- Core UI building blocks. Import with:
+    {% from "templates/components/ui.html" import button, section_header with context %} -#}
+
+{% macro logo_mark(uid="lq", cls="size-8") -%}
+<svg viewBox="0 0 32 32" class="{{ cls }}" aria-hidden="true" focusable="false">
+	<defs>
+		<linearGradient id="{{ uid }}-g" x1="0" y1="0" x2="1" y2="1">
+			<stop offset="0" stop-color="#22d3ee" /><stop offset=".5" stop-color="#5b6cff" /><stop offset="1" stop-color="#a855f7" />
+		</linearGradient>
+	</defs>
+	<rect x="1.5" y="1.5" width="29" height="29" rx="9" fill="url(#{{ uid }}-g)" fill-opacity=".14" stroke="url(#{{ uid }}-g)" stroke-opacity=".7" />
+	<ellipse cx="16" cy="16" rx="10.5" ry="4.2" transform="rotate(-32 16 16)" fill="none" stroke="url(#{{ uid }}-g)" stroke-width="1.6" />
+	<ellipse cx="16" cy="16" rx="10.5" ry="4.2" transform="rotate(32 16 16)" fill="none" stroke="url(#{{ uid }}-g)" stroke-width="1.6" stroke-opacity=".55" />
+	<circle cx="16" cy="16" r="2.8" fill="url(#{{ uid }}-g)" />
+</svg>
+{%- endmacro %}
+
+{% macro logo(uid="lq") -%}
+{%- set s = lq.settings -%}
+{%- if s.logo or s.logo_dark -%}
+	{%- if s.logo %}<img src="{{ s.logo | e }}" alt="{{ s.company_name | e }}" class="h-8 w-auto {{ 'dark:hidden' if s.logo_dark else '' }}" width="140" height="32">{% endif -%}
+	{%- if s.logo_dark %}<img src="{{ s.logo_dark | e }}" alt="{{ s.company_name | e }}" class="h-8 w-auto {{ 'hidden dark:block' if s.logo else '' }}" width="140" height="32">{% endif -%}
+{%- else -%}
+	<span class="flex items-center gap-2.5" dir="ltr">
+		{{ logo_mark(uid) }}
+		<span class="text-[1.15rem] font-semibold tracking-tight text-fg">Lab<span class="lq-gradient-text">Qubit</span></span>
+	</span>
+{%- endif -%}
+{%- endmacro %}
+
+{% macro button(label, href="#", variant="primary", size="", icon_name="", icon_end="", attrs="") -%}
+<a href="{{ href | e }}" class="lq-btn lq-btn-{{ variant }} {{ 'lq-btn-' ~ size if size else '' }}" {{ attrs }}>
+	{%- if icon_name %}{{ lq_icon(icon_name, "size-4") }}{% endif -%}
+	<span>{{ label | e }}</span>
+	{%- if icon_end %}{{ lq_icon(icon_end, "size-4 lq-icon-flip" if icon_end in ("arrow-right", "arrow-left", "chevron-right", "chevron-left", "arrow-up-right") else "size-4") }}{% endif -%}
+</a>
+{%- endmacro %}
+
+{% macro section_header(title, eyebrow="", subtitle="", align="center", cls="") -%}
+<div class="{{ 'mx-auto max-w-3xl text-center' if align == 'center' else 'max-w-2xl' }} {{ cls }}" data-reveal>
+	{%- if eyebrow %}<p class="lq-eyebrow mb-5"><span class="size-1.5 rounded-full bg-signal-400 animate-pulse-dot"></span>{{ eyebrow | e }}</p>{% endif %}
+	<h2 class="lq-h2">{{ title | e }}</h2>
+	{%- if subtitle %}<p class="lq-lead mt-4">{{ subtitle | e }}</p>{% endif %}
+</div>
+{%- endmacro %}
+
+{% macro badge(label, variant="") -%}
+<span class="lq-badge {{ 'lq-badge-' ~ variant if variant else '' }}">{{ label | e }}</span>
+{%- endmacro %}
+
+{% macro breadcrumbs(items) -%}
+{#- items: list of (label, url). The last item is the current page. -#}
+<nav aria-label="{{ _('Breadcrumb') }}" class="mb-6">
+	<ol class="flex flex-wrap items-center gap-1.5 text-sm text-subtle">
+		<li><a href="/" class="hover:text-fg">{{ _("Home") }}</a></li>
+		{%- for label, url in items %}
+		<li class="flex items-center gap-1.5">
+			{{ lq_icon("chevron-right", "size-3.5 lq-icon-flip opacity-60") }}
+			{%- if loop.last %}<span aria-current="page" class="text-muted">{{ label | e }}</span>
+			{%- else %}<a href="{{ url | e }}" class="hover:text-fg">{{ label | e }}</a>{% endif %}
+		</li>
+		{%- endfor %}
+	</ol>
+</nav>
+{%- endmacro %}
+
+{% macro picture(src, alt="", cls="", width=1600, height=900, eager=False, sizes="100vw") -%}
+{%- if src -%}
+<img src="{{ src | e }}" alt="{{ alt | e }}" class="{{ cls }}" width="{{ width }}" height="{{ height }}"
+	{{ 'fetchpriority="high"' if eager else 'loading="lazy"' }} decoding="async" sizes="{{ sizes }}">
+{%- endif -%}
+{%- endmacro %}
+
+{% macro empty_state(title, message="", icon_name="sparkles") -%}
+<div class="lq-glass mx-auto max-w-xl p-10 text-center">
+	<span class="lq-icon-tile mx-auto mb-4">{{ lq_icon(icon_name) }}</span>
+	<p class="lq-h3">{{ title | e }}</p>
+	{%- if message %}<p class="mt-2 text-sm text-muted">{{ message | e }}</p>{% endif %}
+</div>
+{%- endmacro %}

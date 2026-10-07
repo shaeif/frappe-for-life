@@ -1,0 +1,29 @@
+{% extends "templates/lq_page.html" %}
+{% from "templates/components/hero.html" import page_hero with context %}
+{% from "templates/components/cards.html" import case_card with context %}
+{% from "templates/components/sections.html" import cta_band with context %}
+{% from "templates/components/ui.html" import empty_state with context %}
+
+{% block page %}
+{% call page_hero(_("Real projects. Measurable results."),
+	_("A selection of networks, security programs and data centers we have delivered."),
+	_("Case studies"), [(_("Case Studies"), "")]) %}
+	{%- if industries | length > 1 %}
+	{%- set chip = "rounded-full border border-line bg-surface px-3.5 py-1.5 text-sm text-muted transition hover:text-fg aria-pressed:border-brand-400/60 aria-pressed:bg-brand-500/15 aria-pressed:text-fg" %}
+	<div class="mt-8 flex flex-wrap gap-2" data-filter-group="#case-grid" role="group" aria-label="{{ _('Filter by industry') }}" data-reveal style="--reveal-delay: 180ms">
+		<button type="button" class="{{ chip }}" data-filter="" aria-pressed="true">{{ _("All") }}</button>
+		{%- for industry in industries %}
+		<button type="button" class="{{ chip }}" data-filter="{{ industry | e }}" aria-pressed="false">{{ _(industry) }}</button>
+		{%- endfor %}
+	</div>
+	{%- endif %}
+{% endcall %}
+
+<section class="pb-20">
+	<div id="case-grid" class="lq-container grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+		{%- for c in case_studies %}{{ case_card(c, (loop.index0 % 3) * 70) }}
+		{%- else %}<div class="md:col-span-2 lg:col-span-3">{{ empty_state(_("Case studies are coming soon"), _("We are documenting recent projects with our clients' approval.")) }}</div>{% endfor %}
+	</div>
+</section>
+{{ cta_band() }}
+{% endblock %}

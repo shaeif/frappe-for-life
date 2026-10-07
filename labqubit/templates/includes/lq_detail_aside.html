@@ -1,0 +1,17 @@
+{#- Sticky sidebar on detail pages: talk-to-an-engineer CTA. -#}
+<aside class="lg:sticky lg:top-24">
+	<div class="lq-glass relative overflow-hidden p-6">
+		<div class="pointer-events-none absolute -end-12 -top-12 size-40 rounded-full bg-brand-500/20 blur-3xl"></div>
+		<p class="text-xs font-semibold tracking-wide text-signal-400 uppercase">{{ _("Talk to an engineer") }}</p>
+		<p class="mt-2 text-lg font-semibold text-fg">{{ _("Get a tailored proposal") }}</p>
+		<p class="mt-2 text-sm text-muted">{{ _("Tell us about your sites, users and goals. We reply within one business day.") }}</p>
+		<div class="mt-5 grid gap-2.5">
+			<a href="/request-a-quote" class="lq-btn lq-btn-primary w-full">{{ _("Request a Quote") }}</a>
+			<a href="/book-a-consultation" class="lq-btn lq-btn-secondary w-full">{{ _("Book a Consultation") }}</a>
+		</div>
+		{%- if lq.settings.phone %}
+		<a href="tel:{{ lq.settings.phone | e }}" class="mt-4 flex items-center justify-center gap-2 text-sm text-muted hover:text-fg" dir="ltr">{{ lq_icon("phone", "size-4") }}{{ lq.settings.phone | e }}</a>
+		{%- endif %}
+	</div>
+	{{ caller() if caller else "" }}
+</aside>

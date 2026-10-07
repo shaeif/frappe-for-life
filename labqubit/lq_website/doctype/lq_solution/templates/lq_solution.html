@@ -1,7 +1,28 @@
-{% extends "templates/web.html" %}
+{% extends "templates/lq_page.html" %}
+{% from "templates/components/hero.html" import page_hero with context %}
+{% from "templates/components/ui.html" import picture with context %}
+{% from "templates/components/lists.html" import highlights, chip_links, card_grid, case_grid, partner_row with context %}
+{% from "templates/components/sections.html" import cta_band with context %}
 
-{% block page_content %}
-<h1>{{ title }}</h1>
+{% block page %}
+{% call page_hero(t(doc, "title"), t(doc, "short_description"), t(doc, "tagline"), [(section.label, section.url), (t(doc, "title"), "")], doc.icon) %}{% endcall %}
+
+<section class="pb-20">
+	<div class="lq-container grid gap-12 lg:grid-cols-12">
+		<article class="lg:col-span-8">
+			{%- if doc.hero_image %}
+			<div class="mb-10 overflow-hidden rounded-3xl border border-line">{{ picture(doc.hero_image, t(doc, "title"), "w-full object-cover", eager=True) }}</div>
+			{%- endif %}
+			<div class="lq-prose max-w-none">{{ t(doc, "description") }}</div>
+			{{ highlights(doc.features, _("Capabilities")) }}
+			{{ partner_row(partners, _("Technology partners")) }}
+			{{ chip_links(industries, _("Built for")) }}
+		</article>
+		<div class="lg:col-span-4">{% include "templates/includes/lq_detail_aside.html" %}</div>
+	</div>
+</section>
+
+{{ card_grid(services, _("Services involved")) }}
+{{ case_grid(case_studies, _("Proof in production")) }}
+{{ cta_band() }}
 {% endblock %}
-
-<!-- this is a sample default web page template -->

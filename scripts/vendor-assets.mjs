@@ -20,9 +20,9 @@ const fonts = [
 fs.mkdirSync(path.join(pub, "fonts"), { recursive: true });
 for (const [src, dest] of fonts) fs.copyFileSync(path.join(nm, src), path.join(pub, "fonts", dest));
 
-// Icons: editor-selectable list + every icon("name") used in templates and Python
+// Icons: editor-selectable list + every lq_icon("name") used in templates and Python
 const names = new Set(JSON.parse(fs.readFileSync(path.join(root, "styles", "icons.json"))).selectable);
-const iconCall = /icon\(\s*["']([a-z0-9-]+)["']/g;
+const iconCall = /lq_icon\(\s*["']([a-z0-9-]+)["']/g;
 (function scan(dir) {
 	for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
 		const p = path.join(dir, entry.name);

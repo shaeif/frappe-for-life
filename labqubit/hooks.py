@@ -13,21 +13,26 @@ app_license = "Proprietary"
 # Includes in <head>
 # ------------------
 
-# Tailwind output (built by `yarn build` / `bench build`). Not included globally yet:
-# Tailwind's reset would restyle Frappe's default web pages before our own base
-# template exists. Phase 3 links it from our base template via `asset_url()`.
-# web_include_css = "/assets/labqubit/css/labqubit.css"
-# web_include_js = "/assets/labqubit/js/site.js"
+# CSS and JS are linked from templates/lq_base.html via asset_url() (content-hashed URLs),
+# not web_include_css/js, so they are cache-busted on every build.
 
 # Website
 # ------------------
 
-# Phase 3: our own base template and home page
-# base_template = "templates/lq_base.html"
-# home_page = "index"
+# "/" is the marketing home page for everyone (www/index.html)
+home_page = "index"
 
-# Phase 3: SEO-friendly routes for web-view DocTypes
-# website_route_rules = []
+# Every website page (ours and Frappe's built-in ones) renders inside our layout
+base_template = "templates/lq_base.html"
+update_website_context = "labqubit.website.context.update_website_context"
+
+# Blog posts are written with Frappe's Blog Post DocType but rendered by www/blog/*.
+# The explicit "/blog" rule wins over Frappe's own list route for Blog Post.
+website_route_rules = [
+	{"from_route": "/blog", "to_route": "blog"},
+	{"from_route": "/blog/<category>/<name>", "to_route": "blog/post"},
+	{"from_route": "/blog/<category>", "to_route": "blog"},
+]
 
 # Phase 6: client portal sidebar
 # portal_menu_items = []
@@ -38,6 +43,12 @@ app_license = "Proprietary"
 jinja = {
 	"methods": [
 		"labqubit.utils.jinja.asset_url",
+		"labqubit.utils.jinja.lq_icon",
+		"labqubit.utils.jinja.t",
+		"labqubit.utils.jinja.is_arabic",
+	],
+	"filters": [
+		"labqubit.utils.jinja.json_script",
 	],
 }
 
@@ -58,7 +69,26 @@ after_migrate = "labqubit.install.after_migrate"
 # Document Events
 # ---------------
 
-# doc_events = {}
+_clear_website = {
+	"on_update": "labqubit.website.context.clear_website_cache",
+	"on_trash": "labqubit.website.context.clear_website_cache",
+}
+
+doc_events = {
+	doctype: _clear_website
+	for doctype in (
+		"LQ Service",
+		"LQ Solution",
+		"LQ Industry",
+		"LQ Case Study",
+		"LQ Partner",
+		"LQ Testimonial",
+		"LQ Certification",
+		"LQ Job Opening",
+		"LQ Settings",
+		"Blog Post",
+	)
+}
 
 # Scheduled Tasks
 # ---------------

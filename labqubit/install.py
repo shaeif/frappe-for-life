@@ -1,6 +1,7 @@
 import frappe
 
-# (role, desk access, landing page after login)
+# (role, desk access, home page). The client home page is left empty on purpose: a Role
+# home page also replaces "/" for that user. The login page sends clients to /portal instead.
 ROLES = [
 	("LQ Content Editor", 1, None),
 	("LQ Sales User", 1, None),
@@ -8,7 +9,7 @@ ROLES = [
 	("LQ Support Agent", 1, None),
 	("LQ Support Manager", 1, None),
 	("LQ HR User", 1, None),
-	("LQ Client", 0, "/portal"),
+	("LQ Client", 0, None),
 ]
 
 DEFAULT_SLA_POLICIES = {

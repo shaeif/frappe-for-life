@@ -83,7 +83,7 @@ logo strip) live in `labqubit/templates/components/` (Phase 3).
 Lucide (ISC license), 1.75 px stroke, 20 px default. Icons are bundled into one SVG sprite
 (`/assets/labqubit/icons/sprite.svg`) by `scripts/vendor-assets.mjs`. The sprite contains only:
 
-- icons used in templates through `icon("name")`, and
+- icons used in templates through `lq_icon("name")`, and
 - the editor-selectable list in `styles/icons.json`.
 
 Social icons (LinkedIn, X, Instagram, YouTube, Facebook, WhatsApp) are drawn in the same stroke
@@ -100,7 +100,7 @@ style in `styles/icons/`, since Lucide removed brand icons.
 
 | Asset | Budget |
 |---|---|
-| CSS | < 60 KB minified (one file, cached by content hash) |
+| CSS | < 70 KB minified, ~11 KB gzipped (one file, cached by content hash) |
 | JS | < 10 KB (`site.js`, no frameworks); Frappe's 400 KB web bundle is not loaded on our pages |
 | Fonts | 1 Latin file (48 KB) is preloaded; Arabic weights load only on Arabic pages |
 | Images | WebP, explicit width/height, `loading="lazy"` below the fold |

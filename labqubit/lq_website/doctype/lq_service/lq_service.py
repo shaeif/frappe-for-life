@@ -5,4 +5,4 @@ from labqubit.website.generator import LQWebsiteGenerator
 
 
 class LQService(LQWebsiteGenerator):
-	pass
+	route_prefix = "services"

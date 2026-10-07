@@ -1,0 +1,121 @@
+{#- Full-width sections: CTA band, stats, testimonials, logo marquee, certifications. -#}
+{% from "templates/components/ui.html" import button, section_header with context %}
+{% from "templates/components/cards.html" import partner_tile with context %}
+
+{% macro cta_band(title="", subtitle="", primary=None, secondary=None) -%}
+<section class="lq-section-tight">
+	<div class="lq-container">
+		<div class="relative isolate overflow-hidden rounded-3xl border border-line bg-canvas-soft px-6 py-14 sm:px-14 sm:py-16" data-reveal>
+			<div class="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(60%_80%_at_20%_0%,var(--lq-glow-a),transparent),radial-gradient(50%_70%_at_90%_100%,var(--lq-glow-b),transparent)]"></div>
+			<div class="lq-grid-bg pointer-events-none absolute inset-0 -z-10 opacity-60"></div>
+			<div class="flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-center">
+				<div class="max-w-2xl">
+					<h2 class="lq-h2">{{ (title or _("Let's design your next network, together.")) | e }}</h2>
+					<p class="lq-lead mt-3">{{ (subtitle or _("Talk to a certified engineer about your project. We respond within one business day.")) | e }}</p>
+				</div>
+				<div class="flex flex-wrap gap-3">
+					{%- set p = primary or {"label": _("Request a Quote"), "href": "/request-a-quote"} %}
+					{%- set s = secondary or {"label": _("Book a Consultation"), "href": "/book-a-consultation"} %}
+					{{ button(p.label, p.href, "primary", "lg", icon_end="arrow-right") }}
+					{{ button(s.label, s.href, "secondary", "lg") }}
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+{%- endmacro %}
+
+{% macro stats(items) -%}
+{#- items: list of {"value": number, "suffix": "+", "decimals": 0, "label": "..."}; zero values are skipped -#}
+{%- set shown = items | selectattr("value") | list -%}
+{%- if shown %}
+<section class="lq-section-tight border-y border-line bg-canvas-soft/60">
+	<div class="lq-container">
+		{%- set cols = {1: "lg:grid-cols-1", 2: "lg:grid-cols-2", 3: "lg:grid-cols-3", 4: "lg:grid-cols-4"} %}
+		<dl class="grid grid-cols-2 gap-8 {{ cols[shown | length] or 'lg:grid-cols-4' }}">
+			{%- for s in shown %}
+			<div class="text-center" data-reveal style="--reveal-delay: {{ loop.index0 * 80 }}ms">
+				<dt class="text-sm text-muted">{{ s.label | e }}</dt>
+				<dd class="mt-2 text-4xl font-semibold tracking-tight text-fg sm:text-5xl" dir="ltr">
+					<span data-count-to="{{ s.value }}" data-decimals="{{ s.decimals or 0 }}">{{ s.value }}</span><span class="lq-gradient-text">{{ s.suffix or "" }}</span>
+				</dd>
+			</div>
+			{%- endfor %}
+		</dl>
+	</div>
+</section>
+{%- endif %}
+{%- endmacro %}
+
+{% macro testimonial_quote(item, cls="") -%}
+<figure class="lq-card flex h-full flex-col {{ cls }}">
+	{{ lq_icon("quote", "size-8 text-brand-400/70") }}
+	<blockquote class="mt-4 flex-1 text-lg leading-8 text-fg">{{ t(item, "quote") | e }}</blockquote>
+	<figcaption class="mt-6 flex items-center gap-3 border-t border-line pt-5">
+		{%- if item.photo %}<img src="{{ item.photo | e }}" alt="" class="size-11 rounded-full object-cover" width="44" height="44" loading="lazy">
+		{%- else %}<span class="flex size-11 items-center justify-center rounded-full bg-gradient-to-br from-brand-500 to-accent-500 text-sm font-semibold text-white">{{ (item.author_name or "?")[:1] | e }}</span>{% endif %}
+		<span>
+			<span class="block text-sm font-semibold text-fg">{{ item.author_name | e }}</span>
+			<span class="block text-sm text-muted">{{ ([item.author_title, item.company] | select | join(", ")) | e }}</span>
+		</span>
+	</figcaption>
+</figure>
+{%- endmacro %}
+
+{% macro testimonials(items, title="", eyebrow="") -%}
+{%- if items %}
+<section class="lq-section">
+	<div class="lq-container">
+		<div class="flex flex-wrap items-end justify-between gap-6">
+			{{ section_header(title or _("Trusted by teams who can't afford downtime"), eyebrow or _("Client stories"), align="start") }}
+			{%- if items | length > 1 %}
+			<div class="flex gap-2" data-slider-controls="testimonials">
+				<button type="button" class="lq-btn lq-btn-secondary lq-btn-sm" data-slider-prev aria-label="{{ _('Previous') }}">{{ lq_icon("arrow-left", "size-4 lq-icon-flip") }}</button>
+				<button type="button" class="lq-btn lq-btn-secondary lq-btn-sm" data-slider-next aria-label="{{ _('Next') }}">{{ lq_icon("arrow-right", "size-4 lq-icon-flip") }}</button>
+			</div>
+			{%- endif %}
+		</div>
+		<div class="lq-slider mt-12" data-slider="testimonials" tabindex="0" aria-label="{{ _('Testimonials') }}">
+			{%- for item in items %}
+			<div class="w-[88%] shrink-0 sm:w-[60%] lg:w-[calc((100%-3rem)/3)]">{{ testimonial_quote(item) }}</div>
+			{%- endfor %}
+		</div>
+	</div>
+</section>
+{%- endif %}
+{%- endmacro %}
+
+{% macro logo_marquee(partners, label="") -%}
+{%- if partners %}
+<section class="py-14">
+	<div class="lq-container">
+		<p class="text-center text-sm font-medium text-subtle">{{ (label or _("Certified partner of the world's leading technology vendors")) | e }}</p>
+		<div class="lq-marquee mt-8 overflow-hidden">
+			<div class="lq-marquee-track flex w-max gap-4 {{ 'animate-marquee' if partners | length > 3 else 'mx-auto' }}">
+				{%- set loops = 2 if partners | length > 3 else 1 %}
+				{%- for copy in range(loops) %}{% for p in partners %}
+				<div class="w-48 shrink-0" {{ 'aria-hidden="true"' if copy == 1 else '' }}>{{ partner_tile(p) }}</div>
+				{%- endfor %}{% endfor %}
+			</div>
+		</div>
+	</div>
+</section>
+{%- endif %}
+{%- endmacro %}
+
+{% macro certifications(items) -%}
+{%- if items %}
+<div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+	{%- for c in items %}
+	<div class="lq-card flex items-center gap-4" data-reveal style="--reveal-delay: {{ loop.index0 * 60 }}ms">
+		{%- if c.logo %}<img src="{{ c.logo | e }}" alt="" class="size-12 object-contain" width="48" height="48" loading="lazy">
+		{%- else %}<span class="lq-icon-tile">{{ lq_icon("award") }}</span>{% endif %}
+		<div>
+			<p class="text-sm font-semibold text-fg">{{ c.title | e }}</p>
+			{%- if c.issuer %}<p class="text-xs text-muted">{{ c.issuer | e }}</p>{% endif %}
+		</div>
+	</div>
+	{%- endfor %}
+</div>
+{%- endif %}
+{%- endmacro %}

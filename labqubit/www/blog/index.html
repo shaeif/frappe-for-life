@@ -1,0 +1,40 @@
+{% extends "templates/lq_page.html" %}
+{% from "templates/components/hero.html" import page_hero with context %}
+{% from "templates/components/ui.html" import picture, empty_state with context %}
+
+{% block page %}
+{% call page_hero(category.title if category else _("Insights from the field"),
+	_("Practical guidance on networks, security and data centers from the engineers who build them."),
+	_("Blog"), [(_("Blog"), "/blog")] + ([(category.title, "")] if category else [])) %}
+	{%- if categories | length > 1 %}
+	<nav class="mt-8 flex flex-wrap gap-2" aria-label="{{ _('Categories') }}">
+		{%- set chip = "rounded-full border px-3.5 py-1.5 text-sm transition" %}
+		<a href="/blog" class="{{ chip }} {{ 'border-brand-400/60 bg-brand-500/15 text-fg' if not category else 'border-line bg-surface text-muted hover:text-fg' }}">{{ _("All") }}</a>
+		{%- for c in categories %}
+		<a href="/{{ c.route | e }}" class="{{ chip }} {{ 'border-brand-400/60 bg-brand-500/15 text-fg' if category and category.name == c.name else 'border-line bg-surface text-muted hover:text-fg' }}">{{ c.title | e }}</a>
+		{%- endfor %}
+	</nav>
+	{%- endif %}
+{% endcall %}
+
+<section class="pb-24">
+	<div class="lq-container grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+		{%- for p in posts %}
+		<a href="/{{ p.route | e }}" class="lq-card lq-card-hover group flex flex-col overflow-hidden p-0" data-reveal style="--reveal-delay: {{ (loop.index0 % 3) * 70 }}ms">
+			<div class="relative aspect-[16/9] overflow-hidden border-b border-line bg-canvas-soft">
+				{%- if p.meta_image %}{{ picture(p.meta_image, p.title, "size-full object-cover transition duration-700 group-hover:scale-105", 800, 450) }}
+				{%- else %}<div class="lq-grid-bg absolute inset-0"></div><div class="absolute inset-0 bg-gradient-to-br from-brand-500/25 via-transparent to-accent-500/20"></div>{% endif %}
+			</div>
+			<div class="flex flex-1 flex-col p-6">
+				<p class="text-xs text-subtle">{{ frappe.format_date(p.published_on) if p.published_on else "" }}{% if p.read_time %} · {{ _("{0} min read").format(p.read_time) }}{% endif %}</p>
+				<h2 class="lq-h3 mt-2">{{ p.title | e }}</h2>
+				{%- if p.blog_intro %}<p class="mt-2 line-clamp-3 text-sm leading-6 text-muted">{{ p.blog_intro | e }}</p>{% endif %}
+				<span class="mt-auto flex items-center gap-1.5 pt-5 text-sm font-medium text-link">{{ _("Read article") }}{{ lq_icon("arrow-right", "size-4 lq-icon-flip") }}</span>
+			</div>
+		</a>
+		{%- else %}
+		<div class="md:col-span-2 lg:col-span-3">{{ empty_state(_("No articles yet"), _("Check back soon for insights from our engineers."), "file-text") }}</div>
+		{%- endfor %}
+	</div>
+</section>
+{% endblock %}

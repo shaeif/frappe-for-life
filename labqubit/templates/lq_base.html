@@ -1,0 +1,51 @@
+{#- Base layout for every website page, including Frappe's built-in ones (set via the
+    `base_template` hook). LabQubit pages extend templates/lq_page.html instead. -#}
+<!DOCTYPE html>
+<html lang="{{ lq.lang }}" dir="{{ 'rtl' if lq.rtl else 'ltr' }}" data-theme="dark">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script>
+		(function (d) {
+			d.documentElement.classList.add("js");
+			try {
+				var theme = localStorage.getItem("lq-theme");
+				if (theme === "light" || theme === "dark") d.documentElement.dataset.theme = theme;
+			} catch (e) {}
+		})(document);
+	</script>
+	<title>{% block title %}{% include "templates/includes/lq_title.html" %}{% endblock %}</title>
+	{% block meta_block %}{% include "templates/includes/lq_meta.html" %}{% endblock %}
+	<link rel="preload" href="{{ asset_url('fonts/inter-latin.woff2') }}" as="font" type="font/woff2" crossorigin>
+	{%- if lq.rtl %}
+	<link rel="preload" href="{{ asset_url('fonts/plex-arabic-400.woff2') }}" as="font" type="font/woff2" crossorigin>
+	{%- endif %}
+	<link rel="stylesheet" href="{{ asset_url('css/labqubit.css') }}">
+	<link rel="icon" href="{{ (favicon or asset_url('images/favicon.svg')) | e }}">
+	<meta name="theme-color" content="#05070f">
+	{%- block head_include %}{{ head_include or "" }}{% endblock -%}
+	{%- block style %}{% if colocated_css %}<style>{{ colocated_css }}</style>{% endif %}{% endblock -%}
+	<script>
+		window.frappe = window.frappe || {};
+		frappe.ready_events = [];
+		frappe.ready = function (fn) { frappe.ready_events.push(fn); };
+	</script>
+</head>
+<body class="min-h-screen" data-path="{{ (path or '') | e }}">
+	<a href="#main" class="sr-only z-[100] rounded-lg bg-brand-600 px-4 py-2 text-white focus:not-sr-only focus:fixed focus:start-4 focus:top-4">{{ _("Skip to content") }}</a>
+	{% block navbar %}{% include "templates/includes/lq_navbar.html" %}{% endblock %}
+	<div id="main" tabindex="-1" class="outline-none">
+		{% block content %}{{ content or "" }}{% endblock %}
+	</div>
+	{% block footer %}{% include "templates/includes/lq_footer.html" %}{% endblock %}
+	{% block base_scripts %}
+	{#- Frappe's own pages (login fallbacks, unsubscribe, etc.) need frappe-web.bundle.js -#}
+	<script>frappe.boot = {{ (boot or {}) | json }}; frappe.sys_defaults = frappe.boot.sysdefaults;</script>
+	{{ include_script("frappe-web.bundle.js") }}
+	{% endblock %}
+	<script src="{{ asset_url('js/site.js') }}" defer></script>
+	{%- block script %}{% if colocated_js %}<script>{{ colocated_js }}</script>{% endif %}{% endblock %}
+	<!-- csrf_token -->
+	{%- block body_include %}{{ body_include or "" }}{% endblock -%}
+</body>
+</html>

@@ -5,4 +5,4 @@ from labqubit.website.generator import LQWebsiteGenerator
 
 
 class LQIndustry(LQWebsiteGenerator):
-	pass
+	route_prefix = "industries"
