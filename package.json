@@ -1,0 +1,13 @@
+{
+  "name": "labqubit",
+  "private": true,
+  "description": "Frontend build for the LabQubit Frappe app",
+  "scripts": {
+    "dev": "tailwindcss -i ./styles/tailwind.css -o ./labqubit/public/css/labqubit.css --watch",
+    "build": "tailwindcss -i ./styles/tailwind.css -o ./labqubit/public/css/labqubit.css --minify"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.3.3",
+    "tailwindcss": "^4.3.3"
+  }
+}

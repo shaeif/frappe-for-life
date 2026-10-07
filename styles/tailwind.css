@@ -1,0 +1,19 @@
+/*
+ * LabQubit - Tailwind entry point
+ * Compiled to labqubit/public/css/labqubit.css by `yarn build` (bench build runs it).
+ *
+ * Design tokens (colors, fonts, spacing, components) are added in Phase 1,
+ * after the design system is approved.
+ */
+
+/* source(none): don't scan the whole repo, only the folders listed below */
+@import "tailwindcss" source(none);
+
+/* Every place a Tailwind class can appear. Keep classes out of Python files. */
+@source "../labqubit/templates";
+@source "../labqubit/www";
+@source "../labqubit/public/js";
+@source "../labqubit/*/doctype/*/templates/*.html";
+
+/* Dark mode follows <html data-theme="dark|light">, set by the theme toggle */
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
