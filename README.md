@@ -1,9 +1,10 @@
 # LabQubit
 
-Company website and client portal for **LabQubit**, an IT solutions provider (networks,
-cybersecurity, data centers, structured cabling, managed services, cloud). Built as a custom
-[Frappe Framework](https://frappeframework.com) v15 app with Tailwind CSS v4, in English and
-Arabic (RTL).
+Company website and client portal for **LabQubit**, an IT solutions provider (networks and
+network automation, cybersecurity, data centers, structured cabling, managed services, cloud, and
+website and web application development). Tagline: *Resilient solutions for resilient businesses*.
+Built as a custom [Frappe Framework](https://frappeframework.com) v15 app with Tailwind CSS v4, in
+English and Arabic (RTL).
 
 | | |
 |---|---|

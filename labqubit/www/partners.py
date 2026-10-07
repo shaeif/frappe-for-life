@@ -7,7 +7,7 @@ sitemap = 1
 
 def get_context(context):
 	context.title = _("Partners")
-	context.description = _("LabQubit technology partnerships and certifications.")
+	context.description = _("Technology vendors LabQubit works with.")
 	context.partners = published(
 		"LQ Partner",
 		fields=[*PARTNER_FIELDS, "description", "description_ar"],

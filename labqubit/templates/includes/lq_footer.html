@@ -11,7 +11,7 @@
 			<div class="lg:col-span-4">
 				<a href="/" aria-label="{{ _('LabQubit home') }}">{{ logo("footer") }}</a>
 				<p class="mt-4 max-w-sm text-sm leading-6 text-muted">
-					{{ (t(s, "tagline") or _("Network, security and data center engineering for organizations that run on uptime.")) | e }}
+					{{ (t(s, "tagline") or _("Resilient solutions for resilient businesses")) | e }}
 				</p>
 				<ul class="mt-6 space-y-2.5 text-sm text-muted">
 					{%- if s.email %}<li><a href="mailto:{{ s.email | e }}" class="flex items-center gap-2.5 hover:text-fg">{{ lq_icon("mail", "size-4 text-brand-400") }}{{ s.email | e }}</a></li>{% endif %}
@@ -25,7 +25,7 @@
 					<p class="{{ col_title }}">{{ _("Services") }}</p>
 					<ul class="mt-4 space-y-2.5">
 						{%- for group in lq.nav.service_groups %}
-						<li><a href="/services#{{ group.anchor }}" class="{{ col_link }}">{{ _(group.category) }}</a></li>
+						<li><a href="/services#{{ group.anchor }}" class="{{ col_link }}">{{ _(group.category) | e }}</a></li>
 						{%- else %}
 						<li><a href="/services" class="{{ col_link }}">{{ _("All services") }}</a></li>
 						{%- endfor %}

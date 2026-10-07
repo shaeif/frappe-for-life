@@ -20,6 +20,7 @@ SERVICE_CATEGORIES = {
 	"Structured Cabling": "cable",
 	"Managed Services": "headset",
 	"Cloud & Consulting": "cloud",
+	"Web & Application Development": "monitor-smartphone",
 }
 
 CARD_FIELDS = ["name", "title", "title_ar", "route", "icon", "short_description", "short_description_ar"]

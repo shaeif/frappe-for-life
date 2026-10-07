@@ -11,7 +11,7 @@
 			<div class="flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-center">
 				<div class="max-w-2xl">
 					<h2 class="lq-h2">{{ (title or _("Let's design your next network, together.")) | e }}</h2>
-					<p class="lq-lead mt-3">{{ (subtitle or _("Talk to a certified engineer about your project. We respond within one business day.")) | e }}</p>
+					<p class="lq-lead mt-3">{{ (subtitle or _("Talk to an experienced engineer about your project. We respond within one business day.")) | e }}</p>
 				</div>
 				<div class="flex flex-wrap gap-3">
 					{%- set p = primary or {"label": _("Request a Quote"), "href": "/request-a-quote"} %}
@@ -89,7 +89,7 @@
 {%- if partners %}
 <section class="py-14">
 	<div class="lq-container">
-		<p class="text-center text-sm font-medium text-subtle">{{ (label or _("Certified partner of the world's leading technology vendors")) | e }}</p>
+		<p class="text-center text-sm font-medium text-subtle">{{ (label or _("Technologies we design, deploy and support")) | e }}</p>
 		<div class="lq-marquee mt-8 overflow-hidden">
 			<div class="lq-marquee-track flex w-max gap-4 {{ 'animate-marquee' if partners | length > 3 else 'mx-auto' }}">
 				{%- set loops = 2 if partners | length > 3 else 1 %}

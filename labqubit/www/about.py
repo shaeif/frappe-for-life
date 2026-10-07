@@ -10,7 +10,7 @@ def get_context(context):
 	settings = frappe.get_cached_doc("LQ Settings")
 	context.title = _("About")
 	context.description = _(
-		"LabQubit is an IT solutions provider specializing in networks, cybersecurity, data centers and managed services."
+		"LabQubit is an IT solutions provider specializing in networks, cybersecurity, data centers, managed services and web development."
 	)
 	context.partners = published("LQ Partner", fields=PARTNER_FIELDS, order_by="display_order asc")
 	context.certifications = published(

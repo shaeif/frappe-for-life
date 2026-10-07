@@ -93,9 +93,10 @@ def ensure_default_records():
 		).insert(ignore_permissions=True)
 
 	settings = frappe.get_single("LQ Settings")
-	if not settings.default_sla_policy:
-		settings.default_sla_policy = "Standard"
-		settings.save(ignore_permissions=True)
+	settings.default_sla_policy = settings.default_sla_policy or "Standard"
+	settings.tagline = settings.tagline or "Resilient solutions for resilient businesses"
+	settings.tagline_ar = settings.tagline_ar or "حلول مرنة لأعمال مرنة"
+	settings.save(ignore_permissions=True)
 
 
 def apply_security_defaults():

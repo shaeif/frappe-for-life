@@ -13,18 +13,19 @@ def get_context(context):
 	context.description = t(settings, "default_meta_description") or t(settings, "hero_subtitle")
 
 	context.home_hero = {
-		"eyebrow": t(settings, "hero_eyebrow") or _("Network · Security · Data Center"),
-		"title": t(settings, "hero_title") or _("Infrastructure that performs. Security that never sleeps."),
+		"eyebrow": t(settings, "hero_eyebrow") or _("Networks · Security · Cloud · Web"),
+		"title": t(settings, "hero_title") or _("Resilient solutions for resilient businesses"),
 		"subtitle": t(settings, "hero_subtitle")
 		or _(
-			"LabQubit designs, secures and runs mission-critical networks for enterprises, government, "
-			"oil & gas and hospitality, backed by certified engineers and measurable SLAs."
+			"LabQubit designs, builds and runs networks, security, cloud infrastructure and web applications for "
+			"enterprises, government, oil & gas and hospitality, backed by experienced, qualified engineers and "
+			"measurable SLAs."
 		),
 	}
 
 	context.description = context.description or context.home_hero["subtitle"]
 
-	services = published("LQ Service", filters={"featured": 1}, limit=6) or published("LQ Service", limit=6)
+	services = published("LQ Service", filters={"featured": 1}, limit=9) or published("LQ Service", limit=9)
 	context.services = services
 	context.solutions = published(
 		"LQ Solution", filters={"featured": 1}, fields=[*CARD_FIELDS, "tagline", "tagline_ar"], limit=3

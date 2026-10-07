@@ -29,6 +29,20 @@ SERVICES = [
 		],
 	),
 	(
+		"Network Automation",
+		"أتمتة الشبكات",
+		"Network Infrastructure",
+		"workflow",
+		1,
+		"Automate configuration, compliance checks and changes across your network, with fewer errors and faster rollouts.",
+		"أتمتة الإعدادات وفحوصات الامتثال والتغييرات عبر شبكتك، بأخطاء أقل وتنفيذ أسرع.",
+		[
+			("workflow", "Automated configuration and changes"),
+			("badge-check", "Compliance checks and drift detection"),
+			("file-text", "Version-controlled, self-documenting network"),
+		],
+	),
+	(
 		"Wireless & Wi-Fi 7",
 		"الشبكات اللاسلكية وWi-Fi 7",
 		"Network Infrastructure",
@@ -132,11 +146,11 @@ SERVICES = [
 		"Structured Cabling",
 		"cable",
 		1,
-		"Certified copper and fiber cabling with full testing and as-built documentation.",
-		"تمديد كابلات نحاسية وألياف ضوئية معتمدة مع اختبار كامل ووثائق تنفيذية.",
+		"Copper and fiber cabling installed to standard, with full testing and as-built documentation.",
+		"تمديد كابلات نحاسية وألياف ضوئية وفق المعايير مع اختبار كامل ووثائق تنفيذية.",
 		[
 			("cable", "Cat6A and fiber backbones"),
-			("badge-check", "Fluke-tested and certified links"),
+			("badge-check", "Every link tested, with test reports"),
 			("file-text", "As-built drawings and labeling"),
 		],
 	),
@@ -210,6 +224,48 @@ SERVICES = [
 			("handshake", "Vendor-neutral recommendations"),
 		],
 	),
+	(
+		"Website Development",
+		"تطوير المواقع الإلكترونية",
+		"Web & Application Development",
+		"globe",
+		1,
+		"Fast, secure, bilingual company websites that are easy to manage and built to win business.",
+		"مواقع إلكترونية سريعة وآمنة وثنائية اللغة، سهلة الإدارة ومصممة لجذب العملاء.",
+		[
+			("globe", "English and Arabic, right-to-left ready"),
+			("gauge", "Performance and SEO built in"),
+			("shield-check", "Secure hosting and ongoing maintenance"),
+		],
+	),
+	(
+		"Web Application Development",
+		"تطوير تطبيقات الويب",
+		"Web & Application Development",
+		"monitor-smartphone",
+		1,
+		"Custom web applications, portals and dashboards that streamline operations and connect your systems.",
+		"تطبيقات ويب وبوابات ولوحات معلومات مخصصة تبسّط العمليات وتربط أنظمتك ببعضها.",
+		[
+			("layers", "Portals, dashboards and internal tools"),
+			("workflow", "Integration with your existing systems"),
+			("lock", "Role-based access, secure by design"),
+		],
+	),
+	(
+		"Web Application Infrastructure & Support",
+		"البنية التحتية لتطبيقات الويب ودعمها",
+		"Web & Application Development",
+		"cloud-cog",
+		0,
+		"Hosting, deployment and support infrastructure for your web applications: servers or cloud, automated deployments, monitoring and backups.",
+		"بنية الاستضافة والنشر والدعم لتطبيقات الويب الخاصة بك: خوادم أو سحابة، ونشر آلي، ومراقبة، ونسخ احتياطي.",
+		[
+			("cloud-cog", "Cloud or on-premise hosting setup"),
+			("rocket", "Automated deployments (CI/CD)"),
+			("activity", "Monitoring, backups and 24x7 support"),
+		],
+	),
 ]
 
 INDUSTRIES = [
@@ -219,7 +275,13 @@ INDUSTRIES = [
 		"building-2",
 		"Secure, scalable networks for headquarters, branches and hybrid workforces.",
 		"شبكات آمنة وقابلة للتوسع للمقرات والفروع وفرق العمل الهجينة.",
-		["Enterprise Switching & Routing", "SD-WAN & Branch Connectivity", "Zero Trust & Secure Access"],
+		[
+			"Enterprise Switching & Routing",
+			"Network Automation",
+			"SD-WAN & Branch Connectivity",
+			"Zero Trust & Secure Access",
+			"Web Application Development",
+		],
 	),
 	(
 		"Government",
@@ -227,7 +289,12 @@ INDUSTRIES = [
 		"landmark",
 		"Compliant, resilient infrastructure for ministries, authorities and public services.",
 		"بنية تحتية متوافقة ومرنة للوزارات والهيئات والخدمات العامة.",
-		["Next-Generation Firewalls", "Security Assessments & Audits", "Data Center Design & Build"],
+		[
+			"Next-Generation Firewalls",
+			"Security Assessments & Audits",
+			"Data Center Design & Build",
+			"Web Application Infrastructure & Support",
+		],
 	),
 	(
 		"Oil & Gas",
@@ -243,7 +310,7 @@ INDUSTRIES = [
 		"hotel",
 		"Guest-grade Wi-Fi and secure property networks for hotels and resorts.",
 		"شبكات Wi-Fi بمستوى يليق بالضيوف وشبكات آمنة للفنادق والمنتجعات.",
-		["Wireless & Wi-Fi 7", "Structured Cabling", "AMC & Preventive Maintenance"],
+		["Wireless & Wi-Fi 7", "Structured Cabling", "AMC & Preventive Maintenance", "Website Development"],
 	),
 ]
 
@@ -294,7 +361,8 @@ SOLUTIONS = [
 	),
 ]
 
-SAMPLE_PARTNERS = [("Cisco", "Partner"), ("Palo Alto Networks", "Partner"), ("Fortinet", "Partner")]
+# Partnership level is left empty: set it only for partnerships the vendor has confirmed.
+SAMPLE_PARTNERS = [("Cisco", ""), ("Palo Alto Networks", ""), ("Fortinet", "")]
 
 SAMPLE_CASE_STUDIES = [
 	(
@@ -407,8 +475,10 @@ def _insert(doctype, values):
 	frappe.get_doc({"doctype": doctype, **values}).insert(ignore_permissions=True)
 
 
-def _services():
+def _services(only=None):
 	for order, (title, title_ar, category, icon, featured, short, short_ar, features) in enumerate(SERVICES):
+		if only and title not in only:
+			continue
 		_insert(
 			"LQ Service",
 			{
@@ -421,9 +491,9 @@ def _services():
 				"display_order": order,
 				"short_description": short,
 				"short_description_ar": short_ar,
-				"description": f"<p>{short}</p><p>Our certified engineers handle the full lifecycle: assessment, design, "
+				"description": f"<p>{short}</p><p>Our experienced, qualified engineers handle the full lifecycle: assessment, design, "
 				"implementation, documentation and ongoing support under clear SLAs.</p>",
-				"description_ar": f"<p>{short_ar}</p><p>يتولى مهندسونا المعتمدون دورة العمل كاملة: التقييم والتصميم والتنفيذ "
+				"description_ar": f"<p>{short_ar}</p><p>يتولى مهندسونا ذوو الخبرة والكفاءة دورة العمل كاملة: التقييم والتصميم والتنفيذ "
 				"والتوثيق والدعم المستمر وفق اتفاقيات مستوى خدمة واضحة.</p>",
 				"features": [{"icon": i, "title": f} for i, f in features],
 			},
@@ -448,13 +518,34 @@ def _industries():
 				"services": [{"service": s} for s in services],
 			},
 		)
-	# link services back to industries
+	_link_industries()
+
+
+def _link_industries(only_services=None):
+	"""Link industries and services both ways, adding only missing rows."""
 	for title, _ar, _icon, _s, _sa, services in INDUSTRIES:
+		services = [s for s in services if not only_services or s in only_services]
+		if not services or not frappe.db.exists("LQ Industry", title):
+			continue
+		industry = frappe.get_doc("LQ Industry", title)
+		missing = [s for s in services if s not in [r.service for r in industry.services]]
+		if missing:
+			for service in missing:
+				industry.append("services", {"service": service})
+			industry.save(ignore_permissions=True)
 		for service in services:
 			doc = frappe.get_doc("LQ Service", service)
 			if title not in [r.industry for r in doc.industries]:
 				doc.append("industries", {"industry": title})
 				doc.save(ignore_permissions=True)
+
+
+def add_new_services(titles):
+	"""Add starter services introduced after a site was first seeded. Sites that started empty are left alone."""
+	if not frappe.db.exists("LQ Service", {"title": "Enterprise Switching & Routing"}):
+		return
+	_services(only=titles)
+	_link_industries(only_services=titles)
 
 
 def _solutions():

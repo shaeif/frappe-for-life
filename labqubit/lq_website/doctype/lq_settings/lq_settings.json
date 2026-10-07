@@ -73,12 +73,14 @@
   {
    "fieldname": "tagline",
    "fieldtype": "Data",
-   "label": "Tagline"
+   "label": "Tagline",
+   "default": "Resilient solutions for resilient businesses"
   },
   {
    "fieldname": "tagline_ar",
    "fieldtype": "Data",
-   "label": "Tagline (Arabic)"
+   "label": "Tagline (Arabic)",
+   "default": "حلول مرنة لأعمال مرنة"
   },
   {
    "fieldname": "logo",

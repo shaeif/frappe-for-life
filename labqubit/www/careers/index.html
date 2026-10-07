@@ -5,13 +5,13 @@
 
 {% block page %}
 {% call page_hero(_("Build the networks that keep organizations running"),
-	_("Work on demanding projects across enterprise, government, energy and hospitality, with the training and certifications to grow your career."),
+	_("Work on demanding projects across enterprise, government, energy and hospitality, with the training and support to grow your career."),
 	_("Careers"), [(_("Careers"), "")]) %}{% endcall %}
 
 <section class="pb-16">
 	<div class="lq-container grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
 		{%- for ic, title, text in [
-			("graduation-cap", _("Certification budget"), _("Paid vendor training and exams every year.")),
+			("graduation-cap", _("Training budget"), _("Paid technical training and exams every year.")),
 			("rocket", _("Real impact"), _("Own projects end to end, from design to handover.")),
 			("users", _("Senior mentors"), _("Learn from engineers with decades of field experience.")),
 			("shield-check", _("Modern stack"), _("Work with current enterprise and security platforms."))] %}

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: LabQubit VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-10-07 18:28+0000\n"
-"PO-Revision-Date: 2026-10-07 18:28+0000\n"
+"POT-Creation-Date: 2026-10-07 18:54+0000\n"
+"PO-Revision-Date: 2026-10-07 18:54+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -496,7 +496,7 @@ msgstr ""
 #: labqubit/templates/includes/lq_footer.html:37
 #: labqubit/templates/includes/lq_navbar.html:84
 #: labqubit/templates/includes/lq_navbar.html:160
-#: labqubit/website/context.py:235 labqubit/www/careers/index.html:9
+#: labqubit/website/context.py:236 labqubit/www/careers/index.html:9
 #: labqubit/www/careers/index.py:9
 msgid "Careers"
 msgstr ""
@@ -504,7 +504,7 @@ msgstr ""
 #: labqubit/templates/includes/lq_footer.html:45
 #: labqubit/templates/includes/lq_navbar.html:76
 #: labqubit/templates/includes/lq_navbar.html:160
-#: labqubit/website/context.py:212 labqubit/www/case-studies/index.html:10
+#: labqubit/website/context.py:213 labqubit/www/case-studies/index.html:10
 #: labqubit/www/case-studies/index.py:9
 msgid "Case Studies"
 msgstr ""
@@ -540,25 +540,9 @@ msgstr ""
 msgid "Certification"
 msgstr ""
 
-#: labqubit/www/careers/index.html:14
-msgid "Certification budget"
-msgstr ""
-
 #: labqubit/www/about.html:39 labqubit/www/index.html:100
 #: labqubit/www/partners.html:32
 msgid "Certifications"
-msgstr ""
-
-#: labqubit/www/request-a-quote.html:29
-msgid "Certified engineers"
-msgstr ""
-
-#: labqubit/templates/components/sections.html:92
-msgid "Certified partner of the world's leading technology vendors"
-msgstr ""
-
-#: labqubit/www/index.html:100
-msgid "Certified to the highest standards"
 msgstr ""
 
 #. Label of a Text Editor field in DocType 'LQ Case Study'
@@ -686,7 +670,7 @@ msgstr ""
 msgid "Clients Served"
 msgstr ""
 
-#: labqubit/www/about.py:21 labqubit/www/index.py:45
+#: labqubit/www/about.py:21 labqubit/www/index.py:48
 msgid "Clients served"
 msgstr ""
 
@@ -792,7 +776,7 @@ msgid "Contact Email"
 msgstr ""
 
 #: labqubit/www/contact.py:10
-msgid "Contact LabQubit about networks, cybersecurity, data centers and managed services."
+msgid "Contact LabQubit about networks, cybersecurity, data centers, managed services and web development."
 msgstr ""
 
 #: labqubit/templates/lq_portal.html:16 labqubit/www/404.html:13
@@ -1229,6 +1213,14 @@ msgstr ""
 msgid "Experience"
 msgstr ""
 
+#: labqubit/www/request-a-quote.html:29
+msgid "Experienced engineers"
+msgstr ""
+
+#: labqubit/www/index.html:12
+msgid "Experienced, qualified engineers"
+msgstr ""
+
 #. Option for the 'Status' (Select) field in DocType 'LQ AMC Contract'
 #: labqubit/lq_service_desk/doctype/lq_amc_contract/lq_amc_contract.json
 #: labqubit/www/portal/assets.html:24
@@ -1324,7 +1316,7 @@ msgid "Free, no-obligation proposal"
 msgstr ""
 
 #: labqubit/www/index.html:25
-msgid "From the first cable to the last firewall rule, one accountable team designs, deploys and operates your environment."
+msgid "From the first cable to the web applications your customers use, one accountable team designs, builds and operates your environment."
 msgstr ""
 
 #. Label of a Data field in DocType 'LQ Job Application'
@@ -1442,7 +1434,7 @@ msgstr ""
 msgid "Hired"
 msgstr ""
 
-#: labqubit/templates/components/ui.html:55 labqubit/website/context.py:292
+#: labqubit/templates/components/ui.html:55 labqubit/website/context.py:298
 #: labqubit/www/message.html:13
 msgid "Home"
 msgstr ""
@@ -1546,7 +1538,7 @@ msgstr ""
 #: labqubit/lq_website/doctype/lq_solution/lq_solution.json
 #: labqubit/templates/includes/lq_footer.html:45
 #: labqubit/templates/includes/lq_navbar.html:152
-#: labqubit/website/context.py:202 labqubit/www/index.html:62
+#: labqubit/website/context.py:203 labqubit/www/index.html:62
 #: labqubit/www/industries/index.html:10 labqubit/www/industries/index.py:7
 msgid "Industries"
 msgstr ""
@@ -1576,10 +1568,6 @@ msgstr ""
 #: labqubit/lq_website/doctype/lq_testimonial/lq_testimonial.json
 #: labqubit/www/request-a-quote.html:18
 msgid "Industry"
-msgstr ""
-
-#: labqubit/www/index.py:17
-msgid "Infrastructure that performs. Security that never sleeps."
 msgstr ""
 
 #: labqubit/www/blog/index.html:6
@@ -1665,7 +1653,7 @@ msgid "Job title"
 msgstr ""
 
 #: labqubit/www/careers/index.py:10
-msgid "Join LabQubit's team of network, security and data center engineers."
+msgid "Join LabQubit's team of network, security, data center and web engineers."
 msgstr ""
 
 #: labqubit/www/blog/post.html:25
@@ -1880,8 +1868,8 @@ msgstr ""
 msgid "LabQubit"
 msgstr ""
 
-#: labqubit/www/index.py:19
-msgid "LabQubit designs, secures and runs mission-critical networks for enterprises, government, oil & gas and hospitality, backed by certified engineers and measurable SLAs."
+#: labqubit/templates/includes/lq_meta.html:4 labqubit/www/index.py:19
+msgid "LabQubit designs, builds and runs networks, security, cloud infrastructure and web applications for enterprises, government, oil & gas and hospitality, backed by experienced, qualified engineers and measurable SLAs."
 msgstr ""
 
 #: labqubit/templates/includes/lq_footer.html:12
@@ -1891,15 +1879,11 @@ msgid "LabQubit home"
 msgstr ""
 
 #: labqubit/www/about.html:8
-msgid "LabQubit is an IT solutions provider focused on networks, cybersecurity, data centers and the managed services that keep them healthy."
+msgid "LabQubit is an IT solutions provider focused on networks, cybersecurity, data centers, web applications and the managed services that keep them healthy."
 msgstr ""
 
 #: labqubit/www/about.py:12
-msgid "LabQubit is an IT solutions provider specializing in networks, cybersecurity, data centers and managed services."
-msgstr ""
-
-#: labqubit/www/partners.py:10
-msgid "LabQubit technology partnerships and certifications."
+msgid "LabQubit is an IT solutions provider specializing in networks, cybersecurity, data centers, managed services and web development."
 msgstr ""
 
 #. Label of a Data field in DocType 'LQ Metric'
@@ -2229,19 +2213,15 @@ msgid "Network error. Please try again."
 msgstr ""
 
 #: labqubit/www/services/index.py:8
-msgid "Network infrastructure, cybersecurity, data center, structured cabling, managed services and cloud consulting."
+msgid "Network infrastructure and automation, cybersecurity, data center, structured cabling, managed services, cloud consulting, and web and application development."
 msgstr ""
 
-#: labqubit/www/about.py:22 labqubit/www/index.py:46
+#: labqubit/www/about.py:22 labqubit/www/index.py:49
 msgid "Network uptime"
 msgstr ""
 
 #: labqubit/www/index.py:16
-msgid "Network · Security · Data Center"
-msgstr ""
-
-#: labqubit/templates/includes/lq_footer.html:14
-msgid "Network, security and data center engineering for organizations that run on uptime."
+msgid "Networks · Security · Cloud · Web"
 msgstr ""
 
 #. Option for the 'Status' (Select) field in DocType 'LQ Job Application'
@@ -2513,7 +2493,7 @@ msgid "Other open roles"
 msgstr ""
 
 #: labqubit/www/about.html:15
-msgid "Our certified engineers design, deploy and operate infrastructure across the full stack, from structured cabling and data center fabrics to next-generation firewalls and zero trust access, and we stand behind our work with clear, measurable SLAs."
+msgid "Our experienced, qualified engineers design, build and operate technology across the full stack, from structured cabling and data center fabrics to next-generation firewalls, network automation and web applications, and we stand behind our work with clear, measurable SLAs."
 msgstr ""
 
 #: labqubit/lq_website/doctype/lq_case_study/templates/lq_case_study.html:28
@@ -2551,7 +2531,7 @@ msgid "Page not found"
 msgstr ""
 
 #: labqubit/www/careers/index.html:14
-msgid "Paid vendor training and exams every year."
+msgid "Paid technical training and exams every year."
 msgstr ""
 
 #. Option for the 'Employment Type' (Select) field in DocType 'LQ Job Opening'
@@ -2626,7 +2606,7 @@ msgstr ""
 msgid "Please attach your CV."
 msgstr ""
 
-#: labqubit/utils/forms.py:195
+#: labqubit/utils/forms.py:198
 msgid "Please check the form"
 msgstr ""
 
@@ -2766,7 +2746,7 @@ msgstr ""
 msgid "Projects Delivered"
 msgstr ""
 
-#: labqubit/www/about.py:20 labqubit/www/index.py:44
+#: labqubit/www/about.py:20 labqubit/www/index.py:47
 msgid "Projects delivered"
 msgstr ""
 
@@ -3052,6 +3032,11 @@ msgstr ""
 #. Label of a Text Editor field in DocType 'LQ Job Opening'
 #: labqubit/lq_careers/doctype/lq_job_opening/lq_job_opening.json
 msgid "Requirements (Arabic)"
+msgstr ""
+
+#: labqubit/templates/includes/lq_footer.html:14
+#: labqubit/templates/includes/lq_title.html:3 labqubit/www/index.py:17
+msgid "Resilient solutions for resilient businesses"
 msgstr ""
 
 #: labqubit/www/portal/contract.html:27
@@ -3367,7 +3352,7 @@ msgstr ""
 #: labqubit/templates/includes/lq_footer.html:25
 #: labqubit/templates/includes/lq_navbar.html:15
 #: labqubit/templates/includes/lq_navbar.html:125
-#: labqubit/website/context.py:184 labqubit/www/services/index.html:10
+#: labqubit/website/context.py:185 labqubit/www/services/index.html:10
 #: labqubit/www/services/index.py:7
 msgid "Services"
 msgstr ""
@@ -3409,6 +3394,10 @@ msgstr ""
 
 #: labqubit/www/update_password.py:8
 msgid "Set password"
+msgstr ""
+
+#: labqubit/www/services/index.html:9
+msgid "Seven practices, one standard of engineering. Pick a service or let us assess your environment end to end."
 msgstr ""
 
 #: labqubit/www/request-a-quote.html:6
@@ -3500,11 +3489,7 @@ msgstr ""
 msgid "Sites"
 msgstr ""
 
-#: labqubit/www/services/index.html:9
-msgid "Six practices, one standard of engineering. Pick a service or let us assess your environment end to end."
-msgstr ""
-
-#: labqubit/templates/lq_base.html:35
+#: labqubit/templates/lq_base.html:39
 msgid "Skip to content"
 msgstr ""
 
@@ -3551,7 +3536,7 @@ msgstr ""
 #: labqubit/templates/includes/lq_footer.html:45
 #: labqubit/templates/includes/lq_navbar.html:42
 #: labqubit/templates/includes/lq_navbar.html:142
-#: labqubit/website/context.py:194 labqubit/www/index.html:40
+#: labqubit/website/context.py:195 labqubit/www/index.html:40
 #: labqubit/www/solutions/index.html:9 labqubit/www/solutions/index.py:7
 msgid "Solutions"
 msgstr ""
@@ -3586,6 +3571,10 @@ msgstr ""
 #. Option for the 'Coverage Level' (Select) field in DocType 'LQ AMC Contract'
 #: labqubit/lq_service_desk/doctype/lq_amc_contract/lq_amc_contract.json
 msgid "Standard"
+msgstr ""
+
+#: labqubit/www/index.html:100
+msgid "Standards and accreditations"
 msgstr ""
 
 #. Label of a Date field in DocType 'LQ AMC Contract'
@@ -3745,12 +3734,12 @@ msgstr ""
 msgid "Tagline (Arabic)"
 msgstr ""
 
-#: labqubit/templates/components/sections.html:14
-msgid "Talk to a certified engineer about your project. We respond within one business day."
-msgstr ""
-
 #: labqubit/templates/includes/lq_detail_aside.html:5
 msgid "Talk to an engineer"
+msgstr ""
+
+#: labqubit/templates/components/sections.html:14
+msgid "Talk to an experienced engineer about your project. We respond within one business day."
 msgstr ""
 
 #: labqubit/www/login.html:56
@@ -3763,6 +3752,10 @@ msgstr ""
 msgid "Targets"
 msgstr ""
 
+#: labqubit/templates/components/sections.html:92
+msgid "Technologies we design, deploy and support"
+msgstr ""
+
 #. Label of a Table MultiSelect field in DocType 'LQ Service'
 #. Label of a Table MultiSelect field in DocType 'LQ Solution'
 #: labqubit/lq_website/doctype/lq_service/lq_service.json
@@ -3773,6 +3766,10 @@ msgstr ""
 #: labqubit/lq_website/doctype/lq_service/templates/lq_service.html:18
 #: labqubit/lq_website/doctype/lq_solution/templates/lq_solution.html:18
 msgid "Technology partners"
+msgstr ""
+
+#: labqubit/www/partners.py:10
+msgid "Technology vendors LabQubit works with."
 msgstr ""
 
 #: labqubit/www/request_a_quote.py:10
@@ -3802,7 +3799,7 @@ msgstr ""
 msgid "Testimonials"
 msgstr ""
 
-#: labqubit/utils/forms.py:195 labqubit/www/thank_you.py:21
+#: labqubit/utils/forms.py:198 labqubit/www/thank_you.py:21
 msgid "Thank you"
 msgstr ""
 
@@ -3872,6 +3869,10 @@ msgstr ""
 
 #: labqubit/lq_website/doctype/lq_case_study/templates/lq_case_study.html:28
 msgid "The results"
+msgstr ""
+
+#: labqubit/www/partners.html:8
+msgid "The right technology for every job"
 msgstr ""
 
 #: labqubit/lq_service_desk/doctype/lq_support_ticket/lq_support_ticket.py:60
@@ -4025,6 +4026,10 @@ msgstr ""
 msgid "Tracking"
 msgstr ""
 
+#: labqubit/www/careers/index.html:14
+msgid "Training budget"
+msgstr ""
+
 #: labqubit/templates/components/sections.html:70
 msgid "Trusted by teams who can't afford downtime"
 msgstr ""
@@ -4123,14 +4128,6 @@ msgstr ""
 msgid "Vendor"
 msgstr ""
 
-#: labqubit/www/index.html:12
-msgid "Vendor-certified engineers"
-msgstr ""
-
-#: labqubit/www/partners.html:8
-msgid "Vendor-certified. Vendor-neutral in our advice."
-msgstr ""
-
 #: labqubit/www/login.html:29
 msgid "Verification code"
 msgstr ""
@@ -4216,10 +4213,6 @@ msgstr ""
 msgid "We engineer the infrastructure organizations run on"
 msgstr ""
 
-#: labqubit/www/partners.html:9
-msgid "We hold partnerships with leading technology vendors, so you get certified engineering, direct escalation paths and the right product for the job."
-msgstr ""
-
 #: labqubit/www/book-a-consultation.html:30
 msgid "We listen"
 msgstr ""
@@ -4258,6 +4251,15 @@ msgstr ""
 
 #: labqubit/www/privacy.html:12
 msgid "We use this information only to respond to your request, prepare proposals, deliver contracted services and, for job applications, to assess your application. We do not sell your information."
+msgstr ""
+
+#: labqubit/www/partners.html:9
+msgid "We work with leading technology vendors and recommend what fits your needs, deployed and supported by engineers who know these platforms well."
+msgstr ""
+
+#. Option for the 'Category' (Select) field in DocType 'LQ Service'
+#: labqubit/lq_website/doctype/lq_service/lq_service.json
+msgid "Web & Application Development"
 msgstr ""
 
 #. Description of the 'Hero Image' (Attach Image) field in DocType 'LQ Service'
@@ -4347,7 +4349,7 @@ msgid "Work email"
 msgstr ""
 
 #: labqubit/www/careers/index.html:8
-msgid "Work on demanding projects across enterprise, government, energy and hospitality, with the training and certifications to grow your career."
+msgid "Work on demanding projects across enterprise, government, energy and hospitality, with the training and support to grow your career."
 msgstr ""
 
 #: labqubit/www/careers/index.html:17
@@ -4364,7 +4366,7 @@ msgstr ""
 msgid "Years of Experience"
 msgstr ""
 
-#: labqubit/www/about.py:23 labqubit/www/index.py:47
+#: labqubit/www/about.py:23 labqubit/www/index.py:50
 msgid "Years of experience"
 msgstr ""
 
@@ -4422,7 +4424,7 @@ msgid "Your maintenance and support agreements."
 msgstr ""
 
 #: labqubit/www/request-a-quote.html:29
-msgid "Your proposal is designed by vendor-certified engineers."
+msgid "Your proposal is designed by experienced, qualified engineers."
 msgstr ""
 
 #: labqubit/www/privacy.html:17

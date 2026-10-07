@@ -9,7 +9,7 @@
 	{"label": _("Request a Quote"), "href": "/request-a-quote"},
 	{"label": _("Book a Consultation"), "href": "/book-a-consultation"}) %}
 	<ul class="mt-10 flex flex-wrap gap-x-6 gap-y-3 text-sm text-muted" data-reveal style="--reveal-delay: 320ms">
-		{%- for item in [_("Vendor-certified engineers"), _("24x7 NOC & SOC options"), _("SLA-backed support")] %}
+		{%- for item in [_("Experienced, qualified engineers"), _("24x7 NOC & SOC options"), _("SLA-backed support")] %}
 		<li class="flex items-center gap-2">{{ lq_icon("circle-check", "size-4 text-signal-400") }}{{ item }}</li>
 		{%- endfor %}
 	</ul>
@@ -22,7 +22,7 @@
 	<div class="lq-container">
 		<div class="flex flex-wrap items-end justify-between gap-6">
 			{{ section_header(_("End-to-end infrastructure, engineered for uptime"), _("What we do"),
-				_("From the first cable to the last firewall rule, one accountable team designs, deploys and operates your environment."), align="start") }}
+				_("From the first cable to the web applications your customers use, one accountable team designs, builds and operates your environment."), align="start") }}
 			{{ button(_("All services"), "/services", "secondary", icon_end="arrow-right") }}
 		</div>
 		<div class="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -97,7 +97,7 @@
 {%- if certifications %}
 <section class="lq-section-tight">
 	<div class="lq-container">
-		{{ section_header(_("Certified to the highest standards"), _("Certifications")) }}
+		{{ section_header(_("Standards and accreditations"), _("Certifications")) }}
 		<div class="mt-10">{{ cert_grid(certifications) }}</div>
 	</div>
 </section>

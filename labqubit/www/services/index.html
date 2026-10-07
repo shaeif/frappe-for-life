@@ -6,12 +6,12 @@
 
 {% block page %}
 {% call page_hero(_("Everything your infrastructure needs, from one accountable team"),
-	_("Six practices, one standard of engineering. Pick a service or let us assess your environment end to end."),
+	_("Seven practices, one standard of engineering. Pick a service or let us assess your environment end to end."),
 	_("Services"), [(_("Services"), "")]) %}
 	{%- if lq.nav.service_groups %}
 	<nav class="mt-8 flex flex-wrap gap-2" aria-label="{{ _('Service categories') }}" data-reveal style="--reveal-delay: 180ms">
 		{%- for g in lq.nav.service_groups %}
-		<a href="#{{ g.anchor }}" class="inline-flex items-center gap-2 rounded-full border border-line bg-surface px-3.5 py-1.5 text-sm text-muted transition hover:border-brand-400/50 hover:text-fg">{{ lq_icon(g.icon, "size-4 text-brand-400") }}{{ _(g.category) }}</a>
+		<a href="#{{ g.anchor }}" class="inline-flex items-center gap-2 rounded-full border border-line bg-surface px-3.5 py-1.5 text-sm text-muted transition hover:border-brand-400/50 hover:text-fg">{{ lq_icon(g.icon, "size-4 text-brand-400") }}{{ _(g.category) | e }}</a>
 		{%- endfor %}
 	</nav>
 	{%- endif %}
@@ -23,7 +23,7 @@
 		<div class="lq-container">
 			<div class="flex items-center gap-3" data-reveal>
 				<span class="lq-icon-tile">{{ lq_icon(g.icon) }}</span>
-				<h2 class="lq-h2 text-2xl sm:text-3xl">{{ _(g.category) }}</h2>
+				<h2 class="lq-h2 text-2xl sm:text-3xl">{{ _(g.category) | e }}</h2>
 			</div>
 			<div class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
 				{%- for s in g.services %}{{ feature_card(s, "/" ~ s.route, loop.index0 * 60) }}{% endfor %}
