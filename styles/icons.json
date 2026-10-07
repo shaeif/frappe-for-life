@@ -1,0 +1,11 @@
+{
+  "_comment": "Icons that content editors can pick in Desk (Select fields). Icons used directly in templates via icon('name') are found automatically.",
+  "selectable": [
+    "network", "router", "wifi", "shield-check", "shield", "lock", "brick-wall", "server", "server-cog",
+    "database", "hard-drive", "cable", "cloud", "cloud-cog", "headset", "life-buoy", "wrench", "settings",
+    "cpu", "radar", "activity", "gauge", "building-2", "landmark", "fuel", "flame", "hotel", "hospital",
+    "graduation-cap", "briefcase", "users", "zap", "sparkles", "workflow", "handshake", "award",
+    "badge-check", "rocket", "layers", "monitor-smartphone", "circuit-board", "satellite-dish", "key-round",
+    "scan-line", "package", "boxes", "eye", "globe", "clock", "file-text"
+  ]
+}
