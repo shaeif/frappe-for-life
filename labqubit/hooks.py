@@ -92,16 +92,27 @@ doc_events = {
 
 # Scheduled Tasks
 # ---------------
-# Phase 5: SLA checks, AMC renewal reminders
 
-# scheduler_events = {}
+scheduler_events = {
+	"cron": {
+		"*/15 * * * *": ["labqubit.tasks.update_ticket_sla"],
+	},
+	"daily": ["labqubit.tasks.update_amc_contracts"],
+}
 
 # Fixtures
 # --------
-# Phase 2+: custom fields, roles, workflows, assignment rules exported with
-# `bench --site <site> export-fixtures --app labqubit`
+# Records owned by this app, exported with `bench --site <site> export-fixtures --app labqubit`.
+# Roles are created in install.py (they must exist before fixtures load).
 
-# fixtures = []
+LEAD_WORKFLOW_STATES = ["New", "Contacted", "Qualified", "Proposal Sent", "Won", "Lost"]
+LEAD_WORKFLOW_ACTIONS = ["Mark Contacted", "Qualify", "Send Proposal", "Mark Won", "Mark Lost", "Reopen"]
+
+fixtures = [
+	{"dt": "Workflow State", "filters": [["name", "in", LEAD_WORKFLOW_STATES]]},
+	{"dt": "Workflow Action Master", "filters": [["name", "in", LEAD_WORKFLOW_ACTIONS]]},
+	{"dt": "Workflow", "filters": [["name", "in", ["LQ Lead Workflow"]]]},
+]
 
 # Testing
 # -------

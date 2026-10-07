@@ -1,0 +1,44 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2026-10-07 23:41:37.575811",
+  "name": "Mark Contacted",
+  "workflow_action_name": "Mark Contacted"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2026-10-07 23:41:37.578856",
+  "name": "Qualify",
+  "workflow_action_name": "Qualify"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2026-10-07 23:41:37.581257",
+  "name": "Send Proposal",
+  "workflow_action_name": "Send Proposal"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2026-10-07 23:41:37.583179",
+  "name": "Mark Won",
+  "workflow_action_name": "Mark Won"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2026-10-07 23:41:37.585075",
+  "name": "Mark Lost",
+  "workflow_action_name": "Mark Lost"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2026-10-07 23:41:37.587105",
+  "name": "Reopen",
+  "workflow_action_name": "Reopen"
+ }
+]
